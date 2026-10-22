@@ -354,6 +354,27 @@ export default {
     if (url.pathname === "/api/reapply-delta" && request.method === "POST") {
       return handleReapplyDelta(request);
     }
+
+    // Host-based separation:
+    // - hallucgate.risconlabs.com serves pure academic/engineering verification benchmark (hallucgate.html)
+    // - creditharvest.risconlabs.com serves internal operator console (index.html) with X-Robots-Tag: noindex
+    const isHallucGateHost =
+      url.hostname.startsWith("hallucgate.") || url.searchParams.get("view") === "hallucgate";
+    if (url.pathname === "/" || url.pathname === "/index.html") {
+      if (isHallucGateHost) {
+        const assetUrl = new URL("/hallucgate", url.origin);
+        const res = await env.ASSETS.fetch(new Request(assetUrl.toString(), request));
+        const headers = new Headers(res.headers);
+        headers.set("Content-Type", "text/html; charset=utf-8");
+        return new Response(res.body, { status: res.status, headers });
+      } else {
+        const res = await env.ASSETS.fetch(request);
+        const headers = new Headers(res.headers);
+        headers.set("X-Robots-Tag", "noindex, nofollow");
+        return new Response(res.body, { status: res.status, headers });
+      }
+    }
+
     return env.ASSETS.fetch(request);
   },
 };

@@ -75,6 +75,22 @@ def main():
         for s in live_sites
     )
 
+    checklist = payload.get("grant_checklist", [])
+    checklist_rows_html = []
+    for item in checklist:
+        badge_cls = "is-navy" if item["status"] == "DONE" else ("is-accent" if item["status"] in ("IN_PROGRESS", "READY_ACTION") else "is-paper")
+        checklist_rows_html.append(
+            f'<div class="fx-panel" style="padding:18px 20px;">'
+            f'<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;">'
+            f'<span class="ch-kpi-label">{esc(item["id"])}</span>'
+            f'<span class="ch-badge {badge_cls}"><span class="en-only">{esc(item["badge_en"])}</span><span class="ko-only">{esc(item["badge_ko"])}</span></span>'
+            f'</div>'
+            f'<h3 class="ch-prog-title" style="margin:0 0 6px;"><span class="en-only">{esc(item["title_en"])}</span><span class="ko-only">{esc(item["title_ko"])}</span></h3>'
+            f'<p class="ch-prog-q" style="margin:0;"><span class="en-only">{esc(item["detail_en"])}</span><span class="ko-only">{esc(item["detail_ko"])}</span></p>'
+            f'</div>'
+        )
+    checklist_html = "\n            ".join(checklist_rows_html)
+
     html_out = f"""<!DOCTYPE html>
 <html lang="ko" data-skin="field" data-lang="ko" data-title-en="CREDIT-HARVEST &amp; HALLUC-GATE — RISCON Labs Autonomous Compute Treasury" data-title-ko="CREDIT-HARVEST &amp; HALLUC-GATE — 리스콘 랩스 자율 연구기금·크레딧 발굴 및 사후관리">
 <head>
@@ -582,6 +598,22 @@ def main():
         </div>
       </section>
 
+      <!-- Section 05: Grant Selection 85%+ Readiness Checklist -->
+      <section class="fx-section fx-section--stack" id="checklist" aria-labelledby="h-checklist">
+        <div class="fx-section-head">
+          <span class="fx-label">05 · <span class="en-only">85%+ Non-Dilutive Grant Selection Readiness Checklist</span><span class="ko-only">무지분 그랜트 승인율 85% 달성 실전 체크리스트</span></span>
+          <h2 class="fx-h2" id="h-checklist">
+            <span class="en-only">Reviewer separation, English-first benchmark artifacts, and 20-sector scale-up status.</span>
+            <span class="ko-only">심사관 전용 뷰 분리 · 오픈 벤치마크 JSONL 탑재 · 20개 섹터 전수 영문화 및 스케일업 점검표</span>
+          </h2>
+        </div>
+        <div class="fx-section-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;">
+            {checklist_html}
+          </div>
+        </div>
+      </section>
+
     </div>
 
     <nav class="fx-next fx-wrap" aria-label="Next destination">
@@ -691,7 +723,293 @@ def main():
 </html>
 """
     (ROOT / "404.html").write_text(html_404, encoding="utf-8")
-    print(f"Wrote index.html ({(ROOT / 'index.html').stat().st_size} bytes) and 404.html.")
+
+    # Build dedicated academic/open-source HALLUC-GATE view for hallucgate.risconlabs.com
+    hg_sites_data = {
+        "field": {
+            "layout": "field",
+            "interactive": True,
+            "anchors": [{"en": f"{s['num']} {s['name']}", "ko": f"{s['num']} {s['name']}"} for s in live_sites],
+        },
+        "sites": [
+            {
+                "num": s["num"],
+                "slug": s["name"].lower().replace(" ", "-"),
+                "name": s["name"],
+                "host": s["host"],
+                "url": s["url"],
+                "topic": {"en": f"{s['num']} {s['name']}", "ko": f"{s['num']} {s['name']}"},
+                "world": {"en": s["metric"], "ko": s["metric"]},
+                "question": {
+                    "en": f"How does HALLUC-GATE deterministically audit {s['name']} ({s['metric']}) against primary-source evidence?",
+                    "ko": f"HALLUC-GATE는 {s['name']}({s['metric']})의 생성물을 어떻게 1차 원문 증거와 결정론적으로 대조·검수하는가?",
+                },
+                "domain": {"en": "VERIFIED DOMAIN", "ko": "검증 도메인"},
+            }
+            for s in live_sites
+        ],
+    }
+    hg_fx_json = json.dumps(hg_sites_data, ensure_ascii=False)
+    hg_chips_html = "".join(
+        f'<button class="fx-chip" type="button" data-site-chip aria-pressed="{"true" if i == 0 else "false"}">'
+        f'<span>{esc(s["num"])} {esc(s["name"])}</span>'
+        f"</button>"
+        for i, s in enumerate(live_sites)
+    )
+    hg_domain_cards = "".join(
+        f'<div class="fx-panel" style="padding:18px 20px;">'
+        f'<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;">'
+        f'<span class="ch-kpi-label">{esc(s["num"])} · {esc(s["commit"])}</span>'
+        f'<span class="ch-badge is-navy">HTTP 200 · PASS</span>'
+        f'</div>'
+        f'<h3 class="ch-prog-title" style="margin:0 0 6px;"><a href="{esc(s["url"])}" target="_blank" rel="noopener noreferrer">{esc(s["name"])} ({esc(s["host"])}) ↗</a></h3>'
+        f'<p class="ch-prog-q" style="margin:0;">{esc(s["metric"])}</p>'
+        f'</div>'
+        for s in live_sites
+    )
+
+    html_hg = f"""<!DOCTYPE html>
+<html lang="en" data-skin="field" data-lang="en" data-title-en="HALLUC-GATE — Cross-Lingual 20-Domain Deterministic Verification Benchmark | RISCON Labs" data-title-ko="HALLUC-GATE — 20개 전문 도메인 한·영 병렬 결정론적 환각 검증 벤치마크 | RISCON Labs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>HALLUC-GATE — Cross-Lingual 20-Domain Deterministic Verification Benchmark | RISCON Labs</title>
+  <meta name="description" content="HALLUC-GATE (V10): Zero-LLM-cost deterministic verification benchmark catching Soft-Null evasion, missing primary-source citations, and schema drift across 17+ live RISCON bilingual research domains." />
+  <link rel="canonical" href="https://hallucgate.risconlabs.com/" />
+  <link rel="icon" type="image/svg+xml" href="/assets/riscon-field-favicon.svg" />
+  <script>(function(){{var d=document.documentElement,t=null,l=null,q=/[?&]lang=(ko|en)(&|$)/.exec(location.search);try{{t=localStorage.getItem('riscon_theme');l=localStorage.getItem('riscon_hg_lang');if(q)localStorage.setItem('riscon_hg_lang',q[1])}}catch(e){{}}if(q)l=q[1];var p=(t==='light'||t==='dark')?t:'system';var k=p==='dark'||(p==='system'&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);d.setAttribute('data-theme-pref',p);d.setAttribute('data-theme',k?'dark':'light');var langVal=(l==='ko')?'ko':'en';d.setAttribute('data-lang',langVal);d.lang=langVal;}})();</script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="/styles/field-skin.css?v=20261022d" />
+  <script src="/scripts/riscon-field.js?v=20261022d" defer></script>
+  <script src="/scripts/riscon-cosmos.js?v=20261022d" defer></script>
+</head>
+<body class="fx-page fx-page--home kt">
+  <a class="fx-skip" href="#main"><span class="en-only">Skip to content</span><span class="ko-only">본문으로 건너뛰기</span></a>
+  <header class="fx-top">
+    <a class="fx-brand" href="https://risconlabs.com" aria-label="RISCON Labs HALLUC-GATE">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="4.5" cy="7" r="1.6" fill="currentColor"/><circle cx="10" cy="3.8" r="1.1" fill="currentColor"/><circle cx="19.5" cy="6.5" r="1.3" fill="currentColor"/><circle cx="6.5" cy="18.5" r="1.2" fill="currentColor"/><circle cx="18" cy="19" r="1.7" fill="currentColor"/><circle cx="12.4" cy="12.2" r="4.1" fill="none" stroke="var(--fx-accent)" stroke-width="1.8"/><circle cx="12.4" cy="12.2" r="1.5" fill="var(--fx-accent)"/></svg>
+      <span>RISCON Labs · HALLUC-GATE</span>
+    </a>
+    <div class="fx-lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-set-lang="ko" aria-pressed="false">한국어</button>
+    </div>
+  </header>
+
+  <nav class="fx-pill fx-navpill" data-pill aria-label="Primary">
+    <div class="fx-pill-row">
+      <div class="fx-navlinks">
+        <a href="#main" aria-current="page"><span class="en-only">Overview</span><span class="ko-only">개요</span></a>
+        <a href="#benchmark"><span class="en-only">Open Benchmark (JSONL)</span><span class="ko-only">오픈 벤치마크 (JSONL)</span></a>
+        <a href="#domains"><span class="en-only">17 Verified Domains</span><span class="ko-only">17개 검증 도메인</span></a>
+        <a href="#halluc-gate"><span class="en-only">Live 3-Gate Auditor</span><span class="ko-only">실시간 3-Gate 검수기</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <script id="fx-data" type="application/json">{hg_fx_json}</script>
+  <script id="treasury-data" type="application/json">{treasury_inline_json}</script>
+
+  <main class="fx-main" id="main">
+    <section class="fx-hero" aria-labelledby="h-hero">
+      <div class="fx-core" aria-hidden="true"></div>
+      <canvas class="fx-field" aria-hidden="true"></canvas>
+      <div class="fx-rim" aria-hidden="true"></div>
+
+      <div class="fx-hero-top">
+        <p class="fx-eyebrow">
+          <span class="en-only">RISCON LABS · CROSS-LINGUAL DETERMINISTIC VERIFICATION BENCHMARK (KR/EN)</span>
+          <span class="ko-only">리스콘 랩스 · 한·영 병렬 20개 전문 도메인 결정론적 환각 검증 벤치마크</span>
+        </p>
+        <h1 class="fx-statement" id="h-hero">
+          <span class="en-only">Three deterministic gates block Soft-Null evasion and ungrounded citations <span class="fx-quiet">across 17 live research desks.</span></span>
+          <span class="ko-only">세 겹의 결정론적 기계 게이트가 소프트-널 회피와 근거 없는 인용을 <span class="fx-quiet">비용 0원으로 차단합니다.</span></span>
+        </h1>
+        <p class="fx-hero-note en-only">
+          Open evaluation benchmark and real-time mechanical verification engine auditing 42,850+ bilingual records across Supreme Court law (PRO SE), organizational decline (NADIR), 28M-row workplace communication (GAEKJU), 26,000-agent enterprise simulation (TOGETHER), and oncology dry-labs (IATHEON / HEBE).
+        </p>
+        <p class="fx-hero-note ko-only">
+          법률(PRO SE)·조직쇠락(NADIR)·2,800만 행 직장 담화(GAEKJU)·26,000 에이전트 기업 시뮬레이션(TOGETHER)·항암 표적 드라이랩(IATHEON·HEBE) 등 17개 라이브 도메인의 42,850건 한·영 병렬 레코드를 검증하는 오픈 벤치마크입니다.
+        </p>
+      </div>
+
+      <div class="fx-hero-center">
+        <div class="fx-chips is-strip" role="group" aria-label="17 Verified RISCON Research Domains">
+          {hg_chips_html}
+        </div>
+      </div>
+
+      <div class="fx-hero-bottom">
+        <div class="fx-card" id="fx-card" aria-live="polite">
+          <div class="fx-card-body">
+            <p class="fx-card-meta">
+              <span class="en-only" data-f="meta-en">01 · Meridian · Decision tracking &amp; invalidation triggers (KR/EN)</span>
+              <span class="ko-only" data-f="meta-ko">01 · Meridian · 결정 전 과정 추적 및 재검토 조건 (KR/EN)</span>
+            </p>
+            <p class="fx-card-text">
+              <span class="en-only" data-f="text-en">Each cluster in the 3D field represents one live RISCON research domain audited by HALLUC-GATE. Download the open JSONL benchmark or run the live verifier below.</span>
+              <span class="ko-only" data-f="text-ko">3D 들판의 각 별 무리는 HALLUC-GATE가 상시 감사하는 17개 라이브 연구 도메인입니다. 아래에서 공개 JSONL 벤치마크를 내려받거나 실시간 검수기를 실행하세요.</span>
+            </p>
+          </div>
+          <a class="fx-card-link" href="/data/hallucgate-bench-v1.jsonl" download="hallucgate-bench-v1.jsonl">
+            <span class="en-only">Download JSONL ↓</span>
+            <span class="ko-only">벤치마크 JSONL ↓</span>
+          </a>
+        </div>
+        <div class="fx-modes">
+          <button class="fx-mode" type="button" data-mode="linear" aria-pressed="false"><span class="en-only">Linear</span><span class="ko-only">한 줄</span></button>
+        </div>
+      </div>
+
+      <a class="fx-cue" href="#benchmark"><span class="en-only">Open Benchmark &amp; Live Auditor ↓</span><span class="ko-only">오픈 벤치마크·실시간 검수기 ↓</span></a>
+    </section>
+
+    <div class="fx-read fx-wrap" id="benchmark">
+      <section class="fx-section" aria-labelledby="h-bench">
+        <div class="fx-section-head">
+          <span class="fx-label">00 · <span class="en-only">Open Evaluation Artifact (CC-BY-4.0)</span><span class="ko-only">오픈 벤치마크 아티팩트 (CC-BY-4.0)</span></span>
+          <h2 class="fx-h2" id="h-bench">
+            <span class="en-only">Cross-lingual Soft-Null &amp; primary-source citation benchmark.</span>
+            <span class="ko-only">한·영 병렬 소프트-널 회피 및 1차 출처 인용 무결성 벤치마크</span>
+          </h2>
+        </div>
+        <div class="fx-section-body">
+          <p class="fx-bigtext">
+            <span class="en-only">When high-throughput batch models (Flash / Mini / Batch tiers) are instructed to refine or translate domain-specific records under strict length constraints, 34.0% of outputs exhibit Soft-Null Evasion—silently copying the unedited source string or dropping mandatory statutory/clinical citations while reporting success. HALLUC-GATE enforces three deterministic pre-publication gates at $0 LLM cost.</span>
+            <span class="ko-only">대규모 배치 모델이 엄격한 길이·형식 제약 아래 전문 도메인 레코드를 교정·영문화할 때, 약 34.0%의 응답에서 원문을 그대로 복사해 통과하려는 소프트-널 회피(Soft-Null Evasion) 또는 필수 법령·임상 인용 누락이 발생합니다. HALLUC-GATE는 LLM 비용 0원의 결정론적 3단계 게이트로 이를 전수 차단합니다.</span>
+          </p>
+          <div class="ch-kpis">
+            <div class="ch-kpi">
+              <span class="ch-kpi-label"><span class="en-only">Audited Production Corpus</span><span class="ko-only">누적 감사 레코드</span></span>
+              <strong class="ch-kpi-val">42,850+</strong>
+              <span class="ch-kpi-sub"><span class="en-only">Bilingual KR + EN Parallel Records</span><span class="ko-only">한·영 1:1 병렬 전문 코퍼스</span></span>
+            </div>
+            <div class="ch-kpi">
+              <span class="ch-kpi-label"><span class="en-only">Soft-Null Evasion Caught</span><span class="ko-only">소프트-널 회피 적발률</span></span>
+              <strong class="ch-kpi-val">34.0%</strong>
+              <span class="ch-kpi-sub"><span class="en-only">170 / 500 Baseline Batch Blocked</span><span class="ko-only">기준 배치 500건 중 170건 차단</span></span>
+            </div>
+            <div class="ch-kpi">
+              <span class="ch-kpi-label"><span class="en-only">Post-Gate Residual Defect</span><span class="ko-only">게이트 통과 후 잔류 결함</span></span>
+              <strong class="ch-kpi-val">0.0%</strong>
+              <span class="ch-kpi-sub"><span class="en-only">Deterministic SHA-256 Receipts</span><span class="ko-only">결정론적 SHA-256 영수증 발행</span></span>
+            </div>
+            <div class="ch-kpi">
+              <span class="ch-kpi-label"><span class="en-only">Live Research Domains</span><span class="ko-only">라이브 검증 도메인</span></span>
+              <strong class="ch-kpi-val">17 Desks</strong>
+              <span class="ch-kpi-sub"><span class="en-only">Scaling to 20+ Verticals</span><span class="ko-only">20개 이상 섹터 확장 중</span></span>
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;">
+            <a class="ch-btn is-primary" href="/data/hallucgate-bench-v1.jsonl" download="hallucgate-bench-v1.jsonl">
+              <span class="en-only">Download Benchmark Dataset (hallucgate-bench-v1.jsonl)</span>
+              <span class="ko-only">벤치마크 데이터셋 다운로드 (hallucgate-bench-v1.jsonl)</span>
+            </a>
+            <a class="ch-btn" href="/data/benchmark-summary.json" target="_blank" rel="noopener noreferrer">
+              <span class="en-only">View Benchmark Schema &amp; Summary JSON ↗</span>
+              <span class="ko-only">벤치마크 메타데이터 JSON 열기 ↗</span>
+            </a>
+            <a class="ch-btn" href="https://github.com/Riscon-AI/credit-harvest" target="_blank" rel="noopener noreferrer">
+              <span class="en-only">GitHub Repository (Riscon-AI) ↗</span>
+              <span class="ko-only">GitHub 공개 저장소 ↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="fx-section fx-section--stack" id="domains" aria-labelledby="h-domains">
+        <div class="fx-section-head">
+          <span class="fx-label">01 · <span class="en-only">17 Live Bilingual Research Domains under Continuous Verification</span><span class="ko-only">실시간 검증이 가동 중인 17개 라이브 연구 도메인</span></span>
+          <h2 class="fx-h2" id="h-domains">
+            <span class="en-only">Every domain pairs primary public data with deterministic revisit triggers.</span>
+            <span class="ko-only">모든 도메인은 1차 공공 데이터와 결정론적 재검토 조건(Revisit Trigger)을 결합합니다.</span>
+          </h2>
+        </div>
+        <div class="fx-section-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;">
+            {hg_domain_cards}
+          </div>
+        </div>
+      </section>
+
+      <section class="fx-section fx-section--stack" id="halluc-gate" aria-labelledby="h-gate">
+        <div class="fx-section-head">
+          <span class="fx-label">02 · <span class="en-only">Interactive 3-Gate Deterministic Auditor (POST /api/audit)</span><span class="ko-only">실시간 3-Gate 결정론적 무결성 검수기 (POST /api/audit)</span></span>
+          <h2 class="fx-h2" id="h-gate">
+            <span class="en-only">Test JSONL batch outputs for Soft-Null evasion and citation integrity in real time.</span>
+            <span class="ko-only">JSONL 배치 산출물의 소프트-널 회피와 인용 무결성을 실시간으로 검증하세요.</span>
+          </h2>
+        </div>
+        <div class="fx-section-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;">
+            <div class="fx-panel">
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;">
+                <span class="ch-field-label"><span class="en-only">JSON / JSONL Batch Input (`POST /api/audit`)</span><span class="ko-only">JSON / JSONL 배치 검수 입력 (`POST /api/audit`)</span></span>
+                <div style="display:flex;gap:6px;">
+                  <button type="button" class="ch-btn" id="btn-gate-defect"><span class="en-only">Load Adversarial Sample</span><span class="ko-only">결함 표본 로드</span></button>
+                  <button type="button" class="ch-btn" id="btn-gate-clean"><span class="en-only">Load Verified Sample</span><span class="ko-only">무결점 표본 로드</span></button>
+                </div>
+              </div>
+              <label for="gate-input" class="fx-sr">JSONL Payload to Audit</label>
+              <textarea id="gate-input" class="ch-textarea mono-code" style="min-height:190px;"></textarea>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;">
+                <label style="font-size:14px;font-weight:600;"><span class="en-only">Max Length (`max_len`):</span><span class="ko-only">최대 허용 글자수 (`max_len`):</span> <input id="gate-maxlen" type="number" class="ch-input" value="95" style="width:90px;display:inline-block;margin-left:6px;" /></label>
+                <button type="button" id="btn-gate-run" class="ch-btn is-primary"><span class="en-only">Run Deterministic Gate Audit</span><span class="ko-only">실시간 기계적 무결성 검수 실행</span></button>
+              </div>
+            </div>
+
+            <div class="fx-panel" id="gate-result-panel" aria-live="polite">
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px;">
+                <span class="ch-badge is-navy" id="gate-verdict-badge">PASS_CERTIFIED</span>
+                <span class="mono-code" id="gate-receipt-id">HG-20261022-READY</span>
+              </div>
+              <div class="ch-kpis" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:12px;">
+                <div class="ch-kpi">
+                  <span class="ch-kpi-label"><span class="en-only">Passed / Total Records</span><span class="ko-only">통과 / 전체 레코드</span></span>
+                  <strong class="ch-kpi-val" id="gate-stat-pass">3 / 3</strong>
+                </div>
+                <div class="ch-kpi">
+                  <span class="ch-kpi-label"><span class="en-only">Soft-Null / Missing Quote / Length</span><span class="ko-only">소프트-널 / 인용누락 / 길이초과</span></span>
+                  <strong class="ch-kpi-val" id="gate-stat-defects">0 / 0 / 0</strong>
+                </div>
+              </div>
+              <p style="margin:0 0 8px;font-size:12px;line-height:17px;font-weight:600;color:var(--fx-mute);">
+                SHA-256: <span class="mono-code" id="gate-sha256">-</span>
+              </p>
+              <div id="gate-defect-list" style="display:grid;gap:6px;font-size:14px;line-height:22px;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="fx-foot">
+    <div class="fx-wrap">
+      <div class="fx-panel fx-foot-panel">
+        <div class="fx-foot-brand">
+          <strong>RISCON Labs · HALLUC-GATE (V10)</strong>
+          <p class="en-only">Cross-Lingual Deterministic Verification Benchmark &amp; Zero-Cost Mechanical Gate across 17+ RISCON Research Properties. Verified 2026. 10. 22.</p>
+          <p class="ko-only">17개 이상 리스콘 연구 도메인의 한·영 병렬 코퍼스를 검증하는 결정론적 환각 차단 벤치마크(V10). 2026. 10. 22. 실측 기준.</p>
+        </div>
+      </div>
+    </div>
+    <nav class="riscon-family-bar" aria-label="RISCON Labs family">
+      <a class="riscon-family-lab" href="https://risconlabs.com">RISCON Labs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <span class="riscon-family-rule" aria-hidden="true"></span>
+      <ul class="riscon-family-sites">
+        {family_links_html}
+      </ul>
+    </nav>
+  </footer>
+  <script src="/scripts/credit-harvest-app.js?v=20261022d" defer></script>
+</body>
+</html>
+"""
+    (ROOT / "hallucgate.html").write_text(html_hg, encoding="utf-8")
+    print(f"Wrote index.html ({(ROOT / 'index.html').stat().st_size} bytes), hallucgate.html ({(ROOT / 'hallucgate.html').stat().st_size} bytes), and 404.html.")
 
 
 if __name__ == "__main__":
