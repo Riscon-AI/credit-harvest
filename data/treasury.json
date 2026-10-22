@@ -16,68 +16,68 @@
     "interactive": true,
     "anchors": [
       {
-        "en": "Anthropic $20K Science API",
-        "ko": "Anthropic $20K 과학 API"
+        "en": "01 Anthropic",
+        "ko": "01 Anthropic"
       },
       {
-        "en": "Anthropic Safety & Alignment API",
-        "ko": "Anthropic 안전성·감사 API"
+        "en": "02 Claude Ext",
+        "ko": "02 Claude Ext"
       },
       {
-        "en": "OpenAI Researcher Access Credits",
-        "ko": "OpenAI 연구자 액세스 크레딧"
+        "en": "03 OpenAI",
+        "ko": "03 OpenAI"
       },
       {
-        "en": "Google Gemini Academic Quota",
-        "ko": "Google Gemini 학술 연구 쿼터"
+        "en": "04 DeepMind",
+        "ko": "04 DeepMind"
       },
       {
-        "en": "Cohere Command & Embed Grant",
-        "ko": "Cohere 다국어 임베딩·추론 그랜트"
+        "en": "05 Cohere",
+        "ko": "05 Cohere"
       },
       {
-        "en": "Cloudflare $250K Edge & Workers AI",
-        "ko": "Cloudflare $250K 엣지·워커 크레딧"
+        "en": "06 Cloudflare",
+        "ko": "06 Cloudflare"
       },
       {
-        "en": "AWS Activate $100K & Bedrock",
-        "ko": "AWS Activate $100K·Bedrock"
+        "en": "07 AWS",
+        "ko": "07 AWS"
       },
       {
-        "en": "Microsoft $150K Azure OpenAI",
-        "ko": "Microsoft $150K Azure OpenAI"
+        "en": "08 Microsoft",
+        "ko": "08 Microsoft"
       },
       {
-        "en": "Google Cloud $350K Vertex AI",
-        "ko": "Google Cloud $350K Vertex AI"
+        "en": "09 Google Cloud",
+        "ko": "09 Google Cloud"
       },
       {
-        "en": "NVIDIA Inception & DGX Cloud",
-        "ko": "NVIDIA Inception·DGX 클라우드"
+        "en": "10 NVIDIA",
+        "ko": "10 NVIDIA"
       },
       {
-        "en": "Modal $10K Serverless H100/A100",
-        "ko": "Modal $10K 서버리스 H100/A100"
+        "en": "11 Modal",
+        "ko": "11 Modal"
       },
       {
-        "en": "Hugging Face ZeroGPU H200 Grant",
-        "ko": "Hugging Face ZeroGPU H200 그랜트"
+        "en": "12 HuggingFace",
+        "ko": "12 HuggingFace"
       },
       {
-        "en": "Emergent Ventures $50K Cash Grant",
-        "ko": "Emergent Ventures $50K 무지분 기금"
+        "en": "13 Emergent",
+        "ko": "13 Emergent"
       },
       {
-        "en": "LTFF $100K AI Safety & Auditing",
-        "ko": "LTFF $100K AI 안전·감사 기금"
+        "en": "14 LTFF",
+        "ko": "14 LTFF"
       },
       {
-        "en": "SFF $150K Speculation Grant",
-        "ko": "SFF $150K 생존·번영 기금"
+        "en": "15 SFF",
+        "ko": "15 SFF"
       },
       {
-        "en": "NIPA Korea Sovereign GPU Voucher",
-        "ko": "NIPA 고성능 GPU·데이터바우처"
+        "en": "16 NIPA",
+        "ko": "16 NIPA"
       }
     ]
   },

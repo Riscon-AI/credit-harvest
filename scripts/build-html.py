@@ -22,13 +22,9 @@ def main():
     presets = payload["inbound_presets"]
     metrics = payload["metrics"]
 
-    # Build fx-data JSON for riscon-field.js
+    # Build fx-data JSON for riscon-field.js (short crisp labels for 3D field & Linear mode)
     fx_data = {
-        "field": {
-            "layout": "field",
-            "interactive": True,
-            "anchors": [{"en": p["topic"]["en"], "ko": p["topic"]["ko"]} for p in programs],
-        },
+        "field": payload["field"],
         "sites": [
             {
                 "num": p["num"],
@@ -97,15 +93,12 @@ def main():
   <script>(function(){{var d=document.documentElement,t=null,l=null,q=/[?&]lang=(ko|en)(&|$)/.exec(location.search);try{{t=localStorage.getItem('riscon_theme');l=localStorage.getItem('riscon_lang');if(q)localStorage.setItem('riscon_lang',q[1])}}catch(e){{}}if(q){{l=q[1];try{{history.replaceState(null,'',location.pathname+location.hash)}}catch(e){{}}}}var p=(t==='light'||t==='dark')?t:'system';var k=p==='dark'||(p==='system'&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);d.setAttribute('data-theme-pref',p);d.setAttribute('data-theme',k?'dark':'light');var langVal=(l==='en')?'en':'ko';d.setAttribute('data-lang',langVal);d.lang=langVal;var n=d.getAttribute('data-title-'+langVal);if(n)document.title=n;}})();</script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="/styles/field-skin.css?v=20261022b" />
-  <script src="/scripts/riscon-field.js?v=20261022b" defer></script>
-  <script src="/scripts/riscon-cosmos.js?v=20261022b" defer></script>
+  <link rel="stylesheet" href="/styles/field-skin.css?v=20261022c" />
+  <script src="/scripts/riscon-field.js?v=20261022c" defer></script>
+  <script src="/scripts/riscon-cosmos.js?v=20261022c" defer></script>
 </head>
 <body class="fx-page fx-page--home kt">
   <a class="fx-skip" href="#main"><span class="en-only">Skip to content</span><span class="ko-only">본문으로 건너뛰기</span></a>
-  <div class="fx-core" aria-hidden="true"></div>
-  <canvas class="fx-field" aria-hidden="true"></canvas>
-  <div class="fx-rim" aria-hidden="true"></div>
 
   <header class="fx-top">
     <a class="fx-brand" href="https://risconlabs.com" aria-label="RISCON Labs CREDIT-HARVEST">
@@ -166,6 +159,9 @@ def main():
   <main class="fx-main" id="main">
 
     <section class="fx-hero" aria-labelledby="fx-statement">
+      <div class="fx-core" aria-hidden="true"></div>
+      <canvas class="fx-field" aria-hidden="true"></canvas>
+      <div class="fx-rim" aria-hidden="true"></div>
       <div class="fx-hero-top">
         <p class="fx-eyebrow">
           <span class="en-only">S99 CREDIT-HARVEST · S95 HALLUC-GATE · Verified 2026. 10. 22.</span>
@@ -360,8 +356,6 @@ def main():
         </div>
       </section>
 
-      <div class="fx-passage" data-passage="nebula" data-seed="1.7" aria-hidden="true"></div>
-
       <!-- Section 01: Expanded 16-Program Discovery Radar -->
       <section class="fx-section fx-section--stack" id="radar" aria-labelledby="h-radar">
         <div class="fx-section-head">
@@ -449,8 +443,6 @@ def main():
           </div>
         </div>
       </section>
-
-      <div class="fx-passage" data-passage="cluster" data-seed="3.4" aria-hidden="true"></div>
 
       <!-- Section 03: Post-Submission Lifecycle, SLA Tracker & Inbound Email Triage -->
       <section class="fx-section fx-section--stack" id="lifecycle" aria-labelledby="h-lifecycle">
@@ -666,7 +658,7 @@ def main():
     </nav>
   </footer>
 
-  <script src="/scripts/credit-harvest-app.js?v=20261022b" defer></script>
+  <script src="/scripts/credit-harvest-app.js?v=20261022c" defer></script>
 </body>
 </html>
 """

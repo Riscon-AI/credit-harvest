@@ -220,7 +220,8 @@
 
   function size() {
     if (!canvas) return;
-    W = window.innerWidth; H = window.innerHeight;
+    var host = canvas.parentElement || document.documentElement;
+    W = host.clientWidth || window.innerWidth; H = host.clientHeight || window.innerHeight;
     scale = Math.max(.5, Math.min(1, 1100 / Math.max(W, 1)));
     canvas.width = Math.max(1, Math.round(W * scale));
     canvas.height = Math.max(1, Math.round(H * scale));

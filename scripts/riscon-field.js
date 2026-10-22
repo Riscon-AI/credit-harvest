@@ -51,7 +51,7 @@
     // Many sites (2026-10-01, toward a hundred): past DENSE the field spreads its rings over a globe and keeps them
     // smaller, and once the line no longer fits the screen at LIN_GAP pixels a station it becomes an endless loop
     // that drifts slowly and can be dragged or wheeled along (wrapped at lin.L, moved by lin.off).
-    var DENSE = 16, LIN_GAP = 118;
+    var DENSE = 16, LIN_GAP = 185;
     var lin = { on: false, L: 1, off: 0, goal: 0, idle: 0 };
 
     function rng(s) {
@@ -91,11 +91,24 @@
     function linLoops() { var n = anchorCount(); return n > 2 && 2 * spanX * S / (n - 1) < LIN_GAP; }
     function wrapX(v) { var L = lin.L; return ((v + L / 2) % L + L) % L - L / 2; }
 
+    function linearY() {
+      if (canvas && canvas.parentElement) {
+        var host = canvas.parentElement.getBoundingClientRect();
+        var bot = canvas.parentElement.querySelector('.fx-hero-bottom');
+        if (bot && host.height > 0 && S > 0) {
+          var botTop = bot.getBoundingClientRect().top - host.top;
+          var targetPy = clamp(botTop - 52, host.height * 0.52, host.height - 165);
+          return (H * 0.5 - targetPy) / S;
+        }
+      }
+      return -0.24;
+    }
+
     // Where anchor k of n sits in each layout (world units, +y is up).
     function anchorSpot(name, k, n, r) {
       if (name === 'track') return [trackX(k), 0, 0];
       var t = n > 1 ? k / (n - 1) : .5;
-      if (name === 'linear') return [-spanX + 2 * spanX * t, -.5, 0];
+      if (name === 'linear') return [-spanX + 2 * spanX * t, linearY(), 0];
       if (name === 'line') return [-spanX + 2 * spanX * t, 0, 0];
       if (name === 'ladder') return [-1.1 + 2.2 * t, -.72 + 1.44 * t, 0];
       if (name === 'ring') {
@@ -175,9 +188,10 @@
       if (name === 'linear' && linLoops()) {
         // stations LIN_GAP apart (more if the loop would otherwise close on screen), the chosen site in the middle
         var nL = anchorCount(), gapW = Math.max(LIN_GAP, (W + 260) / nL) / S, c0 = selected >= 0 ? selected : 0;
+        var ly = linearY();
         lin.on = true; lin.L = nL * gapW; lin.off = lin.goal = 0; lin.idle = Date.now() + 2500;
         spots = [];
-        for (var sk = 0; sk < nL; sk++) spots.push([wrapX((sk - c0) * gapW), -.5, 0]);
+        for (var sk = 0; sk < nL; sk++) spots.push([wrapX((sk - c0) * gapW), ly, 0]);
       }
       var flat = name === 'linear' || name === 'line' || name === 'track';
       // on the track the loose points spread along its whole length
@@ -339,6 +353,15 @@
         var xa = Math.min(xf, xc);
         if (xa > x0) { ctx.strokeStyle = rgba(accent, .9); ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(xa, y0); ctx.stroke(); }
       }
+      // linear mode: horizontal station rail
+      if (layout === 'linear' && anchorIdx.length > 1) {
+        var pjL = project(0, linearY(), 0);
+        if (pjL.v) {
+          ctx.lineWidth = 1;
+          ctx.strokeStyle = rgba(ink, .18);
+          ctx.beginPath(); ctx.moveTo(0, pjL.y); ctx.lineTo(W, pjL.y); ctx.stroke();
+        }
+      }
       // the family map: the rings joined in order, one closed line through every world
       if (links && anchorIdx.length > 1) {
         ctx.strokeStyle = rgba(accent, .55);
@@ -379,8 +402,14 @@
           var text = label(q);
           if (text) {
             ctx.font = lang() === 'ko' ? fontKo : fontEn;
-            ctx.fillStyle = on || near ? rgba(accent, 1) : rgba(ink, links ? .86 : .72);
-            ctx.fillText(text, ap.sx + rr + 8, ap.sy + .5);
+            ctx.fillStyle = on || near ? rgba(accent, 1) : rgba(ink, links ? .86 : .78);
+            if (layout === 'linear') {
+              ctx.textAlign = 'center';
+              ctx.fillText(text, ap.sx, ap.sy + rr + 16);
+              ctx.textAlign = 'left';
+            } else {
+              ctx.fillText(text, ap.sx + rr + 8, ap.sy + .5);
+            }
           }
         }
       }
@@ -466,14 +495,15 @@
 
     function resize() {
       if (!canvas) return;
-      var w = window.innerWidth, h = window.innerHeight;
+      var host = canvas.parentElement || document.documentElement;
+      var w = host.clientWidth || window.innerWidth, h = host.clientHeight || window.innerHeight;
       DPR = Math.min(window.devicePixelRatio || 1, 2);
       var rebuild = !pts.length || Math.abs(w / Math.max(h, 1) - W / Math.max(H, 1)) > .25 || Math.abs(w - W) > 240;
       W = w; H = h;
       canvas.width = Math.round(W * DPR); canvas.height = Math.round(H * DPR);
       S = Math.min(W, H) * (W < 640 ? .46 : .4);
       spanX = clamp((W / 2 - 90) / S, .6, 1.45);
-      if (rebuild) build(); else if (layout !== cfg.layout || layout === 'line' || layout === 'track') place(layout, true);
+      if (rebuild) build(); else if (layout !== cfg.layout || layout === 'linear' || layout === 'line' || layout === 'track') place(layout, true);
       draw(); loop();
     }
 
@@ -488,6 +518,12 @@
       return best;
     }
 
+    function canvasXY(e) {
+      if (!canvas) return { x: e.clientX, y: e.clientY };
+      var r = canvas.getBoundingClientRect();
+      return { x: e.clientX - r.left, y: e.clientY - r.top };
+    }
+
     function bindPointer() {
       canvas.addEventListener('pointerdown', function (e) {
         if (e.button !== 0) return;
@@ -498,8 +534,9 @@
         if (!canvas || !cfg.interactive) return;
         var inField = e.target === canvas;
         if (!drag && !inField) { if (hover !== -1) { hover = -1; canvas.classList.remove('is-pointing'); loop(); } return; }
-        parGoal.x = reduceMQ.matches ? 0 : (e.clientX / Math.max(W, 1) - .5) * .28;
-        parGoal.y = reduceMQ.matches ? 0 : (e.clientY / Math.max(H, 1) - .5) * .12;
+        var pt = canvasXY(e);
+        parGoal.x = reduceMQ.matches ? 0 : (pt.x / Math.max(W, 1) - .5) * .28;
+        parGoal.y = reduceMQ.matches ? 0 : (pt.y / Math.max(H, 1) - .5) * .12;
         if (drag) {
           var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
           if (Math.abs(dx) + Math.abs(dy) > 5) drag.moved = true;
@@ -513,14 +550,15 @@
             canvas.classList.add('is-dragging');
           }
         } else {
-          var h = hitTest(e.clientX, e.clientY);
+          var h = hitTest(pt.x, pt.y);
           if (h !== hover) { hover = h; canvas.classList.toggle('is-pointing', h >= 0); }
         }
         loop();
       }, { passive: true });
       function end(e) {
         if (drag && !drag.moved && e && e.type === 'pointerup') {
-          var h = hitTest(e.clientX, e.clientY);
+          var pt = canvasXY(e);
+          var h = hitTest(pt.x, pt.y);
           if (h >= 0) { select(h); if (onSelectCb) onSelectCb(h); }
         }
         drag = null;
@@ -531,8 +569,9 @@
       // the loop moves under the wheel only while the pointer is on the line itself; anywhere else the page scrolls
       window.addEventListener('wheel', function (e) {
         if (!lin.on || e.target !== canvas || e.ctrlKey) return;
-        var ly = project(0, -.5, 0).y;
-        if (Math.abs(e.clientY - ly) > 70) return;
+        var pt = canvasXY(e);
+        var ly = project(0, linearY(), 0).y;
+        if (Math.abs(pt.y - ly) > 70) return;
         e.preventDefault();
         var unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? W : 1;
         var dd = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
