@@ -1,0 +1,1282 @@
+{
+  "generated_at": "2026. 10. 22.",
+  "guideline_commit": "85a4bfc",
+  "metrics": {
+    "total_programs": 16,
+    "prefill_ready_count": 4,
+    "verified_urls_200": 16,
+    "live_family_sites": 16,
+    "total_min_krw": 96590000,
+    "total_max_krw": 1909500000,
+    "target_monthly_opex_krw": "500,000 – 700,000 KRW",
+    "coverage_multiple": "13.4x – 265x annual OPEX"
+  },
+  "field": {
+    "layout": "field",
+    "interactive": true,
+    "anchors": [
+      {
+        "en": "Anthropic $20K Science API",
+        "ko": "Anthropic $20K 과학 API"
+      },
+      {
+        "en": "Anthropic Safety & Alignment API",
+        "ko": "Anthropic 안전성·감사 API"
+      },
+      {
+        "en": "OpenAI Researcher Access Credits",
+        "ko": "OpenAI 연구자 액세스 크레딧"
+      },
+      {
+        "en": "Google Gemini Academic Quota",
+        "ko": "Google Gemini 학술 연구 쿼터"
+      },
+      {
+        "en": "Cohere Command & Embed Grant",
+        "ko": "Cohere 다국어 임베딩·추론 그랜트"
+      },
+      {
+        "en": "Cloudflare $250K Edge & Workers AI",
+        "ko": "Cloudflare $250K 엣지·워커 크레딧"
+      },
+      {
+        "en": "AWS Activate $100K & Bedrock",
+        "ko": "AWS Activate $100K·Bedrock"
+      },
+      {
+        "en": "Microsoft $150K Azure OpenAI",
+        "ko": "Microsoft $150K Azure OpenAI"
+      },
+      {
+        "en": "Google Cloud $350K Vertex AI",
+        "ko": "Google Cloud $350K Vertex AI"
+      },
+      {
+        "en": "NVIDIA Inception & DGX Cloud",
+        "ko": "NVIDIA Inception·DGX 클라우드"
+      },
+      {
+        "en": "Modal $10K Serverless H100/A100",
+        "ko": "Modal $10K 서버리스 H100/A100"
+      },
+      {
+        "en": "Hugging Face ZeroGPU H200 Grant",
+        "ko": "Hugging Face ZeroGPU H200 그랜트"
+      },
+      {
+        "en": "Emergent Ventures $50K Cash Grant",
+        "ko": "Emergent Ventures $50K 무지분 기금"
+      },
+      {
+        "en": "LTFF $100K AI Safety & Auditing",
+        "ko": "LTFF $100K AI 안전·감사 기금"
+      },
+      {
+        "en": "SFF $150K Speculation Grant",
+        "ko": "SFF $150K 생존·번영 기금"
+      },
+      {
+        "en": "NIPA Korea Sovereign GPU Voucher",
+        "ko": "NIPA 고성능 GPU·데이터바우처"
+      }
+    ]
+  },
+  "programs": [
+    {
+      "num": "01",
+      "id": "PROG-ANTH-SCI",
+      "slug": "anthropic-science",
+      "provider": "Anthropic",
+      "program_name": "Anthropic AI for Science Program",
+      "category": {
+        "en": "FRONTIER API",
+        "ko": "프론티어 API"
+      },
+      "topic": {
+        "en": "Anthropic $20K Science API",
+        "ko": "Anthropic $20K 과학 API"
+      },
+      "world": {
+        "en": "Up to $20,000 Claude API credits for high-impact biology & medicine research",
+        "ko": "생명과학·의학 고임팩트 연구를 위한 최대 $20,000 Claude API 크레딧"
+      },
+      "question": {
+        "en": "How do we fund 6 months of zero-hallucination oncology (IATHEON) and metabolic (HEBE) evidence synthesis?",
+        "ko": "위암·유방암 표적치료(IATHEON)와 비만·탈모(HEBE) 드라이랩의 6개월 무환각 근거 합성을 어떻게 무상 조달할 것인가?"
+      },
+      "credit_value": "Up to $20,000 Claude API Credits",
+      "estimated_krw_min": 6900000,
+      "estimated_krw_max": 27600000,
+      "cadence": {
+        "en": "Reviewed 1st Monday of each month",
+        "ko": "매월 첫째 주 월요일 정기 심사"
+      },
+      "next_review_date": "2026. 11. 2.",
+      "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform",
+      "prefilled_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform?usp=pp_url&entry.1306138469=Standard+AI+for+Science+program&entry.260304036=Clinical+%26+therapeutic+development+%E2%80%94+accelerating+treatments+for+rare+disease&entry.2105307426=Byungchul+Lee&entry.893525514=RISCON+Labs+%28RISCON+Inc.%29&entry.1985501340=Founder+%26+Principal+Investigator&entry.856529250=riscon.ai%40gmail.com&entry.1971958908=https%3A%2F%2Fiatheon.risconlabs.com+%7C+https%3A%2F%2Fhebe.risconlabs.com+%7C+https%3A%2F%2Frisconlabs.com&entry.793132324=Anthropic+AI+for+Science+Program+Announcement&entry.375137480=IATHEON+%26+HEBE%3A+Open+Evidence-Unit+%26+Structure-Grounded+Dry-Lab+Desks+for+Targeted+Cancer+Therapy+Resistance+and+Metabolic%2FAlopecia+Biology&entry.405994137=Biology+%2F+Life+Sciences&entry.405994137=Medicine%2FHealthcare&entry.1397283218=ORG-ID-FROM-CONSOLE-ANTHROPIC-COM&entry.1471845072=Pro%2FMax&entry.1215820961=Byungchul+Lee+is+Founder+and+Principal+Investigator+of+RISCON+Labs%2C+an+independent+research+organization+operating+16+open+scientific+and+decision-auditing+desks+%28including+IATHEON+for+oncology+resistance+and+HEBE+for+metabolic%2Falopecia+biology%29+backed+by+a+26%2C000-agent+verification+pipeline+%28HALLUC-GATE%29.&entry.2053411569=https%3A%2F%2Fgithub.com%2FRiscon-AI+%7C+https%3A%2F%2Fiatheon.risconlabs.com+%7C+https%3A%2F%2Fhebe.risconlabs.com&entry.585443232=Targeted+cancer+therapies+in+gastric+and+breast+cancer+%28HER2%2C+Claudin+18.2%2C+FGFR2b%2C+TROP2%2C+PI3K%2FAKT%2C+CDK4%2F6%29+and+metabolic%2Falopecia+interventions+%28GLP-1%2FGIP+receptor+agonists%2C+AR%2FWnt+signaling%29+generate+fragmented+clinical+trial+outcomes%2C+resistance+mutation+profiles%2C+and+3D+protein+structure+models.+Researchers+struggle+to+audit+where+preclinical+or+computational+structure+claims+end+and+verified+human+clinical+evidence+begins.+RISCON+Labs+operates+IATHEON+%28https%3A%2F%2Fiatheon.risconlabs.com%29+and+HEBE+%28https%3A%2F%2Fhebe.risconlabs.com%29%2C+two+open+dry-lab+research+desks+that+decompose+published+clinical+trials+%28NCT+IDs%2C+PubMed%2FPMC+full+texts%29+and+AlphaFold%2FPDB+3D+biomolecular+structures+into+falsifiable+Evidence+Units.+Every+claim+is+tagged+by+evidence+tier+%28Clinical%2C+Preclinical%2C+Literature%2C+Computational%29+with+explicit+revision+triggers+and+verified+via+our+mechanical+HALLUC-GATE+auditor+%28https%3A%2F%2Fhallucgate.risconlabs.com%29.&entry.209301913=We+use+Claude+models+to+perform+multi-document+synthesis+across+oncology+phase+I-III+trial+updates%2C+extract+resistance+mutation+pathways+against+PDB%2FAlphaFold+binding+pockets%2C+and+formulate+explicit+falsification+conditions+for+each+therapeutic+question+while+enforcing+zero-hallucination+citation+anchoring.&entry.1028430009=By+strictly+separating+computational+structure+predictions+from+clinical+outcomes+and+attaching+explicit+revision+conditions+to+every+oncology+and+metabolic+research+synthesis%2C+IATHEON+and+HEBE+provide+an+open%2C+zero-paywall+evidence+standard+for+translational+researchers+and+clinical+trialists+worldwide.&entry.684509071=All+synthesized+evidence+units%2C+protein+pocket+annotations%2C+and+revision+logs+are+published+openly+on+iatheon.risconlabs.com%2C+hebe.risconlabs.com%2C+and+github.com%2FRiscon-AI+under+open+licenses+with+automated+weekly+clinical-trial+delta+ingestion.&entry.2006088946=Expand+IATHEON+and+HEBE+from+60%2B+to+500%2B+source-anchored+oncology%2Fmetabolic+evidence+units+over+6+months%2C+maintaining+0.0%25+soft-null%2Fcitation+defects+under+mechanical+HALLUC-GATE+verification.&entry.62262814=%2420%2C000+in+Claude+API+credits+over+6+months&entry.1549141933=None+of+the+above&entry.384373748=Live+production+platforms%3A+https%3A%2F%2Fiatheon.risconlabs.com%2C+https%3A%2F%2Fhebe.risconlabs.com%2C+https%3A%2F%2Fhallucgate.risconlabs.com%2C+https%3A%2F%2Frisconlabs.com+%28GitHub%3A+https%3A%2F%2Fgithub.com%2FRiscon-AI%29.&entry.1171549653=I+agree",
+      "form_type": "GOOGLE_FORM_PREFILL",
+      "mapped_field_count": 20,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "iatheon.risconlabs.com",
+        "hebe.risconlabs.com",
+        "hallucgate.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "매월 첫째 주 월요일 (차기: 2026. 11. 2.)",
+        "sla_rule": "승인 메일 수신 후 5영업일 내 수락 회신 필수 · 14일 내 Compliance Affidavit 서명 제출",
+        "affidavit_required": true,
+        "reapply_interval_days": 30
+      },
+      "fields": [
+        {
+          "key": "entry.375137480",
+          "label": "Project Title (과제명)",
+          "value": "IATHEON & HEBE: Open Evidence-Unit & Structure-Grounded Dry-Lab Desks for Targeted Cancer Therapy Resistance and Metabolic/Alopecia Biology"
+        },
+        {
+          "key": "entry.1215820961",
+          "label": "Team Description (<100w)",
+          "value": "Byungchul Lee is Founder and Principal Investigator of RISCON Labs, an independent research organization operating 16 open scientific and decision-auditing desks (including IATHEON for oncology resistance and HEBE for metabolic/alopecia biology) backed by a 26,000-agent verification pipeline (HALLUC-GATE)."
+        },
+        {
+          "key": "entry.585443232",
+          "label": "Research Project Description (<500w)",
+          "value": "Targeted cancer therapies in gastric and breast cancer (HER2, Claudin 18.2, FGFR2b, TROP2, PI3K/AKT, CDK4/6) and metabolic/alopecia interventions (GLP-1/GIP receptor agonists, AR/Wnt signaling) generate fragmented clinical trial outcomes, resistance mutation profiles, and 3D protein structure models. Researchers struggle to audit where preclinical or computational structure claims end and verified human clinical evidence begins. RISCON Labs operates IATHEON (https://iatheon.risconlabs.com) and HEBE (https://hebe.risconlabs.com), two open dry-lab research desks that decompose published clinical trials (NCT IDs, PubMed/PMC full texts) and AlphaFold/PDB 3D biomolecular structures into falsifiable Evidence Units. Every claim is tagged by evidence tier (Clinical, Preclinical, Literature, Computational) with explicit revision triggers and verified via our mechanical HALLUC-GATE auditor (https://hallucgate.risconlabs.com)."
+        },
+        {
+          "key": "entry.209301913",
+          "label": "How Claude Capabilities Will Be Used (<200w)",
+          "value": "We use Claude models to perform multi-document synthesis across oncology phase I-III trial updates, extract resistance mutation pathways against PDB/AlphaFold binding pockets, and formulate explicit falsification conditions for each therapeutic question while enforcing zero-hallucination citation anchoring."
+        },
+        {
+          "key": "entry.1028430009",
+          "label": "Potential Scientific Impact (<200w)",
+          "value": "By strictly separating computational structure predictions from clinical outcomes and attaching explicit revision conditions to every oncology and metabolic research synthesis, IATHEON and HEBE provide an open, zero-paywall evidence standard for translational researchers and clinical trialists worldwide."
+        },
+        {
+          "key": "entry.2006088946",
+          "label": "Specific Success Metrics (<100w)",
+          "value": "Expand IATHEON and HEBE from 60+ to 500+ source-anchored oncology/metabolic evidence units over 6 months, maintaining 0.0% soft-null/citation defects under mechanical HALLUC-GATE verification."
+        },
+        {
+          "key": "entry.62262814",
+          "label": "Requested Credits (신청 금액)",
+          "value": "$20,000 in Claude API credits over 6 months"
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "id": "PROG-ANTH-EXT",
+      "slug": "anthropic-external",
+      "provider": "Anthropic",
+      "program_name": "Anthropic External Researcher Access",
+      "category": {
+        "en": "FRONTIER API",
+        "ko": "프론티어 API"
+      },
+      "topic": {
+        "en": "Anthropic Safety & Alignment API",
+        "ko": "Anthropic 안전성·감사 API"
+      },
+      "world": {
+        "en": "Rolling Claude API credits for AI safety, auditing & alignment research",
+        "ko": "AI 안전성·감사·정렬 연구를 위한 상시 롤링 Claude API 크레딧"
+      },
+      "question": {
+        "en": "How do we benchmark L0–L6 human ASI auditor protocols and soft-null detection across frontier models?",
+        "ko": "L0–L6 인간 ASI 감사자 훈련과 소프트-널(Soft-Null) 환각 검출을 프론티어 모델에서 어떻게 실측할 것인가?"
+      },
+      "credit_value": "$1,000–$10,000+ Claude API Credits",
+      "estimated_krw_min": 1380000,
+      "estimated_krw_max": 13800000,
+      "cadence": {
+        "en": "Rolling review (1–2 weeks)",
+        "ko": "상시 롤링 심사 (1–2주 소요)"
+      },
+      "next_review_date": "2026. 11. 2.",
+      "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLSdmq-KFTREKw9SXqDqj9kACfhd_5DYZSrifWR7Q3z0ZqAZZog/viewform",
+      "prefilled_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSdmq-KFTREKw9SXqDqj9kACfhd_5DYZSrifWR7Q3z0ZqAZZog/viewform?usp=pp_url&entry.2105307426=Byungchul+Lee&entry.893525514=RISCON+Labs+%28RISCON+Inc.%29&entry.92179113=No&entry.806229330=ORG-ID-FROM-CONSOLE-ANTHROPIC-COM&entry.1448957731=Byungchul+Lee+leads+RISCON+Labs%2C+an+AI+safety+and+decision-auditing+research+institute+operating+16+public+evaluation+platforms+%28including+ASI+2030%2C+ARCHON%2C+NADIR%2C+PRO+SE%2C+and+HALLUC-GATE%29+and+training+human+ASI+auditors+across+the+L0-L6+verification+ladder.&entry.1376099865=We+investigate+two+failure+modes+in+high-volume+frontier-to-batch+distillation%3A+%281%29+Soft-Null+Evasion%2C+where+models+copy+input+text+verbatim+%28fix+%3D%3D+original%29+or+hallucinate+unanchored+source+quotes+under+strict+correction+rubrics%3B+and+%282%29+Sycophantic+Frame+Amplification+across+organizational+failure+%28NADIR%2C+5%2C863+cases%29+and+self-represented+litigation+%28PRO+SE%29.+Using+Claude+as+the+high-precision+L3+Challenger+and+L5+Auditor+reference+model%2C+we+benchmark+automated+detection+rates+against+our+mechanical+HALLUC-GATE+filter+%28https%3A%2F%2Fhallucgate.risconlabs.com%29+and+publish+all+evaluation+datasets+openly.&entry.127440120=%245%2C000+in+Claude+API+credits+for+6+months+of+L3-L5+red-team+auditing+benchmarks&entry.2049764645=I%27m+fine+with+receiving+a+low+quality+of+service&entry.1436591242=https%3A%2F%2Fgithub.com%2FRiscon-AI&entry.384373748=Live+evaluation+platforms%3A+https%3A%2F%2Fasi-2030.risconlabs.com+%7C+https%3A%2F%2Fnadir.risconlabs.com+%7C+https%3A%2F%2Fpro-se.risconlabs.com+%7C+https%3A%2F%2Fhallucgate.risconlabs.com&entry.478362211=No&entry.1171549653=I+agree",
+      "form_type": "GOOGLE_FORM_PREFILL",
+      "mapped_field_count": 12,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "asi-2030.risconlabs.com",
+        "nadir.risconlabs.com",
+        "pro-se.risconlabs.com",
+        "hallucgate.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "상시 롤링 심사 (접수 후 7–14일)",
+        "sla_rule": "승인 통지 후 5영업일 내 Organization ID 재확인 회신",
+        "affidavit_required": false,
+        "reapply_interval_days": 30
+      },
+      "fields": [
+        {
+          "key": "entry.1448957731",
+          "label": "Team Description (<200w)",
+          "value": "Byungchul Lee leads RISCON Labs, an AI safety and decision-auditing research institute operating 16 public evaluation platforms (including ASI 2030, ARCHON, NADIR, PRO SE, and HALLUC-GATE) and training human ASI auditors across the L0-L6 verification ladder."
+        },
+        {
+          "key": "entry.1376099865",
+          "label": "Research Description (<300w)",
+          "value": "We investigate two failure modes in high-volume frontier-to-batch distillation: (1) Soft-Null Evasion, where models copy input text verbatim (fix == original) or hallucinate unanchored source quotes under strict correction rubrics; and (2) Sycophantic Frame Amplification across organizational failure (NADIR, 5,863 cases) and self-represented litigation (PRO SE). Using Claude as the high-precision L3 Challenger and L5 Auditor reference model, we benchmark automated detection rates against our mechanical HALLUC-GATE filter (https://hallucgate.risconlabs.com) and publish all evaluation datasets openly."
+        },
+        {
+          "key": "entry.127440120",
+          "label": "Credit Request (> $1,000 Justification)",
+          "value": "$5,000 in Claude API credits for 6 months of L3-L5 red-team auditing benchmarks"
+        },
+        {
+          "key": "entry.384373748",
+          "label": "Live Proof & Repository Links",
+          "value": "Live evaluation platforms: https://asi-2030.risconlabs.com | https://nadir.risconlabs.com | https://pro-se.risconlabs.com | https://hallucgate.risconlabs.com"
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "id": "PROG-OPENAI-RES",
+      "slug": "openai-researcher",
+      "provider": "OpenAI",
+      "program_name": "OpenAI Researcher Access Program",
+      "category": {
+        "en": "FRONTIER API",
+        "ko": "프론티어 API"
+      },
+      "topic": {
+        "en": "OpenAI Researcher Access Credits",
+        "ko": "OpenAI 연구자 액세스 크레딧"
+      },
+      "world": {
+        "en": "$1,000–$10,000+ OpenAI API credits for alignment, safety & societal impact research",
+        "ko": "AI 정렬·안전성·사회적 영향 연구를 위한 $1,000–$10,000+ API 크레딧"
+      },
+      "question": {
+        "en": "How do we cross-audit OpenAI reasoning models against Claude on legal (PRO SE) and defense (AEGIS) scenarios?",
+        "ko": "나홀로 소송(PRO SE)과 국방 대비(AEGIS) 시나리오에서 이종 프론티어 모델 간 교차 감사를 어떻게 수행할 것인가?"
+      },
+      "credit_value": "$1,000–$10,000+ OpenAI API Credits",
+      "estimated_krw_min": 1380000,
+      "estimated_krw_max": 13800000,
+      "cadence": {
+        "en": "Quarterly review (Mar / Jun / Sep / Dec)",
+        "ko": "분기별 심사 (3·6·9·12월 정기 코호트)"
+      },
+      "next_review_date": "2026. 12. 1.",
+      "apply_url": "https://openai.com/form/researcher-access-program/",
+      "prefilled_form_url": "https://openai.com/form/researcher-access-program/",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 5,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "asi-2030.risconlabs.com",
+        "aegis.risconlabs.com",
+        "pro-se.risconlabs.com",
+        "meridian.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "분기별 심사 (차기 코호트: 2026. 12. 1.)",
+        "sla_rule": "승인 시 OpenAI Organization Billing에 12개월 유효 크레딧 즉시 적립",
+        "affidavit_required": false,
+        "reapply_interval_days": 90
+      },
+      "fields": [
+        {
+          "key": "project_title",
+          "label": "Project Title (과제명)",
+          "value": "Cross-Model Sycophancy & Soft-Null Verification Across Legal (PRO SE), Defense (AEGIS), and ASI 2030 Scenarios"
+        },
+        {
+          "key": "research_summary",
+          "label": "Research Summary (연구 요약)",
+          "value": "RISCON Labs operates 16 public research platforms (https://risconlabs.com) evaluating how frontier models handle high-stakes decision auditing, self-represented litigation questions (PRO SE), and organizational failure forensics (NADIR, 5,863 cases). We use OpenAI reasoning models for L4 Calibrator cross-model replication and publish all audit logs openly."
+        },
+        {
+          "key": "requested_amount",
+          "label": "Requested Credits (신청 규모)",
+          "value": "$5,000 in OpenAI API credits (12-month research allocation)"
+        },
+        {
+          "key": "live_evidence",
+          "label": "Live Verification Links (증빙 URL)",
+          "value": "https://asi-2030.risconlabs.com | https://pro-se.risconlabs.com | https://aegis.risconlabs.com | https://hallucgate.risconlabs.com"
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "id": "PROG-GEMINI-ACAD",
+      "slug": "google-gemini-academic",
+      "provider": "Google DeepMind / Google",
+      "program_name": "Google Gemini Academic Research Program",
+      "category": {
+        "en": "FRONTIER API",
+        "ko": "프론티어 API"
+      },
+      "topic": {
+        "en": "Google Gemini Academic Quota",
+        "ko": "Google Gemini 학술 연구 쿼터"
+      },
+      "world": {
+        "en": "Paid-tier Gemini API quota & high RPM for evaluation & benchmark labs",
+        "ko": "평가·벤치마크 연구소를 위한 유료 티어 Gemini API 크레딧 및 고성능 RPM"
+      },
+      "question": {
+        "en": "How do we scale 1M-token bilingual corpus verification across all 16 RISCON desks at zero marginal cost?",
+        "ko": "16개 리스콘 연구 데스크의 100만 토큰 한·영 코퍼스 교차 검증을 어떻게 한계비용 0원으로 확장할 것인가?"
+      },
+      "credit_value": "Paid-Tier Gemini API Quota & High RPM",
+      "estimated_krw_min": 2760000,
+      "estimated_krw_max": 13800000,
+      "cadence": {
+        "en": "Monthly cohort review",
+        "ko": "월간 코호트 정기 심사"
+      },
+      "next_review_date": "2026. 11. 3.",
+      "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLSd5QWrIjXf5Pupmsl_zzWZeGvHtXSpVbcvOlxdkbUIuj6AWEA/viewform",
+      "prefilled_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSd5QWrIjXf5Pupmsl_zzWZeGvHtXSpVbcvOlxdkbUIuj6AWEA/viewform?usp=pp_url&entry.1036173644=Byungchul&entry.513961113=Lee&entry.1678688306=riscon.ai%40gmail.com&entry.967948232=RISCON+Labs&entry.1793129366=Academic+Research+Lab&entry.1574703433=Research+Staff+Member&entry.185736771=https%3A%2F%2Frisconlabs.com+%7C+https%3A%2F%2Fgithub.com%2FRiscon-AI+%7C+https%3A%2F%2Fmeridian.risconlabs.com+%7C+https%3A%2F%2Fhallucgate.risconlabs.com&entry.15322154=Evaluation+and+Benchmarks&entry.905053998=RISCON+Labs+investigates+large-scale+cross-verification+between+frontier+reasoning+models+and+high-throughput+flash+models+across+16+open+research+platforms+%28Meridian+decision+tracking%2C+Skeptron+pattern+analysis%2C+NADIR+5%2C863-case+organizational+failure+corpus%2C+and+HALLUC-GATE+mechanical+soft-null+verification%29.+We+use+Gemini+Flash+and+Pro+models+for+1M-token+context+synthesis+and+bilingual+%28Korean%2FEnglish%29+citation-anchored+benchmark+generation.&entry.1600765051=Open-source+release+of+the+bilingual+Soft-Null+%26+Citation+Integrity+Benchmark+%2810%2C000%2B+audited+JSONL+pairs%29+and+continuous+public+updates+across+all+16+%2A.risconlabs.com+research+desks.&entry.649256576=~50%2C000+requests%2Fday+%28Batch+%2B+120+RPM+interactive+verification+across+16+research+desks%29&entry.710255224=12+months&entry.1187761374=No%2C+it%27s+on+paid+tier&entry.2115669834=South+Korea",
+      "form_type": "GOOGLE_FORM_PREFILL",
+      "mapped_field_count": 14,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "meridian.risconlabs.com",
+        "skeptron.risconlabs.com",
+        "cosmic-press.risconlabs.com",
+        "hallucgate.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "매월 초 코호트 심사 (차기: 2026. 11. 3.)",
+        "sla_rule": "Paid-tier Google Cloud Billing Project ID 사전 연결 필수",
+        "affidavit_required": false,
+        "reapply_interval_days": 30
+      },
+      "fields": [
+        {
+          "key": "entry.15322154",
+          "label": "Research Area (연구 분야)",
+          "value": "Evaluation and Benchmarks"
+        },
+        {
+          "key": "entry.905053998",
+          "label": "Project Abstract (연구 초록)",
+          "value": "RISCON Labs investigates large-scale cross-verification between frontier reasoning models and high-throughput flash models across 16 open research platforms (Meridian decision tracking, Skeptron pattern analysis, NADIR 5,863-case organizational failure corpus, and HALLUC-GATE mechanical soft-null verification). We use Gemini Flash and Pro models for 1M-token context synthesis and bilingual (Korean/English) citation-anchored benchmark generation."
+        },
+        {
+          "key": "entry.1600765051",
+          "label": "Expected Outcomes (기대 성과)",
+          "value": "Open-source release of the bilingual Soft-Null & Citation Integrity Benchmark (10,000+ audited JSONL pairs) and continuous public updates across all 16 *.risconlabs.com research desks."
+        },
+        {
+          "key": "entry.649256576",
+          "label": "Expected API Usage (일일 요청량)",
+          "value": "~50,000 requests/day (Batch + 120 RPM interactive verification across 16 research desks)"
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "id": "PROG-COHERE-RES",
+      "slug": "cohere-for-ai",
+      "provider": "Cohere For AI",
+      "program_name": "Cohere For AI Research Grant Program",
+      "category": {
+        "en": "FRONTIER API",
+        "ko": "프론티어 API"
+      },
+      "topic": {
+        "en": "Cohere Command & Embed Grant",
+        "ko": "Cohere 다국어 임베딩·추론 그랜트"
+      },
+      "world": {
+        "en": "API credits for multilingual retrieval, reranking & open-science NLP research",
+        "ko": "다국어 검색(RAG)·리랭킹·오픈사이언스 연구를 위한 API 크레딧 지원"
+      },
+      "question": {
+        "en": "How do we index and rerank 5,863 Korean/English organizational collapse cases (NADIR) and workplace vernacular (GAEKJU)?",
+        "ko": "5,863건의 조직 쇠락 사례(NADIR)와 현장 실무자 발화(GAEKJU)를 한·영 다국어 임베딩으로 어떻게 정밀 색인할 것인가?"
+      },
+      "credit_value": "$2,000–$10,000 Command/Embed/Rerank API",
+      "estimated_krw_min": 2760000,
+      "estimated_krw_max": 13800000,
+      "cadence": {
+        "en": "Rolling review (2–3 weeks)",
+        "ko": "상시 롤링 심사 (2–3주 소요)"
+      },
+      "next_review_date": "2026. 11. 9.",
+      "apply_url": "https://cohere.com/research",
+      "prefilled_form_url": "https://cohere.com/research",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 4,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "nadir.risconlabs.com",
+        "gaekju.risconlabs.com",
+        "skeptron.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "상시 롤링 심사 (접수 후 2–3주)",
+        "sla_rule": "승인 후 Cohere 연구자 워크스페이스 API 키 발급 및 분기별 오픈 리포트 공유",
+        "affidavit_required": false,
+        "reapply_interval_days": 60
+      },
+      "fields": [
+        {
+          "key": "project_title",
+          "label": "Project Title (과제명)",
+          "value": "Bilingual Retrieval & Reranking Across 5,863 Organizational Failure Cases (NADIR) and Workplace Vernacular Records (GAEKJU)"
+        },
+        {
+          "key": "abstract",
+          "label": "Research Proposal (연구 제안서)",
+          "value": "We benchmark multilingual embedding and reranking accuracy on non-standard Korean workplace vernacular (GAEKJU, https://gaekju.risconlabs.com) and multi-stage institutional decline records (NADIR, https://nadir.risconlabs.com, 5,863 cases)."
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "id": "PROG-CF-STARTUP",
+      "slug": "cloudflare-startups",
+      "provider": "Cloudflare",
+      "program_name": "Cloudflare for Startups (Workers AI / D1 / R2)",
+      "category": {
+        "en": "CLOUD & EDGE",
+        "ko": "클라우드·엣지"
+      },
+      "topic": {
+        "en": "Cloudflare $250K Edge & Workers AI",
+        "ko": "Cloudflare $250K 엣지·워커 크레딧"
+      },
+      "world": {
+        "en": "$5,000–$250,000 credits for Cloudflare Workers, D1, R2, and Workers AI",
+        "ko": "Cloudflare Workers, D1, R2, Workers AI를 위한 $5,000–$250,000 크레딧"
+      },
+      "question": {
+        "en": "How do we run all 16+ RISCON family sites and edge inference on Cloudflare at zero hosting cost?",
+        "ko": "16개 이상의 리스콘 패밀리 사이트와 엣지 추론 인프라를 어떻게 호스팅 비용 0원으로 영구 가동할 것인가?"
+      },
+      "credit_value": "$5,000–$250,000 Cloudflare Credits",
+      "estimated_krw_min": 6900000,
+      "estimated_krw_max": 345000000,
+      "cadence": {
+        "en": "Rolling review (7–10 business days)",
+        "ko": "상시 심사 (영업일 7–10일 소요)"
+      },
+      "next_review_date": "2026. 11. 5.",
+      "apply_url": "https://www.cloudflare.com/forstartups/",
+      "prefilled_form_url": "https://www.cloudflare.com/forstartups/",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 5,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "risconlabs.com",
+        "creditharvest.risconlabs.com",
+        "hallucgate.risconlabs.com",
+        "meridian.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "상시 심사 (접수 후 영업일 7–10일)",
+        "sla_rule": "Cloudflare Account ID (`10f6645e0670c6c05258cf5e0345121b`) 및 `risconlabs.com` 도메인 소유권 자동 검증 완료 상태",
+        "affidavit_required": false,
+        "reapply_interval_days": 60
+      },
+      "fields": [
+        {
+          "key": "account_id",
+          "label": "Cloudflare Account ID & Zone",
+          "value": "Account ID: 10f6645e0670c6c05258cf5e0345121b | Primary Zone: risconlabs.com (16 active Workers custom domains)"
+        },
+        {
+          "key": "architecture_pitch",
+          "label": "Edge Architecture & Workers AI Pitch",
+          "value": "RISCON Labs runs 16 production Cloudflare Workers + Static Assets + D1/KV properties on risconlabs.com, serving bilingual scenario-planning, oncology dry-lab synthesis, and zero-cost mechanical hallucination auditing (creditharvest.risconlabs.com / hallucgate.risconlabs.com)."
+        }
+      ]
+    },
+    {
+      "num": "07",
+      "id": "PROG-AWS-ACTIVATE",
+      "slug": "aws-activate",
+      "provider": "Amazon Web Services",
+      "program_name": "AWS Activate Founders & Portfolio",
+      "category": {
+        "en": "CLOUD & EDGE",
+        "ko": "클라우드·엣지"
+      },
+      "topic": {
+        "en": "AWS Activate $100K & Bedrock",
+        "ko": "AWS Activate $100K·Bedrock"
+      },
+      "world": {
+        "en": "$1,000–$100,000 AWS compute & Amazon Bedrock Claude/Llama API credits",
+        "ko": "AWS 연산 및 Amazon Bedrock(Claude/Llama) API를 위한 $1,000–$100,000 크레딧"
+      },
+      "question": {
+        "en": "How do we secure secondary Claude & Llama inference routes via Amazon Bedrock with non-dilutive startup credits?",
+        "ko": "Amazon Bedrock을 통한 Claude·Llama 이중화 추론 경로와 연산 자원을 무지분 크레딧으로 어떻게 확보할 것인가?"
+      },
+      "credit_value": "$1,000–$100,000 AWS & Bedrock Credits",
+      "estimated_krw_min": 1380000,
+      "estimated_krw_max": 138000000,
+      "cadence": {
+        "en": "Rolling review (5–10 business days)",
+        "ko": "상시 심사 (영업일 5–10일 소요)"
+      },
+      "next_review_date": "2026. 11. 2.",
+      "apply_url": "https://aws.amazon.com/startups/credits",
+      "prefilled_form_url": "https://aws.amazon.com/startups/credits",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 4,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "wstiger.risconlabs.com",
+        "aegis.risconlabs.com",
+        "dionyas.risconlabs.com",
+        "iatheon.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "Founders 티어($1,000) 영업일 5–7일 즉시 승인 → Portfolio 티어($10,000–$100,000) 순차 승격",
+        "sla_rule": "승인 즉시 AWS Billing Console에 Bedrock 및 EC2/S3 크레딧 자동 적용",
+        "affidavit_required": false,
+        "reapply_interval_days": 45
+      },
+      "fields": [
+        {
+          "key": "product_description",
+          "label": "Company & Product Description",
+          "value": "RISCON Labs builds multi-agent auditing and scenario intelligence platforms across 16 live domains (https://risconlabs.com), leveraging Amazon Bedrock for multi-provider model calibration (L4 Calibrator) and quantitative market/defense risk analysis (WSTiger, AEGIS)."
+        }
+      ]
+    },
+    {
+      "num": "08",
+      "id": "PROG-MS-STARTUPS",
+      "slug": "microsoft-startups",
+      "provider": "Microsoft",
+      "program_name": "Microsoft for Startups (Azure + OpenAI)",
+      "category": {
+        "en": "CLOUD & EDGE",
+        "ko": "클라우드·엣지"
+      },
+      "topic": {
+        "en": "Microsoft $150K Azure OpenAI",
+        "ko": "Microsoft $150K Azure OpenAI"
+      },
+      "world": {
+        "en": "Up to $150,000 in Azure & Azure OpenAI Service credits",
+        "ko": "최대 $150,000 규모의 Azure 클라우드 및 Azure OpenAI 서비스 크레딧"
+      },
+      "question": {
+        "en": "How do we power high-throughput enterprise governance audits (ARCHON) and decision tracking (Meridian) on Azure OpenAI?",
+        "ko": "조직 의사결정 구조 감사(ARCHON)와 판단 추적(Meridian)의 대규모 추론을 Azure OpenAI 크레딧으로 어떻게 처리할 것인가?"
+      },
+      "credit_value": "$5,000–$150,000 Azure & OpenAI Credits",
+      "estimated_krw_min": 6900000,
+      "estimated_krw_max": 207000000,
+      "cadence": {
+        "en": "Rolling review (5–7 business days)",
+        "ko": "상시 심사 (영업일 5–7일 소요)"
+      },
+      "next_review_date": "2026. 11. 2.",
+      "apply_url": "https://www.microsoft.com/en-us/startups",
+      "prefilled_form_url": "https://www.microsoft.com/en-us/startups",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 4,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "archon.risconlabs.com",
+        "meridian.risconlabs.com",
+        "pro-se.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "상시 심사 (초기 $5,000 승인 후 사용량 기반 $25K → $150K 단계별 증액)",
+        "sla_rule": "승인 후 90일 내 Azure OpenAI 리소스 배포 시 차상위 티어 자동 해금 자격 부여",
+        "affidavit_required": false,
+        "reapply_interval_days": 45
+      },
+      "fields": [
+        {
+          "key": "startup_pitch",
+          "label": "Product & Architecture Summary",
+          "value": "RISCON Labs delivers institutional decision-structure auditing (ARCHON, https://archon.risconlabs.com) and longitudinal judgment tracking (Meridian, https://meridian.risconlabs.com) backed by 26,000 orchestrated verification agents."
+        }
+      ]
+    },
+    {
+      "num": "09",
+      "id": "PROG-GCP-STARTUPS",
+      "slug": "google-cloud-startups",
+      "provider": "Google Cloud",
+      "program_name": "Google Cloud for Startups AI Tier",
+      "category": {
+        "en": "CLOUD & EDGE",
+        "ko": "클라우드·엣지"
+      },
+      "topic": {
+        "en": "Google Cloud $350K Vertex AI",
+        "ko": "Google Cloud $350K Vertex AI"
+      },
+      "world": {
+        "en": "$2,000–$350,000 in Google Cloud, BigQuery & Vertex AI credits",
+        "ko": "Google Cloud, BigQuery 및 Vertex AI(Gemini/Claude) 전용 $2,000–$350,000 크레딧"
+      },
+      "question": {
+        "en": "How do we unify Gemini + Claude Partner Models on Vertex AI with BigQuery analytics across RISCON desks?",
+        "ko": "Vertex AI의 Gemini·Claude 파트너 모델과 BigQuery 분석 파이프라인을 어떻게 무상 크레딧으로 통합할 것인가?"
+      },
+      "credit_value": "$2,000–$350,000 Google Cloud & Vertex AI",
+      "estimated_krw_min": 2760000,
+      "estimated_krw_max": 483000000,
+      "cadence": {
+        "en": "Rolling review (7–14 business days)",
+        "ko": "상시 심사 (영업일 7–14일 소요)"
+      },
+      "next_review_date": "2026. 11. 6.",
+      "apply_url": "https://cloud.google.com/startup",
+      "prefilled_form_url": "https://cloud.google.com/startup",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 4,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "iatheon.risconlabs.com",
+        "hebe.risconlabs.com",
+        "wstiger.risconlabs.com",
+        "asi-2030.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "Start 티어($2,000) 즉시 심사 → Scale AI 티어($350,000) 승격 심사",
+        "sla_rule": "Vertex AI Model Garden (Claude & Gemini) 크레딧 할당을 위해 비즈니스 도메인 이메일(`@risconlabs.com`) 인증 필수",
+        "affidavit_required": false,
+        "reapply_interval_days": 60
+      },
+      "fields": [
+        {
+          "key": "ai_workload",
+          "label": "AI Workload & Vertex AI Usage Plan",
+          "value": "RISCON Labs runs multi-model calibration (Gemini + Claude on Vertex AI) and biomolecular structure/clinical evidence pipelines across IATHEON (https://iatheon.risconlabs.com) and HEBE (https://hebe.risconlabs.com)."
+        }
+      ]
+    },
+    {
+      "num": "10",
+      "id": "PROG-NV-INCEPTION",
+      "slug": "nvidia-inception",
+      "provider": "NVIDIA",
+      "program_name": "NVIDIA Inception for AI Research Labs",
+      "category": {
+        "en": "GPU COMPUTE",
+        "ko": "GPU 연산"
+      },
+      "topic": {
+        "en": "NVIDIA Inception & DGX Cloud",
+        "ko": "NVIDIA Inception·DGX 클라우드"
+      },
+      "world": {
+        "en": "DGX Cloud credits, NIM microservices & preferred GPU cluster access",
+        "ko": "NVIDIA DGX Cloud 크레딧, BioNeMo/NIM 마이크로서비스 및 GPU 클러스터 지원"
+      },
+      "question": {
+        "en": "How do we accelerate 3D protein-ligand docking and structure folding for IATHEON & HEBE using BioNeMo & DGX?",
+        "ko": "IATHEON과 HEBE의 3D 표적 단백질 구조 예측 및 결합 부위 분석을 NVIDIA BioNeMo와 DGX로 어떻게 가속할 것인가?"
+      },
+      "credit_value": "DGX Cloud Credits + Preferred GPU Pricing",
+      "estimated_krw_min": 6900000,
+      "estimated_krw_max": 69000000,
+      "cadence": {
+        "en": "Rolling review (10–14 business days)",
+        "ko": "상시 심사 (영업일 10–14일 소요)"
+      },
+      "next_review_date": "2026. 11. 9.",
+      "apply_url": "https://www.nvidia.com/en-us/startups/",
+      "prefilled_form_url": "https://www.nvidia.com/en-us/startups/",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 4,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "iatheon.risconlabs.com",
+        "hebe.risconlabs.com",
+        "aegis.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "상시 심사 (승인 후 AWS/GCP 클라우드 크레딧 파트너십 및 DGX Cloud 바우처 연동)",
+        "sla_rule": "반기 1회 Inception 포털 프로필 업데이트 시 회원 자격 및 혜택 자동 갱신",
+        "affidavit_required": false,
+        "reapply_interval_days": 90
+      },
+      "fields": [
+        {
+          "key": "gpu_use_case",
+          "label": "GPU & BioNeMo / NIM Use Case",
+          "value": "Dry-lab structural oncology and metabolic target modeling on IATHEON (https://iatheon.risconlabs.com) and HEBE (https://hebe.risconlabs.com), plus 26,000-agent batch verification."
+        }
+      ]
+    },
+    {
+      "num": "11",
+      "id": "PROG-MODAL-GPU",
+      "slug": "modal-serverless-gpu",
+      "provider": "Modal Labs",
+      "program_name": "Modal Serverless GPU Compute Grant",
+      "category": {
+        "en": "GPU COMPUTE",
+        "ko": "GPU 연산"
+      },
+      "topic": {
+        "en": "Modal $10K Serverless H100/A100",
+        "ko": "Modal $10K 서버리스 H100/A100"
+      },
+      "world": {
+        "en": "$500–$10,000 in serverless H100/A100 GPU compute for researchers & AI startups",
+        "ko": "연구자·스타트업을 위한 $500–$10,000 서버리스 H100/A100 GPU 연산 크레딧"
+      },
+      "question": {
+        "en": "How do we run bursty open-weight batch inference and protein folding jobs with zero idle GPU cost?",
+        "ko": "유휴 GPU 비용 없이 대규모 배치 추론과 단백질 폴딩 작업을 어떻게 서버리스 H100으로 즉시 처리할 것인가?"
+      },
+      "credit_value": "$500–$10,000 Serverless GPU Credits",
+      "estimated_krw_min": 690000,
+      "estimated_krw_max": 13800000,
+      "cadence": {
+        "en": "Rolling review (5–10 business days)",
+        "ko": "상시 롤링 심사 (영업일 5–10일 소요)"
+      },
+      "next_review_date": "2026. 11. 2.",
+      "apply_url": "https://modal.com/pricing",
+      "prefilled_form_url": "https://modal.com/pricing",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 4,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "iatheon.risconlabs.com",
+        "hebe.risconlabs.com",
+        "hallucgate.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "상시 심사 (학술·연구 및 스타트업 크레딧 프로그램)",
+        "sla_rule": "Modal 워크스페이스 생성 후 크레딧 코드 즉시 등록 가능",
+        "affidavit_required": false,
+        "reapply_interval_days": 60
+      },
+      "fields": [
+        {
+          "key": "workload_desc",
+          "label": "Serverless GPU Workload Description",
+          "value": "On-demand AlphaFold/ColabFold structure verification for IATHEON & HEBE and high-throughput open-model batch verification for HALLUC-GATE."
+        }
+      ]
+    },
+    {
+      "num": "12",
+      "id": "PROG-HF-COMMUNITY",
+      "slug": "huggingface-grant",
+      "provider": "Hugging Face",
+      "program_name": "Hugging Face Community & ZeroGPU Grant",
+      "category": {
+        "en": "GPU COMPUTE",
+        "ko": "GPU 연산"
+      },
+      "topic": {
+        "en": "Hugging Face ZeroGPU H200 Grant",
+        "ko": "Hugging Face ZeroGPU H200 그랜트"
+      },
+      "world": {
+        "en": "Complimentary ZeroGPU H200 quota & Enterprise Hub for open datasets and spaces",
+        "ko": "오픈 데이터셋·벤치마크 공개 연구소를 위한 ZeroGPU H200 쿼터 무상 지원"
+      },
+      "question": {
+        "en": "How do we host public interactive demos of HALLUC-GATE and the NADIR 5,863-case benchmark on H200 GPUs for free?",
+        "ko": "HALLUC-GATE와 NADIR 5,863건 벤치마크의 공개 데모를 어떻게 H200 GPU 위에서 무상으로 호스팅할 것인가?"
+      },
+      "credit_value": "ZeroGPU H200 Quota + PRO/Enterprise Hub",
+      "estimated_krw_min": 1380000,
+      "estimated_krw_max": 6900000,
+      "cadence": {
+        "en": "Rolling community grant review",
+        "ko": "상시 커뮤니티 그랜트 심사"
+      },
+      "next_review_date": "2026. 11. 4.",
+      "apply_url": "https://huggingface.co/",
+      "prefilled_form_url": "https://huggingface.co/",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 3,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "hallucgate.risconlabs.com",
+        "nadir.risconlabs.com",
+        "gaekju.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "상시 롤링 심사 (공개 Space 또는 Dataset 게시 후 신청 시 1–2주 내 할당)",
+        "sla_rule": "승인 시 Hugging Face 조직 계정에 ZeroGPU H200 하드웨어 할당 즉시 부여",
+        "affidavit_required": false,
+        "reapply_interval_days": 45
+      },
+      "fields": [
+        {
+          "key": "hf_org_pitch",
+          "label": "Open Dataset & Space Proposal",
+          "value": "Publishing the RISCON HALLUC-GATE Soft-Null Evasion Benchmark and NADIR Organizational Decline Taxonomy as open Hugging Face Datasets & Spaces."
+        }
+      ]
+    },
+    {
+      "num": "13",
+      "id": "PROG-EV-MERCATUS",
+      "slug": "emergent-ventures",
+      "provider": "Mercatus Center (Tyler Cowen)",
+      "program_name": "Emergent Ventures Fellowship & Grant",
+      "category": {
+        "en": "FELLOWSHIP & SOVEREIGN",
+        "ko": "무지분 기금·바우처"
+      },
+      "topic": {
+        "en": "Emergent Ventures $50K Cash Grant",
+        "ko": "Emergent Ventures $50K 무지분 기금"
+      },
+      "world": {
+        "en": "$5,000–$50,000+ zero-equity, low-bureaucracy cash grant for high-leverage moonshots",
+        "ko": "고레버리지 1인/소수 정예 연구를 위한 $5,000–$50,000+ 무지분 현금 그랜트"
+      },
+      "question": {
+        "en": "How do we secure direct cash runway for RISCON Labs’ 1-person 26,000-agent orchestration model and ASI auditor school?",
+        "ko": "리스콘 랩스의 1인 26,000 에이전트 오케스트레이션과 인간 ASI 감사자 훈련원의 현금 운영비를 어떻게 무지분으로 확보할 것인가?"
+      },
+      "credit_value": "$5,000–$50,000+ Zero-Equity Cash Grant",
+      "estimated_krw_min": 6900000,
+      "estimated_krw_max": 69000000,
+      "cadence": {
+        "en": "Rolling review (4–6 weeks)",
+        "ko": "상시 롤링 심사 (4–6주 소요)"
+      },
+      "next_review_date": "2026. 11. 19.",
+      "apply_url": "https://mercatus.tfaforms.net/5099527",
+      "prefilled_form_url": "https://mercatus.tfaforms.net/5099527?tfa_60=Byungchul&tfa_303=Lee&tfa_5=riscon.ai%40gmail.com&tfa_36=RISCON+Labs%3A+Training+human+ASI+auditors+%26+running+16+public+question-first+research+desks+with+a+26%2C000-agent+verification+swarm.&tfa_35=As+artificial+superintelligence+%28ASI%29+assumes+the+role+of+answering%2C+the+decisive+human+coordinate+is+the+ability+to+formulate+falsifiable+questions+and+audit+machine+judgments.+RISCON+Labs+%28https%3A%2F%2Frisconlabs.com%29+has+already+built+and+deployed+16+live%2C+bilingual+public+systems%E2%80%94spanning+self-represented+court+preparation+%28PRO+SE%29%2C+organizational+collapse+forensics+%28NADIR%2C+5%2C863+cases%29%2C+oncology+dry-lab+synthesis+%28IATHEON%29%2C+and+mechanical+hallucination+auditing+%28HALLUC-GATE%29%E2%80%94powered+by+a+1-person+orchestration+architecture+and+26%2C000+specialized+agents.&tfa_3019=%2415%2C000&tfa_3021=%2410%2C000+for+12-month+frontier+%26+batch+API+compute+across+all+16+public+RISCON+research+desks%3B+%245%2C000+for+open+benchmark+publication+and+L0-L6+human+ASI+auditor+training+cohorts+%28oa.risconlabs.com%29.&tfa_37=https%3A%2F%2Frisconlabs.com",
+      "form_type": "TFA_FORM_PREFILL",
+      "mapped_field_count": 8,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "risconlabs.com",
+        "asi-2030.risconlabs.com",
+        "oa.risconlabs.com",
+        "creditharvest.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "상시 롤링 심사 (접수 후 4–6주 내 이메일 통지)",
+        "sla_rule": "승인 통지 후 Mercatus Center 그랜트 수령 계좌(W-8BEN/Wire) 서류 제출",
+        "affidavit_required": false,
+        "reapply_interval_days": 90
+      },
+      "fields": [
+        {
+          "key": "tfa_36",
+          "label": "Your Idea in a Tweet (한 줄 핵심 요약)",
+          "value": "RISCON Labs: Training human ASI auditors & running 16 public question-first research desks with a 26,000-agent verification swarm."
+        },
+        {
+          "key": "tfa_35",
+          "label": "Proposal Narrative (본문 제안서)",
+          "value": "As artificial superintelligence (ASI) assumes the role of answering, the decisive human coordinate is the ability to formulate falsifiable questions and audit machine judgments. RISCON Labs (https://risconlabs.com) has already built and deployed 16 live, bilingual public systems—spanning self-represented court preparation (PRO SE), organizational collapse forensics (NADIR, 5,863 cases), oncology dry-lab synthesis (IATHEON), and mechanical hallucination auditing (HALLUC-GATE)—powered by a 1-person orchestration architecture and 26,000 specialized agents."
+        },
+        {
+          "key": "tfa_3019",
+          "label": "Estimated Budget (신청 예산)",
+          "value": "$15,000"
+        },
+        {
+          "key": "tfa_3021",
+          "label": "Breakdown of Expenses (예산 세부 내역)",
+          "value": "$10,000 for 12-month frontier & batch API compute across all 16 public RISCON research desks; $5,000 for open benchmark publication and L0-L6 human ASI auditor training cohorts (oa.risconlabs.com)."
+        }
+      ]
+    },
+    {
+      "num": "14",
+      "id": "PROG-LTFF-AISAFETY",
+      "slug": "ltff-ai-auditing",
+      "provider": "Long-Term Future Fund (LTFF)",
+      "program_name": "LTFF AI Safety & Auditing Research Grant",
+      "category": {
+        "en": "FELLOWSHIP & SOVEREIGN",
+        "ko": "무지분 기금·바우처"
+      },
+      "topic": {
+        "en": "LTFF $100K AI Safety & Auditing",
+        "ko": "LTFF $100K AI 안전·감사 기금"
+      },
+      "world": {
+        "en": "$10,000–$100,000+ non-dilutive cash grants for technical AI safety, evaluations & auditing",
+        "ko": "AI 안전성·평가·감사 체계 연구를 위한 $10,000–$100,000+ 무지분 연구기금"
+      },
+      "question": {
+        "en": "How do we fund the L0–L6 Human ASI Auditor curriculum and sealed-vs-open judgment evaluations (ASI 2030)?",
+        "ko": "ASI 2030의 열린 교정 대 봉인된 판단 시나리오와 L0–L6 감사자 사다리 표준화를 어떤 국제 기금으로 뒷받침할 것인가?"
+      },
+      "credit_value": "$10,000–$100,000+ Non-Dilutive Cash Grant",
+      "estimated_krw_min": 13800000,
+      "estimated_krw_max": 138000000,
+      "cadence": {
+        "en": "Rolling / bi-monthly grant rounds (4–8 weeks)",
+        "ko": "상시 접수 및 격월 심사 (4–8주 소요)"
+      },
+      "next_review_date": "2026. 11. 30.",
+      "apply_url": "https://funds.effectivealtruism.org/funds/far-future",
+      "prefilled_form_url": "https://funds.effectivealtruism.org/funds/far-future",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 5,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "asi-2030.risconlabs.com",
+        "archon.risconlabs.com",
+        "hallucgate.risconlabs.com",
+        "oa.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "상시 접수 후 펀드 매니저 배정 및 4–8주 내 지급 심사",
+        "sla_rule": "승인 후 국제 송금/신원 확인 절차 완료 시 무지분 연구비 일시불 지급",
+        "affidavit_required": false,
+        "reapply_interval_days": 90
+      },
+      "fields": [
+        {
+          "key": "ltff_summary",
+          "label": "Project Summary (AI Auditing & Evaluation)",
+          "value": "Developing and empirically testing the L0-L6 Human ASI Auditor framework (https://asi-2030.risconlabs.com/auditor) and mechanical Soft-Null Evasion detection (https://hallucgate.risconlabs.com) across frontier and batch LLM pipelines."
+        }
+      ]
+    },
+    {
+      "num": "15",
+      "id": "PROG-SFF-SPEC",
+      "slug": "sff-speculation-grants",
+      "provider": "Survival and Flourishing Fund (SFF)",
+      "program_name": "SFF Speculation & S-Process Grants",
+      "category": {
+        "en": "FELLOWSHIP & SOVEREIGN",
+        "ko": "무지분 기금·바우처"
+      },
+      "topic": {
+        "en": "SFF $150K Speculation Grant",
+        "ko": "SFF $150K 생존·번영 기금"
+      },
+      "world": {
+        "en": "$10,000–$150,000+ fast-turnaround Speculation Grants & S-Process funding for AI governance",
+        "ko": "AI 거버넌스·문명 시나리오 연구를 위한 $10,000–$150,000+ 패스트트랙 기금"
+      },
+      "question": {
+        "en": "How do we fund quarterly ASI 2030 scenario forks and institutional accountability protocols (ARCHON / Meridian)?",
+        "ko": "분기별 ASI 2030 시나리오 분기점 연구와 기관 책임성 감사 프로토콜(ARCHON·Meridian)을 어떻게 지속 재원화할 것인가?"
+      },
+      "credit_value": "$10,000–$150,000+ Non-Dilutive Cash Grant",
+      "estimated_krw_min": 13800000,
+      "estimated_krw_max": 207000000,
+      "cadence": {
+        "en": "Rolling Speculation Grants + Bi-annual S-Process",
+        "ko": "상시 Speculation 그랜트 + 반기 정기 라운드"
+      },
+      "next_review_date": "2026. 11. 16.",
+      "apply_url": "https://survivalandflourishing.fund/",
+      "prefilled_form_url": "https://survivalandflourishing.fund/",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 4,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "asi-2030.risconlabs.com",
+        "aegis.risconlabs.com",
+        "meridian.risconlabs.com",
+        "archon.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "Speculation Grant 상시 심사 (2–4주) 및 S-Process 본심사 자동 연계",
+        "sla_rule": "Speculation Grant 수령 시 차기 S-Process 본심사 자동 상정 혜택",
+        "affidavit_required": false,
+        "reapply_interval_days": 90
+      },
+      "fields": [
+        {
+          "key": "sff_pitch",
+          "label": "Speculation Grant Application Pitch",
+          "value": "RISCON Labs operates 16 public scenario and governance auditing systems (https://risconlabs.com), mapping the 2026-2030 transition to ASI across open correction vs. sealed judgment poles (https://asi-2030.risconlabs.com)."
+        }
+      ]
+    },
+    {
+      "num": "16",
+      "id": "PROG-NIPA-HPC",
+      "slug": "nipa-kcloud-tips",
+      "provider": "NIPA (정보통신산업진흥원) / K-Startup",
+      "program_name": "NIPA 고성능 컴퓨팅 & K-클라우드 데이터바우처",
+      "category": {
+        "en": "FELLOWSHIP & SOVEREIGN",
+        "ko": "무지분 기금·바우처"
+      },
+      "topic": {
+        "en": "NIPA Korea Sovereign GPU Voucher",
+        "ko": "NIPA 고성능 GPU·데이터바우처"
+      },
+      "world": {
+        "en": "KRW 20M–150M sovereign H100/A100 GPU compute & data processing vouchers",
+        "ko": "2,000만~1.5억 원 상당의 국산 클라우드 H100/A100 GPU 임차 및 데이터 가공 바우처"
+      },
+      "question": {
+        "en": "How do we combine domestic sovereign GPU vouchers with global API credits for zero-out-of-pocket lab operations?",
+        "ko": "국내 정부 GPU·데이터 바우처와 해외 프론티어 API 크레딧을 결합해 연구소 자부담 연산비를 어떻게 완전히 소거할 것인가?"
+      },
+      "credit_value": "KRW 20,000,000–150,000,000 GPU/Data Voucher",
+      "estimated_krw_min": 20000000,
+      "estimated_krw_max": 150000000,
+      "cadence": {
+        "en": "Annual / Semi-annual & supplementary calls",
+        "ko": "연간 본공고 및 상·하반기 수시 추가모집"
+      },
+      "next_review_date": "2026. 11. 16.",
+      "apply_url": "https://www.nipa.kr/",
+      "prefilled_form_url": "https://www.nipa.kr/",
+      "form_type": "PORTAL_DOSSIER",
+      "mapped_field_count": 4,
+      "http_status": 200,
+      "verified_at": "2026. 10. 22.",
+      "target_sites": [
+        "iatheon.risconlabs.com",
+        "hebe.risconlabs.com",
+        "pro-se.risconlabs.com",
+        "aegis.risconlabs.com"
+      ],
+      "lifecycle": {
+        "default_status": "READY_TO_SUBMIT",
+        "review_rule": "공고 접수 후 서면·발표 평가 (약 3–4주) → 협약 체결 및 GPU 클라우드 할당",
+        "sla_rule": "협약 후 분기별 GPU 가동률(80% 이상) 및 산출물 증빙 보고 자동 생성",
+        "affidavit_required": false,
+        "reapply_interval_days": 90
+      },
+      "fields": [
+        {
+          "key": "kr_title",
+          "label": "국문 과제명",
+          "value": "프론티어-배치 교차검증(HALLUC-GATE) 기반 암 표적치료(IATHEON) 및 법률·안보 의사결정 감사 에이전트 고도화"
+        },
+        {
+          "key": "kr_summary",
+          "label": "사업계획서 핵심 요약",
+          "value": "리스콘 랩스가 실가동 중인 16개 연구·의사결정 감사 플랫폼(*.risconlabs.com)과 26,000개 에이전트 파이프라인의 대규모 배치 추론 및 3D 단백질 구조 분석 워크로드를 수행함."
+        }
+      ]
+    }
+  ],
+  "live_sites": [
+    {
+      "num": "01",
+      "name": "Meridian",
+      "host": "meridian.risconlabs.com",
+      "url": "https://meridian.risconlabs.com",
+      "commit": "dc04c34",
+      "verified": "2026. 10. 22.",
+      "metric": "Decision tracking & invalidation triggers"
+    },
+    {
+      "num": "02",
+      "name": "PRO SE",
+      "host": "pro-se.risconlabs.com",
+      "url": "https://pro-se.risconlabs.com",
+      "commit": "c0b62f5",
+      "verified": "2026. 10. 22.",
+      "metric": "Self-represented litigation question board"
+    },
+    {
+      "num": "03",
+      "name": "ASI 2030",
+      "host": "asi-2030.risconlabs.com",
+      "url": "https://asi-2030.risconlabs.com",
+      "commit": "a394635",
+      "verified": "2026. 10. 22.",
+      "metric": "2030 scenario forks & L0–L6 auditor ladder"
+    },
+    {
+      "num": "04",
+      "name": "AEGIS",
+      "host": "aegis.risconlabs.com",
+      "url": "https://aegis.risconlabs.com",
+      "commit": "d8fa889",
+      "verified": "2026. 10. 22.",
+      "metric": "Defense, security & civil preparedness"
+    },
+    {
+      "num": "05",
+      "name": "Skeptron",
+      "host": "skeptron.risconlabs.com",
+      "url": "https://skeptron.risconlabs.com",
+      "commit": "ab84a2b",
+      "verified": "2026. 10. 22.",
+      "metric": "Signs, timing & pattern interpretation"
+    },
+    {
+      "num": "06",
+      "name": "Dionyas",
+      "host": "dionyas.risconlabs.com",
+      "url": "https://dionyas.risconlabs.com",
+      "commit": "live-200",
+      "verified": "2026. 10. 22.",
+      "metric": "Music market perception & vertical AI design"
+    },
+    {
+      "num": "07",
+      "name": "WSTiger",
+      "host": "wstiger.risconlabs.com",
+      "url": "https://wstiger.risconlabs.com",
+      "commit": "live-200",
+      "verified": "2026. 10. 22.",
+      "metric": "Market regimes, quant signals & invalidation"
+    },
+    {
+      "num": "08",
+      "name": "ARCHON",
+      "host": "archon.risconlabs.com",
+      "url": "https://archon.risconlabs.com",
+      "commit": "c457b6a",
+      "verified": "2026. 10. 22.",
+      "metric": "Institutional authority & exception auditing"
+    },
+    {
+      "num": "09",
+      "name": "NADIR",
+      "host": "nadir.risconlabs.com",
+      "url": "https://nadir.risconlabs.com",
+      "commit": "d0c558d",
+      "verified": "2026. 10. 22.",
+      "metric": "5,863 organizational decline cases"
+    },
+    {
+      "num": "10",
+      "name": "GAEKJU",
+      "host": "gaekju.risconlabs.com",
+      "url": "https://gaekju.risconlabs.com",
+      "commit": "1668e68",
+      "verified": "2026. 10. 22.",
+      "metric": "Workplace vernacular & bottom-up flaw records"
+    },
+    {
+      "num": "11",
+      "name": "IATHEON",
+      "host": "iatheon.risconlabs.com",
+      "url": "https://iatheon.risconlabs.com",
+      "commit": "live-200",
+      "verified": "2026. 10. 22.",
+      "metric": "Gastric & breast cancer targeted therapy dry-lab"
+    },
+    {
+      "num": "12",
+      "name": "HEBE",
+      "host": "hebe.risconlabs.com",
+      "url": "https://hebe.risconlabs.com",
+      "commit": "live-200",
+      "verified": "2026. 10. 22.",
+      "metric": "Obesity & hair-loss trial/structure dry-lab"
+    },
+    {
+      "num": "13",
+      "name": "Cosmic Press",
+      "host": "cosmic-press.risconlabs.com",
+      "url": "https://cosmic-press.risconlabs.com",
+      "commit": "live-200",
+      "verified": "2026. 10. 22.",
+      "metric": "Cross-scale research space"
+    },
+    {
+      "num": "14",
+      "name": "ORDO",
+      "host": "ordo.risconlabs.com",
+      "url": "https://ordo.risconlabs.com",
+      "commit": "ef47571",
+      "verified": "2026. 10. 22.",
+      "metric": "Procedural & structural order"
+    },
+    {
+      "num": "15",
+      "name": "RISCON OA",
+      "host": "oa.risconlabs.com",
+      "url": "https://oa.risconlabs.com",
+      "commit": "live-200",
+      "verified": "2026. 10. 22.",
+      "metric": "Auditor & question-architecture training"
+    },
+    {
+      "num": "16",
+      "name": "CREDIT-HARVEST / HALLUC-GATE",
+      "host": "creditharvest.risconlabs.com",
+      "url": "https://creditharvest.risconlabs.com",
+      "commit": "b603cbb",
+      "verified": "2026. 10. 22.",
+      "metric": "Autonomous compute treasury & mechanical gate"
+    }
+  ],
+  "inbound_presets": [
+    {
+      "id": "PRESET-ANTH-APPROVAL",
+      "program_id": "PROG-ANTH-SCI",
+      "label_en": "Anthropic Approval Notice (5-Day Reply + 14-Day Affidavit SLA)",
+      "label_ko": "Anthropic 승인 통지 수신 (5영업일 회신 · 14일 Affidavit SLA 가동)",
+      "sender": "science-program@anthropic.com",
+      "subject": "Anthropic AI for Science — Application Update for RISCON Labs (IATHEON & HEBE)",
+      "body": "Dear Byungchul Lee,\n\nCongratulations! Your application 'IATHEON & HEBE: Open Evidence-Unit & Structure-Grounded Dry-Lab Desks' has been selected for the Anthropic AI for Science Program ($20,000 in Claude API credits).\n\nIMPORTANT NEXT STEPS:\n1. Please reply to this email within 5 business days confirming your Anthropic Console Organization ID.\n2. Please complete and return the attached Biosecurity & Acceptable Use Compliance Affidavit within 14 calendar days.\n\nBest regards,\nAnthropic AI for Science Team"
+    },
+    {
+      "id": "PRESET-OPENAI-INFO",
+      "program_id": "PROG-OPENAI-RES",
+      "label_en": "OpenAI Reviewer Inquiry (Additional Benchmark & Repo Verification)",
+      "label_ko": "OpenAI 심사역 추가 질의 (벤치마크 및 공개 저장소 증빙 요청)",
+      "sender": "researcher-access@openai.com",
+      "subject": "OpenAI Researcher Access Program — Additional Information Requested",
+      "body": "Hello Byungchul Lee,\n\nWe are reviewing your application for the OpenAI Researcher Access Program regarding Cross-Model Sycophancy & Soft-Null Verification. Could you please share direct links to your live evaluation interface, your GitHub organization, and a brief breakdown of your expected monthly token volume?\n\nThank you,\nOpenAI Academic & Research Relations"
+    },
+    {
+      "id": "PRESET-CF-VERIFY",
+      "program_id": "PROG-CF-STARTUP",
+      "label_en": "Cloudflare Startups Verification (Account ID & Domain Check)",
+      "label_ko": "Cloudflare 스타트업 실사 요청 (Account ID 및 도메인 확인)",
+      "sender": "startups@cloudflare.com",
+      "subject": "Cloudflare for Startups — Confirming Your Account ID & Active Zones",
+      "body": "Hi RISCON Labs team,\n\nThanks for applying to Cloudflare for Startups. Before applying your startup credit tier, please reply with your 32-character Cloudflare Account ID, primary domain zone on Cloudflare DNS, and the list of active Workers currently running in production.\n\nBest,\nCloudflare Startup Program"
+    },
+    {
+      "id": "PRESET-CYCLE-ROLLOVER",
+      "program_id": "PROG-ANTH-EXT",
+      "label_en": "Monthly Cycle Rollover (Trigger Auto-Delta Re-application)",
+      "label_ko": "월간 심사 코호트 이월 통지 (최신 Git 커밋 델타 자동 재접수)",
+      "sender": "external-research@anthropic.com",
+      "subject": "Status Update — Anthropic External Researcher Access Cohort",
+      "body": "Dear Applicant,\n\nThank you for applying to the External Researcher Access program. Due to high volume in this month's review cycle, we were unable to fund all eligible proposals. Researchers with updated benchmarks or new public deployments are welcome to submit an updated application for the next monthly review window.\n\nSincerely,\nAnthropic Research Programs"
+    }
+  ],
+  "audit_runs": []
+}

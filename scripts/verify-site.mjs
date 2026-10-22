@@ -1,79 +1,92 @@
 #!/usr/bin/env node
 /**
- * Deterministic verification gate for `Riscon-AI/credit-harvest`
- * (`creditharvest.risconlabs.com` & `hallucgate.risconlabs.com`).
+ * End-to-end live verification for creditharvest.risconlabs.com & hallucgate.risconlabs.com
+ * Verifies:
+ * 1. HTTP 200 on both custom domains + Field skin & WebGL scripts loaded
+ * 2. /data/treasury.json has 16 verified programs + pre-filled form URLs
+ * 3. POST /api/audit (HALLUC-GATE mechanical auditor)
+ * 4. POST /api/inbound-email (Post-Submission SLA & Auto-Reply generator)
+ * 5. POST /api/reapply-delta (Cycle rollover live git delta compiler)
+ * 6. /.git/HEAD is blocked (HTTP 404)
  */
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.resolve(__dirname, "..");
-
-const errors = [];
-
-const requiredFiles = [
-  "index.html",
-  "404.html",
-  "worker.js",
-  "wrangler.json",
-  "package.json",
-  "data/treasury-data.json",
+const DOMAINS = [
+  "https://creditharvest.risconlabs.com",
+  "https://hallucgate.risconlabs.com",
 ];
 
-for (const rel of requiredFiles) {
-  const full = path.join(root, rel);
-  if (!fs.existsSync(full)) {
-    errors.push(`Missing required file: ${rel}`);
+async function check() {
+  for (const base of DOMAINS) {
+    const res = await fetch(base);
+    if (res.status !== 200) throw new Error(`${base} returned HTTP ${res.status}`);
+    const html = await res.text();
+    for (const marker of ["fx-field", "riscon-field.js", "riscon-cosmos.js", "PROG-ANTH-SCI", "HALLUC-GATE"]) {
+      if (!html.includes(marker)) throw new Error(`${base} missing marker: ${marker}`);
+    }
+    console.log(`[PASS] ${base} -> HTTP 200 (${html.length} chars, Field Skin + WebGL active)`);
   }
-}
 
-const data = JSON.parse(fs.readFileSync(path.join(root, "data/treasury-data.json"), "utf8"));
-
-if (!Array.isArray(data.programs) || data.programs.length !== 8) {
-  errors.push(`Expected 8 programs in treasury-data.json, got ${data.programs?.length}`);
-}
-
-for (const p of data.programs || []) {
-  if (!p.official_url || !p.official_url.startsWith("https://")) {
-    errors.push(`Invalid official_url for ${p.program_id}: ${p.official_url}`);
+  const dataRes = await fetch("https://creditharvest.risconlabs.com/data/treasury.json");
+  if (dataRes.status !== 200) throw new Error(`/data/treasury.json returned ${dataRes.status}`);
+  const data = await dataRes.json();
+  if (!Array.isArray(data.programs) || data.programs.length !== 16) {
+    throw new Error(`Expected 16 programs in treasury.json, found ${data.programs?.length}`);
   }
-  if (!p.direct_form_url || !p.direct_form_url.startsWith("https://")) {
-    errors.push(`Invalid direct_form_url for ${p.program_id}: ${p.direct_form_url}`);
+  console.log(`[PASS] /data/treasury.json -> 16 programs, ${data.metrics.prefill_ready_count} 1-click prefill forms`);
+
+  // Test POST /api/audit
+  const auditRes = await fetch("https://hallucgate.risconlabs.com/api/audit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      items: [
+        { id: "t1", original: "Same text", fix: "Same text", source_quote: "Quote A" },
+        { id: "t2", original: "Old text", fix: "Corrected text", source_quote: "Quote B" },
+      ],
+    }),
+  });
+  const auditJson = await auditRes.json();
+  if (auditJson.soft_null_count !== 1 || auditJson.verdict !== "REJECT_RETURN_TO_SPARK") {
+    throw new Error(`Unexpected /api/audit response: ${JSON.stringify(auditJson)}`);
   }
-  if (!p.copy_fields?.project_title || !p.copy_fields?.abstract || !p.copy_fields?.full_dossier_markdown) {
-    errors.push(`Missing copy_fields in ${p.program_id}`);
+  console.log(`[PASS] POST /api/audit -> ${auditJson.receipt_id} (${auditJson.verdict})`);
+
+  // Test POST /api/inbound-email
+  const inboundRes = await fetch("https://creditharvest.risconlabs.com/api/inbound-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      program_id: "PROG-ANTH-SCI",
+      subject: "Congratulations! Anthropic AI for Science Application Update",
+      body: "Please reply within 5 business days and submit the Compliance Affidavit within 14 days.",
+      org_id: "org-riscon-verified",
+      email: "riscon.ai@gmail.com",
+    }),
+  });
+  const inboundJson = await inboundRes.json();
+  if (inboundJson.classification !== "APPROVAL_AFFIDAVIT_SLA" || inboundJson.recommended_stage !== "AFFIDAVIT_SLA_5D") {
+    throw new Error(`Unexpected /api/inbound-email response: ${JSON.stringify(inboundJson)}`);
   }
+  console.log(`[PASS] POST /api/inbound-email -> ${inboundJson.triage_id} (${inboundJson.classification}, SLA: ${inboundJson.sla_reply_by})`);
+
+  // Test POST /api/reapply-delta
+  const deltaRes = await fetch("https://creditharvest.risconlabs.com/api/reapply-delta", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ program_id: "PROG-ANTH-SCI" }),
+  });
+  const deltaJson = await deltaRes.json();
+  if (!deltaJson.delta_id || !deltaJson.delta_brief.includes("dc04c34")) {
+    throw new Error(`Unexpected /api/reapply-delta response: ${JSON.stringify(deltaJson)}`);
+  }
+  console.log(`[PASS] POST /api/reapply-delta -> ${deltaJson.delta_id}`);
+
+  // Verify /.git/HEAD is blocked
+  const gitRes = await fetch("https://creditharvest.risconlabs.com/.git/HEAD");
+  if (gitRes.status === 200) throw new Error(`/.git/HEAD is exposed!`);
+  console.log(`[PASS] /.git/HEAD blocked -> HTTP ${gitRes.status}`);
 }
 
-const siteCount = Object.keys(data.portfolio?.sites || {}).length;
-if (siteCount !== 16) {
-  errors.push(`Expected 16 live sites in portfolio, got ${siteCount}`);
-}
-
-const wrangler = JSON.parse(fs.readFileSync(path.join(root, "wrangler.json"), "utf8"));
-const routeDomains = (wrangler.routes || []).map((r) => r.pattern);
-if (!routeDomains.includes("creditharvest.risconlabs.com") || !routeDomains.includes("hallucgate.risconlabs.com")) {
-  errors.push(`Expected creditharvest.risconlabs.com & hallucgate.risconlabs.com in wrangler.json routes`);
-}
-
-if (errors.length > 0) {
-  console.error(JSON.stringify({ pass: false, errors }, null, 2));
+check().catch((err) => {
+  console.error("[FAIL]", err.message);
   process.exit(1);
-}
-
-console.log(
-  JSON.stringify(
-    {
-      pass: true,
-      asOf: data.as_of,
-      programs: data.programs.length,
-      microB2BProducts: data.micro_b2b_products.length,
-      portfolioSites: siteCount,
-      customDomains: routeDomains,
-      errors: 0,
-    },
-    null,
-    2
-  )
-);
+});

@@ -1,0 +1,218 @@
+/* RISCON 가독성 가이드라인 — tokens.json에서 만든 파일이다. 손으로 고치지 말고 scripts/build-tokens.mjs를 돌린다. */
+
+@font-face {
+  font-family: 'Pretendard Variable';
+  src: url('fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 45 930;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root, [data-theme="light"] {
+  --ink: #1d1d1f;
+  --ink-secondary: #6e6e73;
+  --surface: #ffffff;
+  --surface-alt: #f5f5f7;
+  --navy: #0b1527;
+  --navy-deep: #081121;
+  --navy-tint: #f0f2f6;
+  --link: #0b1527;
+  --hairline: #d2d2d7;
+  --point-red: #e00000;
+  --point-blue: #1b64da;
+}
+[data-theme="dark"] {
+  --ink: #ededed;
+  --ink-secondary: #979ba2;
+  --surface: #0b1527;
+  --surface-alt: #0e1b2e;
+  --navy: #0b1527;
+  --navy-deep: #081121;
+  --navy-tint: #14243a;
+  --link: #ffffff;
+  --hairline: #232c3d;
+  --point-red: #ff6b6b;
+  --point-blue: #60a5fa;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --ink: #ededed;
+    --ink-secondary: #979ba2;
+    --surface: #0b1527;
+    --surface-alt: #0e1b2e;
+    --navy: #0b1527;
+    --navy-deep: #081121;
+    --navy-tint: #14243a;
+    --link: #ffffff;
+    --hairline: #232c3d;
+    --point-red: #ff6b6b;
+    --point-blue: #60a5fa;
+  }
+}
+
+:root {
+  --font-sans: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  --para-gap: 1.5882em;
+  --para-gap-reading: 1.5263em;
+  --measure-reading: 36em;
+  --sup-offset: 0.6em;
+  --ratio-display: 4.71;
+  --ratio-headline: 2.82;
+  --ratio-title: 1.65;
+  --ratio-title-sm: 1.41;
+  --ratio-lead: 1.24;
+  --ratio-body-sm: 0.82;
+  --ratio-caption: 0.71;
+  --tracking-ko: 0em;
+  --tracking-19: 0.012em;
+  --tracking-21: 0.011em;
+  --tracking-24: 0.009em;
+  --tracking-28: 0.007em;
+  --tracking-32: 0.004em;
+}
+
+/* 제목 · 데스크톱 */
+.display-xl {
+  font-family: var(--font-sans);
+  font-size: 96px;
+  line-height: 110px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.display {
+  font-family: var(--font-sans);
+  font-size: 80px;
+  line-height: 92px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.display-sm {
+  font-family: var(--font-sans);
+  font-size: 64px;
+  line-height: 75px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.headline {
+  font-family: var(--font-sans);
+  font-size: 48px;
+  line-height: 57px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.headline-sm {
+  font-family: var(--font-sans);
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.title {
+  font-family: var(--font-sans);
+  font-size: 28px;
+  line-height: 35px;
+  font-weight: 600;
+  letter-spacing: 0.007em;
+}
+.title-sm {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  line-height: 31px;
+  font-weight: 600;
+  letter-spacing: 0.009em;
+}
+
+/* 본문 · 공통 */
+.lead {
+  font-family: var(--font-sans);
+  font-size: 21px;
+  line-height: 32px;
+  font-weight: 400;
+  letter-spacing: 0.011em;
+}
+.body-lg {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  line-height: 29px;
+  font-weight: 400;
+  letter-spacing: 0.012em;
+}
+.body {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.body-tight {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.body-sm {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.body-sm-tight {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.caption {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.footnote {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* 제목 · 모바일 (734px 이하) */
+.m-display {
+  font-family: var(--font-sans);
+  font-size: 48px;
+  line-height: 57px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.m-headline {
+  font-family: var(--font-sans);
+  font-size: 32px;
+  line-height: 39px;
+  font-weight: 600;
+  letter-spacing: 0.004em;
+}
+.m-shelf {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  line-height: 31px;
+  font-weight: 600;
+  letter-spacing: 0.009em;
+}
+.m-title {
+  font-family: var(--font-sans);
+  font-size: 21px;
+  line-height: 27px;
+  font-weight: 600;
+  letter-spacing: 0.011em;
+}
+.m-lead {
+  font-family: var(--font-sans);
+  font-size: 19px;
+  line-height: 29px;
+  font-weight: 400;
+  letter-spacing: 0.012em;
+}

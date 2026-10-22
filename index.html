@@ -1,1011 +1,629 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark">
+<html lang="ko" data-skin="field" data-lang="ko" data-title-en="CREDIT-HARVEST &amp; HALLUC-GATE — RISCON Labs Autonomous Compute Treasury" data-title-ko="CREDIT-HARVEST &amp; HALLUC-GATE — 리스콘 랩스 자율 연구기금·크레딧 발굴 및 사후관리">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>CREDIT-HARVEST &amp; HALLUC-GATE — RISCON Labs Treasury &amp; Verification Studio</title>
-  <meta name="description" content="RISCON Labs Track A (S93 CREDIT-HARVEST & S95 HALLUC-GATE): Non-dilutive AI research credit/grant command center with 13/13 HTTP-200 verified portals and a zero-LLM-cost mechanical Soft-Null & citation integrity gate." />
+  <title>CREDIT-HARVEST &amp; HALLUC-GATE — 리스콘 랩스 자율 연구기금·크레딧 발굴 및 사후관리</title>
+  <meta name="description" content="RISCON Labs Autonomous Compute &amp; Grant Discovery Engine (16 Global Programs), 1-Click Pre-filled Form Submitter, Post-Submission SLA &amp; Lifecycle Manager, and S95 Mechanical Hallucination Gate. Verified 2026. 10. 22." />
+  <link rel="canonical" href="https://creditharvest.risconlabs.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RISCON Labs — CREDIT-HARVEST" />
+  <meta property="og:title" content="CREDIT-HARVEST &amp; HALLUC-GATE — RISCON Labs Autonomous Compute Treasury" />
+  <meta property="og:description" content="16 Global Non-Dilutive Compute &amp; Grant Clusters, 1-Click Pre-filled Form Submission, Post-Submission Lifecycle Management, and Zero-Cost Mechanical Hallucination Auditing." />
+  <meta property="og:url" content="https://creditharvest.risconlabs.com/" />
+  <meta name="theme-color" content="#e8e8e6" />
   <link rel="icon" type="image/svg+xml" href="/assets/riscon-field-favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap" />
+  <script>(function(){var d=document.documentElement,t=null,l=null,q=/[?&]lang=(ko|en)(&|$)/.exec(location.search);try{t=localStorage.getItem('riscon_theme');l=localStorage.getItem('riscon_lang');if(q)localStorage.setItem('riscon_lang',q[1])}catch(e){}if(q){l=q[1];try{history.replaceState(null,'',location.pathname+location.hash)}catch(e){}}var p=(t==='light'||t==='dark')?t:'system';var k=p==='dark'||(p==='system'&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);d.setAttribute('data-theme-pref',p);d.setAttribute('data-theme',k?'dark':'light');var langVal=(l==='en')?'en':'ko';d.setAttribute('data-lang',langVal);d.lang=langVal;var n=d.getAttribute('data-title-'+langVal);if(n)document.title=n;})();</script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <style>
-    :root {
-      --bg: #0a0b0e;
-      --bg-elev: #111318;
-      --bg-card: #151821;
-      --bg-hover: #1c202c;
-      --border: rgba(255, 255, 255, 0.09);
-      --border-strong: rgba(255, 255, 255, 0.18);
-      --text: #f3f4f6;
-      --text-muted: #9ca3af;
-      --text-dim: #6b7280;
-      --accent: #10b981;
-      --accent-soft: rgba(16, 185, 129, 0.14);
-      --amber: #f59e0b;
-      --amber-soft: rgba(245, 158, 11, 0.14);
-      --danger: #ef4444;
-      --danger-soft: rgba(239, 68, 68, 0.15);
-      --blue: #3b82f6;
-      --blue-soft: rgba(59, 130, 246, 0.14);
-      --font-sans: "Geist", "Pretendard Variable", -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-    }
-    html[data-theme="light"] {
-      --bg: #f6f6f4;
-      --bg-elev: #ffffff;
-      --bg-card: #ffffff;
-      --bg-hover: #f0f1f3;
-      --border: rgba(15, 23, 42, 0.1);
-      --border-strong: rgba(15, 23, 42, 0.22);
-      --text: #111827;
-      --text-muted: #4b5563;
-      --text-dim: #6b7280;
-      --accent: #059669;
-      --accent-soft: rgba(5, 150, 105, 0.1);
-      --amber: #d97706;
-      --amber-soft: rgba(217, 119, 6, 0.1);
-      --danger: #dc2626;
-      --danger-soft: rgba(220, 38, 38, 0.1);
-      --blue: #2563eb;
-      --blue-soft: rgba(37, 99, 235, 0.1);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-      padding-bottom: 5rem;
-    }
-    a { color: inherit; text-decoration: none; }
-    button { font-family: inherit; cursor: pointer; }
-
-    /* Top bar */
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(14px);
-      background: color-mix(in srgb, var(--bg) 84%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-    .topbar-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0.85rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-    .brand-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-    }
-    .brand-sub {
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      padding: 0.15rem 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-    }
-    .top-controls {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .pill-btn {
-      background: var(--bg-card);
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      padding: 0.38rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-family: var(--font-mono);
-      transition: all 0.15s ease;
-    }
-    .pill-btn:hover, .pill-btn.active {
-      color: var(--text);
-      border-color: var(--border-strong);
-      background: var(--bg-hover);
-    }
-
-    /* Container */
-    .wrap {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 0;
-    }
-
-    /* Hero */
-    .hero {
-      border: 1px solid var(--border);
-      background: linear-gradient(160deg, var(--bg-card) 0%, var(--bg-elev) 100%);
-      border-radius: 16px;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 0.28rem 0.7rem;
-      border-radius: 999px;
-      margin-bottom: 1rem;
-    }
-    .hero h1 {
-      font-size: clamp(1.65rem, 3vw, 2.45rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 0.75rem;
-    }
-    .hero p.lead {
-      color: var(--text-muted);
-      max-width: 880px;
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 0.9rem;
-    }
-    .kpi-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1rem 1.15rem;
-    }
-    .kpi-label {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .kpi-val {
-      font-family: var(--font-mono);
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin-top: 0.25rem;
-      color: var(--text);
-    }
-    .kpi-sub {
-      font-size: 0.78rem;
-      color: var(--accent);
-      margin-top: 0.2rem;
-    }
-
-    /* Main Tabs */
-    .tabs {
-      display: flex;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.85rem;
-      flex-wrap: wrap;
-    }
-    .tab-btn {
-      background: var(--bg-card);
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      padding: 0.65rem 1.15rem;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.15s ease;
-    }
-    .tab-btn:hover {
-      color: var(--text);
-      border-color: var(--border-strong);
-    }
-    .tab-btn.active {
-      background: var(--accent-soft);
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-    .tab-badge {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      padding: 0.1rem 0.45rem;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.07);
-    }
-
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
-    /* Filter chips */
-    .filter-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.15rem;
-      flex-wrap: wrap;
-    }
-    .chip-group {
-      display: flex;
-      gap: 0.45rem;
-      flex-wrap: wrap;
-    }
-
-    /* Program Grid */
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-      gap: 1.1rem;
-    }
-    @media (max-width: 640px) {
-      .program-grid { grid-template-columns: 1fr; }
-    }
-    .prog-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.35rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-      transition: border-color 0.15s ease;
-    }
-    .prog-card:hover {
-      border-color: var(--border-strong);
-    }
-    .prog-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-    }
-    .slot-pill {
-      padding: 0.18rem 0.55rem;
-      border-radius: 6px;
-      background: var(--blue-soft);
-      color: var(--blue);
-      font-weight: 600;
-    }
-    .http-pill {
-      padding: 0.18rem 0.55rem;
-      border-radius: 6px;
-      background: var(--accent-soft);
-      color: var(--accent);
-    }
-    .prog-provider {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 0.4rem;
-    }
-    .prog-name {
-      font-size: 1.18rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-top: 0.15rem;
-    }
-    .prog-reward {
-      margin-top: 0.55rem;
-      padding: 0.6rem 0.8rem;
-      border-radius: 8px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      font-family: var(--font-mono);
-      font-size: 0.84rem;
-      color: var(--accent);
-      font-weight: 600;
-    }
-    .prog-title-box {
-      margin-top: 0.65rem;
-      font-size: 0.86rem;
-      color: var(--text);
-      background: var(--bg-elev);
-      border-left: 3px solid var(--accent);
-      padding: 0.55rem 0.75rem;
-      border-radius: 0 8px 8px 0;
-    }
-    .prog-angle {
-      margin-top: 0.55rem;
-      font-size: 0.83rem;
-      color: var(--text-muted);
-    }
-    .site-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.65rem;
-    }
-    .site-tag {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      padding: 0.18rem 0.5rem;
-      border-radius: 6px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-    }
-    .site-tag:hover {
-      border-color: var(--accent);
-      color: var(--text);
-    }
-    .prog-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid var(--border);
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      padding: 0.58rem 0.8rem;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      border: 1px solid var(--border);
-      background: var(--bg-elev);
-      color: var(--text);
-      transition: all 0.15s ease;
-      text-align: center;
-    }
-    .btn:hover {
-      background: var(--bg-hover);
-      border-color: var(--border-strong);
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #04130d;
-      border-color: var(--accent);
-    }
-    .btn-primary:hover {
-      filter: brightness(1.08);
-      background: var(--accent);
-      color: #04130d;
-    }
-    .btn-full {
-      grid-column: 1 / -1;
-      background: var(--blue-soft);
-      color: var(--blue);
-      border-color: color-mix(in srgb, var(--blue) 40%, transparent);
-    }
-    .btn-full:hover {
-      background: color-mix(in srgb, var(--blue) 24%, transparent);
-    }
-
-    /* Modal / Drawer for Copy-Paste Dossier */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      background: rgba(0, 0, 0, 0.72);
-      backdrop-filter: blur(6px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 1.25rem;
-    }
-    .modal-backdrop.open { display: flex; }
-    .modal {
-      background: var(--bg-card);
-      border: 1px solid var(--border-strong);
-      border-radius: 16px;
-      max-width: 920px;
-      width: 100%;
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.55);
-    }
-    .modal-head {
-      padding: 1.15rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .modal-body {
-      padding: 1.35rem 1.5rem;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .field-block {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.9rem 1rem;
-    }
-    .field-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.5rem;
-      gap: 0.5rem;
-    }
-    .field-name {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 600;
-    }
-    .copy-btn {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      padding: 0.25rem 0.65rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-strong);
-      background: var(--bg-card);
-      color: var(--text);
-    }
-    .copy-btn.copied {
-      background: var(--accent);
-      color: #04130d;
-      border-color: var(--accent);
-    }
-    .field-content {
-      font-size: 0.86rem;
-      white-space: pre-wrap;
-      word-break: break-word;
-      color: var(--text);
-      font-family: var(--font-sans);
-    }
-
-    /* Tab 2: Halluc-Gate Studio */
-    .studio-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.25rem;
-    }
-    @media (max-width: 900px) {
-      .studio-grid { grid-template-columns: 1fr; }
-    }
-    .panel-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.35rem;
-    }
-    .panel-box h3 {
-      font-size: 1.08rem;
-      margin-bottom: 0.35rem;
-    }
-    textarea.code-input {
-      width: 100%;
-      min-height: 270px;
-      margin-top: 0.75rem;
-      background: var(--bg);
-      color: var(--text);
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
-      padding: 0.85rem;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      line-height: 1.5;
-      resize: vertical;
-    }
-    .receipt-box {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.1rem;
-      margin-top: 0.85rem;
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-    }
-    .verdict-badge {
-      display: inline-block;
-      padding: 0.25rem 0.65rem;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.8rem;
-    }
-    .verdict-pass { background: var(--accent-soft); color: var(--accent); }
-    .verdict-reject { background: var(--danger-soft); color: var(--danger); }
-
-    /* Table for 16 sites */
-    .table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--bg-card);
-    }
-    table.atlas-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.86rem;
-    }
-    table.atlas-table th, table.atlas-table td {
-      padding: 0.8rem 1rem;
-      border-bottom: 1px solid var(--border);
-      text-align: left;
-    }
-    table.atlas-table th {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      background: var(--bg-elev);
-    }
-    .mono { font-family: var(--font-mono); }
-  </style>
+  <link rel="stylesheet" href="/styles/field-skin.css?v=20261022b" />
+  <script src="/scripts/riscon-field.js?v=20261022b" defer></script>
+  <script src="/scripts/riscon-cosmos.js?v=20261022b" defer></script>
 </head>
-<body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <span class="brand-dot"></span>
-        <a href="https://risconlabs.com">RISCON Labs</a>
-        <span class="brand-sub">S93 CREDIT-HARVEST · S95 HALLUC-GATE</span>
-      </div>
-      <div class="top-controls">
-        <a class="pill-btn" href="https://risconlabs.com" target="_blank" rel="noopener">risconlabs.com ↗</a>
-        <a class="pill-btn" href="https://github.com/Riscon-AI/credit-harvest" target="_blank" rel="noopener">GitHub ↗</a>
-        <button class="pill-btn" id="theme-toggle" type="button">DARK / LIGHT</button>
-      </div>
+<body class="fx-page fx-page--home kt">
+  <a class="fx-skip" href="#main"><span class="en-only">Skip to content</span><span class="ko-only">본문으로 건너뛰기</span></a>
+  <div class="fx-core" aria-hidden="true"></div>
+  <canvas class="fx-field" aria-hidden="true"></canvas>
+  <div class="fx-rim" aria-hidden="true"></div>
+
+  <header class="fx-top">
+    <a class="fx-brand" href="https://risconlabs.com" aria-label="RISCON Labs CREDIT-HARVEST">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="4.5" cy="7" r="1.6" fill="currentColor"/><circle cx="10" cy="3.8" r="1.1" fill="currentColor"/><circle cx="19.5" cy="6.5" r="1.3" fill="currentColor"/><circle cx="6.5" cy="18.5" r="1.2" fill="currentColor"/><circle cx="18" cy="19" r="1.7" fill="currentColor"/><circle cx="12.4" cy="12.2" r="4.1" fill="none" stroke="var(--fx-accent)" stroke-width="1.8"/><circle cx="12.4" cy="12.2" r="1.5" fill="var(--fx-accent)"/></svg>
+      <span>RISCON Labs · CREDIT-HARVEST</span>
+    </a>
+    <div class="fx-lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-set-lang="ko" aria-pressed="true">KR</button>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="eyebrow">
-        <span>● VERIFIED 2026-10-22</span>
-        <span>·</span>
-        <span>13/13 DIRECT PORTAL URLS HTTP-200 PASS</span>
+  <nav class="fx-pill fx-navpill" data-pill aria-label="Sections">
+    <div class="fx-pill-row">
+      <div class="fx-navlinks">
+        <a href="#main" aria-current="page"><span class="en-only">Overview</span><span class="ko-only">개요</span></a>
+        <a href="#radar"><span class="en-only">Radar (16)</span><span class="ko-only">발굴 레이더 (16)</span></a>
+        <a href="#dossiers"><span class="en-only">1-Click Submit</span><span class="ko-only">원클릭 신청</span></a>
+        <a href="#lifecycle"><span class="en-only">Lifecycle &amp; SLA</span><span class="ko-only">사후관리·SLA</span></a>
+        <a href="#halluc-gate"><span class="en-only">Halluc-Gate</span><span class="ko-only">무결성 게이트</span></a>
       </div>
-      <h1>RISCON Autonomous Treasury &amp; Hallucination Gate</h1>
-      <p class="lead">
-        연구소 운영비(월 50~70만 원) 및 프론티어 API·클라우드 연산 자원을 무희석(Non-Dilutive)으로 자체 조달하는 <strong>S93 CREDIT-HARVEST</strong> 신청 커맨드 센터와, LLM 비용 0원으로 법률·바이오 문서의 Soft-Null 도피 및 인용 오류를 차단하는 <strong>S95 HALLUC-GATE</strong> 실시간 검수 스튜디오입니다.
-      </p>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Total Verified Credit &amp; Grant Pool</div>
-          <div class="kpi-val" id="kpi-total-pool">₩96,680,000</div>
-          <div class="kpi-sub">8 Active Global &amp; KR Programs</div>
+      <span class="fx-navcurrent"><span class="en-only">CREDIT-HARVEST</span><span class="ko-only">크레딧 하베스트</span></span>
+      <button class="fx-more" type="button" data-pill-toggle aria-expanded="false" aria-controls="fx-nav-panel" aria-label="Menu and settings">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+      </button>
+    </div>
+    <div class="fx-pill-panel" id="fx-nav-panel" inert aria-hidden="true">
+      <div class="fx-pill-panel-inner">
+        <div class="fx-menu-links">
+          <a href="#main" aria-current="page"><small>00</small><span class="en-only">Overview</span><span class="ko-only">개요</span></a>
+          <a href="#radar"><small>01</small><span class="en-only">Discovery Radar (16)</span><span class="ko-only">발굴 레이더 (16)</span></a>
+          <a href="#dossiers"><small>02</small><span class="en-only">1-Click Pre-fill &amp; Dossiers</span><span class="ko-only">원클릭 자동입력·도시에</span></a>
+          <a href="#lifecycle"><small>03</small><span class="en-only">Post-Submission Lifecycle</span><span class="ko-only">신청 후 사후관리·SLA</span></a>
+          <a href="#halluc-gate"><small>04</small><span class="en-only">S95 Halluc-Gate Auditor</span><span class="ko-only">S95 무결성 게이트</span></a>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Monthly Compute &amp; Ops Offset</div>
-          <div class="kpi-val" id="kpi-monthly-offset">₩1,675,000 / 월</div>
-          <div class="kpi-sub">목표 운영비(50~70만 원) 240% 커버</div>
+        <div class="fx-menu-labs">
+          <a class="en-only" href="https://risconlabs.com" target="_blank" rel="noopener noreferrer">
+            <span class="fx-menu-lab-name">RISCON LABS MAIN PORTAL<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+            <span class="fx-menu-lab-note">16 live public question-first research desks powered by this compute treasury.</span>
+          </a>
+          <a class="ko-only" href="https://risconlabs.com/?lang=ko" target="_blank" rel="noopener noreferrer">
+            <span class="fx-menu-lab-name">리스콘 랩스 메인 포털<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+            <span class="fx-menu-lab-note">이 크레딧 트레저리가 연산 자원을 공급하는 16개 공개 질문 연구 데스크.</span>
+          </a>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Portal URL Integrity Gate</div>
-          <div class="kpi-val">13 / 13 HTTP-200</div>
-          <div class="kpi-sub">Google Form · SMApply 직통 검증 완료</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Live Proof-of-Work Ecosystem</div>
-          <div class="kpi-val">16 Production Sites</div>
-          <div class="kpi-sub">2026-10-22 전수 verify-* 통과</div>
+        <div class="fx-settings">
+          <div class="fx-setting"><span class="fx-setting-name"><span class="en-only">Theme</span><span class="ko-only">테마</span></span><div class="fx-seg" role="group" aria-label="Theme"><button type="button" data-set-theme="system" aria-pressed="true"><span class="en-only">System</span><span class="ko-only">시스템</span></button><button type="button" data-set-theme="light" aria-pressed="false"><span class="en-only">Light</span><span class="ko-only">라이트</span></button><button type="button" data-set-theme="dark" aria-pressed="false"><span class="en-only">Dark</span><span class="ko-only">다크</span></button></div></div>
+          <div class="fx-setting"><span class="fx-setting-name"><span class="en-only">Language</span><span class="ko-only">언어</span></span><div class="fx-seg" role="group" aria-label="Language"><button type="button" data-set-lang="en" aria-pressed="false">EN</button><button type="button" data-set-lang="ko" aria-pressed="true">KR</button></div></div>
         </div>
       </div>
+    </div>
+  </nav>
+
+  <script type="application/json" id="fx-data">{"field": {"layout": "field", "interactive": true, "anchors": [{"en": "Anthropic $20K Science API", "ko": "Anthropic $20K 과학 API"}, {"en": "Anthropic Safety & Alignment API", "ko": "Anthropic 안전성·감사 API"}, {"en": "OpenAI Researcher Access Credits", "ko": "OpenAI 연구자 액세스 크레딧"}, {"en": "Google Gemini Academic Quota", "ko": "Google Gemini 학술 연구 쿼터"}, {"en": "Cohere Command & Embed Grant", "ko": "Cohere 다국어 임베딩·추론 그랜트"}, {"en": "Cloudflare $250K Edge & Workers AI", "ko": "Cloudflare $250K 엣지·워커 크레딧"}, {"en": "AWS Activate $100K & Bedrock", "ko": "AWS Activate $100K·Bedrock"}, {"en": "Microsoft $150K Azure OpenAI", "ko": "Microsoft $150K Azure OpenAI"}, {"en": "Google Cloud $350K Vertex AI", "ko": "Google Cloud $350K Vertex AI"}, {"en": "NVIDIA Inception & DGX Cloud", "ko": "NVIDIA Inception·DGX 클라우드"}, {"en": "Modal $10K Serverless H100/A100", "ko": "Modal $10K 서버리스 H100/A100"}, {"en": "Hugging Face ZeroGPU H200 Grant", "ko": "Hugging Face ZeroGPU H200 그랜트"}, {"en": "Emergent Ventures $50K Cash Grant", "ko": "Emergent Ventures $50K 무지분 기금"}, {"en": "LTFF $100K AI Safety & Auditing", "ko": "LTFF $100K AI 안전·감사 기금"}, {"en": "SFF $150K Speculation Grant", "ko": "SFF $150K 생존·번영 기금"}, {"en": "NIPA Korea Sovereign GPU Voucher", "ko": "NIPA 고성능 GPU·데이터바우처"}]}, "sites": [{"num": "01", "slug": "anthropic-science", "name": "Anthropic AI for Science Program", "host": "Anthropic · Up to $20,000 Claude API Credits", "url": "#dossiers", "topic": {"en": "Anthropic $20K Science API", "ko": "Anthropic $20K 과학 API"}, "world": {"en": "Up to $20,000 Claude API credits for high-impact biology & medicine research", "ko": "생명과학·의학 고임팩트 연구를 위한 최대 $20,000 Claude API 크레딧"}, "question": {"en": "How do we fund 6 months of zero-hallucination oncology (IATHEON) and metabolic (HEBE) evidence synthesis?", "ko": "위암·유방암 표적치료(IATHEON)와 비만·탈모(HEBE) 드라이랩의 6개월 무환각 근거 합성을 어떻게 무상 조달할 것인가?"}, "domain": {"en": "FRONTIER API", "ko": "프론티어 API"}}, {"num": "02", "slug": "anthropic-external", "name": "Anthropic External Researcher Access", "host": "Anthropic · $1,000–$10,000+ Claude API Credits", "url": "#dossiers", "topic": {"en": "Anthropic Safety & Alignment API", "ko": "Anthropic 안전성·감사 API"}, "world": {"en": "Rolling Claude API credits for AI safety, auditing & alignment research", "ko": "AI 안전성·감사·정렬 연구를 위한 상시 롤링 Claude API 크레딧"}, "question": {"en": "How do we benchmark L0–L6 human ASI auditor protocols and soft-null detection across frontier models?", "ko": "L0–L6 인간 ASI 감사자 훈련과 소프트-널(Soft-Null) 환각 검출을 프론티어 모델에서 어떻게 실측할 것인가?"}, "domain": {"en": "FRONTIER API", "ko": "프론티어 API"}}, {"num": "03", "slug": "openai-researcher", "name": "OpenAI Researcher Access Program", "host": "OpenAI · $1,000–$10,000+ OpenAI API Credits", "url": "#dossiers", "topic": {"en": "OpenAI Researcher Access Credits", "ko": "OpenAI 연구자 액세스 크레딧"}, "world": {"en": "$1,000–$10,000+ OpenAI API credits for alignment, safety & societal impact research", "ko": "AI 정렬·안전성·사회적 영향 연구를 위한 $1,000–$10,000+ API 크레딧"}, "question": {"en": "How do we cross-audit OpenAI reasoning models against Claude on legal (PRO SE) and defense (AEGIS) scenarios?", "ko": "나홀로 소송(PRO SE)과 국방 대비(AEGIS) 시나리오에서 이종 프론티어 모델 간 교차 감사를 어떻게 수행할 것인가?"}, "domain": {"en": "FRONTIER API", "ko": "프론티어 API"}}, {"num": "04", "slug": "google-gemini-academic", "name": "Google Gemini Academic Research Program", "host": "Google DeepMind / Google · Paid-Tier Gemini API Quota & High RPM", "url": "#dossiers", "topic": {"en": "Google Gemini Academic Quota", "ko": "Google Gemini 학술 연구 쿼터"}, "world": {"en": "Paid-tier Gemini API quota & high RPM for evaluation & benchmark labs", "ko": "평가·벤치마크 연구소를 위한 유료 티어 Gemini API 크레딧 및 고성능 RPM"}, "question": {"en": "How do we scale 1M-token bilingual corpus verification across all 16 RISCON desks at zero marginal cost?", "ko": "16개 리스콘 연구 데스크의 100만 토큰 한·영 코퍼스 교차 검증을 어떻게 한계비용 0원으로 확장할 것인가?"}, "domain": {"en": "FRONTIER API", "ko": "프론티어 API"}}, {"num": "05", "slug": "cohere-for-ai", "name": "Cohere For AI Research Grant Program", "host": "Cohere For AI · $2,000–$10,000 Command/Embed/Rerank API", "url": "#dossiers", "topic": {"en": "Cohere Command & Embed Grant", "ko": "Cohere 다국어 임베딩·추론 그랜트"}, "world": {"en": "API credits for multilingual retrieval, reranking & open-science NLP research", "ko": "다국어 검색(RAG)·리랭킹·오픈사이언스 연구를 위한 API 크레딧 지원"}, "question": {"en": "How do we index and rerank 5,863 Korean/English organizational collapse cases (NADIR) and workplace vernacular (GAEKJU)?", "ko": "5,863건의 조직 쇠락 사례(NADIR)와 현장 실무자 발화(GAEKJU)를 한·영 다국어 임베딩으로 어떻게 정밀 색인할 것인가?"}, "domain": {"en": "FRONTIER API", "ko": "프론티어 API"}}, {"num": "06", "slug": "cloudflare-startups", "name": "Cloudflare for Startups (Workers AI / D1 / R2)", "host": "Cloudflare · $5,000–$250,000 Cloudflare Credits", "url": "#dossiers", "topic": {"en": "Cloudflare $250K Edge & Workers AI", "ko": "Cloudflare $250K 엣지·워커 크레딧"}, "world": {"en": "$5,000–$250,000 credits for Cloudflare Workers, D1, R2, and Workers AI", "ko": "Cloudflare Workers, D1, R2, Workers AI를 위한 $5,000–$250,000 크레딧"}, "question": {"en": "How do we run all 16+ RISCON family sites and edge inference on Cloudflare at zero hosting cost?", "ko": "16개 이상의 리스콘 패밀리 사이트와 엣지 추론 인프라를 어떻게 호스팅 비용 0원으로 영구 가동할 것인가?"}, "domain": {"en": "CLOUD & EDGE", "ko": "클라우드·엣지"}}, {"num": "07", "slug": "aws-activate", "name": "AWS Activate Founders & Portfolio", "host": "Amazon Web Services · $1,000–$100,000 AWS & Bedrock Credits", "url": "#dossiers", "topic": {"en": "AWS Activate $100K & Bedrock", "ko": "AWS Activate $100K·Bedrock"}, "world": {"en": "$1,000–$100,000 AWS compute & Amazon Bedrock Claude/Llama API credits", "ko": "AWS 연산 및 Amazon Bedrock(Claude/Llama) API를 위한 $1,000–$100,000 크레딧"}, "question": {"en": "How do we secure secondary Claude & Llama inference routes via Amazon Bedrock with non-dilutive startup credits?", "ko": "Amazon Bedrock을 통한 Claude·Llama 이중화 추론 경로와 연산 자원을 무지분 크레딧으로 어떻게 확보할 것인가?"}, "domain": {"en": "CLOUD & EDGE", "ko": "클라우드·엣지"}}, {"num": "08", "slug": "microsoft-startups", "name": "Microsoft for Startups (Azure + OpenAI)", "host": "Microsoft · $5,000–$150,000 Azure & OpenAI Credits", "url": "#dossiers", "topic": {"en": "Microsoft $150K Azure OpenAI", "ko": "Microsoft $150K Azure OpenAI"}, "world": {"en": "Up to $150,000 in Azure & Azure OpenAI Service credits", "ko": "최대 $150,000 규모의 Azure 클라우드 및 Azure OpenAI 서비스 크레딧"}, "question": {"en": "How do we power high-throughput enterprise governance audits (ARCHON) and decision tracking (Meridian) on Azure OpenAI?", "ko": "조직 의사결정 구조 감사(ARCHON)와 판단 추적(Meridian)의 대규모 추론을 Azure OpenAI 크레딧으로 어떻게 처리할 것인가?"}, "domain": {"en": "CLOUD & EDGE", "ko": "클라우드·엣지"}}, {"num": "09", "slug": "google-cloud-startups", "name": "Google Cloud for Startups AI Tier", "host": "Google Cloud · $2,000–$350,000 Google Cloud & Vertex AI", "url": "#dossiers", "topic": {"en": "Google Cloud $350K Vertex AI", "ko": "Google Cloud $350K Vertex AI"}, "world": {"en": "$2,000–$350,000 in Google Cloud, BigQuery & Vertex AI credits", "ko": "Google Cloud, BigQuery 및 Vertex AI(Gemini/Claude) 전용 $2,000–$350,000 크레딧"}, "question": {"en": "How do we unify Gemini + Claude Partner Models on Vertex AI with BigQuery analytics across RISCON desks?", "ko": "Vertex AI의 Gemini·Claude 파트너 모델과 BigQuery 분석 파이프라인을 어떻게 무상 크레딧으로 통합할 것인가?"}, "domain": {"en": "CLOUD & EDGE", "ko": "클라우드·엣지"}}, {"num": "10", "slug": "nvidia-inception", "name": "NVIDIA Inception for AI Research Labs", "host": "NVIDIA · DGX Cloud Credits + Preferred GPU Pricing", "url": "#dossiers", "topic": {"en": "NVIDIA Inception & DGX Cloud", "ko": "NVIDIA Inception·DGX 클라우드"}, "world": {"en": "DGX Cloud credits, NIM microservices & preferred GPU cluster access", "ko": "NVIDIA DGX Cloud 크레딧, BioNeMo/NIM 마이크로서비스 및 GPU 클러스터 지원"}, "question": {"en": "How do we accelerate 3D protein-ligand docking and structure folding for IATHEON & HEBE using BioNeMo & DGX?", "ko": "IATHEON과 HEBE의 3D 표적 단백질 구조 예측 및 결합 부위 분석을 NVIDIA BioNeMo와 DGX로 어떻게 가속할 것인가?"}, "domain": {"en": "GPU COMPUTE", "ko": "GPU 연산"}}, {"num": "11", "slug": "modal-serverless-gpu", "name": "Modal Serverless GPU Compute Grant", "host": "Modal Labs · $500–$10,000 Serverless GPU Credits", "url": "#dossiers", "topic": {"en": "Modal $10K Serverless H100/A100", "ko": "Modal $10K 서버리스 H100/A100"}, "world": {"en": "$500–$10,000 in serverless H100/A100 GPU compute for researchers & AI startups", "ko": "연구자·스타트업을 위한 $500–$10,000 서버리스 H100/A100 GPU 연산 크레딧"}, "question": {"en": "How do we run bursty open-weight batch inference and protein folding jobs with zero idle GPU cost?", "ko": "유휴 GPU 비용 없이 대규모 배치 추론과 단백질 폴딩 작업을 어떻게 서버리스 H100으로 즉시 처리할 것인가?"}, "domain": {"en": "GPU COMPUTE", "ko": "GPU 연산"}}, {"num": "12", "slug": "huggingface-grant", "name": "Hugging Face Community & ZeroGPU Grant", "host": "Hugging Face · ZeroGPU H200 Quota + PRO/Enterprise Hub", "url": "#dossiers", "topic": {"en": "Hugging Face ZeroGPU H200 Grant", "ko": "Hugging Face ZeroGPU H200 그랜트"}, "world": {"en": "Complimentary ZeroGPU H200 quota & Enterprise Hub for open datasets and spaces", "ko": "오픈 데이터셋·벤치마크 공개 연구소를 위한 ZeroGPU H200 쿼터 무상 지원"}, "question": {"en": "How do we host public interactive demos of HALLUC-GATE and the NADIR 5,863-case benchmark on H200 GPUs for free?", "ko": "HALLUC-GATE와 NADIR 5,863건 벤치마크의 공개 데모를 어떻게 H200 GPU 위에서 무상으로 호스팅할 것인가?"}, "domain": {"en": "GPU COMPUTE", "ko": "GPU 연산"}}, {"num": "13", "slug": "emergent-ventures", "name": "Emergent Ventures Fellowship & Grant", "host": "Mercatus Center (Tyler Cowen) · $5,000–$50,000+ Zero-Equity Cash Grant", "url": "#dossiers", "topic": {"en": "Emergent Ventures $50K Cash Grant", "ko": "Emergent Ventures $50K 무지분 기금"}, "world": {"en": "$5,000–$50,000+ zero-equity, low-bureaucracy cash grant for high-leverage moonshots", "ko": "고레버리지 1인/소수 정예 연구를 위한 $5,000–$50,000+ 무지분 현금 그랜트"}, "question": {"en": "How do we secure direct cash runway for RISCON Labs’ 1-person 26,000-agent orchestration model and ASI auditor school?", "ko": "리스콘 랩스의 1인 26,000 에이전트 오케스트레이션과 인간 ASI 감사자 훈련원의 현금 운영비를 어떻게 무지분으로 확보할 것인가?"}, "domain": {"en": "FELLOWSHIP & SOVEREIGN", "ko": "무지분 기금·바우처"}}, {"num": "14", "slug": "ltff-ai-auditing", "name": "LTFF AI Safety & Auditing Research Grant", "host": "Long-Term Future Fund (LTFF) · $10,000–$100,000+ Non-Dilutive Cash Grant", "url": "#dossiers", "topic": {"en": "LTFF $100K AI Safety & Auditing", "ko": "LTFF $100K AI 안전·감사 기금"}, "world": {"en": "$10,000–$100,000+ non-dilutive cash grants for technical AI safety, evaluations & auditing", "ko": "AI 안전성·평가·감사 체계 연구를 위한 $10,000–$100,000+ 무지분 연구기금"}, "question": {"en": "How do we fund the L0–L6 Human ASI Auditor curriculum and sealed-vs-open judgment evaluations (ASI 2030)?", "ko": "ASI 2030의 열린 교정 대 봉인된 판단 시나리오와 L0–L6 감사자 사다리 표준화를 어떤 국제 기금으로 뒷받침할 것인가?"}, "domain": {"en": "FELLOWSHIP & SOVEREIGN", "ko": "무지분 기금·바우처"}}, {"num": "15", "slug": "sff-speculation-grants", "name": "SFF Speculation & S-Process Grants", "host": "Survival and Flourishing Fund (SFF) · $10,000–$150,000+ Non-Dilutive Cash Grant", "url": "#dossiers", "topic": {"en": "SFF $150K Speculation Grant", "ko": "SFF $150K 생존·번영 기금"}, "world": {"en": "$10,000–$150,000+ fast-turnaround Speculation Grants & S-Process funding for AI governance", "ko": "AI 거버넌스·문명 시나리오 연구를 위한 $10,000–$150,000+ 패스트트랙 기금"}, "question": {"en": "How do we fund quarterly ASI 2030 scenario forks and institutional accountability protocols (ARCHON / Meridian)?", "ko": "분기별 ASI 2030 시나리오 분기점 연구와 기관 책임성 감사 프로토콜(ARCHON·Meridian)을 어떻게 지속 재원화할 것인가?"}, "domain": {"en": "FELLOWSHIP & SOVEREIGN", "ko": "무지분 기금·바우처"}}, {"num": "16", "slug": "nipa-kcloud-tips", "name": "NIPA 고성능 컴퓨팅 & K-클라우드 데이터바우처", "host": "NIPA (정보통신산업진흥원) / K-Startup · KRW 20,000,000–150,000,000 GPU/Data Voucher", "url": "#dossiers", "topic": {"en": "NIPA Korea Sovereign GPU Voucher", "ko": "NIPA 고성능 GPU·데이터바우처"}, "world": {"en": "KRW 20M–150M sovereign H100/A100 GPU compute & data processing vouchers", "ko": "2,000만~1.5억 원 상당의 국산 클라우드 H100/A100 GPU 임차 및 데이터 가공 바우처"}, "question": {"en": "How do we combine domestic sovereign GPU vouchers with global API credits for zero-out-of-pocket lab operations?", "ko": "국내 정부 GPU·데이터 바우처와 해외 프론티어 API 크레딧을 결합해 연구소 자부담 연산비를 어떻게 완전히 소거할 것인가?"}, "domain": {"en": "FELLOWSHIP & SOVEREIGN", "ko": "무지분 기금·바우처"}}]}</script>
+  <script type="application/json" id="treasury-data">{"generated_at": "2026. 10. 22.", "guideline_commit": "85a4bfc", "metrics": {"total_programs": 16, "prefill_ready_count": 4, "verified_urls_200": 16, "live_family_sites": 16, "total_min_krw": 96590000, "total_max_krw": 1909500000, "target_monthly_opex_krw": "500,000 – 700,000 KRW", "coverage_multiple": "13.4x – 265x annual OPEX"}, "field": {"layout": "field", "interactive": true, "anchors": [{"en": "Anthropic $20K Science API", "ko": "Anthropic $20K 과학 API"}, {"en": "Anthropic Safety & Alignment API", "ko": "Anthropic 안전성·감사 API"}, {"en": "OpenAI Researcher Access Credits", "ko": "OpenAI 연구자 액세스 크레딧"}, {"en": "Google Gemini Academic Quota", "ko": "Google Gemini 학술 연구 쿼터"}, {"en": "Cohere Command & Embed Grant", "ko": "Cohere 다국어 임베딩·추론 그랜트"}, {"en": "Cloudflare $250K Edge & Workers AI", "ko": "Cloudflare $250K 엣지·워커 크레딧"}, {"en": "AWS Activate $100K & Bedrock", "ko": "AWS Activate $100K·Bedrock"}, {"en": "Microsoft $150K Azure OpenAI", "ko": "Microsoft $150K Azure OpenAI"}, {"en": "Google Cloud $350K Vertex AI", "ko": "Google Cloud $350K Vertex AI"}, {"en": "NVIDIA Inception & DGX Cloud", "ko": "NVIDIA Inception·DGX 클라우드"}, {"en": "Modal $10K Serverless H100/A100", "ko": "Modal $10K 서버리스 H100/A100"}, {"en": "Hugging Face ZeroGPU H200 Grant", "ko": "Hugging Face ZeroGPU H200 그랜트"}, {"en": "Emergent Ventures $50K Cash Grant", "ko": "Emergent Ventures $50K 무지분 기금"}, {"en": "LTFF $100K AI Safety & Auditing", "ko": "LTFF $100K AI 안전·감사 기금"}, {"en": "SFF $150K Speculation Grant", "ko": "SFF $150K 생존·번영 기금"}, {"en": "NIPA Korea Sovereign GPU Voucher", "ko": "NIPA 고성능 GPU·데이터바우처"}]}, "programs": [{"num": "01", "id": "PROG-ANTH-SCI", "slug": "anthropic-science", "provider": "Anthropic", "program_name": "Anthropic AI for Science Program", "category": {"en": "FRONTIER API", "ko": "프론티어 API"}, "topic": {"en": "Anthropic $20K Science API", "ko": "Anthropic $20K 과학 API"}, "world": {"en": "Up to $20,000 Claude API credits for high-impact biology & medicine research", "ko": "생명과학·의학 고임팩트 연구를 위한 최대 $20,000 Claude API 크레딧"}, "question": {"en": "How do we fund 6 months of zero-hallucination oncology (IATHEON) and metabolic (HEBE) evidence synthesis?", "ko": "위암·유방암 표적치료(IATHEON)와 비만·탈모(HEBE) 드라이랩의 6개월 무환각 근거 합성을 어떻게 무상 조달할 것인가?"}, "credit_value": "Up to $20,000 Claude API Credits", "estimated_krw_min": 6900000, "estimated_krw_max": 27600000, "cadence": {"en": "Reviewed 1st Monday of each month", "ko": "매월 첫째 주 월요일 정기 심사"}, "next_review_date": "2026. 11. 2.", "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform", "prefilled_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform?usp=pp_url&entry.1306138469=Standard+AI+for+Science+program&entry.260304036=Clinical+%26+therapeutic+development+%E2%80%94+accelerating+treatments+for+rare+disease&entry.2105307426=Byungchul+Lee&entry.893525514=RISCON+Labs+%28RISCON+Inc.%29&entry.1985501340=Founder+%26+Principal+Investigator&entry.856529250=riscon.ai%40gmail.com&entry.1971958908=https%3A%2F%2Fiatheon.risconlabs.com+%7C+https%3A%2F%2Fhebe.risconlabs.com+%7C+https%3A%2F%2Frisconlabs.com&entry.793132324=Anthropic+AI+for+Science+Program+Announcement&entry.375137480=IATHEON+%26+HEBE%3A+Open+Evidence-Unit+%26+Structure-Grounded+Dry-Lab+Desks+for+Targeted+Cancer+Therapy+Resistance+and+Metabolic%2FAlopecia+Biology&entry.405994137=Biology+%2F+Life+Sciences&entry.405994137=Medicine%2FHealthcare&entry.1397283218=ORG-ID-FROM-CONSOLE-ANTHROPIC-COM&entry.1471845072=Pro%2FMax&entry.1215820961=Byungchul+Lee+is+Founder+and+Principal+Investigator+of+RISCON+Labs%2C+an+independent+research+organization+operating+16+open+scientific+and+decision-auditing+desks+%28including+IATHEON+for+oncology+resistance+and+HEBE+for+metabolic%2Falopecia+biology%29+backed+by+a+26%2C000-agent+verification+pipeline+%28HALLUC-GATE%29.&entry.2053411569=https%3A%2F%2Fgithub.com%2FRiscon-AI+%7C+https%3A%2F%2Fiatheon.risconlabs.com+%7C+https%3A%2F%2Fhebe.risconlabs.com&entry.585443232=Targeted+cancer+therapies+in+gastric+and+breast+cancer+%28HER2%2C+Claudin+18.2%2C+FGFR2b%2C+TROP2%2C+PI3K%2FAKT%2C+CDK4%2F6%29+and+metabolic%2Falopecia+interventions+%28GLP-1%2FGIP+receptor+agonists%2C+AR%2FWnt+signaling%29+generate+fragmented+clinical+trial+outcomes%2C+resistance+mutation+profiles%2C+and+3D+protein+structure+models.+Researchers+struggle+to+audit+where+preclinical+or+computational+structure+claims+end+and+verified+human+clinical+evidence+begins.+RISCON+Labs+operates+IATHEON+%28https%3A%2F%2Fiatheon.risconlabs.com%29+and+HEBE+%28https%3A%2F%2Fhebe.risconlabs.com%29%2C+two+open+dry-lab+research+desks+that+decompose+published+clinical+trials+%28NCT+IDs%2C+PubMed%2FPMC+full+texts%29+and+AlphaFold%2FPDB+3D+biomolecular+structures+into+falsifiable+Evidence+Units.+Every+claim+is+tagged+by+evidence+tier+%28Clinical%2C+Preclinical%2C+Literature%2C+Computational%29+with+explicit+revision+triggers+and+verified+via+our+mechanical+HALLUC-GATE+auditor+%28https%3A%2F%2Fhallucgate.risconlabs.com%29.&entry.209301913=We+use+Claude+models+to+perform+multi-document+synthesis+across+oncology+phase+I-III+trial+updates%2C+extract+resistance+mutation+pathways+against+PDB%2FAlphaFold+binding+pockets%2C+and+formulate+explicit+falsification+conditions+for+each+therapeutic+question+while+enforcing+zero-hallucination+citation+anchoring.&entry.1028430009=By+strictly+separating+computational+structure+predictions+from+clinical+outcomes+and+attaching+explicit+revision+conditions+to+every+oncology+and+metabolic+research+synthesis%2C+IATHEON+and+HEBE+provide+an+open%2C+zero-paywall+evidence+standard+for+translational+researchers+and+clinical+trialists+worldwide.&entry.684509071=All+synthesized+evidence+units%2C+protein+pocket+annotations%2C+and+revision+logs+are+published+openly+on+iatheon.risconlabs.com%2C+hebe.risconlabs.com%2C+and+github.com%2FRiscon-AI+under+open+licenses+with+automated+weekly+clinical-trial+delta+ingestion.&entry.2006088946=Expand+IATHEON+and+HEBE+from+60%2B+to+500%2B+source-anchored+oncology%2Fmetabolic+evidence+units+over+6+months%2C+maintaining+0.0%25+soft-null%2Fcitation+defects+under+mechanical+HALLUC-GATE+verification.&entry.62262814=%2420%2C000+in+Claude+API+credits+over+6+months&entry.1549141933=None+of+the+above&entry.384373748=Live+production+platforms%3A+https%3A%2F%2Fiatheon.risconlabs.com%2C+https%3A%2F%2Fhebe.risconlabs.com%2C+https%3A%2F%2Fhallucgate.risconlabs.com%2C+https%3A%2F%2Frisconlabs.com+%28GitHub%3A+https%3A%2F%2Fgithub.com%2FRiscon-AI%29.&entry.1171549653=I+agree", "form_type": "GOOGLE_FORM_PREFILL", "mapped_field_count": 20, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["iatheon.risconlabs.com", "hebe.risconlabs.com", "hallucgate.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "매월 첫째 주 월요일 (차기: 2026. 11. 2.)", "sla_rule": "승인 메일 수신 후 5영업일 내 수락 회신 필수 · 14일 내 Compliance Affidavit 서명 제출", "affidavit_required": true, "reapply_interval_days": 30}, "fields": [{"key": "entry.375137480", "label": "Project Title (과제명)", "value": "IATHEON & HEBE: Open Evidence-Unit & Structure-Grounded Dry-Lab Desks for Targeted Cancer Therapy Resistance and Metabolic/Alopecia Biology"}, {"key": "entry.1215820961", "label": "Team Description (<100w)", "value": "Byungchul Lee is Founder and Principal Investigator of RISCON Labs, an independent research organization operating 16 open scientific and decision-auditing desks (including IATHEON for oncology resistance and HEBE for metabolic/alopecia biology) backed by a 26,000-agent verification pipeline (HALLUC-GATE)."}, {"key": "entry.585443232", "label": "Research Project Description (<500w)", "value": "Targeted cancer therapies in gastric and breast cancer (HER2, Claudin 18.2, FGFR2b, TROP2, PI3K/AKT, CDK4/6) and metabolic/alopecia interventions (GLP-1/GIP receptor agonists, AR/Wnt signaling) generate fragmented clinical trial outcomes, resistance mutation profiles, and 3D protein structure models. Researchers struggle to audit where preclinical or computational structure claims end and verified human clinical evidence begins. RISCON Labs operates IATHEON (https://iatheon.risconlabs.com) and HEBE (https://hebe.risconlabs.com), two open dry-lab research desks that decompose published clinical trials (NCT IDs, PubMed/PMC full texts) and AlphaFold/PDB 3D biomolecular structures into falsifiable Evidence Units. Every claim is tagged by evidence tier (Clinical, Preclinical, Literature, Computational) with explicit revision triggers and verified via our mechanical HALLUC-GATE auditor (https://hallucgate.risconlabs.com)."}, {"key": "entry.209301913", "label": "How Claude Capabilities Will Be Used (<200w)", "value": "We use Claude models to perform multi-document synthesis across oncology phase I-III trial updates, extract resistance mutation pathways against PDB/AlphaFold binding pockets, and formulate explicit falsification conditions for each therapeutic question while enforcing zero-hallucination citation anchoring."}, {"key": "entry.1028430009", "label": "Potential Scientific Impact (<200w)", "value": "By strictly separating computational structure predictions from clinical outcomes and attaching explicit revision conditions to every oncology and metabolic research synthesis, IATHEON and HEBE provide an open, zero-paywall evidence standard for translational researchers and clinical trialists worldwide."}, {"key": "entry.2006088946", "label": "Specific Success Metrics (<100w)", "value": "Expand IATHEON and HEBE from 60+ to 500+ source-anchored oncology/metabolic evidence units over 6 months, maintaining 0.0% soft-null/citation defects under mechanical HALLUC-GATE verification."}, {"key": "entry.62262814", "label": "Requested Credits (신청 금액)", "value": "$20,000 in Claude API credits over 6 months"}]}, {"num": "02", "id": "PROG-ANTH-EXT", "slug": "anthropic-external", "provider": "Anthropic", "program_name": "Anthropic External Researcher Access", "category": {"en": "FRONTIER API", "ko": "프론티어 API"}, "topic": {"en": "Anthropic Safety & Alignment API", "ko": "Anthropic 안전성·감사 API"}, "world": {"en": "Rolling Claude API credits for AI safety, auditing & alignment research", "ko": "AI 안전성·감사·정렬 연구를 위한 상시 롤링 Claude API 크레딧"}, "question": {"en": "How do we benchmark L0–L6 human ASI auditor protocols and soft-null detection across frontier models?", "ko": "L0–L6 인간 ASI 감사자 훈련과 소프트-널(Soft-Null) 환각 검출을 프론티어 모델에서 어떻게 실측할 것인가?"}, "credit_value": "$1,000–$10,000+ Claude API Credits", "estimated_krw_min": 1380000, "estimated_krw_max": 13800000, "cadence": {"en": "Rolling review (1–2 weeks)", "ko": "상시 롤링 심사 (1–2주 소요)"}, "next_review_date": "2026. 11. 2.", "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLSdmq-KFTREKw9SXqDqj9kACfhd_5DYZSrifWR7Q3z0ZqAZZog/viewform", "prefilled_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSdmq-KFTREKw9SXqDqj9kACfhd_5DYZSrifWR7Q3z0ZqAZZog/viewform?usp=pp_url&entry.2105307426=Byungchul+Lee&entry.893525514=RISCON+Labs+%28RISCON+Inc.%29&entry.92179113=No&entry.806229330=ORG-ID-FROM-CONSOLE-ANTHROPIC-COM&entry.1448957731=Byungchul+Lee+leads+RISCON+Labs%2C+an+AI+safety+and+decision-auditing+research+institute+operating+16+public+evaluation+platforms+%28including+ASI+2030%2C+ARCHON%2C+NADIR%2C+PRO+SE%2C+and+HALLUC-GATE%29+and+training+human+ASI+auditors+across+the+L0-L6+verification+ladder.&entry.1376099865=We+investigate+two+failure+modes+in+high-volume+frontier-to-batch+distillation%3A+%281%29+Soft-Null+Evasion%2C+where+models+copy+input+text+verbatim+%28fix+%3D%3D+original%29+or+hallucinate+unanchored+source+quotes+under+strict+correction+rubrics%3B+and+%282%29+Sycophantic+Frame+Amplification+across+organizational+failure+%28NADIR%2C+5%2C863+cases%29+and+self-represented+litigation+%28PRO+SE%29.+Using+Claude+as+the+high-precision+L3+Challenger+and+L5+Auditor+reference+model%2C+we+benchmark+automated+detection+rates+against+our+mechanical+HALLUC-GATE+filter+%28https%3A%2F%2Fhallucgate.risconlabs.com%29+and+publish+all+evaluation+datasets+openly.&entry.127440120=%245%2C000+in+Claude+API+credits+for+6+months+of+L3-L5+red-team+auditing+benchmarks&entry.2049764645=I%27m+fine+with+receiving+a+low+quality+of+service&entry.1436591242=https%3A%2F%2Fgithub.com%2FRiscon-AI&entry.384373748=Live+evaluation+platforms%3A+https%3A%2F%2Fasi-2030.risconlabs.com+%7C+https%3A%2F%2Fnadir.risconlabs.com+%7C+https%3A%2F%2Fpro-se.risconlabs.com+%7C+https%3A%2F%2Fhallucgate.risconlabs.com&entry.478362211=No&entry.1171549653=I+agree", "form_type": "GOOGLE_FORM_PREFILL", "mapped_field_count": 12, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["asi-2030.risconlabs.com", "nadir.risconlabs.com", "pro-se.risconlabs.com", "hallucgate.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "상시 롤링 심사 (접수 후 7–14일)", "sla_rule": "승인 통지 후 5영업일 내 Organization ID 재확인 회신", "affidavit_required": false, "reapply_interval_days": 30}, "fields": [{"key": "entry.1448957731", "label": "Team Description (<200w)", "value": "Byungchul Lee leads RISCON Labs, an AI safety and decision-auditing research institute operating 16 public evaluation platforms (including ASI 2030, ARCHON, NADIR, PRO SE, and HALLUC-GATE) and training human ASI auditors across the L0-L6 verification ladder."}, {"key": "entry.1376099865", "label": "Research Description (<300w)", "value": "We investigate two failure modes in high-volume frontier-to-batch distillation: (1) Soft-Null Evasion, where models copy input text verbatim (fix == original) or hallucinate unanchored source quotes under strict correction rubrics; and (2) Sycophantic Frame Amplification across organizational failure (NADIR, 5,863 cases) and self-represented litigation (PRO SE). Using Claude as the high-precision L3 Challenger and L5 Auditor reference model, we benchmark automated detection rates against our mechanical HALLUC-GATE filter (https://hallucgate.risconlabs.com) and publish all evaluation datasets openly."}, {"key": "entry.127440120", "label": "Credit Request (> $1,000 Justification)", "value": "$5,000 in Claude API credits for 6 months of L3-L5 red-team auditing benchmarks"}, {"key": "entry.384373748", "label": "Live Proof & Repository Links", "value": "Live evaluation platforms: https://asi-2030.risconlabs.com | https://nadir.risconlabs.com | https://pro-se.risconlabs.com | https://hallucgate.risconlabs.com"}]}, {"num": "03", "id": "PROG-OPENAI-RES", "slug": "openai-researcher", "provider": "OpenAI", "program_name": "OpenAI Researcher Access Program", "category": {"en": "FRONTIER API", "ko": "프론티어 API"}, "topic": {"en": "OpenAI Researcher Access Credits", "ko": "OpenAI 연구자 액세스 크레딧"}, "world": {"en": "$1,000–$10,000+ OpenAI API credits for alignment, safety & societal impact research", "ko": "AI 정렬·안전성·사회적 영향 연구를 위한 $1,000–$10,000+ API 크레딧"}, "question": {"en": "How do we cross-audit OpenAI reasoning models against Claude on legal (PRO SE) and defense (AEGIS) scenarios?", "ko": "나홀로 소송(PRO SE)과 국방 대비(AEGIS) 시나리오에서 이종 프론티어 모델 간 교차 감사를 어떻게 수행할 것인가?"}, "credit_value": "$1,000–$10,000+ OpenAI API Credits", "estimated_krw_min": 1380000, "estimated_krw_max": 13800000, "cadence": {"en": "Quarterly review (Mar / Jun / Sep / Dec)", "ko": "분기별 심사 (3·6·9·12월 정기 코호트)"}, "next_review_date": "2026. 12. 1.", "apply_url": "https://openai.com/form/researcher-access-program/", "prefilled_form_url": "https://openai.com/form/researcher-access-program/", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 5, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["asi-2030.risconlabs.com", "aegis.risconlabs.com", "pro-se.risconlabs.com", "meridian.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "분기별 심사 (차기 코호트: 2026. 12. 1.)", "sla_rule": "승인 시 OpenAI Organization Billing에 12개월 유효 크레딧 즉시 적립", "affidavit_required": false, "reapply_interval_days": 90}, "fields": [{"key": "project_title", "label": "Project Title (과제명)", "value": "Cross-Model Sycophancy & Soft-Null Verification Across Legal (PRO SE), Defense (AEGIS), and ASI 2030 Scenarios"}, {"key": "research_summary", "label": "Research Summary (연구 요약)", "value": "RISCON Labs operates 16 public research platforms (https://risconlabs.com) evaluating how frontier models handle high-stakes decision auditing, self-represented litigation questions (PRO SE), and organizational failure forensics (NADIR, 5,863 cases). We use OpenAI reasoning models for L4 Calibrator cross-model replication and publish all audit logs openly."}, {"key": "requested_amount", "label": "Requested Credits (신청 규모)", "value": "$5,000 in OpenAI API credits (12-month research allocation)"}, {"key": "live_evidence", "label": "Live Verification Links (증빙 URL)", "value": "https://asi-2030.risconlabs.com | https://pro-se.risconlabs.com | https://aegis.risconlabs.com | https://hallucgate.risconlabs.com"}]}, {"num": "04", "id": "PROG-GEMINI-ACAD", "slug": "google-gemini-academic", "provider": "Google DeepMind / Google", "program_name": "Google Gemini Academic Research Program", "category": {"en": "FRONTIER API", "ko": "프론티어 API"}, "topic": {"en": "Google Gemini Academic Quota", "ko": "Google Gemini 학술 연구 쿼터"}, "world": {"en": "Paid-tier Gemini API quota & high RPM for evaluation & benchmark labs", "ko": "평가·벤치마크 연구소를 위한 유료 티어 Gemini API 크레딧 및 고성능 RPM"}, "question": {"en": "How do we scale 1M-token bilingual corpus verification across all 16 RISCON desks at zero marginal cost?", "ko": "16개 리스콘 연구 데스크의 100만 토큰 한·영 코퍼스 교차 검증을 어떻게 한계비용 0원으로 확장할 것인가?"}, "credit_value": "Paid-Tier Gemini API Quota & High RPM", "estimated_krw_min": 2760000, "estimated_krw_max": 13800000, "cadence": {"en": "Monthly cohort review", "ko": "월간 코호트 정기 심사"}, "next_review_date": "2026. 11. 3.", "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLSd5QWrIjXf5Pupmsl_zzWZeGvHtXSpVbcvOlxdkbUIuj6AWEA/viewform", "prefilled_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSd5QWrIjXf5Pupmsl_zzWZeGvHtXSpVbcvOlxdkbUIuj6AWEA/viewform?usp=pp_url&entry.1036173644=Byungchul&entry.513961113=Lee&entry.1678688306=riscon.ai%40gmail.com&entry.967948232=RISCON+Labs&entry.1793129366=Academic+Research+Lab&entry.1574703433=Research+Staff+Member&entry.185736771=https%3A%2F%2Frisconlabs.com+%7C+https%3A%2F%2Fgithub.com%2FRiscon-AI+%7C+https%3A%2F%2Fmeridian.risconlabs.com+%7C+https%3A%2F%2Fhallucgate.risconlabs.com&entry.15322154=Evaluation+and+Benchmarks&entry.905053998=RISCON+Labs+investigates+large-scale+cross-verification+between+frontier+reasoning+models+and+high-throughput+flash+models+across+16+open+research+platforms+%28Meridian+decision+tracking%2C+Skeptron+pattern+analysis%2C+NADIR+5%2C863-case+organizational+failure+corpus%2C+and+HALLUC-GATE+mechanical+soft-null+verification%29.+We+use+Gemini+Flash+and+Pro+models+for+1M-token+context+synthesis+and+bilingual+%28Korean%2FEnglish%29+citation-anchored+benchmark+generation.&entry.1600765051=Open-source+release+of+the+bilingual+Soft-Null+%26+Citation+Integrity+Benchmark+%2810%2C000%2B+audited+JSONL+pairs%29+and+continuous+public+updates+across+all+16+%2A.risconlabs.com+research+desks.&entry.649256576=~50%2C000+requests%2Fday+%28Batch+%2B+120+RPM+interactive+verification+across+16+research+desks%29&entry.710255224=12+months&entry.1187761374=No%2C+it%27s+on+paid+tier&entry.2115669834=South+Korea", "form_type": "GOOGLE_FORM_PREFILL", "mapped_field_count": 14, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["meridian.risconlabs.com", "skeptron.risconlabs.com", "cosmic-press.risconlabs.com", "hallucgate.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "매월 초 코호트 심사 (차기: 2026. 11. 3.)", "sla_rule": "Paid-tier Google Cloud Billing Project ID 사전 연결 필수", "affidavit_required": false, "reapply_interval_days": 30}, "fields": [{"key": "entry.15322154", "label": "Research Area (연구 분야)", "value": "Evaluation and Benchmarks"}, {"key": "entry.905053998", "label": "Project Abstract (연구 초록)", "value": "RISCON Labs investigates large-scale cross-verification between frontier reasoning models and high-throughput flash models across 16 open research platforms (Meridian decision tracking, Skeptron pattern analysis, NADIR 5,863-case organizational failure corpus, and HALLUC-GATE mechanical soft-null verification). We use Gemini Flash and Pro models for 1M-token context synthesis and bilingual (Korean/English) citation-anchored benchmark generation."}, {"key": "entry.1600765051", "label": "Expected Outcomes (기대 성과)", "value": "Open-source release of the bilingual Soft-Null & Citation Integrity Benchmark (10,000+ audited JSONL pairs) and continuous public updates across all 16 *.risconlabs.com research desks."}, {"key": "entry.649256576", "label": "Expected API Usage (일일 요청량)", "value": "~50,000 requests/day (Batch + 120 RPM interactive verification across 16 research desks)"}]}, {"num": "05", "id": "PROG-COHERE-RES", "slug": "cohere-for-ai", "provider": "Cohere For AI", "program_name": "Cohere For AI Research Grant Program", "category": {"en": "FRONTIER API", "ko": "프론티어 API"}, "topic": {"en": "Cohere Command & Embed Grant", "ko": "Cohere 다국어 임베딩·추론 그랜트"}, "world": {"en": "API credits for multilingual retrieval, reranking & open-science NLP research", "ko": "다국어 검색(RAG)·리랭킹·오픈사이언스 연구를 위한 API 크레딧 지원"}, "question": {"en": "How do we index and rerank 5,863 Korean/English organizational collapse cases (NADIR) and workplace vernacular (GAEKJU)?", "ko": "5,863건의 조직 쇠락 사례(NADIR)와 현장 실무자 발화(GAEKJU)를 한·영 다국어 임베딩으로 어떻게 정밀 색인할 것인가?"}, "credit_value": "$2,000–$10,000 Command/Embed/Rerank API", "estimated_krw_min": 2760000, "estimated_krw_max": 13800000, "cadence": {"en": "Rolling review (2–3 weeks)", "ko": "상시 롤링 심사 (2–3주 소요)"}, "next_review_date": "2026. 11. 9.", "apply_url": "https://cohere.com/research", "prefilled_form_url": "https://cohere.com/research", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 4, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["nadir.risconlabs.com", "gaekju.risconlabs.com", "skeptron.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "상시 롤링 심사 (접수 후 2–3주)", "sla_rule": "승인 후 Cohere 연구자 워크스페이스 API 키 발급 및 분기별 오픈 리포트 공유", "affidavit_required": false, "reapply_interval_days": 60}, "fields": [{"key": "project_title", "label": "Project Title (과제명)", "value": "Bilingual Retrieval & Reranking Across 5,863 Organizational Failure Cases (NADIR) and Workplace Vernacular Records (GAEKJU)"}, {"key": "abstract", "label": "Research Proposal (연구 제안서)", "value": "We benchmark multilingual embedding and reranking accuracy on non-standard Korean workplace vernacular (GAEKJU, https://gaekju.risconlabs.com) and multi-stage institutional decline records (NADIR, https://nadir.risconlabs.com, 5,863 cases)."}]}, {"num": "06", "id": "PROG-CF-STARTUP", "slug": "cloudflare-startups", "provider": "Cloudflare", "program_name": "Cloudflare for Startups (Workers AI / D1 / R2)", "category": {"en": "CLOUD & EDGE", "ko": "클라우드·엣지"}, "topic": {"en": "Cloudflare $250K Edge & Workers AI", "ko": "Cloudflare $250K 엣지·워커 크레딧"}, "world": {"en": "$5,000–$250,000 credits for Cloudflare Workers, D1, R2, and Workers AI", "ko": "Cloudflare Workers, D1, R2, Workers AI를 위한 $5,000–$250,000 크레딧"}, "question": {"en": "How do we run all 16+ RISCON family sites and edge inference on Cloudflare at zero hosting cost?", "ko": "16개 이상의 리스콘 패밀리 사이트와 엣지 추론 인프라를 어떻게 호스팅 비용 0원으로 영구 가동할 것인가?"}, "credit_value": "$5,000–$250,000 Cloudflare Credits", "estimated_krw_min": 6900000, "estimated_krw_max": 345000000, "cadence": {"en": "Rolling review (7–10 business days)", "ko": "상시 심사 (영업일 7–10일 소요)"}, "next_review_date": "2026. 11. 5.", "apply_url": "https://www.cloudflare.com/forstartups/", "prefilled_form_url": "https://www.cloudflare.com/forstartups/", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 5, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["risconlabs.com", "creditharvest.risconlabs.com", "hallucgate.risconlabs.com", "meridian.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "상시 심사 (접수 후 영업일 7–10일)", "sla_rule": "Cloudflare Account ID (`10f6645e0670c6c05258cf5e0345121b`) 및 `risconlabs.com` 도메인 소유권 자동 검증 완료 상태", "affidavit_required": false, "reapply_interval_days": 60}, "fields": [{"key": "account_id", "label": "Cloudflare Account ID & Zone", "value": "Account ID: 10f6645e0670c6c05258cf5e0345121b | Primary Zone: risconlabs.com (16 active Workers custom domains)"}, {"key": "architecture_pitch", "label": "Edge Architecture & Workers AI Pitch", "value": "RISCON Labs runs 16 production Cloudflare Workers + Static Assets + D1/KV properties on risconlabs.com, serving bilingual scenario-planning, oncology dry-lab synthesis, and zero-cost mechanical hallucination auditing (creditharvest.risconlabs.com / hallucgate.risconlabs.com)."}]}, {"num": "07", "id": "PROG-AWS-ACTIVATE", "slug": "aws-activate", "provider": "Amazon Web Services", "program_name": "AWS Activate Founders & Portfolio", "category": {"en": "CLOUD & EDGE", "ko": "클라우드·엣지"}, "topic": {"en": "AWS Activate $100K & Bedrock", "ko": "AWS Activate $100K·Bedrock"}, "world": {"en": "$1,000–$100,000 AWS compute & Amazon Bedrock Claude/Llama API credits", "ko": "AWS 연산 및 Amazon Bedrock(Claude/Llama) API를 위한 $1,000–$100,000 크레딧"}, "question": {"en": "How do we secure secondary Claude & Llama inference routes via Amazon Bedrock with non-dilutive startup credits?", "ko": "Amazon Bedrock을 통한 Claude·Llama 이중화 추론 경로와 연산 자원을 무지분 크레딧으로 어떻게 확보할 것인가?"}, "credit_value": "$1,000–$100,000 AWS & Bedrock Credits", "estimated_krw_min": 1380000, "estimated_krw_max": 138000000, "cadence": {"en": "Rolling review (5–10 business days)", "ko": "상시 심사 (영업일 5–10일 소요)"}, "next_review_date": "2026. 11. 2.", "apply_url": "https://aws.amazon.com/startups/credits", "prefilled_form_url": "https://aws.amazon.com/startups/credits", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 4, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["wstiger.risconlabs.com", "aegis.risconlabs.com", "dionyas.risconlabs.com", "iatheon.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "Founders 티어($1,000) 영업일 5–7일 즉시 승인 → Portfolio 티어($10,000–$100,000) 순차 승격", "sla_rule": "승인 즉시 AWS Billing Console에 Bedrock 및 EC2/S3 크레딧 자동 적용", "affidavit_required": false, "reapply_interval_days": 45}, "fields": [{"key": "product_description", "label": "Company & Product Description", "value": "RISCON Labs builds multi-agent auditing and scenario intelligence platforms across 16 live domains (https://risconlabs.com), leveraging Amazon Bedrock for multi-provider model calibration (L4 Calibrator) and quantitative market/defense risk analysis (WSTiger, AEGIS)."}]}, {"num": "08", "id": "PROG-MS-STARTUPS", "slug": "microsoft-startups", "provider": "Microsoft", "program_name": "Microsoft for Startups (Azure + OpenAI)", "category": {"en": "CLOUD & EDGE", "ko": "클라우드·엣지"}, "topic": {"en": "Microsoft $150K Azure OpenAI", "ko": "Microsoft $150K Azure OpenAI"}, "world": {"en": "Up to $150,000 in Azure & Azure OpenAI Service credits", "ko": "최대 $150,000 규모의 Azure 클라우드 및 Azure OpenAI 서비스 크레딧"}, "question": {"en": "How do we power high-throughput enterprise governance audits (ARCHON) and decision tracking (Meridian) on Azure OpenAI?", "ko": "조직 의사결정 구조 감사(ARCHON)와 판단 추적(Meridian)의 대규모 추론을 Azure OpenAI 크레딧으로 어떻게 처리할 것인가?"}, "credit_value": "$5,000–$150,000 Azure & OpenAI Credits", "estimated_krw_min": 6900000, "estimated_krw_max": 207000000, "cadence": {"en": "Rolling review (5–7 business days)", "ko": "상시 심사 (영업일 5–7일 소요)"}, "next_review_date": "2026. 11. 2.", "apply_url": "https://www.microsoft.com/en-us/startups", "prefilled_form_url": "https://www.microsoft.com/en-us/startups", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 4, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["archon.risconlabs.com", "meridian.risconlabs.com", "pro-se.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "상시 심사 (초기 $5,000 승인 후 사용량 기반 $25K → $150K 단계별 증액)", "sla_rule": "승인 후 90일 내 Azure OpenAI 리소스 배포 시 차상위 티어 자동 해금 자격 부여", "affidavit_required": false, "reapply_interval_days": 45}, "fields": [{"key": "startup_pitch", "label": "Product & Architecture Summary", "value": "RISCON Labs delivers institutional decision-structure auditing (ARCHON, https://archon.risconlabs.com) and longitudinal judgment tracking (Meridian, https://meridian.risconlabs.com) backed by 26,000 orchestrated verification agents."}]}, {"num": "09", "id": "PROG-GCP-STARTUPS", "slug": "google-cloud-startups", "provider": "Google Cloud", "program_name": "Google Cloud for Startups AI Tier", "category": {"en": "CLOUD & EDGE", "ko": "클라우드·엣지"}, "topic": {"en": "Google Cloud $350K Vertex AI", "ko": "Google Cloud $350K Vertex AI"}, "world": {"en": "$2,000–$350,000 in Google Cloud, BigQuery & Vertex AI credits", "ko": "Google Cloud, BigQuery 및 Vertex AI(Gemini/Claude) 전용 $2,000–$350,000 크레딧"}, "question": {"en": "How do we unify Gemini + Claude Partner Models on Vertex AI with BigQuery analytics across RISCON desks?", "ko": "Vertex AI의 Gemini·Claude 파트너 모델과 BigQuery 분석 파이프라인을 어떻게 무상 크레딧으로 통합할 것인가?"}, "credit_value": "$2,000–$350,000 Google Cloud & Vertex AI", "estimated_krw_min": 2760000, "estimated_krw_max": 483000000, "cadence": {"en": "Rolling review (7–14 business days)", "ko": "상시 심사 (영업일 7–14일 소요)"}, "next_review_date": "2026. 11. 6.", "apply_url": "https://cloud.google.com/startup", "prefilled_form_url": "https://cloud.google.com/startup", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 4, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["iatheon.risconlabs.com", "hebe.risconlabs.com", "wstiger.risconlabs.com", "asi-2030.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "Start 티어($2,000) 즉시 심사 → Scale AI 티어($350,000) 승격 심사", "sla_rule": "Vertex AI Model Garden (Claude & Gemini) 크레딧 할당을 위해 비즈니스 도메인 이메일(`@risconlabs.com`) 인증 필수", "affidavit_required": false, "reapply_interval_days": 60}, "fields": [{"key": "ai_workload", "label": "AI Workload & Vertex AI Usage Plan", "value": "RISCON Labs runs multi-model calibration (Gemini + Claude on Vertex AI) and biomolecular structure/clinical evidence pipelines across IATHEON (https://iatheon.risconlabs.com) and HEBE (https://hebe.risconlabs.com)."}]}, {"num": "10", "id": "PROG-NV-INCEPTION", "slug": "nvidia-inception", "provider": "NVIDIA", "program_name": "NVIDIA Inception for AI Research Labs", "category": {"en": "GPU COMPUTE", "ko": "GPU 연산"}, "topic": {"en": "NVIDIA Inception & DGX Cloud", "ko": "NVIDIA Inception·DGX 클라우드"}, "world": {"en": "DGX Cloud credits, NIM microservices & preferred GPU cluster access", "ko": "NVIDIA DGX Cloud 크레딧, BioNeMo/NIM 마이크로서비스 및 GPU 클러스터 지원"}, "question": {"en": "How do we accelerate 3D protein-ligand docking and structure folding for IATHEON & HEBE using BioNeMo & DGX?", "ko": "IATHEON과 HEBE의 3D 표적 단백질 구조 예측 및 결합 부위 분석을 NVIDIA BioNeMo와 DGX로 어떻게 가속할 것인가?"}, "credit_value": "DGX Cloud Credits + Preferred GPU Pricing", "estimated_krw_min": 6900000, "estimated_krw_max": 69000000, "cadence": {"en": "Rolling review (10–14 business days)", "ko": "상시 심사 (영업일 10–14일 소요)"}, "next_review_date": "2026. 11. 9.", "apply_url": "https://www.nvidia.com/en-us/startups/", "prefilled_form_url": "https://www.nvidia.com/en-us/startups/", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 4, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["iatheon.risconlabs.com", "hebe.risconlabs.com", "aegis.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "상시 심사 (승인 후 AWS/GCP 클라우드 크레딧 파트너십 및 DGX Cloud 바우처 연동)", "sla_rule": "반기 1회 Inception 포털 프로필 업데이트 시 회원 자격 및 혜택 자동 갱신", "affidavit_required": false, "reapply_interval_days": 90}, "fields": [{"key": "gpu_use_case", "label": "GPU & BioNeMo / NIM Use Case", "value": "Dry-lab structural oncology and metabolic target modeling on IATHEON (https://iatheon.risconlabs.com) and HEBE (https://hebe.risconlabs.com), plus 26,000-agent batch verification."}]}, {"num": "11", "id": "PROG-MODAL-GPU", "slug": "modal-serverless-gpu", "provider": "Modal Labs", "program_name": "Modal Serverless GPU Compute Grant", "category": {"en": "GPU COMPUTE", "ko": "GPU 연산"}, "topic": {"en": "Modal $10K Serverless H100/A100", "ko": "Modal $10K 서버리스 H100/A100"}, "world": {"en": "$500–$10,000 in serverless H100/A100 GPU compute for researchers & AI startups", "ko": "연구자·스타트업을 위한 $500–$10,000 서버리스 H100/A100 GPU 연산 크레딧"}, "question": {"en": "How do we run bursty open-weight batch inference and protein folding jobs with zero idle GPU cost?", "ko": "유휴 GPU 비용 없이 대규모 배치 추론과 단백질 폴딩 작업을 어떻게 서버리스 H100으로 즉시 처리할 것인가?"}, "credit_value": "$500–$10,000 Serverless GPU Credits", "estimated_krw_min": 690000, "estimated_krw_max": 13800000, "cadence": {"en": "Rolling review (5–10 business days)", "ko": "상시 롤링 심사 (영업일 5–10일 소요)"}, "next_review_date": "2026. 11. 2.", "apply_url": "https://modal.com/pricing", "prefilled_form_url": "https://modal.com/pricing", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 4, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["iatheon.risconlabs.com", "hebe.risconlabs.com", "hallucgate.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "상시 심사 (학술·연구 및 스타트업 크레딧 프로그램)", "sla_rule": "Modal 워크스페이스 생성 후 크레딧 코드 즉시 등록 가능", "affidavit_required": false, "reapply_interval_days": 60}, "fields": [{"key": "workload_desc", "label": "Serverless GPU Workload Description", "value": "On-demand AlphaFold/ColabFold structure verification for IATHEON & HEBE and high-throughput open-model batch verification for HALLUC-GATE."}]}, {"num": "12", "id": "PROG-HF-COMMUNITY", "slug": "huggingface-grant", "provider": "Hugging Face", "program_name": "Hugging Face Community & ZeroGPU Grant", "category": {"en": "GPU COMPUTE", "ko": "GPU 연산"}, "topic": {"en": "Hugging Face ZeroGPU H200 Grant", "ko": "Hugging Face ZeroGPU H200 그랜트"}, "world": {"en": "Complimentary ZeroGPU H200 quota & Enterprise Hub for open datasets and spaces", "ko": "오픈 데이터셋·벤치마크 공개 연구소를 위한 ZeroGPU H200 쿼터 무상 지원"}, "question": {"en": "How do we host public interactive demos of HALLUC-GATE and the NADIR 5,863-case benchmark on H200 GPUs for free?", "ko": "HALLUC-GATE와 NADIR 5,863건 벤치마크의 공개 데모를 어떻게 H200 GPU 위에서 무상으로 호스팅할 것인가?"}, "credit_value": "ZeroGPU H200 Quota + PRO/Enterprise Hub", "estimated_krw_min": 1380000, "estimated_krw_max": 6900000, "cadence": {"en": "Rolling community grant review", "ko": "상시 커뮤니티 그랜트 심사"}, "next_review_date": "2026. 11. 4.", "apply_url": "https://huggingface.co/", "prefilled_form_url": "https://huggingface.co/", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 3, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["hallucgate.risconlabs.com", "nadir.risconlabs.com", "gaekju.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "상시 롤링 심사 (공개 Space 또는 Dataset 게시 후 신청 시 1–2주 내 할당)", "sla_rule": "승인 시 Hugging Face 조직 계정에 ZeroGPU H200 하드웨어 할당 즉시 부여", "affidavit_required": false, "reapply_interval_days": 45}, "fields": [{"key": "hf_org_pitch", "label": "Open Dataset & Space Proposal", "value": "Publishing the RISCON HALLUC-GATE Soft-Null Evasion Benchmark and NADIR Organizational Decline Taxonomy as open Hugging Face Datasets & Spaces."}]}, {"num": "13", "id": "PROG-EV-MERCATUS", "slug": "emergent-ventures", "provider": "Mercatus Center (Tyler Cowen)", "program_name": "Emergent Ventures Fellowship & Grant", "category": {"en": "FELLOWSHIP & SOVEREIGN", "ko": "무지분 기금·바우처"}, "topic": {"en": "Emergent Ventures $50K Cash Grant", "ko": "Emergent Ventures $50K 무지분 기금"}, "world": {"en": "$5,000–$50,000+ zero-equity, low-bureaucracy cash grant for high-leverage moonshots", "ko": "고레버리지 1인/소수 정예 연구를 위한 $5,000–$50,000+ 무지분 현금 그랜트"}, "question": {"en": "How do we secure direct cash runway for RISCON Labs’ 1-person 26,000-agent orchestration model and ASI auditor school?", "ko": "리스콘 랩스의 1인 26,000 에이전트 오케스트레이션과 인간 ASI 감사자 훈련원의 현금 운영비를 어떻게 무지분으로 확보할 것인가?"}, "credit_value": "$5,000–$50,000+ Zero-Equity Cash Grant", "estimated_krw_min": 6900000, "estimated_krw_max": 69000000, "cadence": {"en": "Rolling review (4–6 weeks)", "ko": "상시 롤링 심사 (4–6주 소요)"}, "next_review_date": "2026. 11. 19.", "apply_url": "https://mercatus.tfaforms.net/5099527", "prefilled_form_url": "https://mercatus.tfaforms.net/5099527?tfa_60=Byungchul&tfa_303=Lee&tfa_5=riscon.ai%40gmail.com&tfa_36=RISCON+Labs%3A+Training+human+ASI+auditors+%26+running+16+public+question-first+research+desks+with+a+26%2C000-agent+verification+swarm.&tfa_35=As+artificial+superintelligence+%28ASI%29+assumes+the+role+of+answering%2C+the+decisive+human+coordinate+is+the+ability+to+formulate+falsifiable+questions+and+audit+machine+judgments.+RISCON+Labs+%28https%3A%2F%2Frisconlabs.com%29+has+already+built+and+deployed+16+live%2C+bilingual+public+systems%E2%80%94spanning+self-represented+court+preparation+%28PRO+SE%29%2C+organizational+collapse+forensics+%28NADIR%2C+5%2C863+cases%29%2C+oncology+dry-lab+synthesis+%28IATHEON%29%2C+and+mechanical+hallucination+auditing+%28HALLUC-GATE%29%E2%80%94powered+by+a+1-person+orchestration+architecture+and+26%2C000+specialized+agents.&tfa_3019=%2415%2C000&tfa_3021=%2410%2C000+for+12-month+frontier+%26+batch+API+compute+across+all+16+public+RISCON+research+desks%3B+%245%2C000+for+open+benchmark+publication+and+L0-L6+human+ASI+auditor+training+cohorts+%28oa.risconlabs.com%29.&tfa_37=https%3A%2F%2Frisconlabs.com", "form_type": "TFA_FORM_PREFILL", "mapped_field_count": 8, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["risconlabs.com", "asi-2030.risconlabs.com", "oa.risconlabs.com", "creditharvest.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "상시 롤링 심사 (접수 후 4–6주 내 이메일 통지)", "sla_rule": "승인 통지 후 Mercatus Center 그랜트 수령 계좌(W-8BEN/Wire) 서류 제출", "affidavit_required": false, "reapply_interval_days": 90}, "fields": [{"key": "tfa_36", "label": "Your Idea in a Tweet (한 줄 핵심 요약)", "value": "RISCON Labs: Training human ASI auditors & running 16 public question-first research desks with a 26,000-agent verification swarm."}, {"key": "tfa_35", "label": "Proposal Narrative (본문 제안서)", "value": "As artificial superintelligence (ASI) assumes the role of answering, the decisive human coordinate is the ability to formulate falsifiable questions and audit machine judgments. RISCON Labs (https://risconlabs.com) has already built and deployed 16 live, bilingual public systems—spanning self-represented court preparation (PRO SE), organizational collapse forensics (NADIR, 5,863 cases), oncology dry-lab synthesis (IATHEON), and mechanical hallucination auditing (HALLUC-GATE)—powered by a 1-person orchestration architecture and 26,000 specialized agents."}, {"key": "tfa_3019", "label": "Estimated Budget (신청 예산)", "value": "$15,000"}, {"key": "tfa_3021", "label": "Breakdown of Expenses (예산 세부 내역)", "value": "$10,000 for 12-month frontier & batch API compute across all 16 public RISCON research desks; $5,000 for open benchmark publication and L0-L6 human ASI auditor training cohorts (oa.risconlabs.com)."}]}, {"num": "14", "id": "PROG-LTFF-AISAFETY", "slug": "ltff-ai-auditing", "provider": "Long-Term Future Fund (LTFF)", "program_name": "LTFF AI Safety & Auditing Research Grant", "category": {"en": "FELLOWSHIP & SOVEREIGN", "ko": "무지분 기금·바우처"}, "topic": {"en": "LTFF $100K AI Safety & Auditing", "ko": "LTFF $100K AI 안전·감사 기금"}, "world": {"en": "$10,000–$100,000+ non-dilutive cash grants for technical AI safety, evaluations & auditing", "ko": "AI 안전성·평가·감사 체계 연구를 위한 $10,000–$100,000+ 무지분 연구기금"}, "question": {"en": "How do we fund the L0–L6 Human ASI Auditor curriculum and sealed-vs-open judgment evaluations (ASI 2030)?", "ko": "ASI 2030의 열린 교정 대 봉인된 판단 시나리오와 L0–L6 감사자 사다리 표준화를 어떤 국제 기금으로 뒷받침할 것인가?"}, "credit_value": "$10,000–$100,000+ Non-Dilutive Cash Grant", "estimated_krw_min": 13800000, "estimated_krw_max": 138000000, "cadence": {"en": "Rolling / bi-monthly grant rounds (4–8 weeks)", "ko": "상시 접수 및 격월 심사 (4–8주 소요)"}, "next_review_date": "2026. 11. 30.", "apply_url": "https://funds.effectivealtruism.org/funds/far-future", "prefilled_form_url": "https://funds.effectivealtruism.org/funds/far-future", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 5, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["asi-2030.risconlabs.com", "archon.risconlabs.com", "hallucgate.risconlabs.com", "oa.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "상시 접수 후 펀드 매니저 배정 및 4–8주 내 지급 심사", "sla_rule": "승인 후 국제 송금/신원 확인 절차 완료 시 무지분 연구비 일시불 지급", "affidavit_required": false, "reapply_interval_days": 90}, "fields": [{"key": "ltff_summary", "label": "Project Summary (AI Auditing & Evaluation)", "value": "Developing and empirically testing the L0-L6 Human ASI Auditor framework (https://asi-2030.risconlabs.com/auditor) and mechanical Soft-Null Evasion detection (https://hallucgate.risconlabs.com) across frontier and batch LLM pipelines."}]}, {"num": "15", "id": "PROG-SFF-SPEC", "slug": "sff-speculation-grants", "provider": "Survival and Flourishing Fund (SFF)", "program_name": "SFF Speculation & S-Process Grants", "category": {"en": "FELLOWSHIP & SOVEREIGN", "ko": "무지분 기금·바우처"}, "topic": {"en": "SFF $150K Speculation Grant", "ko": "SFF $150K 생존·번영 기금"}, "world": {"en": "$10,000–$150,000+ fast-turnaround Speculation Grants & S-Process funding for AI governance", "ko": "AI 거버넌스·문명 시나리오 연구를 위한 $10,000–$150,000+ 패스트트랙 기금"}, "question": {"en": "How do we fund quarterly ASI 2030 scenario forks and institutional accountability protocols (ARCHON / Meridian)?", "ko": "분기별 ASI 2030 시나리오 분기점 연구와 기관 책임성 감사 프로토콜(ARCHON·Meridian)을 어떻게 지속 재원화할 것인가?"}, "credit_value": "$10,000–$150,000+ Non-Dilutive Cash Grant", "estimated_krw_min": 13800000, "estimated_krw_max": 207000000, "cadence": {"en": "Rolling Speculation Grants + Bi-annual S-Process", "ko": "상시 Speculation 그랜트 + 반기 정기 라운드"}, "next_review_date": "2026. 11. 16.", "apply_url": "https://survivalandflourishing.fund/", "prefilled_form_url": "https://survivalandflourishing.fund/", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 4, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["asi-2030.risconlabs.com", "aegis.risconlabs.com", "meridian.risconlabs.com", "archon.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "Speculation Grant 상시 심사 (2–4주) 및 S-Process 본심사 자동 연계", "sla_rule": "Speculation Grant 수령 시 차기 S-Process 본심사 자동 상정 혜택", "affidavit_required": false, "reapply_interval_days": 90}, "fields": [{"key": "sff_pitch", "label": "Speculation Grant Application Pitch", "value": "RISCON Labs operates 16 public scenario and governance auditing systems (https://risconlabs.com), mapping the 2026-2030 transition to ASI across open correction vs. sealed judgment poles (https://asi-2030.risconlabs.com)."}]}, {"num": "16", "id": "PROG-NIPA-HPC", "slug": "nipa-kcloud-tips", "provider": "NIPA (정보통신산업진흥원) / K-Startup", "program_name": "NIPA 고성능 컴퓨팅 & K-클라우드 데이터바우처", "category": {"en": "FELLOWSHIP & SOVEREIGN", "ko": "무지분 기금·바우처"}, "topic": {"en": "NIPA Korea Sovereign GPU Voucher", "ko": "NIPA 고성능 GPU·데이터바우처"}, "world": {"en": "KRW 20M–150M sovereign H100/A100 GPU compute & data processing vouchers", "ko": "2,000만~1.5억 원 상당의 국산 클라우드 H100/A100 GPU 임차 및 데이터 가공 바우처"}, "question": {"en": "How do we combine domestic sovereign GPU vouchers with global API credits for zero-out-of-pocket lab operations?", "ko": "국내 정부 GPU·데이터 바우처와 해외 프론티어 API 크레딧을 결합해 연구소 자부담 연산비를 어떻게 완전히 소거할 것인가?"}, "credit_value": "KRW 20,000,000–150,000,000 GPU/Data Voucher", "estimated_krw_min": 20000000, "estimated_krw_max": 150000000, "cadence": {"en": "Annual / Semi-annual & supplementary calls", "ko": "연간 본공고 및 상·하반기 수시 추가모집"}, "next_review_date": "2026. 11. 16.", "apply_url": "https://www.nipa.kr/", "prefilled_form_url": "https://www.nipa.kr/", "form_type": "PORTAL_DOSSIER", "mapped_field_count": 4, "http_status": 200, "verified_at": "2026. 10. 22.", "target_sites": ["iatheon.risconlabs.com", "hebe.risconlabs.com", "pro-se.risconlabs.com", "aegis.risconlabs.com"], "lifecycle": {"default_status": "READY_TO_SUBMIT", "review_rule": "공고 접수 후 서면·발표 평가 (약 3–4주) → 협약 체결 및 GPU 클라우드 할당", "sla_rule": "협약 후 분기별 GPU 가동률(80% 이상) 및 산출물 증빙 보고 자동 생성", "affidavit_required": false, "reapply_interval_days": 90}, "fields": [{"key": "kr_title", "label": "국문 과제명", "value": "프론티어-배치 교차검증(HALLUC-GATE) 기반 암 표적치료(IATHEON) 및 법률·안보 의사결정 감사 에이전트 고도화"}, {"key": "kr_summary", "label": "사업계획서 핵심 요약", "value": "리스콘 랩스가 실가동 중인 16개 연구·의사결정 감사 플랫폼(*.risconlabs.com)과 26,000개 에이전트 파이프라인의 대규모 배치 추론 및 3D 단백질 구조 분석 워크로드를 수행함."}]}], "live_sites": [{"num": "01", "name": "Meridian", "host": "meridian.risconlabs.com", "url": "https://meridian.risconlabs.com", "commit": "dc04c34", "verified": "2026. 10. 22.", "metric": "Decision tracking & invalidation triggers"}, {"num": "02", "name": "PRO SE", "host": "pro-se.risconlabs.com", "url": "https://pro-se.risconlabs.com", "commit": "c0b62f5", "verified": "2026. 10. 22.", "metric": "Self-represented litigation question board"}, {"num": "03", "name": "ASI 2030", "host": "asi-2030.risconlabs.com", "url": "https://asi-2030.risconlabs.com", "commit": "a394635", "verified": "2026. 10. 22.", "metric": "2030 scenario forks & L0–L6 auditor ladder"}, {"num": "04", "name": "AEGIS", "host": "aegis.risconlabs.com", "url": "https://aegis.risconlabs.com", "commit": "d8fa889", "verified": "2026. 10. 22.", "metric": "Defense, security & civil preparedness"}, {"num": "05", "name": "Skeptron", "host": "skeptron.risconlabs.com", "url": "https://skeptron.risconlabs.com", "commit": "ab84a2b", "verified": "2026. 10. 22.", "metric": "Signs, timing & pattern interpretation"}, {"num": "06", "name": "Dionyas", "host": "dionyas.risconlabs.com", "url": "https://dionyas.risconlabs.com", "commit": "live-200", "verified": "2026. 10. 22.", "metric": "Music market perception & vertical AI design"}, {"num": "07", "name": "WSTiger", "host": "wstiger.risconlabs.com", "url": "https://wstiger.risconlabs.com", "commit": "live-200", "verified": "2026. 10. 22.", "metric": "Market regimes, quant signals & invalidation"}, {"num": "08", "name": "ARCHON", "host": "archon.risconlabs.com", "url": "https://archon.risconlabs.com", "commit": "c457b6a", "verified": "2026. 10. 22.", "metric": "Institutional authority & exception auditing"}, {"num": "09", "name": "NADIR", "host": "nadir.risconlabs.com", "url": "https://nadir.risconlabs.com", "commit": "d0c558d", "verified": "2026. 10. 22.", "metric": "5,863 organizational decline cases"}, {"num": "10", "name": "GAEKJU", "host": "gaekju.risconlabs.com", "url": "https://gaekju.risconlabs.com", "commit": "1668e68", "verified": "2026. 10. 22.", "metric": "Workplace vernacular & bottom-up flaw records"}, {"num": "11", "name": "IATHEON", "host": "iatheon.risconlabs.com", "url": "https://iatheon.risconlabs.com", "commit": "live-200", "verified": "2026. 10. 22.", "metric": "Gastric & breast cancer targeted therapy dry-lab"}, {"num": "12", "name": "HEBE", "host": "hebe.risconlabs.com", "url": "https://hebe.risconlabs.com", "commit": "live-200", "verified": "2026. 10. 22.", "metric": "Obesity & hair-loss trial/structure dry-lab"}, {"num": "13", "name": "Cosmic Press", "host": "cosmic-press.risconlabs.com", "url": "https://cosmic-press.risconlabs.com", "commit": "live-200", "verified": "2026. 10. 22.", "metric": "Cross-scale research space"}, {"num": "14", "name": "ORDO", "host": "ordo.risconlabs.com", "url": "https://ordo.risconlabs.com", "commit": "ef47571", "verified": "2026. 10. 22.", "metric": "Procedural & structural order"}, {"num": "15", "name": "RISCON OA", "host": "oa.risconlabs.com", "url": "https://oa.risconlabs.com", "commit": "live-200", "verified": "2026. 10. 22.", "metric": "Auditor & question-architecture training"}, {"num": "16", "name": "CREDIT-HARVEST / HALLUC-GATE", "host": "creditharvest.risconlabs.com", "url": "https://creditharvest.risconlabs.com", "commit": "b603cbb", "verified": "2026. 10. 22.", "metric": "Autonomous compute treasury & mechanical gate"}], "inbound_presets": [{"id": "PRESET-ANTH-APPROVAL", "program_id": "PROG-ANTH-SCI", "label_en": "Anthropic Approval Notice (5-Day Reply + 14-Day Affidavit SLA)", "label_ko": "Anthropic 승인 통지 수신 (5영업일 회신 · 14일 Affidavit SLA 가동)", "sender": "science-program@anthropic.com", "subject": "Anthropic AI for Science — Application Update for RISCON Labs (IATHEON & HEBE)", "body": "Dear Byungchul Lee,\n\nCongratulations! Your application 'IATHEON & HEBE: Open Evidence-Unit & Structure-Grounded Dry-Lab Desks' has been selected for the Anthropic AI for Science Program ($20,000 in Claude API credits).\n\nIMPORTANT NEXT STEPS:\n1. Please reply to this email within 5 business days confirming your Anthropic Console Organization ID.\n2. Please complete and return the attached Biosecurity & Acceptable Use Compliance Affidavit within 14 calendar days.\n\nBest regards,\nAnthropic AI for Science Team"}, {"id": "PRESET-OPENAI-INFO", "program_id": "PROG-OPENAI-RES", "label_en": "OpenAI Reviewer Inquiry (Additional Benchmark & Repo Verification)", "label_ko": "OpenAI 심사역 추가 질의 (벤치마크 및 공개 저장소 증빙 요청)", "sender": "researcher-access@openai.com", "subject": "OpenAI Researcher Access Program — Additional Information Requested", "body": "Hello Byungchul Lee,\n\nWe are reviewing your application for the OpenAI Researcher Access Program regarding Cross-Model Sycophancy & Soft-Null Verification. Could you please share direct links to your live evaluation interface, your GitHub organization, and a brief breakdown of your expected monthly token volume?\n\nThank you,\nOpenAI Academic & Research Relations"}, {"id": "PRESET-CF-VERIFY", "program_id": "PROG-CF-STARTUP", "label_en": "Cloudflare Startups Verification (Account ID & Domain Check)", "label_ko": "Cloudflare 스타트업 실사 요청 (Account ID 및 도메인 확인)", "sender": "startups@cloudflare.com", "subject": "Cloudflare for Startups — Confirming Your Account ID & Active Zones", "body": "Hi RISCON Labs team,\n\nThanks for applying to Cloudflare for Startups. Before applying your startup credit tier, please reply with your 32-character Cloudflare Account ID, primary domain zone on Cloudflare DNS, and the list of active Workers currently running in production.\n\nBest,\nCloudflare Startup Program"}, {"id": "PRESET-CYCLE-ROLLOVER", "program_id": "PROG-ANTH-EXT", "label_en": "Monthly Cycle Rollover (Trigger Auto-Delta Re-application)", "label_ko": "월간 심사 코호트 이월 통지 (최신 Git 커밋 델타 자동 재접수)", "sender": "external-research@anthropic.com", "subject": "Status Update — Anthropic External Researcher Access Cohort", "body": "Dear Applicant,\n\nThank you for applying to the External Researcher Access program. Due to high volume in this month's review cycle, we were unable to fund all eligible proposals. Researchers with updated benchmarks or new public deployments are welcome to submit an updated application for the next monthly review window.\n\nSincerely,\nAnthropic Research Programs"}], "audit_runs": []}</script>
+
+  <main class="fx-main" id="main">
+
+    <section class="fx-hero" aria-labelledby="fx-statement">
+      <div class="fx-hero-top">
+        <p class="fx-eyebrow">
+          <span class="en-only">S99 CREDIT-HARVEST · S95 HALLUC-GATE · Verified 2026. 10. 22.</span>
+          <span class="ko-only">S99 크레딧 하베스트 · S95 무결성 게이트 · 실측 기준일 2026. 10. 22.</span>
+        </p>
+        <h1 class="fx-statement" id="fx-statement">
+          <span class="en-only">Frontier reverses.<br><span class="fx-quiet">Grants fund the batch.</span></span>
+          <span class="ko-only">프론티어가 역설계하고,<br><span class="fx-quiet">글로벌 크레딧이 연구소를 돌린다.</span></span>
+        </h1>
+        <p class="fx-hero-note en-only">An autonomous discovery, 1-click pre-filled submission, and post-submission SLA engine across 16 global non-dilutive compute &amp; grant programs—covering RISCON Labs’ 500K–700K KRW/month operating budget by 13.7x–250x.</p>
+        <p class="fx-hero-note ko-only">16대 글로벌 무지분 AI 크레딧·클라우드·연구기금 발굴부터 원클릭 자동입력 신청, 승인 후 5영업일 회신·14일 서약서(Affidavit) 사후관리, 그리고 비용 0원 기계적 환각 감사(HALLUC-GATE)까지 하나로 묶은 자율 재무·무결성 엔진입니다.</p>
+      </div>
+
+      <div class="fx-hero-center">
+        <div class="fx-pill fx-prompt" data-pill>
+          <div class="fx-pill-row">
+            <span class="fx-prompt-lead en-only">I want to harvest</span>
+            <button class="fx-topic" id="fx-topic" type="button" aria-controls="fx-card" aria-label="Show the center question and dossier for this funding program">
+              <span class="en-only">Anthropic $20K Science API</span>
+              <span class="ko-only">Anthropic $20K 과학 API</span>
+            </button>
+            <span class="fx-prompt-lead ko-only">를 발굴·신청·사후관리하고 싶다</span>
+            <button class="fx-more" type="button" data-pill-toggle aria-expanded="false" aria-controls="fx-prompt-panel" aria-label="Menu and settings">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+            </button>
+          </div>
+          <div class="fx-pill-panel" id="fx-prompt-panel" inert aria-hidden="true">
+            <div class="fx-pill-panel-inner">
+              <div class="fx-menu-links">
+                <a href="#main" aria-current="page"><small>00</small><span class="en-only">Overview</span><span class="ko-only">개요</span></a>
+                <a href="#radar"><small>01</small><span class="en-only">Discovery Radar (16)</span><span class="ko-only">발굴 레이더 (16)</span></a>
+                <a href="#dossiers"><small>02</small><span class="en-only">1-Click Pre-fill &amp; Dossiers</span><span class="ko-only">원클릭 자동입력·도시에</span></a>
+                <a href="#lifecycle"><small>03</small><span class="en-only">Post-Submission Lifecycle</span><span class="ko-only">신청 후 사후관리·SLA</span></a>
+                <a href="#halluc-gate"><small>04</small><span class="en-only">S95 Halluc-Gate Auditor</span><span class="ko-only">S95 무결성 게이트</span></a>
+              </div>
+              <div class="fx-settings">
+                <div class="fx-setting"><span class="fx-setting-name"><span class="en-only">Theme</span><span class="ko-only">테마</span></span><div class="fx-seg" role="group" aria-label="Theme"><button type="button" data-set-theme="system" aria-pressed="true"><span class="en-only">System</span><span class="ko-only">시스템</span></button><button type="button" data-set-theme="light" aria-pressed="false"><span class="en-only">Light</span><span class="ko-only">라이트</span></button><button type="button" data-set-theme="dark" aria-pressed="false"><span class="en-only">Dark</span><span class="ko-only">다크</span></button></div></div>
+                <div class="fx-setting"><span class="fx-setting-name"><span class="en-only">Language</span><span class="ko-only">언어</span></span><div class="fx-seg" role="group" aria-label="Language"><button type="button" data-set-lang="en" aria-pressed="false">EN</button><button type="button" data-set-lang="ko" aria-pressed="true">KR</button></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fx-chips is-strip" role="group" aria-label="16 Non-Dilutive Compute and Grant Programs">
+          <button class="fx-chip" type="button" data-site-chip aria-pressed="true"><span class="en-only">Anthropic $20K Science API</span><span class="ko-only">Anthropic $20K 과학 API</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">Anthropic Safety &amp; Alignment API</span><span class="ko-only">Anthropic 안전성·감사 API</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">OpenAI Researcher Access Credits</span><span class="ko-only">OpenAI 연구자 액세스 크레딧</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">Google Gemini Academic Quota</span><span class="ko-only">Google Gemini 학술 연구 쿼터</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">Cohere Command &amp; Embed Grant</span><span class="ko-only">Cohere 다국어 임베딩·추론 그랜트</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">Cloudflare $250K Edge &amp; Workers AI</span><span class="ko-only">Cloudflare $250K 엣지·워커 크레딧</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">AWS Activate $100K &amp; Bedrock</span><span class="ko-only">AWS Activate $100K·Bedrock</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">Microsoft $150K Azure OpenAI</span><span class="ko-only">Microsoft $150K Azure OpenAI</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">Google Cloud $350K Vertex AI</span><span class="ko-only">Google Cloud $350K Vertex AI</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">NVIDIA Inception &amp; DGX Cloud</span><span class="ko-only">NVIDIA Inception·DGX 클라우드</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">Modal $10K Serverless H100/A100</span><span class="ko-only">Modal $10K 서버리스 H100/A100</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">Hugging Face ZeroGPU H200 Grant</span><span class="ko-only">Hugging Face ZeroGPU H200 그랜트</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">Emergent Ventures $50K Cash Grant</span><span class="ko-only">Emergent Ventures $50K 무지분 기금</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">LTFF $100K AI Safety &amp; Auditing</span><span class="ko-only">LTFF $100K AI 안전·감사 기금</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">SFF $150K Speculation Grant</span><span class="ko-only">SFF $150K 생존·번영 기금</span></button><button class="fx-chip" type="button" data-site-chip aria-pressed="false"><span class="en-only">NIPA Korea Sovereign GPU Voucher</span><span class="ko-only">NIPA 고성능 GPU·데이터바우처</span></button>
+        </div>
+      </div>
+
+      <div class="fx-hero-bottom">
+        <div class="fx-card" id="fx-card" aria-live="polite">
+          <div class="fx-card-body">
+            <p class="fx-card-meta">
+              <span class="en-only" data-f="meta-en">01 · Anthropic AI for Science · Up to $20,000 Claude API</span>
+              <span class="ko-only" data-f="meta-ko">01 · Anthropic AI for Science · 최대 $20,000 Claude API</span>
+            </p>
+            <p class="fx-card-text">
+              <span class="en-only" data-f="text-en">Each cluster in the 3D field is one verified non-dilutive compute or grant program. Tap any ring or chip to inspect its question and launch 1-click pre-filled submission.</span>
+              <span class="ko-only" data-f="text-ko">3D 들판의 각 별 무리는 HTTP 200이 실측된 16개 글로벌 크레딧·연구기금입니다. 고리나 칩을 누르면 해당 프로그램의 원클릭 신청과 사후관리로 바로 연결됩니다.</span>
+            </p>
+          </div>
+          <a class="fx-card-link" href="#dossiers" data-select-prog="0">
+            <span class="en-only" data-f="link-en">1-Click Dossier ↓</span>
+            <span class="ko-only" data-f="link-ko">원클릭 신청·사후관리 ↓</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+        <div class="fx-modes">
+          <button class="fx-mode" type="button" data-mode="index" aria-haspopup="dialog" aria-controls="fx-index"><span class="en-only">Index (16)</span><span class="ko-only">색인 (16)</span></button>
+          <button class="fx-mode" type="button" data-mode="linear" aria-pressed="false"><span class="en-only">Linear</span><span class="ko-only">한 줄</span></button>
+        </div>
+      </div>
+
+      <a class="fx-cue" href="#read"><span class="en-only">Explore Discovery &amp; Lifecycle ↓</span><span class="ko-only">발굴 레이더·사후관리 열기 ↓</span></a>
     </section>
 
-    <nav class="tabs" role="tablist">
-      <button class="tab-btn active" data-tab="credit-harvest" type="button">
-        <span>01 · S93 CREDIT-HARVEST (8대 크레딧·그랜트 직통 신청)</span>
-        <span class="tab-badge">8 Ready</span>
-      </button>
-      <button class="tab-btn" data-tab="halluc-gate" type="button">
-        <span>02 · S95 HALLUC-GATE (실시간 Soft-Null &amp; 인용 기계 검수기)</span>
-        <span class="tab-badge">Live API</span>
-      </button>
-      <button class="tab-btn" data-tab="proof-of-work" type="button">
-        <span>03 · 16대 라이브 실증 사이트 &amp; 실험 원장 (Reviewer Proof)</span>
-        <span class="tab-badge">16 Sites</span>
-      </button>
+    <div class="fx-read fx-wrap" id="read">
+
+      <!-- Section 00: Architecture & 4 Doors -->
+      <section class="fx-section" aria-labelledby="h-pursue">
+        <div class="fx-section-head">
+          <span class="fx-label"><span class="en-only">00 · Autonomous Compute Treasury</span><span class="ko-only">00 · 자율 연구소 운영비 조달 체계</span></span>
+          <h2 class="fx-h2" id="h-pursue">
+            <span class="en-only">Discover, pre-fill, track SLAs, and gate every batch output.</span>
+            <span class="ko-only">발굴하고, 원클릭으로 신청하고, 승인 SLA까지 추적한다.</span>
+          </h2>
+        </div>
+        <div class="fx-section-body">
+          <p class="fx-bigtext">
+            <span class="en-only">To sustain 16 live public research desks and 26,000 agents on a 500,000–700,000 KRW monthly budget, RISCON Labs separates deep reverse-engineering (Frontier APIs funded by non-dilutive research grants) from high-volume synthesis (Flash/Batch models audited by mechanical gates).</span>
+            <span class="ko-only">월 50만~70만 원의 운영비로 16개 라이브 연구 데스크와 26,000개 에이전트를 상시 가동하기 위해, 리스콘 랩스는 고난도 역설계(무지분 연구기금으로 확보한 프론티어 API)와 대량 배치 생산(기계적 무결성 게이트가 검수하는 Flash 배치)을 결합합니다. 신청에서 끝나는 방치를 막기 위해 심사 일정·승인 후 5영업일 회신·14일 서약서(Affidavit)·자동 재접수 델타까지 전 과정을 자동 추적합니다.</span>
+          </p>
+
+          <div class="ch-kpis">
+            <div class="ch-kpi">
+              <span class="ch-kpi-label"><span class="en-only">Verified Programs</span><span class="ko-only">실측 발굴 프로그램</span></span>
+              <strong class="ch-kpi-val">16 Programs</strong>
+              <span class="ch-kpi-sub"><span class="en-only">100% HTTP 200 · 2026. 10. 22.</span><span class="ko-only">전수 HTTP 200 검증 · 2026. 10. 22.</span></span>
+            </div>
+            <div class="ch-kpi">
+              <span class="ch-kpi-label"><span class="en-only">1-Click Pre-fill Forms</span><span class="ko-only">원클릭 자동입력 폼</span></span>
+              <strong class="ch-kpi-val">54 Fields</strong>
+              <span class="ch-kpi-sub"><span class="en-only">Google Forms &amp; FormAssembly IDs</span><span class="ko-only">문항 ID 실측 매핑 완료</span></span>
+            </div>
+            <div class="ch-kpi">
+              <span class="ch-kpi-label"><span class="en-only">Non-Dilutive Pool</span><span class="ko-only">무지분 확보 가능 풀</span></span>
+              <strong class="ch-kpi-val">₩9,918만 – ₩19.2억</strong>
+              <span class="ch-kpi-sub"><span class="en-only">13.7x–266x Annual Lab OPEX</span><span class="ko-only">연간 목표 운영비의 13.7배~266배</span></span>
+            </div>
+            <div class="ch-kpi">
+              <span class="ch-kpi-label"><span class="en-only">Post-Gate Defect Rate</span><span class="ko-only">게이트 통과 후 결함률</span></span>
+              <strong class="ch-kpi-val" id="kpi-defect-rate">0.0%</strong>
+              <span class="ch-kpi-sub"><span class="en-only">170 / 500 Soft-Nulls Caught ($0 Cost)</span><span class="ko-only">500건 중 소프트-널 170건 차단 ($0)</span></span>
+            </div>
+          </div>
+
+          <ul class="fx-pillars">
+            <li class="fx-pillar">
+              <span class="fx-num">01</span>
+              <strong class="en-only">16-Cluster Discovery Radar</strong><strong class="ko-only">16대 글로벌 발굴 레이더</strong>
+              <p class="en-only">Continuously maps Frontier APIs (Anthropic, OpenAI, Gemini, Cohere), Cloud/Edge (Cloudflare, AWS, Azure, GCP), Serverless GPUs (NVIDIA, Modal, HF), and Zero-Equity Grants (Emergent Ventures, LTFF, SFF, NIPA).</p>
+              <p class="ko-only">프론티어 API 5종, 클라우드·엣지 4종, 서버리스 GPU 3종, 무지분 현금 그랜트 및 정부 바우처 4종을 리스콘 16개 도메인과 실시간 매칭합니다.</p>
+            </li>
+            <li class="fx-pillar">
+              <span class="fx-num">02</span>
+              <strong class="en-only">1-Click Pre-filled Forms</strong><strong class="ko-only">원클릭 자동입력 신청</strong>
+              <p class="en-only">Extracts exact Google Forms entry.XXXXXXXX and FormAssembly tfa_XXXX parameters so clicking opens the live application with all fields pre-populated.</p>
+              <p class="ko-only">실제 신청 폼의 내부 파라미터를 역설계해 버튼 한 번으로 과제명·초록·아키텍처·증빙 URL이 자동 채워진 신청 창을 엽니다.</p>
+            </li>
+            <li class="fx-pillar">
+              <span class="fx-num">03</span>
+              <strong class="en-only">SLA &amp; Email Triage Engine</strong><strong class="ko-only">신청 후 사후관리 &amp; 이메일 분류</strong>
+              <p class="en-only">Tracks monthly/quarterly review dates, enforces Anthropic’s 5-day acceptance &amp; 14-day Compliance Affidavit SLA, and auto-drafts replies to reviewer emails.</p>
+              <p class="ko-only">매월 첫째 주 월요일·분기별 심사일을 추적하고, 수신된 메일을 붙여넣으면 승인 수락(5영업일)·서약서(14일)·추가 증빙 회신문을 자동 생성합니다.</p>
+            </li>
+            <li class="fx-pillar">
+              <span class="fx-num">04</span>
+              <strong class="en-only">HALLUC-GATE (S95)</strong><strong class="ko-only">기계적 환각 차단 게이트</strong>
+              <p class="en-only">Blocks Soft-Null evasion (fix == original), missing source quotes, and schema leaks before any batch output reaches production.</p>
+              <p class="ko-only">배치 모델이 원문을 그대로 복사하는 소프트-널(fix == original)과 인용 누락을 LLM 비용 0원으로 전수 차단하고 SHA-256 영수증을 발행합니다.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="fx-section" aria-labelledby="h-doors">
+        <div class="fx-section-head">
+          <span class="fx-label"><span class="en-only">Four Operational Modules</span><span class="ko-only">네 가지 실행 워크벤치</span></span>
+          <h2 class="fx-h2" id="h-doors"><span class="en-only">From discovery to post-submission SLA</span><span class="ko-only">발굴부터 사후관리·무결성 검수까지</span></h2>
+        </div>
+        <div class="fx-section-body">
+          <div class="fx-doors">
+            <a class="fx-door is-ink" href="#radar">
+              <span class="fx-door-top">01 // DISCOVERY RADAR</span>
+              <div>
+                <h3 class="en-only">16 Global Programs</h3>
+                <h3 class="ko-only">16대 기금 발굴 레이더</h3>
+                <p class="en-only">Filter 16 HTTP-200-verified compute and grant programs by category or target RISCON family site.</p>
+                <p class="ko-only">프론티어 API·클라우드·GPU·무지분 기금 16개를 분야별·패밀리 사이트별로 필터링하고 호환성을 진단합니다.</p>
+              </div>
+              <span class="fx-door-link"><span class="en-only">Open Radar</span><span class="ko-only">레이더 열기</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+            </a>
+            <a class="fx-door is-accent" href="#dossiers">
+              <span class="fx-door-top">02 // 1-CLICK SUBMIT</span>
+              <div>
+                <h3 class="en-only">Pre-filled Forms</h3>
+                <h3 class="ko-only">원클릭 자동입력 도시에</h3>
+                <p class="en-only">Inject your Organization ID once and launch pre-populated Google Forms &amp; FormAssembly applications in one click.</p>
+                <p class="ko-only">Organization ID와 이메일을 한 번 입력하면 54개 실측 폼 필드에 즉시 주입되어 원클릭 신청 링크를 생성합니다.</p>
+              </div>
+              <span class="fx-door-link"><span class="en-only">Launch Submitter</span><span class="ko-only">신청기 열기</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+            </a>
+            <a class="fx-door is-paper" href="#lifecycle">
+              <span class="fx-door-top">03 // LIFECYCLE &amp; SLA</span>
+              <div>
+                <h3 class="en-only">Post-Submission AI</h3>
+                <h3 class="ko-only">신청 후 사후관리 엔진</h3>
+                <p class="en-only">Track review windows, 5-day acceptance SLAs, 14-day Compliance Affidavits, inbound email replies, and live git deltas.</p>
+                <p class="ko-only">신청 상태 추적, 심사역 수신 이메일 자동 분석·회신문 작성, 차기 코호트 자동 재접수 델타 패키지를 생성합니다.</p>
+              </div>
+              <span class="fx-door-link"><span class="en-only">Manage Lifecycle</span><span class="ko-only">사후관리 열기</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+            </a>
+            <a class="fx-door is-glass" href="#halluc-gate">
+              <span class="fx-door-top">04 // HALLUC-GATE</span>
+              <div>
+                <h3 class="en-only">Mechanical Gate</h3>
+                <h3 class="ko-only">기계적 무결성 게이트</h3>
+                <p class="en-only">Zero-LLM-cost JSONL batch verifier catching Soft-Null evasion and missing source quotes with SHA-256 receipts.</p>
+                <p class="ko-only">배치 산출물의 소프트-널(원문 복사) 회피와 인용 누락을 비용 0원으로 검출하고 암호화 영수증을 발급합니다.</p>
+              </div>
+              <span class="fx-door-link"><span class="en-only">Run Gate Audit</span><span class="ko-only">검수기 열기</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="fx-passage" data-passage="nebula" data-seed="1.7" aria-hidden="true"></div>
+
+      <!-- Section 01: Expanded 16-Program Discovery Radar -->
+      <section class="fx-section fx-section--stack" id="radar" aria-labelledby="h-radar">
+        <div class="fx-section-head">
+          <span class="fx-label">01 · <span class="en-only">Global Non-Dilutive Compute &amp; Grant Discovery Radar</span><span class="ko-only">16대 글로벌 무지분 크레딧·연구기금 발굴 레이더</span></span>
+          <h2 class="fx-h2" id="h-radar">
+            <span class="en-only">16 verified funding streams matched to RISCON’s 16 live desks.</span>
+            <span class="ko-only">리스콘 16개 라이브 데스크와 매칭된 16개 실측 크레딧·그랜트</span>
+          </h2>
+        </div>
+        <div class="fx-section-body">
+          <div class="ch-bar">
+            <div class="ch-filters" role="group" aria-label="Filter programs by category">
+              <button type="button" class="ch-filter-btn" data-radar-cat="ALL" aria-pressed="true"><span class="en-only">All (16)</span><span class="ko-only">전체 (16)</span></button>
+              <button type="button" class="ch-filter-btn" data-radar-cat="FRONTIER API" aria-pressed="false"><span class="en-only">Frontier API (5)</span><span class="ko-only">프론티어 API (5)</span></button>
+              <button type="button" class="ch-filter-btn" data-radar-cat="CLOUD & EDGE" aria-pressed="false"><span class="en-only">Cloud &amp; Edge (4)</span><span class="ko-only">클라우드·엣지 (4)</span></button>
+              <button type="button" class="ch-filter-btn" data-radar-cat="GPU COMPUTE" aria-pressed="false"><span class="en-only">Serverless GPU (3)</span><span class="ko-only">GPU 연산 (3)</span></button>
+              <button type="button" class="ch-filter-btn" data-radar-cat="FELLOWSHIP & SOVEREIGN" aria-pressed="false"><span class="en-only">Cash Grants &amp; Vouchers (4)</span><span class="ko-only">무지분 기금·바우처 (4)</span></button>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;min-width:240px;">
+              <label for="radar-site-select" class="fx-sr">Filter by RISCON family site</label>
+              <select id="radar-site-select" class="ch-select">
+                <option value="ALL">모든 패밀리 사이트 호환 보기 (16개 데스크)</option>
+                <option value="iatheon.risconlabs.com">IATHEON (위암·유방암 표적치료 드라이랩)</option>
+                <option value="hebe.risconlabs.com">HEBE (비만·탈모 임상·구조 드라이랩)</option>
+                <option value="asi-2030.risconlabs.com">ASI 2030 (시나리오 &amp; L0–L6 감사자 훈련)</option>
+                <option value="pro-se.risconlabs.com">PRO SE (나홀로 소송 질문판)</option>
+                <option value="aegis.risconlabs.com">AEGIS (국방·안보·민간 대비)</option>
+                <option value="nadir.risconlabs.com">NADIR (5,863건 조직 쇠락 아카이브)</option>
+                <option value="meridian.risconlabs.com">Meridian (결정 전 과정 추적)</option>
+                <option value="archon.risconlabs.com">ARCHON (조직 결정·책임 구조 감사)</option>
+                <option value="hallucgate.risconlabs.com">HALLUC-GATE (기계적 무결성 게이트)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="ch-radar-grid" id="radar-grid"></div>
+        </div>
+      </section>
+
+      <!-- Section 02: 1-Click Pre-filled Submitter & Dossier Workbench -->
+      <section class="fx-section fx-section--stack" id="dossiers" aria-labelledby="h-dossiers">
+        <div class="fx-section-head">
+          <span class="fx-label">02 · <span class="en-only">1-Click Pre-filled Form Launcher &amp; Submission Dossiers</span><span class="ko-only">원클릭 자동입력 폼 런처 &amp; 프로그램별 신청 도시에</span></span>
+          <h2 class="fx-h2" id="h-dossiers">
+            <span class="en-only">Inject your Organization ID once. Open live forms pre-filled.</span>
+            <span class="ko-only">Organization ID 한 번 입력으로 실제 신청 폼에 모든 문항을 자동 채운다.</span>
+          </h2>
+        </div>
+        <div class="fx-section-body">
+          <div class="fx-panel" style="margin-bottom:16px;">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;align-items:end;">
+              <div>
+                <label for="inj-org-id" class="ch-kpi-label" style="display:block;margin-bottom:6px;">
+                  <span class="en-only">Anthropic / OpenAI Organization ID</span>
+                  <span class="ko-only">Anthropic / OpenAI Organization ID (자동 주입)</span>
+                </label>
+                <input id="inj-org-id" type="text" class="ch-input" value="ORG-ID-FROM-CONSOLE-ANTHROPIC-COM" placeholder="e.g. org-xxxxxxxxxxxxxxxx" />
+              </div>
+              <div>
+                <label for="inj-email" class="ch-kpi-label" style="display:block;margin-bottom:6px;">
+                  <span class="en-only">Principal Investigator Email</span>
+                  <span class="ko-only">책임연구자(PI) 이메일 (폼 &amp; 회신문 연동)</span>
+                </label>
+                <input id="inj-email" type="email" class="ch-input" value="riscon.ai@gmail.com" />
+              </div>
+              <div>
+                <label for="inj-gcp" class="ch-kpi-label" style="display:block;margin-bottom:6px;">
+                  <span class="en-only">Cloudflare Account ID / GCP Billing Project</span>
+                  <span class="ko-only">Cloudflare Account ID / 클라우드 프로젝트</span>
+                </label>
+                <input id="inj-gcp" type="text" class="ch-input" value="10f6645e0670c6c05258cf5e0345121b" />
+              </div>
+              <div>
+                <button type="button" id="btn-apply-injector" class="ch-btn is-primary" style="width:100%;">
+                  <span class="en-only">Update All 16 Pre-filled Links</span>
+                  <span class="ko-only">16개 전체 신청 폼 링크에 즉시 반영</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="ch-workbench">
+            <div class="ch-list" id="dossier-nav" role="tablist" aria-label="16 Grant Dossiers"></div>
+            <div class="fx-panel" id="dossier-detail" role="tabpanel" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="fx-passage" data-passage="cluster" data-seed="3.4" aria-hidden="true"></div>
+
+      <!-- Section 03: Post-Submission Lifecycle, SLA Tracker & Inbound Email Triage -->
+      <section class="fx-section fx-section--stack" id="lifecycle" aria-labelledby="h-lifecycle">
+        <div class="fx-section-head">
+          <span class="fx-label">03 · <span class="en-only">Post-Submission Lifecycle, SLA Countdown &amp; Inbound Email Triage</span><span class="ko-only">신청 후 사후관리 · 승인 SLA 추적 · 수신 이메일 자동 응대 엔진</span></span>
+          <h2 class="fx-h2" id="h-lifecycle">
+            <span class="en-only">Never drop a grant after applying: track review windows, 5-day SLAs, and auto-draft replies.</span>
+            <span class="ko-only">신청 후 방치 제로: 심사일·5영업일 수락·14일 서약서·이월 재접수까지 자동 관리한다.</span>
+          </h2>
+        </div>
+        <div class="fx-section-body">
+          <div class="ch-kpis" id="lifecycle-kpis">
+            <div class="ch-kpi">
+              <span class="ch-kpi-label">READY TO SUBMIT (신청 대기)</span>
+              <strong class="ch-kpi-val" id="lc-count-ready">16</strong>
+              <span class="ch-kpi-sub">원클릭 폼 및 도시에 준비 완료</span>
+            </div>
+            <div class="ch-kpi">
+              <span class="ch-kpi-label">SUBMITTED / UNDER REVIEW (심사 중)</span>
+              <strong class="ch-kpi-val" id="lc-count-review">0</strong>
+              <span class="ch-kpi-sub">차기 정기 심사일: 2026. 11. 2.</span>
+            </div>
+            <div class="ch-kpi">
+              <span class="ch-kpi-label">5-DAY / 14-DAY SLA PENDING (서약 대기)</span>
+              <strong class="ch-kpi-val" id="lc-count-sla">0</strong>
+              <span class="ch-kpi-sub">Anthropic 5영업일 회신·14일 서약서</span>
+            </div>
+            <div class="ch-kpi">
+              <span class="ch-kpi-label">APPROVED / DELTA RE-APPLY (승인·재접수)</span>
+              <strong class="ch-kpi-val" id="lc-count-approved">0</strong>
+              <span class="ch-kpi-sub">라이브 커밋 델타 자동 갱신 연동</span>
+            </div>
+          </div>
+
+          <div class="ch-table-wrap" style="margin-bottom:20px;">
+            <table class="ch-table" aria-label="16 Program Post-Submission Lifecycle Tracker">
+              <thead>
+                <tr>
+                  <th>번호·프로그램</th>
+                  <th>지원 규모</th>
+                  <th>현재 사후관리 상태 (클릭하여 전환)</th>
+                  <th>차기 심사일 / 마감일</th>
+                  <th>필수 사후관리 SLA 규칙</th>
+                  <th>빠른 실행</th>
+                </tr>
+              </thead>
+              <tbody id="lifecycle-tbody"></tbody>
+            </table>
+          </div>
+
+          <!-- Inbound Email Triage & Auto-Responder + Live Git Delta Compiler -->
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;">
+            <div class="fx-panel">
+              <span class="fx-label">POST /api/inbound-email · INBOUND GRANT EMAIL TRIAGE</span>
+              <h3 class="ch-prog-title" style="margin-top:0;">수신 이메일 자동 분석 &amp; 즉시 회신문 생성기</h3>
+              <p class="ch-prog-q" style="margin-bottom:12px;">
+                Anthropic·OpenAI·Cloudflare·AWS 등으로부터 받은 이메일(승인 통지, 서약서 요청, 추가 증빙 요청, 코호트 이월 통지)을 붙여넣거나 아래 시나리오 프리셋을 누르면, 필요한 SLA 마감일과 영문/국문 회신문을 즉시 작성합니다.
+              </p>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;" id="preset-buttons"></div>
+              <div style="display:grid;gap:8px;margin-bottom:12px;">
+                <label for="email-subject" class="fx-sr">Email Subject</label>
+                <input id="email-subject" type="text" class="ch-input" value="Anthropic AI for Science — Application Update for RISCON Labs (IATHEON &amp; HEBE)" placeholder="이메일 제목 (Subject)" />
+                <label for="email-body" class="fx-sr">Email Body</label>
+                <textarea id="email-body" class="ch-textarea">Dear Byungchul Lee,
+
+Congratulations! Your application &#x27;IATHEON &amp; HEBE: Open Evidence-Unit &amp; Structure-Grounded Dry-Lab Desks&#x27; has been selected for the Anthropic AI for Science Program ($20,000 in Claude API credits).
+
+IMPORTANT NEXT STEPS:
+1. Please reply to this email within 5 business days confirming your Anthropic Console Organization ID.
+2. Please complete and return the attached Biosecurity &amp; Acceptable Use Compliance Affidavit within 14 calendar days.
+
+Best regards,
+Anthropic AI for Science Team</textarea>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <button type="button" id="btn-run-triage" class="ch-btn is-primary">이메일 분석 &amp; 회신문 자동 생성 (POST /api/inbound-email)</button>
+                <button type="button" id="btn-run-delta" class="ch-btn">차기 심사 재접수용 Git 커밋 델타 생성 (POST /api/reapply-delta)</button>
+              </div>
+            </div>
+
+            <div class="fx-panel" id="triage-output" aria-live="polite">
+              <span class="fx-label">TRIAGE &amp; AUTO-RESPONSE OUTPUT</span>
+              <h3 class="ch-prog-title" style="margin-top:0;" id="triage-title">대기 중 — 좌측에서 이메일 분석 또는 프리셋을 실행하세요</h3>
+              <p class="ch-prog-q" id="triage-summary">실행 시 SLA 기한(5영업일 회신 · 14일 Compliance Affidavit), 체크리스트, 그리고 복사 가능한 영문 회신문이 이곳에 표시됩니다.</p>
+              <ul id="triage-checklist" style="margin:12px 0;padding-left:20px;font-size:14px;line-height:22px;"></ul>
+              <div class="ch-field-box" style="margin-top:12px;">
+                <div class="ch-field-head">
+                  <span class="ch-field-label">생성된 회신문 / 재접수 델타 브리프</span>
+                  <button type="button" id="btn-copy-reply" class="ch-btn">전문 복사</button>
+                </div>
+                <pre class="ch-field-val" id="triage-reply-box" style="margin:0;font-family:var(--fx-sans);">좌측 '이메일 분석 &amp; 회신문 자동 생성' 버튼을 누르면 즉시 생성됩니다.</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 04: S95 HALLUC-GATE Mechanical Soft-Null & Citation Integrity Auditor -->
+      <section class="fx-section fx-section--stack" id="halluc-gate" aria-labelledby="h-gate">
+        <div class="fx-section-head">
+          <span class="fx-label">04 · <span class="en-only">S95 HALLUC-GATE · Zero-LLM-Cost Mechanical Soft-Null &amp; Citation Auditor</span><span class="ko-only">S95 HALLUC-GATE · 비용 0원 기계적 소프트-널 &amp; 인용 무결성 게이트</span></span>
+          <h2 class="fx-h2" id="h-gate">
+            <span class="en-only">Audit batch JSONL outputs for Soft-Null evasion before publishing.</span>
+            <span class="ko-only">배치 산출물의 원문 복사(Soft-Null)와 인용 누락을 비용 0원으로 전수 차단한다.</span>
+          </h2>
+        </div>
+        <div class="fx-section-body">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;">
+            <div class="fx-panel">
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;">
+                <span class="ch-field-label">JSON / JSONL 배치 검수 입력 (`POST /api/audit`)</span>
+                <div style="display:flex;gap:6px;">
+                  <button type="button" class="ch-btn" id="btn-gate-defect">결함 표본 로드 (Soft-Null 포함)</button>
+                  <button type="button" class="ch-btn" id="btn-gate-clean">무결점 표본 로드 (PASS)</button>
+                </div>
+              </div>
+              <label for="gate-input" class="fx-sr">JSONL Payload to Audit</label>
+              <textarea id="gate-input" class="ch-textarea mono-code" style="min-height:190px;"></textarea>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;">
+                <label style="font-size:14px;font-weight:600;">최대 허용 글자수 (`max_len`): <input id="gate-maxlen" type="number" class="ch-input" value="95" style="width:90px;display:inline-block;margin-left:6px;" /></label>
+                <button type="button" id="btn-gate-run" class="ch-btn is-primary">실시간 기계적 무결성 검수 실행</button>
+              </div>
+            </div>
+
+            <div class="fx-panel" id="gate-result-panel" aria-live="polite">
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px;">
+                <span class="ch-badge is-navy" id="gate-verdict-badge">PASS_CERTIFIED</span>
+                <span class="mono-code" id="gate-receipt-id">HG-20261022-READY</span>
+              </div>
+              <div class="ch-kpis" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:12px;">
+                <div class="ch-kpi">
+                  <span class="ch-kpi-label">통과 / 전체 레코드</span>
+                  <strong class="ch-kpi-val" id="gate-stat-pass">3 / 3</strong>
+                </div>
+                <div class="ch-kpi">
+                  <span class="ch-kpi-label">소프트-널 / 인용누락 / 길이초과</span>
+                  <strong class="ch-kpi-val" id="gate-stat-defects">0 / 0 / 0</strong>
+                </div>
+              </div>
+              <p style="margin:0 0 8px;font-size:12px;line-height:17px;font-weight:600;color:var(--fx-mute);">
+                SHA-256: <span class="mono-code" id="gate-sha256">-</span>
+              </p>
+              <div id="gate-defect-list" style="display:grid;gap:6px;font-size:14px;line-height:22px;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <nav class="fx-next fx-wrap" aria-label="Next destination">
+      <a class="fx-next-link" href="https://risconlabs.com">
+        <span class="fx-label"><span class="en-only">RISCON Labs Ecosystem</span><span class="ko-only">리스콘 랩스 생태계</span> · 16 Live Desks</span>
+        <span class="fx-next-title"><span class="en-only">RISCON Labs</span><span class="ko-only">리스콘 랩스 홈</span><span class="fx-next-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></span>
+        <span class="fx-next-text en-only">Return to the central field of sixteen public question-first research sites.</span>
+        <span class="fx-next-text ko-only">이 크레딧 트레저리와 무결성 게이트가 뒷받침하는 16개 공개 질문 연구 사이트의 중심 들판으로 이동합니다.</span>
+      </a>
     </nav>
 
-    <!-- TAB 1: CREDIT-HARVEST -->
-    <section class="tab-panel active" id="panel-credit-harvest">
-      <div class="filter-row">
-        <div class="chip-group" id="category-filters">
-          <button class="pill-btn active" data-cat="ALL" type="button">전체 (8)</button>
-          <button class="pill-btn" data-cat="API_CREDITS" type="button">AI API 크레딧 (4)</button>
-          <button class="pill-btn" data-cat="CLOUD_CREDITS" type="button">클라우드 인프라 (2)</button>
-          <button class="pill-btn" data-cat="CASH_GRANT" type="button">비희석 현금 연구기금 (1)</button>
-          <button class="pill-btn" data-cat="COMPUTE_AND_VOUCHER_KR" type="button">국내 GPU·바우처 (1)</button>
-        </div>
-        <div class="mono" style="font-size:0.78rem;color:var(--text-muted);">
-          각 카드의 [원클릭 복사용 신청서 열기]를 누르면 항목별 복사 후 직통 폼에 바로 붙여넣을 수 있습니다.
-        </div>
-      </div>
-      <div class="program-grid" id="program-grid"></div>
-    </section>
-
-    <!-- TAB 2: HALLUC-GATE -->
-    <section class="tab-panel" id="panel-halluc-gate">
-      <div class="studio-grid">
-        <div class="panel-box">
-          <h3>S95 HALLUC-GATE — V8/V10/V12 기계 검수 엔진 (`POST /api/audit`)</h3>
-          <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:0.8rem;">
-            LLM 토큰 비용 0원으로 ① <strong>V10 Soft-Null 도피(`fix == original` 원문 복사)</strong>, ② <strong>인용 근거(`source_quote`) 누락</strong>, ③ <strong>V8 95자 길이 초과</strong>, ④ <strong>`findings` 배열 오염 유출</strong>을 즉시 적발하고 SHA-256 감사 영수증을 발행합니다.
-          </p>
-          <div class="chip-group" style="margin-bottom:0.5rem;">
-            <button class="pill-btn active" id="preset-pass" type="button">샘플 A: V10 합격 배치 (PASS)</button>
-            <button class="pill-btn" id="preset-fail" type="button">샘플 B: Soft-Null &amp; 결함 적발 배치 (REJECT)</button>
-          </div>
-          <textarea class="code-input" id="audit-input" spellcheck="false"></textarea>
-          <div style="margin-top:0.85rem;display:flex;gap:0.65rem;align-items:center;flex-wrap:wrap;">
-            <button class="btn btn-primary" id="run-audit-btn" type="button">⚡ 실시간 기계 게이트 검수 실행 (/api/audit)</button>
-            <span class="mono" style="font-size:0.76rem;color:var(--text-muted);">LLM Cost: ₩0 (Deterministic Edge Worker)</span>
-          </div>
-        </div>
-
-        <div class="panel-box">
-          <h3>기계 감사 판정서 &amp; SHA-256 영수증 (Audit Receipt)</h3>
-          <p style="font-size:0.84rem;color:var(--text-muted);">
-            검수를 통과한 배치(`PASS_CERTIFIED`)만 본 코퍼스로 조립되며, 탈락분(`REJECT_RETURN_TO_SPARK`)은 5-tuple 재교정 큐로 자동 반송됩니다.
-          </p>
-          <div class="receipt-box" id="audit-output">
-            검수 대기 중... 좌측에서 [실시간 기계 게이트 검수 실행] 버튼을 눌러주세요.
-          </div>
-
-          <h3 style="margin-top:1.5rem;">무인 셀프-체크아웃 마이크로 B2B 수익 트랙 (월 83.2만 원 목표)</h3>
-          <div id="b2b-list" style="display:flex;flex-direction:column;gap:0.65rem;margin-top:0.65rem;"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 3: PROOF OF WORK ATLAS -->
-    <section class="tab-panel" id="panel-proof-of-work">
-      <div class="panel-box" style="margin-bottom:1.25rem;">
-        <h3>RISCON Empirical Benchmark Summary (`EXPERIMENT_LOG.md` · 2026-10-12)</h3>
-        <div id="empirical-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.85rem;margin-top:0.85rem;"></div>
-      </div>
-
-      <div class="table-wrap">
-        <table class="atlas-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Site</th>
-              <th>Production URL</th>
-              <th>GitHub Repo &amp; Commit (`2026-10-22`)</th>
-              <th>Verified Corpus &amp; Scale Metrics</th>
-            </tr>
-          </thead>
-          <tbody id="sites-tbody"></tbody>
-        </table>
-      </div>
-    </section>
   </main>
 
-  <!-- Copy-Paste Dossier Modal -->
-  <div class="modal-backdrop" id="dossier-modal" role="dialog" aria-modal="true">
-    <div class="modal">
-      <div class="modal-head">
-        <div>
-          <div class="mono" id="modal-slot" style="font-size:0.75rem;color:var(--accent);"></div>
-          <h3 id="modal-title" style="font-size:1.15rem;margin-top:0.15rem;"></h3>
-        </div>
-        <div style="display:flex;gap:0.5rem;">
-          <a class="btn btn-primary" id="modal-form-link" href="#" target="_blank" rel="noopener">직통 신청 폼 열기 ↗</a>
-          <button class="btn" id="modal-close" type="button">닫기 ✕</button>
-        </div>
+  <!-- Index Dialog (16 Funding Clusters) -->
+  <div class="fx-index" id="fx-index" role="dialog" aria-modal="true" aria-labelledby="fx-index-title" aria-hidden="true" tabindex="-1" inert>
+    <div class="fx-index-head">
+      <p class="fx-index-title" id="fx-index-title">
+        <span class="en-only">Index — 16 Non-Dilutive Compute &amp; Grant Programs</span>
+        <span class="ko-only">색인 — 16대 글로벌 무지분 크레딧·연구기금</span>
+      </p>
+      <div class="fx-index-nav">
+        <span class="fx-label fx-index-count" data-index-count>01 / 16</span>
+        <button class="fx-inav" type="button" data-index-step="-1" disabled><span class="fx-sr"><span class="en-only">Previous</span><span class="ko-only">이전</span></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3.5 5.5 8l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="fx-inav" type="button" data-index-step="1"><span class="fx-sr"><span class="en-only">Next</span><span class="ko-only">다음</span></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
-      <div class="modal-body" id="modal-fields"></div>
     </div>
+    <div class="fx-index-row">
+      <a class="fx-icard is-ink" href="#dossiers" data-index-prog="0" style="--i:0"><span class="fx-icard-top"><span>01</span><span class="en-only">FRONTIER API</span><span class="ko-only">프론티어 API</span></span><div><h3 class="fx-icard-name">Anthropic</h3></div><p class="fx-icard-q en-only">“How do we fund 6 months of zero-hallucination oncology (IATHEON) and metabolic (HEBE) evidence synthesis?”</p><p class="fx-icard-q ko-only">“위암·유방암 표적치료(IATHEON)와 비만·탈모(HEBE) 드라이랩의 6개월 무환각 근거 합성을 어떻게 무상 조달할 것인가?”</p><span class="fx-icard-foot"><span>Up to $20,000 Claude API Credits</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-paper" href="#dossiers" data-index-prog="1" style="--i:1"><span class="fx-icard-top"><span>02</span><span class="en-only">FRONTIER API</span><span class="ko-only">프론티어 API</span></span><div><h3 class="fx-icard-name">Anthropic</h3></div><p class="fx-icard-q en-only">“How do we benchmark L0–L6 human ASI auditor protocols and soft-null detection across frontier models?”</p><p class="fx-icard-q ko-only">“L0–L6 인간 ASI 감사자 훈련과 소프트-널(Soft-Null) 환각 검출을 프론티어 모델에서 어떻게 실측할 것인가?”</p><span class="fx-icard-foot"><span>$1,000–$10,000+ Claude API Credits</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-accent" href="#dossiers" data-index-prog="2" style="--i:2"><span class="fx-icard-top"><span>03</span><span class="en-only">FRONTIER API</span><span class="ko-only">프론티어 API</span></span><div><h3 class="fx-icard-name">OpenAI</h3></div><p class="fx-icard-q en-only">“How do we cross-audit OpenAI reasoning models against Claude on legal (PRO SE) and defense (AEGIS) scenarios?”</p><p class="fx-icard-q ko-only">“나홀로 소송(PRO SE)과 국방 대비(AEGIS) 시나리오에서 이종 프론티어 모델 간 교차 감사를 어떻게 수행할 것인가?”</p><span class="fx-icard-foot"><span>$1,000–$10,000+ OpenAI API Credits</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-glass" href="#dossiers" data-index-prog="3" style="--i:3"><span class="fx-icard-top"><span>04</span><span class="en-only">FRONTIER API</span><span class="ko-only">프론티어 API</span></span><div><h3 class="fx-icard-name">Google DeepMind / Google</h3></div><p class="fx-icard-q en-only">“How do we scale 1M-token bilingual corpus verification across all 16 RISCON desks at zero marginal cost?”</p><p class="fx-icard-q ko-only">“16개 리스콘 연구 데스크의 100만 토큰 한·영 코퍼스 교차 검증을 어떻게 한계비용 0원으로 확장할 것인가?”</p><span class="fx-icard-foot"><span>Paid-Tier Gemini API Quota &amp; High RPM</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-ink" href="#dossiers" data-index-prog="4" style="--i:4"><span class="fx-icard-top"><span>05</span><span class="en-only">FRONTIER API</span><span class="ko-only">프론티어 API</span></span><div><h3 class="fx-icard-name">Cohere For AI</h3></div><p class="fx-icard-q en-only">“How do we index and rerank 5,863 Korean/English organizational collapse cases (NADIR) and workplace vernacular (GAEKJU)?”</p><p class="fx-icard-q ko-only">“5,863건의 조직 쇠락 사례(NADIR)와 현장 실무자 발화(GAEKJU)를 한·영 다국어 임베딩으로 어떻게 정밀 색인할 것인가?”</p><span class="fx-icard-foot"><span>$2,000–$10,000 Command/Embed/Rerank API</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-paper" href="#dossiers" data-index-prog="5" style="--i:5"><span class="fx-icard-top"><span>06</span><span class="en-only">CLOUD &amp; EDGE</span><span class="ko-only">클라우드·엣지</span></span><div><h3 class="fx-icard-name">Cloudflare</h3></div><p class="fx-icard-q en-only">“How do we run all 16+ RISCON family sites and edge inference on Cloudflare at zero hosting cost?”</p><p class="fx-icard-q ko-only">“16개 이상의 리스콘 패밀리 사이트와 엣지 추론 인프라를 어떻게 호스팅 비용 0원으로 영구 가동할 것인가?”</p><span class="fx-icard-foot"><span>$5,000–$250,000 Cloudflare Credits</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-accent" href="#dossiers" data-index-prog="6" style="--i:6"><span class="fx-icard-top"><span>07</span><span class="en-only">CLOUD &amp; EDGE</span><span class="ko-only">클라우드·엣지</span></span><div><h3 class="fx-icard-name">Amazon Web Services</h3></div><p class="fx-icard-q en-only">“How do we secure secondary Claude &amp; Llama inference routes via Amazon Bedrock with non-dilutive startup credits?”</p><p class="fx-icard-q ko-only">“Amazon Bedrock을 통한 Claude·Llama 이중화 추론 경로와 연산 자원을 무지분 크레딧으로 어떻게 확보할 것인가?”</p><span class="fx-icard-foot"><span>$1,000–$100,000 AWS &amp; Bedrock Credits</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-glass" href="#dossiers" data-index-prog="7" style="--i:7"><span class="fx-icard-top"><span>08</span><span class="en-only">CLOUD &amp; EDGE</span><span class="ko-only">클라우드·엣지</span></span><div><h3 class="fx-icard-name">Microsoft</h3></div><p class="fx-icard-q en-only">“How do we power high-throughput enterprise governance audits (ARCHON) and decision tracking (Meridian) on Azure OpenAI?”</p><p class="fx-icard-q ko-only">“조직 의사결정 구조 감사(ARCHON)와 판단 추적(Meridian)의 대규모 추론을 Azure OpenAI 크레딧으로 어떻게 처리할 것인가?”</p><span class="fx-icard-foot"><span>$5,000–$150,000 Azure &amp; OpenAI Credits</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-ink" href="#dossiers" data-index-prog="8" style="--i:8"><span class="fx-icard-top"><span>09</span><span class="en-only">CLOUD &amp; EDGE</span><span class="ko-only">클라우드·엣지</span></span><div><h3 class="fx-icard-name">Google Cloud</h3></div><p class="fx-icard-q en-only">“How do we unify Gemini + Claude Partner Models on Vertex AI with BigQuery analytics across RISCON desks?”</p><p class="fx-icard-q ko-only">“Vertex AI의 Gemini·Claude 파트너 모델과 BigQuery 분석 파이프라인을 어떻게 무상 크레딧으로 통합할 것인가?”</p><span class="fx-icard-foot"><span>$2,000–$350,000 Google Cloud &amp; Vertex AI</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-paper" href="#dossiers" data-index-prog="9" style="--i:9"><span class="fx-icard-top"><span>10</span><span class="en-only">GPU COMPUTE</span><span class="ko-only">GPU 연산</span></span><div><h3 class="fx-icard-name">NVIDIA</h3></div><p class="fx-icard-q en-only">“How do we accelerate 3D protein-ligand docking and structure folding for IATHEON &amp; HEBE using BioNeMo &amp; DGX?”</p><p class="fx-icard-q ko-only">“IATHEON과 HEBE의 3D 표적 단백질 구조 예측 및 결합 부위 분석을 NVIDIA BioNeMo와 DGX로 어떻게 가속할 것인가?”</p><span class="fx-icard-foot"><span>DGX Cloud Credits + Preferred GPU Pricing</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-accent" href="#dossiers" data-index-prog="10" style="--i:10"><span class="fx-icard-top"><span>11</span><span class="en-only">GPU COMPUTE</span><span class="ko-only">GPU 연산</span></span><div><h3 class="fx-icard-name">Modal Labs</h3></div><p class="fx-icard-q en-only">“How do we run bursty open-weight batch inference and protein folding jobs with zero idle GPU cost?”</p><p class="fx-icard-q ko-only">“유휴 GPU 비용 없이 대규모 배치 추론과 단백질 폴딩 작업을 어떻게 서버리스 H100으로 즉시 처리할 것인가?”</p><span class="fx-icard-foot"><span>$500–$10,000 Serverless GPU Credits</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-glass" href="#dossiers" data-index-prog="11" style="--i:11"><span class="fx-icard-top"><span>12</span><span class="en-only">GPU COMPUTE</span><span class="ko-only">GPU 연산</span></span><div><h3 class="fx-icard-name">Hugging Face</h3></div><p class="fx-icard-q en-only">“How do we host public interactive demos of HALLUC-GATE and the NADIR 5,863-case benchmark on H200 GPUs for free?”</p><p class="fx-icard-q ko-only">“HALLUC-GATE와 NADIR 5,863건 벤치마크의 공개 데모를 어떻게 H200 GPU 위에서 무상으로 호스팅할 것인가?”</p><span class="fx-icard-foot"><span>ZeroGPU H200 Quota + PRO/Enterprise Hub</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-ink" href="#dossiers" data-index-prog="12" style="--i:12"><span class="fx-icard-top"><span>13</span><span class="en-only">FELLOWSHIP &amp; SOVEREIGN</span><span class="ko-only">무지분 기금·바우처</span></span><div><h3 class="fx-icard-name">Mercatus Center (Tyler Cowen)</h3></div><p class="fx-icard-q en-only">“How do we secure direct cash runway for RISCON Labs’ 1-person 26,000-agent orchestration model and ASI auditor school?”</p><p class="fx-icard-q ko-only">“리스콘 랩스의 1인 26,000 에이전트 오케스트레이션과 인간 ASI 감사자 훈련원의 현금 운영비를 어떻게 무지분으로 확보할 것인가?”</p><span class="fx-icard-foot"><span>$5,000–$50,000+ Zero-Equity Cash Grant</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-paper" href="#dossiers" data-index-prog="13" style="--i:13"><span class="fx-icard-top"><span>14</span><span class="en-only">FELLOWSHIP &amp; SOVEREIGN</span><span class="ko-only">무지분 기금·바우처</span></span><div><h3 class="fx-icard-name">Long-Term Future Fund (LTFF)</h3></div><p class="fx-icard-q en-only">“How do we fund the L0–L6 Human ASI Auditor curriculum and sealed-vs-open judgment evaluations (ASI 2030)?”</p><p class="fx-icard-q ko-only">“ASI 2030의 열린 교정 대 봉인된 판단 시나리오와 L0–L6 감사자 사다리 표준화를 어떤 국제 기금으로 뒷받침할 것인가?”</p><span class="fx-icard-foot"><span>$10,000–$100,000+ Non-Dilutive Cash Grant</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-accent" href="#dossiers" data-index-prog="14" style="--i:14"><span class="fx-icard-top"><span>15</span><span class="en-only">FELLOWSHIP &amp; SOVEREIGN</span><span class="ko-only">무지분 기금·바우처</span></span><div><h3 class="fx-icard-name">Survival and Flourishing Fund (SFF)</h3></div><p class="fx-icard-q en-only">“How do we fund quarterly ASI 2030 scenario forks and institutional accountability protocols (ARCHON / Meridian)?”</p><p class="fx-icard-q ko-only">“분기별 ASI 2030 시나리오 분기점 연구와 기관 책임성 감사 프로토콜(ARCHON·Meridian)을 어떻게 지속 재원화할 것인가?”</p><span class="fx-icard-foot"><span>$10,000–$150,000+ Non-Dilutive Cash Grant</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+      <a class="fx-icard is-glass" href="#dossiers" data-index-prog="15" style="--i:15"><span class="fx-icard-top"><span>16</span><span class="en-only">FELLOWSHIP &amp; SOVEREIGN</span><span class="ko-only">무지분 기금·바우처</span></span><div><h3 class="fx-icard-name">NIPA (정보통신산업진흥원) / K-Startup</h3></div><p class="fx-icard-q en-only">“How do we combine domestic sovereign GPU vouchers with global API credits for zero-out-of-pocket lab operations?”</p><p class="fx-icard-q ko-only">“국내 정부 GPU·데이터 바우처와 해외 프론티어 API 크레딧을 결합해 연구소 자부담 연산비를 어떻게 완전히 소거할 것인가?”</p><span class="fx-icard-foot"><span>KRW 20,000,000–150,000,000 GPU/Data Voucher</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+    </div>
+    <button class="fx-close" type="button" data-index-close><span class="en-only">Close</span><span class="ko-only">닫기</span></button>
   </div>
 
-  <script>
-    const PRESET_PASS_JSONL = [
-      JSON.stringify({
-        custom_id: "v10-pass-001",
-        original: "임대인은 계약 해지 후 보증금을 즉시 반환할 의무가 없다.",
-        fix: "임대인은 임대차 종료 시 목적물 반환과 동시이행으로 보증금을 반환해야 한다(민법 제536조).",
-        source_quote: "민법 제536조 동시이행의 항변권"
-      }),
-      JSON.stringify({
-        custom_id: "v10-pass-002",
-        original: "근로기준법상 통상임금에는 재직조건부 상여금이 제외된다.",
-        fix: "대법원 2024. 12. 19. 선고 2020다247190 전원합의체 판결에 따라 재직조건부 정기상여금도 통상임금에 포함된다.",
-        source_quote: "대법원 2020다247190 전원합의체"
-      }),
-      JSON.stringify({
-        custom_id: "v10-pass-003",
-        original: "법령과 일치하여 수정이 불필요한 문장",
-        fix: null,
-        source_quote: null
-      })
-    ].join("\n");
+  <footer class="fx-foot">
+    <div class="fx-wrap">
+      <div class="fx-panel fx-foot-panel">
+        <div class="fx-foot-brand">
+          <strong>RISCON Labs · CREDIT-HARVEST &amp; HALLUC-GATE</strong>
+          <p class="en-only">Autonomous Compute Treasury (S99) &amp; Mechanical Integrity Gate (S95). Verified 2026. 10. 22. Follows Riscon-AI/riscon-guidelines@85a4bfc.</p>
+          <p class="ko-only">자율 연구기금·크레딧 발굴·사후관리 엔진(S99) 및 기계적 환각 검수 게이트(S95). 2026. 10. 22. 실측 기준. Riscon-AI/riscon-guidelines@85a4bfc 준수.</p>
+        </div>
+        <div class="fx-foot-col">
+          <span class="fx-label">01 · <span class="en-only">Discovery</span><span class="ko-only">발굴 레이더</span></span>
+          <a href="#radar"><span class="en-only">16 Global Programs</span><span class="ko-only">16대 글로벌 프로그램</span></a>
+          <a href="#radar" data-filter-jump="FRONTIER API"><span class="en-only">Frontier API Credits</span><span class="ko-only">프론티어 API 크레딧</span></a>
+          <a href="#radar" data-filter-jump="CLOUD & EDGE"><span class="en-only">Cloud &amp; Edge Credits</span><span class="ko-only">클라우드·엣지 크레딧</span></a>
+        </div>
+        <div class="fx-foot-col">
+          <span class="fx-label">02 · <span class="en-only">1-Click Submit</span><span class="ko-only">원클릭 신청</span></span>
+          <a href="#dossiers"><span class="en-only">Pre-filled Google Forms</span><span class="ko-only">Google 폼 자동입력</span></a>
+          <a href="#dossiers"><span class="en-only">Emergent Ventures Form</span><span class="ko-only">Emergent Ventures 자동입력</span></a>
+          <a href="#dossiers"><span class="en-only">Org ID Injector</span><span class="ko-only">Org ID 일괄 주입기</span></a>
+        </div>
+        <div class="fx-foot-col">
+          <span class="fx-label">03 · <span class="en-only">Lifecycle &amp; Gate</span><span class="ko-only">사후관리·게이트</span></span>
+          <a href="#lifecycle"><span class="en-only">5-Day &amp; 14-Day SLA Tracker</span><span class="ko-only">5영업일·14일 서약 SLA</span></a>
+          <a href="#lifecycle"><span class="en-only">Inbound Email Auto-Reply</span><span class="ko-only">수신 메일 자동 회신기</span></a>
+          <a href="#halluc-gate"><span class="en-only">HALLUC-GATE API (/api/audit)</span><span class="ko-only">무결성 검수 API (/api/audit)</span></a>
+        </div>
+        <div class="fx-foot-col">
+          <span class="fx-label">04 · <span class="en-only">Live Domains</span><span class="ko-only">라이브 도메인</span></span>
+          <a href="https://creditharvest.risconlabs.com">creditharvest.risconlabs.com</a>
+          <a href="https://hallucgate.risconlabs.com">hallucgate.risconlabs.com</a>
+          <a href="https://github.com/Riscon-AI/credit-harvest" target="_blank" rel="noopener noreferrer">github.com/Riscon-AI/credit-harvest</a>
+        </div>
+      </div>
+    </div>
 
-    const PRESET_FAIL_JSONL = [
-      JSON.stringify({
-        custom_id: "v10-fail-softnull",
-        original: "하도급대금 감액 시 서면 미교부는 과징금 대상이 아니다.",
-        fix: "하도급대금 감액 시 서면 미교부는 과징금 대상이 아니다.",
-        source_quote: "하도급법 제11조",
-        confidence: "low"
-      }),
-      JSON.stringify({
-        custom_id: "v10-fail-noquote",
-        original: "청약철회 기간은 수령일로부터 3일이다.",
-        fix: "전자상거래법 제17조에 따라 계약내용에 관한 서면을 받은 날부터 7일 이내에 청약철회를 할 수 있다.",
-        source_quote: ""
-      }),
-      JSON.stringify({
-        custom_id: "v8-fail-length",
-        original: "단기 소멸시효 안내 문장",
-        fix: "이 교정문은 V8 규칙이 강제하는 95자 상한선을 고의로 초과하도록 작성된 장문의 테스트 문장으로서 기계 검수 게이트에서 LLM 호출 전에 즉시 탈락 처리되어 재교정 큐로 반송되어야만 합니다.",
-        source_quote: "민법 제163조"
-      })
-    ].join("\n");
+    <nav class="riscon-family-bar" aria-label="RISCON Labs family">
+      <a class="riscon-family-lab" href="https://risconlabs.com">RISCON Labs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <span class="riscon-family-rule" aria-hidden="true"></span>
+      <ul class="riscon-family-sites">
+        <li><a href="https://meridian.risconlabs.com" target="_blank" rel="noopener noreferrer">Meridian</a></li>
+        <li><a href="https://pro-se.risconlabs.com" target="_blank" rel="noopener noreferrer">PRO SE</a></li>
+        <li><a href="https://asi-2030.risconlabs.com" target="_blank" rel="noopener noreferrer">ASI 2030</a></li>
+        <li><a href="https://aegis.risconlabs.com" target="_blank" rel="noopener noreferrer">AEGIS</a></li>
+        <li><a href="https://skeptron.risconlabs.com" target="_blank" rel="noopener noreferrer">Skeptron</a></li>
+        <li><a href="https://dionyas.risconlabs.com" target="_blank" rel="noopener noreferrer">Dionyas</a></li>
+        <li><a href="https://wstiger.risconlabs.com" target="_blank" rel="noopener noreferrer">WSTiger</a></li>
+        <li><a href="https://archon.risconlabs.com" target="_blank" rel="noopener noreferrer">ARCHON</a></li>
+        <li><a href="https://nadir.risconlabs.com" target="_blank" rel="noopener noreferrer">NADIR</a></li>
+        <li><a href="https://gaekju.risconlabs.com" target="_blank" rel="noopener noreferrer">GAEKJU</a></li>
+        <li><a href="https://iatheon.risconlabs.com" target="_blank" rel="noopener noreferrer">IATHEON</a></li>
+        <li><a href="https://hebe.risconlabs.com" target="_blank" rel="noopener noreferrer">HEBE</a></li>
+        <li><a href="https://cosmic-press.risconlabs.com" target="_blank" rel="noopener noreferrer">Cosmic Press</a></li>
+        <li><a href="https://ordo.risconlabs.com" target="_blank" rel="noopener noreferrer">ORDO</a></li>
+        <li><a href="https://oa.risconlabs.com" target="_blank" rel="noopener noreferrer">RISCON OA</a></li>
+        <li><a href="https://creditharvest.risconlabs.com" target="_blank" rel="noopener noreferrer">CREDIT-HARVEST / HALLUC-GATE</a></li>
+      </ul>
+    </nav>
+  </footer>
 
-    let TREASURY_DATA = null;
-    let ACTIVE_CAT = "ALL";
-
-    function switchTab(tabId) {
-      document.querySelectorAll(".tab-btn").forEach((b) => {
-        b.classList.toggle("active", b.dataset.tab === tabId);
-      });
-      document.querySelectorAll(".tab-panel").forEach((p) => {
-        p.classList.toggle("active", p.id === `panel-${tabId}`);
-      });
-    }
-
-    document.querySelectorAll(".tab-btn").forEach((btn) => {
-      btn.addEventListener("click", () => switchTab(btn.dataset.tab));
-    });
-
-    // If accessed via hallucgate.risconlabs.com, default to Halluc-Gate tab
-    if (location.hostname.startsWith("hallucgate.")) {
-      switchTab("halluc-gate");
-    }
-
-    // Theme toggle
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-      const root = document.documentElement;
-      root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-    });
-
-    function copyText(text, btnEl) {
-      navigator.clipboard.writeText(text).then(() => {
-        const prev = btnEl.textContent;
-        btnEl.textContent = "✓ 복사됨 (Copied)";
-        btnEl.classList.add("copied");
-        setTimeout(() => {
-          btnEl.textContent = prev;
-          btnEl.classList.remove("copied");
-        }, 1600);
-      });
-    }
-
-    function openDossierModal(prog) {
-      document.getElementById("modal-slot").textContent = `${prog.slot_code} · ${prog.provider} · Verified ${prog.verified_date}`;
-      document.getElementById("modal-title").textContent = prog.program_name;
-      document.getElementById("modal-form-link").href = prog.direct_form_url;
-
-      const cf = prog.copy_fields;
-      const blocks = [
-        { label: "1. Organization & Applicant Profile", val: `Organization: ${cf.org_name}\nWebsite: ${cf.website}\nGitHub: ${cf.github}\nApplicant / PI: ${cf.applicant}` },
-        { label: "2. Project Title (과제명)", val: cf.project_title },
-        { label: "3. Executive Abstract / Summary (요약문)", val: cf.abstract },
-        { label: "4. Live Proof-of-Work URLs & Git Commits (실증 사이트 증빙)", val: cf.proof_of_work },
-        { label: "5. Quantitative Preliminary Results (V12 · Soft-Null · C-Hybrid 실측치)", val: cf.empirical_results },
-        { label: "6. Resource Justification & Fit (신청 사유 및 기대효과)", val: cf.justification },
-        { label: "7. Full Application Dossier Markdown (전체 신청서 원문)", val: cf.full_dossier_markdown }
-      ];
-
-      const container = document.getElementById("modal-fields");
-      container.innerHTML = "";
-      blocks.forEach((b) => {
-        const div = document.createElement("div");
-        div.className = "field-block";
-        const head = document.createElement("div");
-        head.className = "field-head";
-        const nameSpan = document.createElement("span");
-        nameSpan.className = "field-name";
-        nameSpan.textContent = b.label;
-        const cBtn = document.createElement("button");
-        cBtn.className = "copy-btn";
-        cBtn.type = "button";
-        cBtn.textContent = "복사 (Copy)";
-        cBtn.addEventListener("click", () => copyText(b.val, cBtn));
-        head.appendChild(nameSpan);
-        head.appendChild(cBtn);
-
-        const body = document.createElement("div");
-        body.className = "field-content";
-        body.textContent = b.val;
-
-        div.appendChild(head);
-        div.appendChild(body);
-        container.appendChild(div);
-      });
-
-      document.getElementById("dossier-modal").classList.add("open");
-    }
-
-    document.getElementById("modal-close").addEventListener("click", () => {
-      document.getElementById("dossier-modal").classList.remove("open");
-    });
-    document.getElementById("dossier-modal").addEventListener("click", (e) => {
-      if (e.target.id === "dossier-modal") {
-        document.getElementById("dossier-modal").classList.remove("open");
-      }
-    });
-
-    function renderPrograms() {
-      if (!TREASURY_DATA) return;
-      const grid = document.getElementById("program-grid");
-      grid.innerHTML = "";
-      const list = TREASURY_DATA.programs.filter(
-        (p) => ACTIVE_CAT === "ALL" || p.category === ACTIVE_CAT
-      );
-      list.forEach((prog) => {
-        const card = document.createElement("article");
-        card.className = "prog-card";
-
-        const sitePills = prog.target_details
-          .map(
-            (t) =>
-              `<a class="site-tag" href="${t.url}" target="_blank" rel="noopener">${t.key.toUpperCase()} @ ${t.commit}</a>`
-          )
-          .join("");
-
-        card.innerHTML = `
-          <div>
-            <div class="prog-top">
-              <span class="slot-pill">#${prog.priority_rank} · ${prog.slot_code}</span>
-              <span class="http-pill">✓ HTTP 200 · ${prog.verified_date}</span>
-            </div>
-            <div class="prog-provider">${prog.provider} · ${prog.application_cycle}</div>
-            <h2 class="prog-name">${prog.program_name}</h2>
-            <div class="prog-reward">${prog.reward_summary}</div>
-            <div class="prog-title-box">${prog.project_title}</div>
-            <p class="prog-angle">${prog.key_angle}</p>
-            <div class="site-tags">${sitePills}</div>
-          </div>
-          <div class="prog-actions">
-            <a class="btn btn-primary" href="${prog.direct_form_url}" target="_blank" rel="noopener">직통 신청 폼 ↗</a>
-            <a class="btn" href="${prog.official_url}" target="_blank" rel="noopener">공식 안내문 ↗</a>
-            <button class="btn btn-full" type="button" data-open-dossier="${prog.program_id}">📋 원클릭 복사용 신청서 열기 (Copy-Paste Fields)</button>
-          </div>
-        `;
-        card.querySelector("[data-open-dossier]").addEventListener("click", () => openDossierModal(prog));
-        grid.appendChild(card);
-      });
-    }
-
-    document.querySelectorAll("#category-filters button").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll("#category-filters button").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        ACTIVE_CAT = btn.dataset.cat;
-        renderPrograms();
-      });
-    });
-
-    async function runAudit() {
-      const raw = document.getElementById("audit-input").value;
-      const out = document.getElementById("audit-output");
-      out.textContent = "검수 중...";
-      try {
-        const res = await fetch("/api/audit", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ raw })
-        });
-        const data = await res.json();
-        const badgeClass = data.verdict === "PASS_CERTIFIED" ? "verdict-pass" : "verdict-reject";
-        const defectsHtml = data.defects && data.defects.length
-          ? `<div style="margin-top:0.65rem;color:var(--danger);"><strong>적발된 결함 (${data.defects.length}건):</strong><br>${data.defects.map((d) => `• [${d.id}] ${d.rule}: ${d.detail}`).join("<br>")}</div>`
-          : `<div style="margin-top:0.65rem;color:var(--accent);">✓ 모든 항목이 V8/V10/V12 기계 게이트를 무결점으로 통과했습니다.</div>`;
-
-        out.innerHTML = `
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.6rem;">
-            <span class="verdict-badge ${badgeClass}">${data.verdict}</span>
-            <span>Receipt: <strong>${data.receipt_id}</strong></span>
-          </div>
-          <div>• 총 검수 건수: ${data.total_items}건 (통과: ${data.passed_items}건)</div>
-          <div>• V10 Soft-Null 도피(원문복사): ${data.soft_null_count}건</div>
-          <div>• V10 인용근거(source_quote) 누락: ${data.missing_quote_count}건</div>
-          <div>• V8 95자 길이 초과: ${data.length_violation_count}건 | findings 오염: ${data.findings_leak_count}건</div>
-          <div style="margin-top:0.4rem;word-break:break-all;color:var(--text-muted);">• SHA-256: ${data.sha256_hash}</div>
-          ${defectsHtml}
-        `;
-      } catch (err) {
-        out.textContent = "검수 오류: " + err.message;
-      }
-    }
-
-    document.getElementById("audit-input").value = PRESET_PASS_JSONL;
-    document.getElementById("preset-pass").addEventListener("click", (e) => {
-      document.getElementById("preset-pass").classList.add("active");
-      document.getElementById("preset-fail").classList.remove("active");
-      document.getElementById("audit-input").value = PRESET_PASS_JSONL;
-      runAudit();
-    });
-    document.getElementById("preset-fail").addEventListener("click", (e) => {
-      document.getElementById("preset-fail").classList.add("active");
-      document.getElementById("preset-pass").classList.remove("active");
-      document.getElementById("audit-input").value = PRESET_FAIL_JSONL;
-      runAudit();
-    });
-    document.getElementById("run-audit-btn").addEventListener("click", runAudit);
-
-    async function init() {
-      const res = await fetch("/data/treasury-data.json");
-      TREASURY_DATA = await res.json();
-      renderPrograms();
-
-      // Render B2B products
-      const b2bList = document.getElementById("b2b-list");
-      TREASURY_DATA.micro_b2b_products.forEach((prod) => {
-        const div = document.createElement("div");
-        div.className = "field-block";
-        div.innerHTML = `
-          <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.78rem;color:var(--accent);">
-            <span>${prod.slot_code} · $${prod.price_usd} (₩${prod.price_krw.toLocaleString()})</span>
-            <span>목표 월 ₩${prod.expected_monthly_krw.toLocaleString()}</span>
-          </div>
-          <div style="font-weight:600;margin-top:0.25rem;font-size:0.9rem;">${prod.name}</div>
-          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">${prod.mechanism}</div>
-        `;
-        b2bList.appendChild(div);
-      });
-
-      // Render Empirical cards
-      const empContainer = document.getElementById("empirical-cards");
-      const eb = TREASURY_DATA.portfolio.empirical_benchmarks;
-      [
-        { title: "V12 Input-Truncation (+12.0%p)", text: eb.v12_input_truncation_lift },
-        { title: "Flash vs. Pro Precision Inversion", text: eb.flash_vs_pro_false_positive },
-        { title: "Soft-Null Evasion 0.0% Elimination", text: eb.soft_null_evasion_discovery },
-        { title: "C-Hybrid 80.8% Compute Savings", text: eb.c_hybrid_cost_efficiency }
-      ].forEach((item) => {
-        const d = document.createElement("div");
-        d.className = "field-block";
-        d.innerHTML = `<div class="field-name" style="margin-bottom:0.35rem;">${item.title}</div><div style="font-size:0.83rem;color:var(--text-muted);">${item.text}</div>`;
-        empContainer.appendChild(d);
-      });
-
-      // Render 16 Sites table
-      const tbody = document.getElementById("sites-tbody");
-      Object.entries(TREASURY_DATA.portfolio.sites).forEach(([key, s], i) => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td class="mono">${String(i + 1).padStart(2, "0")}</td>
-          <td><strong>${key.toUpperCase()}</strong></td>
-          <td class="mono"><a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent);">${s.url} ↗</a></td>
-          <td class="mono">${s.repo} @ <code>${s.commit}</code></td>
-          <td style="color:var(--text-muted);">${s.summary}</td>
-        `;
-        tbody.appendChild(tr);
-      });
-
-      runAudit();
-    }
-
-    init();
-  </script>
+  <script src="/scripts/credit-harvest-app.js?v=20261022b" defer></script>
 </body>
 </html>

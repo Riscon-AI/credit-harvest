@@ -1,0 +1,48 @@
+/* RISCON 가독성 가이드라인 — 공통 규칙. tokens.css를 먼저 불러온다. */
+
+.kt {
+  margin: 0;
+  background: var(--surface-alt);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  font-kerning: normal;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.kt *, .kt *::before, .kt *::after { box-sizing: border-box; }
+
+/* 한글에는 기울임이 없다. 강조는 굵기로. */
+.kt :is(em, i, cite, address) { font-style: normal; }
+.kt :is(em, strong, b) { font-weight: 600; }
+
+.kt .secondary { color: var(--ink-secondary); }
+.kt .num { font-variant-numeric: tabular-nums; }
+
+.kt a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+.kt a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+
+/* 각주 번호: 부모의 0.6배, 줄 높이를 밀어내지 않는다. */
+.kt sup { font-size: var(--sup-offset); line-height: 0; vertical-align: super; margin-left: 0.05em; }
+
+/* 두 톤 제목: 같은 크기·굵기의 두 인라인 요소. */
+.kt-pair { margin: 0; }
+.kt-pair > span { display: inline; }
+
+/* 긴 글 */
+.kt-measure { max-width: var(--measure-reading); }
+.kt-prose > p { margin: 0; }
+.kt-prose > p + p { margin-top: var(--para-gap-reading); }
+
+/* 각주 목록 */
+.kt-notes { list-style: none; margin: 0; padding: 0; color: var(--ink-secondary); }
+.kt-notes li + li { margin-top: 4px; }
+.kt-notes .mark { display: inline-block; min-width: 1.4em; }

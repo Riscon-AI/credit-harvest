@@ -4,7 +4,8 @@
 .DS_Store
 **/.DS_Store
 node_modules
-scripts
+scripts/*.py
+scripts/*.mjs
 package.json
 package-lock.json
 wrangler.json
