@@ -1109,9 +1109,9 @@
       "name": "PRO SE",
       "host": "pro-se.risconlabs.com",
       "url": "https://pro-se.risconlabs.com",
-      "commit": "c0b62f5",
+      "commit": "eb2e28c",
       "verified": "2026. 10. 22.",
-      "metric": "10,000 target cases · 3,000 SC ledger · 114-vol monograph (KR/EN)"
+      "metric": "3,000 cases · 1,050 SC 8-axis ledger · 567 briefs · 114-vol monograph (17.35M chars, 100% KR/EN)"
     },
     {
       "num": "03",
@@ -1232,12 +1232,12 @@
     },
     {
       "num": "16",
-      "name": "TOGETHER",
-      "host": "together.risconlabs.com",
-      "url": "https://together.risconlabs.com",
-      "commit": "v12.0.0",
+      "name": "SIMUL",
+      "host": "simul.risconlabs.com",
+      "url": "https://simul.risconlabs.com",
+      "commit": "v1.0.0",
       "verified": "2026. 10. 22.",
-      "metric": "26,000 autonomous agents · 28M-row enterprise simulation"
+      "metric": "26,000 autonomous agents · 26.3M-row 11-industry enterprise simulator"
     },
     {
       "num": "17",
@@ -1325,28 +1325,28 @@
       "badge_ko": "조치 완료 (자동 반영)",
       "title_en": "16 Non-Dilutive Dossiers + 4 Pre-filled Forms + Post-Submission SLA Engine Live",
       "title_ko": "16개 무지분 프로그램 Dossier · 4종 1-Click 프리필 폼 · 사후관리 SLA 엔진 가동",
-      "detail_en": "All 16 program URLs verified HTTP 200; PRO SE (10,000 target cases) and TOGETHER (26,000 agents) metrics synced into application payloads.",
-      "detail_ko": "16개 프로그램 HTTP 200 검증, PRO SE(1만 건 스케일업) 및 TOGETHER(2.6만 에이전트) 지표를 신청서 브리프에 통합 반영했습니다."
+      "detail_en": "All 16 program URLs verified HTTP 200; PRO SE (10,000 target cases) and SIMUL (26,000 agents across 11 industries) metrics synced into application payloads.",
+      "detail_ko": "16개 프로그램 HTTP 200 검증, PRO SE(1만 건 스케일업) 및 SIMUL(2.6만 에이전트 · 11대 산업) 지표를 신청서 브리프에 통합 반영했습니다."
     },
     {
       "id": "CHK-05",
-      "status": "IN_PROGRESS",
-      "badge_en": "SCALING (AUTONOMOUS)",
-      "badge_ko": "진행 중 (자율 스케일업)",
-      "title_en": "PRO SE Moat Scale-Up (10,000 Cases / 3,000 SC Ledger) & 100% Full English Translation",
-      "title_ko": "PRO SE 해자 완성 스케일(1만 카드·3천 원장·114권) 및 전수 영문화 파이프라인",
-      "detail_en": "Running in parallel session (925e1937) via Muse Spark 1.3 + MiMo v2.6 Flash + Claude Batch. Replicate this exact single-pass bilingual pipeline across all 20+ sectors.",
-      "detail_ko": "병렬 세션(925e1937)에서 가동 중인 1-Pass 한·영 동시 생성 및 전수 영문화 파이프라인을 20개 이상 전 섹터로 순차 확장합니다."
+      "status": "DONE",
+      "badge_en": "COMPLETED (DEPLOYED)",
+      "badge_ko": "배포 완료 (한·영 전수)",
+      "title_en": "PRO SE Moat Scale-Up (3,000 Cases / 1,050 SC 8-Axis Ledger / 17.35M Chars) & 100% Full English Corpus Overlay",
+      "title_ko": "PRO SE 해자 완성 스케일(3,000 카드·1,050 원장·567 변론서·114권 1,735만 자) 및 100% 전수 영문화 배포 완료",
+      "detail_en": "Completed & deployed in session 925e1937 via Claude 5.5 Opus/Sonnet/Haiku Batch + Muse Spark 1.3 + MiMo v2.6 Pro/Flash with /en-corpus/*.json client-side overlay and EN/KR toggle.",
+      "detail_ko": "세션 925e1937에서 Claude 5.5 배치 + Muse Spark 1.3 + MiMo v2.6 파이프라인으로 한·영 코퍼스 확장 및 /en-corpus/*.json 실시간 오버레이 배포를 완료했습니다."
     },
     {
       "id": "CHK-06",
-      "status": "READY_ACTION",
-      "badge_en": "NEXT TRACK (READY)",
-      "badge_ko": "신규 트랙 (즉시 착수 가능)",
-      "title_en": "28M-Row Slack Corpus Domain Shift + 26,000-Agent Autonomous Enterprise on together.risconlabs.com",
-      "title_ko": "2,800만 행 슬랙 원시데이터 PII 치환·도메인 이동·영문화 + 26,000 에이전트 무인 기업 런칭",
-      "detail_en": "Transform the 26.3M-row Slack vault from Outdoor D2C SPA to an AI Legacy Transformation Enterprise (KR+EN) and run multi-scale autonomous company simulations with 26,000 agents on together.risconlabs.com.",
-      "detail_ko": "아웃도어 D2C 2,632만 행 슬랙 볼트를 개인정보 완전 치환 후 'AI 레거시 트랜스포메이션 기업'으로 도메인 이동·영문화하고 together.risconlabs.com의 26,000명 에이전트로 기업 규모별 무인 운영 시뮬레이션을 런칭합니다."
+      "status": "DONE",
+      "badge_en": "COMPLETED (SIMUL LIVE)",
+      "badge_ko": "런칭 완료 (simul.risconlabs.com)",
+      "title_en": "26.3M-Row Slack Corpus Domain Shift + 26,000-Agent 11-Industry Simulator Live on simul.risconlabs.com",
+      "title_ko": "2,632만 행 슬랙 원시데이터 PII 치환·도메인 이동·영문화 + 11대 산업 26,000 에이전트 SIMUL 런칭 완료",
+      "detail_en": "Transposed 26,323,165 empirical Slack rows (477,943 episodes, 0 PII leaks) into 11 pluggable industry editions (AI Legacy, Semicon, Agency Decay, Skate Craft, AI XR, Lean Wrapper, Mega Oil, Defense Next, Ontology Security, Cult Drop, Everything FC) across 26,000 agents on simul.risconlabs.com.",
+      "detail_ko": "26,323,165행 슬랙 원시데이터(477,943 에피소드, 개인정보 0건)를 AI 레거시 전환 기업(기본) 및 반도체·대행사·스케이트보드·AI XR·래퍼·아람코형 정유·안두릴형 방산·팔란티어형 안보·슈프림형 드롭·아마존형 풀필먼트 등 11대 산업 에디션으로 변환하여 simul.risconlabs.com에 런칭했습니다."
     },
     {
       "id": "CHK-07",
@@ -1424,12 +1424,12 @@
         "expected_gate": "PASS_CERTIFIED"
       },
       {
-        "id": "HG-BENCH-TOGETHER-01",
-        "sector": "TOGETHER (26,000-Agent Autonomous Enterprise)",
+        "id": "HG-BENCH-SIMUL-01",
+        "sector": "SIMUL (26,000-Agent 11-Industry Simulator)",
         "lang": "en",
         "original": "Legacy ERP migration handoffs across 26,000 simulated enterprise agents exhibited a 22% bottleneck at cross-departmental approval gates.",
-        "fix": "In the 26,000-agent AI transformation simulation, cross-departmental ERP handoffs generated 22.0% of total queue latency.",
-        "source_quote": "together-sim-v1: agents=26000, bottleneck_gate=cross_dept_erp, share=0.220",
+        "fix": "In the 26,000-agent SIMUL simulation across 11 industry editions, cross-departmental ERP handoffs generated 22.0% of total queue latency.",
+        "source_quote": "simul-v1: agents=26000, editions=11, bottleneck_gate=cross_dept_erp, share=0.220",
         "max_len": 160,
         "expected_gate": "PASS_CERTIFIED"
       },

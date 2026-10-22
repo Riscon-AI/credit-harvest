@@ -402,6 +402,7 @@ def main():
                 <option value="nadir.risconlabs.com">NADIR (5,863건 조직 쇠락 아카이브)</option>
                 <option value="meridian.risconlabs.com">Meridian (결정 전 과정 추적)</option>
                 <option value="archon.risconlabs.com">ARCHON (조직 결정·책임 구조 감사)</option>
+                <option value="simul.risconlabs.com">SIMUL (26,000 에이전트 · 11대 산업 자율기업 시뮬레이터)</option>
                 <option value="hallucgate.risconlabs.com">HALLUC-GATE (기계적 무결성 게이트)</option>
               </select>
             </div>
@@ -828,10 +829,10 @@ def main():
           <span class="ko-only">세 겹의 결정론적 기계 게이트가 소프트-널 회피와 근거 없는 인용을 <span class="fx-quiet">비용 0원으로 차단합니다.</span></span>
         </h1>
         <p class="fx-hero-note en-only">
-          Open evaluation benchmark and real-time mechanical verification engine auditing 42,850+ bilingual records across Supreme Court law (PRO SE), organizational decline (NADIR), 28M-row workplace communication (GAEKJU), 26,000-agent enterprise simulation (TOGETHER), and oncology dry-labs (IATHEON / HEBE).
+          Open evaluation benchmark and real-time mechanical verification engine auditing 42,850+ bilingual records across Supreme Court law (PRO SE), organizational decline (NADIR), 28M-row workplace communication (GAEKJU), 26,000-agent 11-industry enterprise simulation (SIMUL), and oncology dry-labs (IATHEON / HEBE).
         </p>
         <p class="fx-hero-note ko-only">
-          법률(PRO SE)·조직쇠락(NADIR)·2,800만 행 직장 담화(GAEKJU)·26,000 에이전트 기업 시뮬레이션(TOGETHER)·항암 표적 드라이랩(IATHEON·HEBE) 등 17개 라이브 도메인의 42,850건 한·영 병렬 레코드를 검증하는 오픈 벤치마크입니다.
+          법률(PRO SE)·조직쇠락(NADIR)·2,800만 행 직장 담화(GAEKJU)·26,000 에이전트 11대 산업 기업 시뮬레이션(SIMUL)·항암 표적 드라이랩(IATHEON·HEBE) 등 17개 라이브 도메인의 42,850건 한·영 병렬 레코드를 검증하는 오픈 벤치마크입니다.
         </p>
       </div>
 

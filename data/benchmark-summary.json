@@ -63,12 +63,12 @@
       "expected_gate": "PASS_CERTIFIED"
     },
     {
-      "id": "HG-BENCH-TOGETHER-01",
-      "sector": "TOGETHER (26,000-Agent Autonomous Enterprise)",
+      "id": "HG-BENCH-SIMUL-01",
+      "sector": "SIMUL (26,000-Agent 11-Industry Simulator)",
       "lang": "en",
       "original": "Legacy ERP migration handoffs across 26,000 simulated enterprise agents exhibited a 22% bottleneck at cross-departmental approval gates.",
-      "fix": "In the 26,000-agent AI transformation simulation, cross-departmental ERP handoffs generated 22.0% of total queue latency.",
-      "source_quote": "together-sim-v1: agents=26000, bottleneck_gate=cross_dept_erp, share=0.220",
+      "fix": "In the 26,000-agent SIMUL simulation across 11 industry editions, cross-departmental ERP handoffs generated 22.0% of total queue latency.",
+      "source_quote": "simul-v1: agents=26000, editions=11, bottleneck_gate=cross_dept_erp, share=0.220",
       "max_len": 160,
       "expected_gate": "PASS_CERTIFIED"
     },
