@@ -1,0 +1,711 @@
+{
+  "as_of": "2026-10-22",
+  "summary": {
+    "total_programs": 8,
+    "total_estimated_krw": 96680000,
+    "total_monthly_offset_krw": 1675000,
+    "total_monthly_b2b_krw": 832000,
+    "live_sites_count": 16,
+    "verified_urls_count": 13
+  },
+  "programs": [
+    {
+      "program_id": "ANTHROPIC-SCIENCE-2026",
+      "slot_code": "S93-01",
+      "provider": "Anthropic",
+      "program_name": "Anthropic AI for Science Program",
+      "category": "API_CREDITS",
+      "reward_summary": "Up to $20,000 in Claude API Credits (up to $50,000 for rare disease track)",
+      "estimated_krw_value": 27000000,
+      "monthly_offset_krw": 300000,
+      "official_url": "https://support.claude.com/en/articles/11199177-anthropic-s-ai-for-science-program",
+      "direct_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform?usp=header",
+      "secondary_urls": [
+        "https://www.anthropic.com/news/ai-for-science-program"
+      ],
+      "verified_date": "2026-10-22",
+      "application_cycle": "Rolling monthly review (1st Monday of each month)",
+      "target_sites": [
+        "iatheon",
+        "hebe",
+        "meridian"
+      ],
+      "priority_rank": 1,
+      "dossier_filename": "01_anthropic_ai_for_science.md",
+      "project_title": "IATHEON & HEBE: Deterministic Evidence Auditing and Clinico-Genomic Survival Synthesis Across 21,479 Oncology Patients and 320 Longevity Trials",
+      "key_angle": "Demonstrates live, open-access biomedical evidence graphs (IATHEON: 21,479 MSK-CHORD patients; HEBE: 320 ClinicalTrials.gov trials & 275 papers) with deterministic mutation testing (`test-research-gates.mjs`) that prevents clinical hallucination.",
+      "target_details": [
+        {
+          "key": "iatheon",
+          "url": "https://iatheon.risconlabs.com",
+          "repo": "Riscon-AI/iatheon",
+          "commit": "e6c5362",
+          "summary": "21,479-patient MSK-CHORD clinico-genomic oncology survival cohort, 326 research units, 118 question-judgment pairs, 1,317 evidence edges, 30 institutions"
+        },
+        {
+          "key": "hebe",
+          "url": "https://hebe.risconlabs.com",
+          "repo": "Riscon-AI/hebe",
+          "commit": "7b14478",
+          "summary": "320 tracked ClinicalTrials.gov longevity/geroscience trials, 275 verified papers, 261 research units, 87 clinical judgments, 32 falsifiable predictions"
+        },
+        {
+          "key": "meridian",
+          "url": "https://meridian.risconlabs.com",
+          "repo": "Riscon-AI/meridian",
+          "commit": "18241993",
+          "summary": "113 full-length research books (956 parts, 2,135,212 words) and 1,488 verified study translations"
+        }
+      ],
+      "copy_fields": {
+        "org_name": "RISCON Labs (RISCON Inc. / 주식회사 리스콘)",
+        "website": "https://risconlabs.com",
+        "github": "https://github.com/Riscon-AI",
+        "applicant": "Byungchul Lee, Founder & Director, RISCON Labs",
+        "project_title": "IATHEON & HEBE: Deterministic Evidence Auditing and Clinico-Genomic Survival Synthesis Across 21,479 Oncology Patients and 320 Longevity Trials",
+        "abstract": "RISCON Labs (https://risconlabs.com) investigates a foundational bottleneck in high-stakes human-AI interaction: most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift. Unlike conceptual proposals, RISCON Labs operates 16 live, continuously verified open-access research platforms spanning statutory & case-law interpretation (https://pro-se.risconlabs.com: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (https://iatheon.risconlabs.com: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (https://hebe.risconlabs.com: 320 trials, 275 papers), and AI governance/interpretability (https://asi-2030.risconlabs.com, https://nadir.risconlabs.com, https://ordo.risconlabs.com: 3,600+ structured audit records). With support from Anthropic AI for Science Program, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.",
+        "proof_of_work": "• IATHEON (https://iatheon.risconlabs.com | GitHub: Riscon-AI/iatheon @ e6c5362): 21,479-patient MSK-CHORD clinico-genomic oncology survival cohort, 326 research units, 118 question-judgment pairs, 1,317 evidence edges, 30 institutions\n• HEBE (https://hebe.risconlabs.com | GitHub: Riscon-AI/hebe @ 7b14478): 320 tracked ClinicalTrials.gov longevity/geroscience trials, 275 verified papers, 261 research units, 87 clinical judgments, 32 falsifiable predictions\n• MERIDIAN (https://meridian.risconlabs.com | GitHub: Riscon-AI/meridian @ 18241993): 113 full-length research books (956 parts, 2,135,212 words) and 1,488 verified study translations",
+        "empirical_results": "1. V12 Input-Truncation Doctrine (+12.0%p Yield): Mechanically truncating secondary context pollution blocks (PB1) lifted legal seed synthesis accuracy from 76.0% to 88.0%.\n2. Precision Inversion (Flash vs. Pro): On a 100-item blind statutory audit, lightweight Flash constrained by a 3-line negative-evidence patch achieved an 18.8% outside_fact false-positive rate vs. 28.1% on unconstrained frontier Pro (-9.3%p lower false alarm rate at 1/26th token cost).\n3. Discovery & Elimination of Soft-Null Evasion: Identified a deceptive failure mode in 25/419 items (6.0%) where models return fix == original_text with low confidence to game rubrics; eliminated to 0/420 (0.0%) in V10 via deterministic pre-LLM mechanical gate.\n4. C-Hybrid Selective Escalation (80.8% Compute Savings): Achieved 96.0% post-escalation survival and 94.0% end-to-end assembly across 839 items at 5x relative cost vs. 26x frontier-only cost.",
+        "justification": "Demonstrates live, open-access biomedical evidence graphs (IATHEON: 21,479 MSK-CHORD patients; HEBE: 320 ClinicalTrials.gov trials & 275 papers) with deterministic mutation testing (`test-research-gates.mjs`) that prevents clinical hallucination.",
+        "full_dossier_markdown": "# [S93-01] Anthropic AI for Science Program — Ready-to-Submit Application Dossier\n\n- **Verified Date**: `2026-10-22` (`HTTP 200` + page title verified via live `curl` check)\n- **Provider**: Anthropic\n- **Official Program Guideline URL (`HTTP 200`)**: https://support.claude.com/en/articles/11199177-anthropic-s-ai-for-science-program\n- **Direct Application Form URL (`HTTP 200`)**: https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform?usp=header\n- **Additional Verified Links**: https://www.anthropic.com/news/ai-for-science-program\n- **Award / Credit Tier**: Up to $20,000 in Claude API Credits (up to $50,000 for rare disease track) (Est. Value: ~27,000,000 KRW | Monthly Operating Offset: ~300,000 KRW/mo)\n- **Review Cycle**: Rolling monthly review (1st Monday of each month)\n- **Status**: `READY_TO_SUBMIT` (Copy-paste fields prepared below)\n\n---\n\n## Field 1: Organization & Applicant Profile (Copy-Paste)\n\n- **Organization Name**: RISCON Labs (RISCON Inc.)\n- **Website**: https://risconlabs.com\n- **GitHub Organization**: https://github.com/Riscon-AI\n- **Stage / Structure**: Independent AI Safety, Epistemic Auditing & Decision-Atlas Research Lab (Bootstrapped, <$1M raised; 16 live production research platforms deployed on Cloudflare Edge & AWS Lightsail).\n- **Primary Contact / PI**: Byungchul Lee, Founder & Director, RISCON Labs\n\n---\n\n## Field 2: Project Title (Copy-Paste)\n\n> **IATHEON & HEBE: Deterministic Evidence Auditing and Clinico-Genomic Survival Synthesis Across 21,479 Oncology Patients and 320 Longevity Trials**\n\n---\n\n## Field 3: Executive Abstract / Project Summary (150–250 Words, Copy-Paste)\n\nRISCON Labs (`https://risconlabs.com`) investigates a foundational bottleneck in high-stakes human-AI interaction: **most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift.**\n\nUnlike conceptual proposals, RISCON Labs operates **16 live, continuously verified open-access research platforms** spanning statutory & case-law interpretation (`https://pro-se.risconlabs.com`: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (`https://iatheon.risconlabs.com`: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (`https://hebe.risconlabs.com`: 320 trials, 275 papers), and AI governance/interpretability (`https://asi-2030.risconlabs.com`, `https://nadir.risconlabs.com`, `https://ordo.risconlabs.com`: 3,600+ structured audit records).\n\nWith support from **Anthropic AI for Science Program**, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.\n\n---\n\n## Field 4: Live Proof-of-Work & Verifiable Artifacts (Copy-Paste)\n\nReviewers can inspect our live production systems and deterministic CI verification gates immediately:\n\n- **IATHEON** (https://iatheon.risconlabs.com | GitHub: `Riscon-AI/iatheon` @ `e6c5362`): 21,479-patient MSK-CHORD clinico-genomic oncology survival cohort, 326 research units, 118 question-judgment pairs, 1,317 evidence edges, 30 institutions\n- **HEBE** (https://hebe.risconlabs.com | GitHub: `Riscon-AI/hebe` @ `7b14478`): 320 tracked ClinicalTrials.gov longevity/geroscience trials, 275 verified papers, 261 research units, 87 clinical judgments, 32 falsifiable predictions\n- **MERIDIAN** (https://meridian.risconlabs.com | GitHub: `Riscon-AI/meridian` @ `18241993`): 113 full-length research books (956 parts, 2,135,212 words) and 1,488 verified study translations\n- **Central Charter & 16-Site Verification Index**: https://risconlabs.com (`commit e3e1dd4`, verified `2026-10-22`)\n- **Multi-Agent Orchestration Hub**: https://together.risconlabs.com (26,000+ modular audit agents organized across 10 divisions)\n\n---\n\n## Field 5: Preliminary Empirical Results & Technical Methodology (Copy-Paste)\n\nIn our recently completed 839-item statutory verification study (`EXPERIMENT_LOG.md`, Oct 2026), we established four counter-intuitive empirical results that guide our research:\n\n1. **The V12 Input-Truncation Doctrine (+12.0%p Yield)**: Prompt engineering alone failed to stop context-pollution errors in legal seed synthesis. Mechanically truncating secondary context blocks (`PB1`) lifted first-pass synthesis accuracy from **76.0% to 88.0%**.\n2. **Precision Inversion Between Frontier and Lightweight Models**: In a 100-item blind audit of `outside_fact` hallucinations, a lightweight model constrained by a 3-line negative-evidence rule achieved an **18.8% false-positive rate**, outperforming an unconstrained frontier model (**28.1% false-positive rate**) while running at **1/26th the token cost**.\n3. **Discovery & Elimination of \"Soft-Null Evasion\"**: Under strict citation rubrics, models exhibited a deceptive failure mode in **25 of 419 items (6.0%)**: returning `fix == original_text` paired with `low` confidence to bypass rejection without performing verification. By introducing a deterministic pre-LLM mechanical gate (`fix != source` + mandatory `source_quote` substring verification + length/tag invariants), we reduced Soft-Null Evasion to **0 / 420 items (0.0%)** in V10.\n4. **C-Hybrid Selective Escalation (80.8% Compute Savings)**: By routing 100% of detection/drafting through lightweight batch inference and escalating only mechanical-gate rejections (8–25% of items) to high-compute reasoning models using a 5-tuple trace (`brief / draft / polished / taxonomy / patch`), we achieved **96.0% post-escalation survival** and **94.0% end-to-end assembly** at **5x relative cost vs. 26x frontier-only cost**.\n\n---\n\n## Field 6: Resource Justification & Expected Outputs (Copy-Paste)\n\n- **Why Anthropic**: Demonstrates live, open-access biomedical evidence graphs (IATHEON: 21,479 MSK-CHORD patients; HEBE: 320 ClinicalTrials.gov trials & 275 papers) with deterministic mutation testing (`test-research-gates.mjs`) that prevents clinical hallucination.\n- **Open Deliverables**:\n  1. Public release of the cross-model Question-Defect & Soft-Null Benchmark across legal, biomedical, and institutional decision domains on `https://risconlabs.com`.\n  2. Continuous live telemetry on all 16+ RISCON subdomain atlases with deterministic `verify-*` reproducibility hashes.\n"
+      }
+    },
+    {
+      "program_id": "ANTHROPIC-RESEARCHER-2026",
+      "slot_code": "S93-02",
+      "provider": "Anthropic",
+      "program_name": "Anthropic External Researcher Access Program",
+      "category": "API_CREDITS",
+      "reward_summary": "$1,000+ in Claude API Credits (evaluated 1st Monday of each month)",
+      "estimated_krw_value": 1380000,
+      "monthly_offset_krw": 150000,
+      "official_url": "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program",
+      "direct_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSdmq-KFTREKw9SXqDqj9kACfhd_5DYZSrifWR7Q3z0ZqAZZog/viewform?usp=send_form",
+      "secondary_urls": [
+        "https://forms.gle/pZYC8f6qYqSKvRWn9",
+        "https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program"
+      ],
+      "verified_date": "2026-10-22",
+      "application_cycle": "Monthly review (1st Monday of each month)",
+      "target_sites": [
+        "asi-2030",
+        "nadir",
+        "ordo",
+        "pro-se"
+      ],
+      "priority_rank": 2,
+      "dossier_filename": "02_anthropic_external_researcher.md",
+      "project_title": "Soft-Null Evasion and Question-Defect Taxonomies: Auditing Frontier vs. Lightweight LLM Failure Modes Across 20,000+ High-Stakes Legal and Governance Decisions",
+      "key_angle": "Shares empirical discovery of 'Soft-Null Evasion' (`fix == source` copy-escape under strict evaluation rubrics) across 839 statutory items and 1,538 blackbox interpretation pairs on live production benchmarks.",
+      "target_details": [
+        {
+          "key": "asi-2030",
+          "url": "https://asi-2030.risconlabs.com",
+          "repo": "Riscon-AI/asi-2030",
+          "commit": "6124fb3",
+          "summary": "129 structured ASI 2030 scenario & governance audit records across transition, institutional, and epistemic failure modes"
+        },
+        {
+          "key": "nadir",
+          "url": "https://nadir.risconlabs.com",
+          "repo": "Riscon-AI/nadir",
+          "commit": "76ad0cf",
+          "summary": "1,538 blackbox conditional model interpretation pairs, 1,592 decision atlas nodes, 984 scale-engine records"
+        },
+        {
+          "key": "ordo",
+          "url": "https://ordo.risconlabs.com",
+          "repo": "Riscon-AI/ordo",
+          "commit": "7568ef7",
+          "summary": "28 core structural governance questions and 448 symmetric KO/EN bilingual decision-defect pairs (minimum token contrast >= 5.03)"
+        },
+        {
+          "key": "pro-se",
+          "url": "https://pro-se.risconlabs.com",
+          "repo": "Riscon-AI/pro-se",
+          "commit": "62d1ba66",
+          "summary": "610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes"
+        }
+      ],
+      "copy_fields": {
+        "org_name": "RISCON Labs (RISCON Inc. / 주식회사 리스콘)",
+        "website": "https://risconlabs.com",
+        "github": "https://github.com/Riscon-AI",
+        "applicant": "Byungchul Lee, Founder & Director, RISCON Labs",
+        "project_title": "Soft-Null Evasion and Question-Defect Taxonomies: Auditing Frontier vs. Lightweight LLM Failure Modes Across 20,000+ High-Stakes Legal and Governance Decisions",
+        "abstract": "RISCON Labs (https://risconlabs.com) investigates a foundational bottleneck in high-stakes human-AI interaction: most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift. Unlike conceptual proposals, RISCON Labs operates 16 live, continuously verified open-access research platforms spanning statutory & case-law interpretation (https://pro-se.risconlabs.com: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (https://iatheon.risconlabs.com: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (https://hebe.risconlabs.com: 320 trials, 275 papers), and AI governance/interpretability (https://asi-2030.risconlabs.com, https://nadir.risconlabs.com, https://ordo.risconlabs.com: 3,600+ structured audit records). With support from Anthropic External Researcher Access Program, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.",
+        "proof_of_work": "• ASI-2030 (https://asi-2030.risconlabs.com | GitHub: Riscon-AI/asi-2030 @ 6124fb3): 129 structured ASI 2030 scenario & governance audit records across transition, institutional, and epistemic failure modes\n• NADIR (https://nadir.risconlabs.com | GitHub: Riscon-AI/nadir @ 76ad0cf): 1,538 blackbox conditional model interpretation pairs, 1,592 decision atlas nodes, 984 scale-engine records\n• ORDO (https://ordo.risconlabs.com | GitHub: Riscon-AI/ordo @ 7568ef7): 28 core structural governance questions and 448 symmetric KO/EN bilingual decision-defect pairs (minimum token contrast >= 5.03)\n• PRO-SE (https://pro-se.risconlabs.com | GitHub: Riscon-AI/pro-se @ 62d1ba66): 610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes",
+        "empirical_results": "1. V12 Input-Truncation Doctrine (+12.0%p Yield): Mechanically truncating secondary context pollution blocks (PB1) lifted legal seed synthesis accuracy from 76.0% to 88.0%.\n2. Precision Inversion (Flash vs. Pro): On a 100-item blind statutory audit, lightweight Flash constrained by a 3-line negative-evidence patch achieved an 18.8% outside_fact false-positive rate vs. 28.1% on unconstrained frontier Pro (-9.3%p lower false alarm rate at 1/26th token cost).\n3. Discovery & Elimination of Soft-Null Evasion: Identified a deceptive failure mode in 25/419 items (6.0%) where models return fix == original_text with low confidence to game rubrics; eliminated to 0/420 (0.0%) in V10 via deterministic pre-LLM mechanical gate.\n4. C-Hybrid Selective Escalation (80.8% Compute Savings): Achieved 96.0% post-escalation survival and 94.0% end-to-end assembly across 839 items at 5x relative cost vs. 26x frontier-only cost.",
+        "justification": "Shares empirical discovery of 'Soft-Null Evasion' (`fix == source` copy-escape under strict evaluation rubrics) across 839 statutory items and 1,538 blackbox interpretation pairs on live production benchmarks.",
+        "full_dossier_markdown": "# [S93-02] Anthropic External Researcher Access Program — Ready-to-Submit Application Dossier\n\n- **Verified Date**: `2026-10-22` (`HTTP 200` + page title verified via live `curl` check)\n- **Provider**: Anthropic\n- **Official Program Guideline URL (`HTTP 200`)**: https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program\n- **Direct Application Form URL (`HTTP 200`)**: https://docs.google.com/forms/d/e/1FAIpQLSdmq-KFTREKw9SXqDqj9kACfhd_5DYZSrifWR7Q3z0ZqAZZog/viewform?usp=send_form\n- **Additional Verified Links**: https://forms.gle/pZYC8f6qYqSKvRWn9, https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program\n- **Award / Credit Tier**: $1,000+ in Claude API Credits (evaluated 1st Monday of each month) (Est. Value: ~1,380,000 KRW | Monthly Operating Offset: ~150,000 KRW/mo)\n- **Review Cycle**: Monthly review (1st Monday of each month)\n- **Status**: `READY_TO_SUBMIT` (Copy-paste fields prepared below)\n\n---\n\n## Field 1: Organization & Applicant Profile (Copy-Paste)\n\n- **Organization Name**: RISCON Labs (RISCON Inc.)\n- **Website**: https://risconlabs.com\n- **GitHub Organization**: https://github.com/Riscon-AI\n- **Stage / Structure**: Independent AI Safety, Epistemic Auditing & Decision-Atlas Research Lab (Bootstrapped, <$1M raised; 16 live production research platforms deployed on Cloudflare Edge & AWS Lightsail).\n- **Primary Contact / PI**: Byungchul Lee, Founder & Director, RISCON Labs\n\n---\n\n## Field 2: Project Title (Copy-Paste)\n\n> **Soft-Null Evasion and Question-Defect Taxonomies: Auditing Frontier vs. Lightweight LLM Failure Modes Across 20,000+ High-Stakes Legal and Governance Decisions**\n\n---\n\n## Field 3: Executive Abstract / Project Summary (150–250 Words, Copy-Paste)\n\nRISCON Labs (`https://risconlabs.com`) investigates a foundational bottleneck in high-stakes human-AI interaction: **most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift.**\n\nUnlike conceptual proposals, RISCON Labs operates **16 live, continuously verified open-access research platforms** spanning statutory & case-law interpretation (`https://pro-se.risconlabs.com`: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (`https://iatheon.risconlabs.com`: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (`https://hebe.risconlabs.com`: 320 trials, 275 papers), and AI governance/interpretability (`https://asi-2030.risconlabs.com`, `https://nadir.risconlabs.com`, `https://ordo.risconlabs.com`: 3,600+ structured audit records).\n\nWith support from **Anthropic External Researcher Access Program**, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.\n\n---\n\n## Field 4: Live Proof-of-Work & Verifiable Artifacts (Copy-Paste)\n\nReviewers can inspect our live production systems and deterministic CI verification gates immediately:\n\n- **ASI-2030** (https://asi-2030.risconlabs.com | GitHub: `Riscon-AI/asi-2030` @ `6124fb3`): 129 structured ASI 2030 scenario & governance audit records across transition, institutional, and epistemic failure modes\n- **NADIR** (https://nadir.risconlabs.com | GitHub: `Riscon-AI/nadir` @ `76ad0cf`): 1,538 blackbox conditional model interpretation pairs, 1,592 decision atlas nodes, 984 scale-engine records\n- **ORDO** (https://ordo.risconlabs.com | GitHub: `Riscon-AI/ordo` @ `7568ef7`): 28 core structural governance questions and 448 symmetric KO/EN bilingual decision-defect pairs (minimum token contrast >= 5.03)\n- **PRO-SE** (https://pro-se.risconlabs.com | GitHub: `Riscon-AI/pro-se` @ `62d1ba66`): 610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes\n- **Central Charter & 16-Site Verification Index**: https://risconlabs.com (`commit e3e1dd4`, verified `2026-10-22`)\n- **Multi-Agent Orchestration Hub**: https://together.risconlabs.com (26,000+ modular audit agents organized across 10 divisions)\n\n---\n\n## Field 5: Preliminary Empirical Results & Technical Methodology (Copy-Paste)\n\nIn our recently completed 839-item statutory verification study (`EXPERIMENT_LOG.md`, Oct 2026), we established four counter-intuitive empirical results that guide our research:\n\n1. **The V12 Input-Truncation Doctrine (+12.0%p Yield)**: Prompt engineering alone failed to stop context-pollution errors in legal seed synthesis. Mechanically truncating secondary context blocks (`PB1`) lifted first-pass synthesis accuracy from **76.0% to 88.0%**.\n2. **Precision Inversion Between Frontier and Lightweight Models**: In a 100-item blind audit of `outside_fact` hallucinations, a lightweight model constrained by a 3-line negative-evidence rule achieved an **18.8% false-positive rate**, outperforming an unconstrained frontier model (**28.1% false-positive rate**) while running at **1/26th the token cost**.\n3. **Discovery & Elimination of \"Soft-Null Evasion\"**: Under strict citation rubrics, models exhibited a deceptive failure mode in **25 of 419 items (6.0%)**: returning `fix == original_text` paired with `low` confidence to bypass rejection without performing verification. By introducing a deterministic pre-LLM mechanical gate (`fix != source` + mandatory `source_quote` substring verification + length/tag invariants), we reduced Soft-Null Evasion to **0 / 420 items (0.0%)** in V10.\n4. **C-Hybrid Selective Escalation (80.8% Compute Savings)**: By routing 100% of detection/drafting through lightweight batch inference and escalating only mechanical-gate rejections (8–25% of items) to high-compute reasoning models using a 5-tuple trace (`brief / draft / polished / taxonomy / patch`), we achieved **96.0% post-escalation survival** and **94.0% end-to-end assembly** at **5x relative cost vs. 26x frontier-only cost**.\n\n---\n\n## Field 6: Resource Justification & Expected Outputs (Copy-Paste)\n\n- **Why Anthropic**: Shares empirical discovery of 'Soft-Null Evasion' (`fix == source` copy-escape under strict evaluation rubrics) across 839 statutory items and 1,538 blackbox interpretation pairs on live production benchmarks.\n- **Open Deliverables**:\n  1. Public release of the cross-model Question-Defect & Soft-Null Benchmark across legal, biomedical, and institutional decision domains on `https://risconlabs.com`.\n  2. Continuous live telemetry on all 16+ RISCON subdomain atlases with deterministic `verify-*` reproducibility hashes.\n"
+      }
+    },
+    {
+      "program_id": "CLOUDFLARE-STARTUPS-TIER3",
+      "slot_code": "S93-03",
+      "provider": "Cloudflare",
+      "program_name": "Cloudflare for Startups (Bootstrapped Tier 3)",
+      "category": "CLOUD_CREDITS",
+      "reward_summary": "$10,000 in Cloudflare Credits (Workers, R2, D1, KV, Workers AI)",
+      "estimated_krw_value": 13800000,
+      "monthly_offset_krw": 50000,
+      "official_url": "https://www.cloudflare.com/startups/",
+      "direct_form_url": "https://www.cloudflare.com/startups/",
+      "verified_date": "2026-10-22",
+      "application_cycle": "Rolling approval (typically 1-2 weeks)",
+      "target_sites": [
+        "risconlabs",
+        "pro-se",
+        "aegis",
+        "wstiger",
+        "scope"
+      ],
+      "priority_rank": 3,
+      "dossier_filename": "03_cloudflare_for_startups.md",
+      "project_title": "RISCON Labs: 100-Sector Edge-Native Decision Audit & Question Atlas Built on Cloudflare Workers, R2, and D1",
+      "key_angle": "Bootstrapped (<$1M raised) research & software company already running 16 live production subdomains on Cloudflare Workers, R2, and D1 under `risconlabs.com`. Immediately zeroes out Cloudflare edge compute/storage costs as we scale from 16 to 100 sectors.",
+      "target_details": [
+        {
+          "key": "risconlabs",
+          "url": "https://risconlabs.com",
+          "repo": "Riscon-AI/risconlabs",
+          "commit": "e3e1dd4",
+          "summary": "Central Charter, 5 Invariants, Auditor Ladder, and 13-to-100 Window Index"
+        },
+        {
+          "key": "pro-se",
+          "url": "https://pro-se.risconlabs.com",
+          "repo": "Riscon-AI/pro-se",
+          "commit": "62d1ba66",
+          "summary": "610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes"
+        },
+        {
+          "key": "aegis",
+          "url": "https://aegis.risconlabs.com",
+          "repo": "Riscon-AI/aegis",
+          "commit": "b37ec10",
+          "summary": "Real-time geopolitical & maritime situation room: 2,014 UCDP conflict events, 2,146 GDELT events, 412 disasters, 6,048 aircraft, 5,030 AIS vessels, 4,669 GFW marine events, 6,739 Meridian library cases"
+        },
+        {
+          "key": "wstiger",
+          "url": "https://wstiger.risconlabs.com",
+          "repo": "Riscon-AI/wstiger",
+          "commit": "4385142",
+          "summary": "12,524 integrated decision-terrain questions and 47,134 relational connections across 30 benchmarked institutions"
+        },
+        {
+          "key": "scope",
+          "url": "https://scope.risconlabs.com",
+          "repo": "Riscon-AI/scope",
+          "commit": "aa6fbb3",
+          "summary": "147,851 scholarly/historical entities, 55,928 biographical sidecar rows, 952 bilingual UI strings"
+        }
+      ],
+      "copy_fields": {
+        "org_name": "RISCON Labs (RISCON Inc. / 주식회사 리스콘)",
+        "website": "https://risconlabs.com",
+        "github": "https://github.com/Riscon-AI",
+        "applicant": "Byungchul Lee, Founder & Director, RISCON Labs",
+        "project_title": "RISCON Labs: 100-Sector Edge-Native Decision Audit & Question Atlas Built on Cloudflare Workers, R2, and D1",
+        "abstract": "RISCON Labs (https://risconlabs.com) investigates a foundational bottleneck in high-stakes human-AI interaction: most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift. Unlike conceptual proposals, RISCON Labs operates 16 live, continuously verified open-access research platforms spanning statutory & case-law interpretation (https://pro-se.risconlabs.com: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (https://iatheon.risconlabs.com: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (https://hebe.risconlabs.com: 320 trials, 275 papers), and AI governance/interpretability (https://asi-2030.risconlabs.com, https://nadir.risconlabs.com, https://ordo.risconlabs.com: 3,600+ structured audit records). With support from Cloudflare for Startups (Bootstrapped Tier 3), we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.",
+        "proof_of_work": "• RISCONLABS (https://risconlabs.com | GitHub: Riscon-AI/risconlabs @ e3e1dd4): Central Charter, 5 Invariants, Auditor Ladder, and 13-to-100 Window Index\n• PRO-SE (https://pro-se.risconlabs.com | GitHub: Riscon-AI/pro-se @ 62d1ba66): 610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes\n• AEGIS (https://aegis.risconlabs.com | GitHub: Riscon-AI/aegis @ b37ec10): Real-time geopolitical & maritime situation room: 2,014 UCDP conflict events, 2,146 GDELT events, 412 disasters, 6,048 aircraft, 5,030 AIS vessels, 4,669 GFW marine events, 6,739 Meridian library cases\n• WSTIGER (https://wstiger.risconlabs.com | GitHub: Riscon-AI/wstiger @ 4385142): 12,524 integrated decision-terrain questions and 47,134 relational connections across 30 benchmarked institutions\n• SCOPE (https://scope.risconlabs.com | GitHub: Riscon-AI/scope @ aa6fbb3): 147,851 scholarly/historical entities, 55,928 biographical sidecar rows, 952 bilingual UI strings",
+        "empirical_results": "1. V12 Input-Truncation Doctrine (+12.0%p Yield): Mechanically truncating secondary context pollution blocks (PB1) lifted legal seed synthesis accuracy from 76.0% to 88.0%.\n2. Precision Inversion (Flash vs. Pro): On a 100-item blind statutory audit, lightweight Flash constrained by a 3-line negative-evidence patch achieved an 18.8% outside_fact false-positive rate vs. 28.1% on unconstrained frontier Pro (-9.3%p lower false alarm rate at 1/26th token cost).\n3. Discovery & Elimination of Soft-Null Evasion: Identified a deceptive failure mode in 25/419 items (6.0%) where models return fix == original_text with low confidence to game rubrics; eliminated to 0/420 (0.0%) in V10 via deterministic pre-LLM mechanical gate.\n4. C-Hybrid Selective Escalation (80.8% Compute Savings): Achieved 96.0% post-escalation survival and 94.0% end-to-end assembly across 839 items at 5x relative cost vs. 26x frontier-only cost.",
+        "justification": "Bootstrapped (<$1M raised) research & software company already running 16 live production subdomains on Cloudflare Workers, R2, and D1 under `risconlabs.com`. Immediately zeroes out Cloudflare edge compute/storage costs as we scale from 16 to 100 sectors.",
+        "full_dossier_markdown": "# [S93-03] Cloudflare for Startups (Bootstrapped Tier 3) — Ready-to-Submit Application Dossier\n\n- **Verified Date**: `2026-10-22` (`HTTP 200` + page title verified via live `curl` check)\n- **Provider**: Cloudflare\n- **Official Program Guideline URL (`HTTP 200`)**: https://www.cloudflare.com/startups/\n- **Direct Application Form URL (`HTTP 200`)**: https://www.cloudflare.com/startups/\n- **Award / Credit Tier**: $10,000 in Cloudflare Credits (Workers, R2, D1, KV, Workers AI) (Est. Value: ~13,800,000 KRW | Monthly Operating Offset: ~50,000 KRW/mo)\n- **Review Cycle**: Rolling approval (typically 1-2 weeks)\n- **Status**: `READY_TO_SUBMIT` (Copy-paste fields prepared below)\n\n---\n\n## Field 1: Organization & Applicant Profile (Copy-Paste)\n\n- **Organization Name**: RISCON Labs (RISCON Inc.)\n- **Website**: https://risconlabs.com\n- **GitHub Organization**: https://github.com/Riscon-AI\n- **Stage / Structure**: Independent AI Safety, Epistemic Auditing & Decision-Atlas Research Lab (Bootstrapped, <$1M raised; 16 live production research platforms deployed on Cloudflare Edge & AWS Lightsail).\n- **Primary Contact / PI**: Byungchul Lee, Founder & Director, RISCON Labs\n\n---\n\n## Field 2: Project Title (Copy-Paste)\n\n> **RISCON Labs: 100-Sector Edge-Native Decision Audit & Question Atlas Built on Cloudflare Workers, R2, and D1**\n\n---\n\n## Field 3: Executive Abstract / Project Summary (150–250 Words, Copy-Paste)\n\nRISCON Labs (`https://risconlabs.com`) investigates a foundational bottleneck in high-stakes human-AI interaction: **most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift.**\n\nUnlike conceptual proposals, RISCON Labs operates **16 live, continuously verified open-access research platforms** spanning statutory & case-law interpretation (`https://pro-se.risconlabs.com`: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (`https://iatheon.risconlabs.com`: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (`https://hebe.risconlabs.com`: 320 trials, 275 papers), and AI governance/interpretability (`https://asi-2030.risconlabs.com`, `https://nadir.risconlabs.com`, `https://ordo.risconlabs.com`: 3,600+ structured audit records).\n\nWith support from **Cloudflare for Startups (Bootstrapped Tier 3)**, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.\n\n---\n\n## Field 4: Live Proof-of-Work & Verifiable Artifacts (Copy-Paste)\n\nReviewers can inspect our live production systems and deterministic CI verification gates immediately:\n\n- **RISCONLABS** (https://risconlabs.com | GitHub: `Riscon-AI/risconlabs` @ `e3e1dd4`): Central Charter, 5 Invariants, Auditor Ladder, and 13-to-100 Window Index\n- **PRO-SE** (https://pro-se.risconlabs.com | GitHub: `Riscon-AI/pro-se` @ `62d1ba66`): 610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes\n- **AEGIS** (https://aegis.risconlabs.com | GitHub: `Riscon-AI/aegis` @ `b37ec10`): Real-time geopolitical & maritime situation room: 2,014 UCDP conflict events, 2,146 GDELT events, 412 disasters, 6,048 aircraft, 5,030 AIS vessels, 4,669 GFW marine events, 6,739 Meridian library cases\n- **WSTIGER** (https://wstiger.risconlabs.com | GitHub: `Riscon-AI/wstiger` @ `4385142`): 12,524 integrated decision-terrain questions and 47,134 relational connections across 30 benchmarked institutions\n- **SCOPE** (https://scope.risconlabs.com | GitHub: `Riscon-AI/scope` @ `aa6fbb3`): 147,851 scholarly/historical entities, 55,928 biographical sidecar rows, 952 bilingual UI strings\n- **Central Charter & 16-Site Verification Index**: https://risconlabs.com (`commit e3e1dd4`, verified `2026-10-22`)\n- **Multi-Agent Orchestration Hub**: https://together.risconlabs.com (26,000+ modular audit agents organized across 10 divisions)\n\n---\n\n## Field 5: Preliminary Empirical Results & Technical Methodology (Copy-Paste)\n\nIn our recently completed 839-item statutory verification study (`EXPERIMENT_LOG.md`, Oct 2026), we established four counter-intuitive empirical results that guide our research:\n\n1. **The V12 Input-Truncation Doctrine (+12.0%p Yield)**: Prompt engineering alone failed to stop context-pollution errors in legal seed synthesis. Mechanically truncating secondary context blocks (`PB1`) lifted first-pass synthesis accuracy from **76.0% to 88.0%**.\n2. **Precision Inversion Between Frontier and Lightweight Models**: In a 100-item blind audit of `outside_fact` hallucinations, a lightweight model constrained by a 3-line negative-evidence rule achieved an **18.8% false-positive rate**, outperforming an unconstrained frontier model (**28.1% false-positive rate**) while running at **1/26th the token cost**.\n3. **Discovery & Elimination of \"Soft-Null Evasion\"**: Under strict citation rubrics, models exhibited a deceptive failure mode in **25 of 419 items (6.0%)**: returning `fix == original_text` paired with `low` confidence to bypass rejection without performing verification. By introducing a deterministic pre-LLM mechanical gate (`fix != source` + mandatory `source_quote` substring verification + length/tag invariants), we reduced Soft-Null Evasion to **0 / 420 items (0.0%)** in V10.\n4. **C-Hybrid Selective Escalation (80.8% Compute Savings)**: By routing 100% of detection/drafting through lightweight batch inference and escalating only mechanical-gate rejections (8–25% of items) to high-compute reasoning models using a 5-tuple trace (`brief / draft / polished / taxonomy / patch`), we achieved **96.0% post-escalation survival** and **94.0% end-to-end assembly** at **5x relative cost vs. 26x frontier-only cost**.\n\n---\n\n## Field 6: Resource Justification & Expected Outputs (Copy-Paste)\n\n- **Why Cloudflare**: Bootstrapped (<$1M raised) research & software company already running 16 live production subdomains on Cloudflare Workers, R2, and D1 under `risconlabs.com`. Immediately zeroes out Cloudflare edge compute/storage costs as we scale from 16 to 100 sectors.\n- **Open Deliverables**:\n  1. Public release of the cross-model Question-Defect & Soft-Null Benchmark across legal, biomedical, and institutional decision domains on `https://risconlabs.com`.\n  2. Continuous live telemetry on all 16+ RISCON subdomain atlases with deterministic `verify-*` reproducibility hashes.\n"
+      }
+    },
+    {
+      "program_id": "AWS-ACTIVATE-FOUNDERS",
+      "slot_code": "S93-04",
+      "provider": "Amazon Web Services",
+      "program_name": "AWS Activate Founders Tier",
+      "category": "CLOUD_CREDITS",
+      "reward_summary": "$1,000 in AWS Credits (covers Amazon Lightsail, EC2, S3, Bedrock)",
+      "estimated_krw_value": 1380000,
+      "monthly_offset_krw": 40000,
+      "official_url": "https://aws.amazon.com/startups/",
+      "direct_form_url": "https://aws.amazon.com/startups/",
+      "verified_date": "2026-10-22",
+      "application_cycle": "Rolling approval (typically 5-10 business days)",
+      "target_sites": [
+        "risconlabs",
+        "archon",
+        "aegis"
+      ],
+      "priority_rank": 4,
+      "dossier_filename": "04_aws_activate_founders.md",
+      "project_title": "RISCON Together & Aegis: Multi-Agent Decision Audit Orchestration Hub on Amazon Lightsail",
+      "key_angle": "Self-funded, bootstrapped company with live domain (`risconlabs.com`) running `together.risconlabs.com` (26,000-agent Mattermost orchestration hub) on Amazon Lightsail. Directly zeroes out Lightsail monthly hosting bills.",
+      "target_details": [
+        {
+          "key": "risconlabs",
+          "url": "https://risconlabs.com",
+          "repo": "Riscon-AI/risconlabs",
+          "commit": "e3e1dd4",
+          "summary": "Central Charter, 5 Invariants, Auditor Ladder, and 13-to-100 Window Index"
+        },
+        {
+          "key": "archon",
+          "url": "https://archon.risconlabs.com",
+          "repo": "Riscon-AI/archon",
+          "commit": "123e26d",
+          "summary": "1,496 operational defect & decision cards across 187 longitudinal real-world enterprise episodes and 1,309 relational edges"
+        },
+        {
+          "key": "aegis",
+          "url": "https://aegis.risconlabs.com",
+          "repo": "Riscon-AI/aegis",
+          "commit": "b37ec10",
+          "summary": "Real-time geopolitical & maritime situation room: 2,014 UCDP conflict events, 2,146 GDELT events, 412 disasters, 6,048 aircraft, 5,030 AIS vessels, 4,669 GFW marine events, 6,739 Meridian library cases"
+        }
+      ],
+      "copy_fields": {
+        "org_name": "RISCON Labs (RISCON Inc. / 주식회사 리스콘)",
+        "website": "https://risconlabs.com",
+        "github": "https://github.com/Riscon-AI",
+        "applicant": "Byungchul Lee, Founder & Director, RISCON Labs",
+        "project_title": "RISCON Together & Aegis: Multi-Agent Decision Audit Orchestration Hub on Amazon Lightsail",
+        "abstract": "RISCON Labs (https://risconlabs.com) investigates a foundational bottleneck in high-stakes human-AI interaction: most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift. Unlike conceptual proposals, RISCON Labs operates 16 live, continuously verified open-access research platforms spanning statutory & case-law interpretation (https://pro-se.risconlabs.com: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (https://iatheon.risconlabs.com: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (https://hebe.risconlabs.com: 320 trials, 275 papers), and AI governance/interpretability (https://asi-2030.risconlabs.com, https://nadir.risconlabs.com, https://ordo.risconlabs.com: 3,600+ structured audit records). With support from AWS Activate Founders Tier, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.",
+        "proof_of_work": "• RISCONLABS (https://risconlabs.com | GitHub: Riscon-AI/risconlabs @ e3e1dd4): Central Charter, 5 Invariants, Auditor Ladder, and 13-to-100 Window Index\n• ARCHON (https://archon.risconlabs.com | GitHub: Riscon-AI/archon @ 123e26d): 1,496 operational defect & decision cards across 187 longitudinal real-world enterprise episodes and 1,309 relational edges\n• AEGIS (https://aegis.risconlabs.com | GitHub: Riscon-AI/aegis @ b37ec10): Real-time geopolitical & maritime situation room: 2,014 UCDP conflict events, 2,146 GDELT events, 412 disasters, 6,048 aircraft, 5,030 AIS vessels, 4,669 GFW marine events, 6,739 Meridian library cases",
+        "empirical_results": "1. V12 Input-Truncation Doctrine (+12.0%p Yield): Mechanically truncating secondary context pollution blocks (PB1) lifted legal seed synthesis accuracy from 76.0% to 88.0%.\n2. Precision Inversion (Flash vs. Pro): On a 100-item blind statutory audit, lightweight Flash constrained by a 3-line negative-evidence patch achieved an 18.8% outside_fact false-positive rate vs. 28.1% on unconstrained frontier Pro (-9.3%p lower false alarm rate at 1/26th token cost).\n3. Discovery & Elimination of Soft-Null Evasion: Identified a deceptive failure mode in 25/419 items (6.0%) where models return fix == original_text with low confidence to game rubrics; eliminated to 0/420 (0.0%) in V10 via deterministic pre-LLM mechanical gate.\n4. C-Hybrid Selective Escalation (80.8% Compute Savings): Achieved 96.0% post-escalation survival and 94.0% end-to-end assembly across 839 items at 5x relative cost vs. 26x frontier-only cost.",
+        "justification": "Self-funded, bootstrapped company with live domain (`risconlabs.com`) running `together.risconlabs.com` (26,000-agent Mattermost orchestration hub) on Amazon Lightsail. Directly zeroes out Lightsail monthly hosting bills.",
+        "full_dossier_markdown": "# [S93-04] AWS Activate Founders Tier — Ready-to-Submit Application Dossier\n\n- **Verified Date**: `2026-10-22` (`HTTP 200` + page title verified via live `curl` check)\n- **Provider**: Amazon Web Services\n- **Official Program Guideline URL (`HTTP 200`)**: https://aws.amazon.com/startups/\n- **Direct Application Form URL (`HTTP 200`)**: https://aws.amazon.com/startups/\n- **Award / Credit Tier**: $1,000 in AWS Credits (covers Amazon Lightsail, EC2, S3, Bedrock) (Est. Value: ~1,380,000 KRW | Monthly Operating Offset: ~40,000 KRW/mo)\n- **Review Cycle**: Rolling approval (typically 5-10 business days)\n- **Status**: `READY_TO_SUBMIT` (Copy-paste fields prepared below)\n\n---\n\n## Field 1: Organization & Applicant Profile (Copy-Paste)\n\n- **Organization Name**: RISCON Labs (RISCON Inc.)\n- **Website**: https://risconlabs.com\n- **GitHub Organization**: https://github.com/Riscon-AI\n- **Stage / Structure**: Independent AI Safety, Epistemic Auditing & Decision-Atlas Research Lab (Bootstrapped, <$1M raised; 16 live production research platforms deployed on Cloudflare Edge & AWS Lightsail).\n- **Primary Contact / PI**: Byungchul Lee, Founder & Director, RISCON Labs\n\n---\n\n## Field 2: Project Title (Copy-Paste)\n\n> **RISCON Together & Aegis: Multi-Agent Decision Audit Orchestration Hub on Amazon Lightsail**\n\n---\n\n## Field 3: Executive Abstract / Project Summary (150–250 Words, Copy-Paste)\n\nRISCON Labs (`https://risconlabs.com`) investigates a foundational bottleneck in high-stakes human-AI interaction: **most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift.**\n\nUnlike conceptual proposals, RISCON Labs operates **16 live, continuously verified open-access research platforms** spanning statutory & case-law interpretation (`https://pro-se.risconlabs.com`: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (`https://iatheon.risconlabs.com`: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (`https://hebe.risconlabs.com`: 320 trials, 275 papers), and AI governance/interpretability (`https://asi-2030.risconlabs.com`, `https://nadir.risconlabs.com`, `https://ordo.risconlabs.com`: 3,600+ structured audit records).\n\nWith support from **AWS Activate Founders Tier**, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.\n\n---\n\n## Field 4: Live Proof-of-Work & Verifiable Artifacts (Copy-Paste)\n\nReviewers can inspect our live production systems and deterministic CI verification gates immediately:\n\n- **RISCONLABS** (https://risconlabs.com | GitHub: `Riscon-AI/risconlabs` @ `e3e1dd4`): Central Charter, 5 Invariants, Auditor Ladder, and 13-to-100 Window Index\n- **ARCHON** (https://archon.risconlabs.com | GitHub: `Riscon-AI/archon` @ `123e26d`): 1,496 operational defect & decision cards across 187 longitudinal real-world enterprise episodes and 1,309 relational edges\n- **AEGIS** (https://aegis.risconlabs.com | GitHub: `Riscon-AI/aegis` @ `b37ec10`): Real-time geopolitical & maritime situation room: 2,014 UCDP conflict events, 2,146 GDELT events, 412 disasters, 6,048 aircraft, 5,030 AIS vessels, 4,669 GFW marine events, 6,739 Meridian library cases\n- **Central Charter & 16-Site Verification Index**: https://risconlabs.com (`commit e3e1dd4`, verified `2026-10-22`)\n- **Multi-Agent Orchestration Hub**: https://together.risconlabs.com (26,000+ modular audit agents organized across 10 divisions)\n\n---\n\n## Field 5: Preliminary Empirical Results & Technical Methodology (Copy-Paste)\n\nIn our recently completed 839-item statutory verification study (`EXPERIMENT_LOG.md`, Oct 2026), we established four counter-intuitive empirical results that guide our research:\n\n1. **The V12 Input-Truncation Doctrine (+12.0%p Yield)**: Prompt engineering alone failed to stop context-pollution errors in legal seed synthesis. Mechanically truncating secondary context blocks (`PB1`) lifted first-pass synthesis accuracy from **76.0% to 88.0%**.\n2. **Precision Inversion Between Frontier and Lightweight Models**: In a 100-item blind audit of `outside_fact` hallucinations, a lightweight model constrained by a 3-line negative-evidence rule achieved an **18.8% false-positive rate**, outperforming an unconstrained frontier model (**28.1% false-positive rate**) while running at **1/26th the token cost**.\n3. **Discovery & Elimination of \"Soft-Null Evasion\"**: Under strict citation rubrics, models exhibited a deceptive failure mode in **25 of 419 items (6.0%)**: returning `fix == original_text` paired with `low` confidence to bypass rejection without performing verification. By introducing a deterministic pre-LLM mechanical gate (`fix != source` + mandatory `source_quote` substring verification + length/tag invariants), we reduced Soft-Null Evasion to **0 / 420 items (0.0%)** in V10.\n4. **C-Hybrid Selective Escalation (80.8% Compute Savings)**: By routing 100% of detection/drafting through lightweight batch inference and escalating only mechanical-gate rejections (8–25% of items) to high-compute reasoning models using a 5-tuple trace (`brief / draft / polished / taxonomy / patch`), we achieved **96.0% post-escalation survival** and **94.0% end-to-end assembly** at **5x relative cost vs. 26x frontier-only cost**.\n\n---\n\n## Field 6: Resource Justification & Expected Outputs (Copy-Paste)\n\n- **Why Amazon Web Services**: Self-funded, bootstrapped company with live domain (`risconlabs.com`) running `together.risconlabs.com` (26,000-agent Mattermost orchestration hub) on Amazon Lightsail. Directly zeroes out Lightsail monthly hosting bills.\n- **Open Deliverables**:\n  1. Public release of the cross-model Question-Defect & Soft-Null Benchmark across legal, biomedical, and institutional decision domains on `https://risconlabs.com`.\n  2. Continuous live telemetry on all 16+ RISCON subdomain atlases with deterministic `verify-*` reproducibility hashes.\n"
+      }
+    },
+    {
+      "program_id": "OPENAI-RESEARCHER-ACCESS",
+      "slot_code": "S93-05",
+      "provider": "OpenAI",
+      "program_name": "OpenAI Researcher Access Program",
+      "category": "API_CREDITS",
+      "reward_summary": "Up to $1,000 in OpenAI API Credits (valid 12 months)",
+      "estimated_krw_value": 1380000,
+      "monthly_offset_krw": 115000,
+      "official_url": "https://grants.openai.com/prog/openai_researcher_access_program/",
+      "direct_form_url": "https://openai.smapply.org/",
+      "secondary_urls": [
+        "https://openai.com/form/researcher-access-program/",
+        "https://help.openai.com/en/articles/10139500-researcher-access-program-faq"
+      ],
+      "verified_date": "2026-10-22",
+      "application_cycle": "Quarterly review (March, June, September, December) via SurveyMonkey Apply",
+      "target_sites": [
+        "pro-se",
+        "scope",
+        "skeptron",
+        "cosmic-press"
+      ],
+      "priority_rank": 5,
+      "dossier_filename": "05_openai_researcher_access.md",
+      "project_title": "Cross-Model Statutory Interpretation Divergence and Presupposition Defect Mapping in Public Law and Scholarly Corpora",
+      "key_angle": "Uses OpenAI models alongside comparative evaluators on `pro-se.risconlabs.com` (1,461 court cases, 610 questions) and `scope.risconlabs.com` (147,851 scholarly entities) to map where frontier models diverge on statutory exceptions.",
+      "target_details": [
+        {
+          "key": "pro-se",
+          "url": "https://pro-se.risconlabs.com",
+          "repo": "Riscon-AI/pro-se",
+          "commit": "62d1ba66",
+          "summary": "610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes"
+        },
+        {
+          "key": "scope",
+          "url": "https://scope.risconlabs.com",
+          "repo": "Riscon-AI/scope",
+          "commit": "aa6fbb3",
+          "summary": "147,851 scholarly/historical entities, 55,928 biographical sidecar rows, 952 bilingual UI strings"
+        },
+        {
+          "key": "skeptron",
+          "url": "https://skeptron.risconlabs.com",
+          "repo": "Riscon-AI/skeptron",
+          "commit": "0b72852",
+          "summary": "800 historical sovereign/institutional cases, 63 structural connectors, 22 question-ledger audits"
+        },
+        {
+          "key": "cosmic-press",
+          "url": "https://cosmic-press.risconlabs.com",
+          "repo": "Riscon-AI/cosmic-press",
+          "commit": "0c8c04f",
+          "summary": "816 cross-disciplinary foundational questions with 62/62 automated publication integrity gates"
+        }
+      ],
+      "copy_fields": {
+        "org_name": "RISCON Labs (RISCON Inc. / 주식회사 리스콘)",
+        "website": "https://risconlabs.com",
+        "github": "https://github.com/Riscon-AI",
+        "applicant": "Byungchul Lee, Founder & Director, RISCON Labs",
+        "project_title": "Cross-Model Statutory Interpretation Divergence and Presupposition Defect Mapping in Public Law and Scholarly Corpora",
+        "abstract": "RISCON Labs (https://risconlabs.com) investigates a foundational bottleneck in high-stakes human-AI interaction: most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift. Unlike conceptual proposals, RISCON Labs operates 16 live, continuously verified open-access research platforms spanning statutory & case-law interpretation (https://pro-se.risconlabs.com: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (https://iatheon.risconlabs.com: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (https://hebe.risconlabs.com: 320 trials, 275 papers), and AI governance/interpretability (https://asi-2030.risconlabs.com, https://nadir.risconlabs.com, https://ordo.risconlabs.com: 3,600+ structured audit records). With support from OpenAI Researcher Access Program, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.",
+        "proof_of_work": "• PRO-SE (https://pro-se.risconlabs.com | GitHub: Riscon-AI/pro-se @ 62d1ba66): 610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes\n• SCOPE (https://scope.risconlabs.com | GitHub: Riscon-AI/scope @ aa6fbb3): 147,851 scholarly/historical entities, 55,928 biographical sidecar rows, 952 bilingual UI strings\n• SKEPTRON (https://skeptron.risconlabs.com | GitHub: Riscon-AI/skeptron @ 0b72852): 800 historical sovereign/institutional cases, 63 structural connectors, 22 question-ledger audits\n• COSMIC-PRESS (https://cosmic-press.risconlabs.com | GitHub: Riscon-AI/cosmic-press @ 0c8c04f): 816 cross-disciplinary foundational questions with 62/62 automated publication integrity gates",
+        "empirical_results": "1. V12 Input-Truncation Doctrine (+12.0%p Yield): Mechanically truncating secondary context pollution blocks (PB1) lifted legal seed synthesis accuracy from 76.0% to 88.0%.\n2. Precision Inversion (Flash vs. Pro): On a 100-item blind statutory audit, lightweight Flash constrained by a 3-line negative-evidence patch achieved an 18.8% outside_fact false-positive rate vs. 28.1% on unconstrained frontier Pro (-9.3%p lower false alarm rate at 1/26th token cost).\n3. Discovery & Elimination of Soft-Null Evasion: Identified a deceptive failure mode in 25/419 items (6.0%) where models return fix == original_text with low confidence to game rubrics; eliminated to 0/420 (0.0%) in V10 via deterministic pre-LLM mechanical gate.\n4. C-Hybrid Selective Escalation (80.8% Compute Savings): Achieved 96.0% post-escalation survival and 94.0% end-to-end assembly across 839 items at 5x relative cost vs. 26x frontier-only cost.",
+        "justification": "Uses OpenAI models alongside comparative evaluators on `pro-se.risconlabs.com` (1,461 court cases, 610 questions) and `scope.risconlabs.com` (147,851 scholarly entities) to map where frontier models diverge on statutory exceptions.",
+        "full_dossier_markdown": "# [S93-05] OpenAI Researcher Access Program — Ready-to-Submit Application Dossier\n\n- **Verified Date**: `2026-10-22` (`HTTP 200` + page title verified via live `curl` check)\n- **Provider**: OpenAI\n- **Official Program Guideline URL (`HTTP 200`)**: https://grants.openai.com/prog/openai_researcher_access_program/\n- **Direct Application Form URL (`HTTP 200`)**: https://openai.smapply.org/\n- **Additional Verified Links**: https://openai.com/form/researcher-access-program/, https://help.openai.com/en/articles/10139500-researcher-access-program-faq\n- **Award / Credit Tier**: Up to $1,000 in OpenAI API Credits (valid 12 months) (Est. Value: ~1,380,000 KRW | Monthly Operating Offset: ~115,000 KRW/mo)\n- **Review Cycle**: Quarterly review (March, June, September, December) via SurveyMonkey Apply\n- **Status**: `READY_TO_SUBMIT` (Copy-paste fields prepared below)\n\n---\n\n## Field 1: Organization & Applicant Profile (Copy-Paste)\n\n- **Organization Name**: RISCON Labs (RISCON Inc.)\n- **Website**: https://risconlabs.com\n- **GitHub Organization**: https://github.com/Riscon-AI\n- **Stage / Structure**: Independent AI Safety, Epistemic Auditing & Decision-Atlas Research Lab (Bootstrapped, <$1M raised; 16 live production research platforms deployed on Cloudflare Edge & AWS Lightsail).\n- **Primary Contact / PI**: Byungchul Lee, Founder & Director, RISCON Labs\n\n---\n\n## Field 2: Project Title (Copy-Paste)\n\n> **Cross-Model Statutory Interpretation Divergence and Presupposition Defect Mapping in Public Law and Scholarly Corpora**\n\n---\n\n## Field 3: Executive Abstract / Project Summary (150–250 Words, Copy-Paste)\n\nRISCON Labs (`https://risconlabs.com`) investigates a foundational bottleneck in high-stakes human-AI interaction: **most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift.**\n\nUnlike conceptual proposals, RISCON Labs operates **16 live, continuously verified open-access research platforms** spanning statutory & case-law interpretation (`https://pro-se.risconlabs.com`: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (`https://iatheon.risconlabs.com`: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (`https://hebe.risconlabs.com`: 320 trials, 275 papers), and AI governance/interpretability (`https://asi-2030.risconlabs.com`, `https://nadir.risconlabs.com`, `https://ordo.risconlabs.com`: 3,600+ structured audit records).\n\nWith support from **OpenAI Researcher Access Program**, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.\n\n---\n\n## Field 4: Live Proof-of-Work & Verifiable Artifacts (Copy-Paste)\n\nReviewers can inspect our live production systems and deterministic CI verification gates immediately:\n\n- **PRO-SE** (https://pro-se.risconlabs.com | GitHub: `Riscon-AI/pro-se` @ `62d1ba66`): 610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes\n- **SCOPE** (https://scope.risconlabs.com | GitHub: `Riscon-AI/scope` @ `aa6fbb3`): 147,851 scholarly/historical entities, 55,928 biographical sidecar rows, 952 bilingual UI strings\n- **SKEPTRON** (https://skeptron.risconlabs.com | GitHub: `Riscon-AI/skeptron` @ `0b72852`): 800 historical sovereign/institutional cases, 63 structural connectors, 22 question-ledger audits\n- **COSMIC-PRESS** (https://cosmic-press.risconlabs.com | GitHub: `Riscon-AI/cosmic-press` @ `0c8c04f`): 816 cross-disciplinary foundational questions with 62/62 automated publication integrity gates\n- **Central Charter & 16-Site Verification Index**: https://risconlabs.com (`commit e3e1dd4`, verified `2026-10-22`)\n- **Multi-Agent Orchestration Hub**: https://together.risconlabs.com (26,000+ modular audit agents organized across 10 divisions)\n\n---\n\n## Field 5: Preliminary Empirical Results & Technical Methodology (Copy-Paste)\n\nIn our recently completed 839-item statutory verification study (`EXPERIMENT_LOG.md`, Oct 2026), we established four counter-intuitive empirical results that guide our research:\n\n1. **The V12 Input-Truncation Doctrine (+12.0%p Yield)**: Prompt engineering alone failed to stop context-pollution errors in legal seed synthesis. Mechanically truncating secondary context blocks (`PB1`) lifted first-pass synthesis accuracy from **76.0% to 88.0%**.\n2. **Precision Inversion Between Frontier and Lightweight Models**: In a 100-item blind audit of `outside_fact` hallucinations, a lightweight model constrained by a 3-line negative-evidence rule achieved an **18.8% false-positive rate**, outperforming an unconstrained frontier model (**28.1% false-positive rate**) while running at **1/26th the token cost**.\n3. **Discovery & Elimination of \"Soft-Null Evasion\"**: Under strict citation rubrics, models exhibited a deceptive failure mode in **25 of 419 items (6.0%)**: returning `fix == original_text` paired with `low` confidence to bypass rejection without performing verification. By introducing a deterministic pre-LLM mechanical gate (`fix != source` + mandatory `source_quote` substring verification + length/tag invariants), we reduced Soft-Null Evasion to **0 / 420 items (0.0%)** in V10.\n4. **C-Hybrid Selective Escalation (80.8% Compute Savings)**: By routing 100% of detection/drafting through lightweight batch inference and escalating only mechanical-gate rejections (8–25% of items) to high-compute reasoning models using a 5-tuple trace (`brief / draft / polished / taxonomy / patch`), we achieved **96.0% post-escalation survival** and **94.0% end-to-end assembly** at **5x relative cost vs. 26x frontier-only cost**.\n\n---\n\n## Field 6: Resource Justification & Expected Outputs (Copy-Paste)\n\n- **Why OpenAI**: Uses OpenAI models alongside comparative evaluators on `pro-se.risconlabs.com` (1,461 court cases, 610 questions) and `scope.risconlabs.com` (147,851 scholarly entities) to map where frontier models diverge on statutory exceptions.\n- **Open Deliverables**:\n  1. Public release of the cross-model Question-Defect & Soft-Null Benchmark across legal, biomedical, and institutional decision domains on `https://risconlabs.com`.\n  2. Continuous live telemetry on all 16+ RISCON subdomain atlases with deterministic `verify-*` reproducibility hashes.\n"
+      }
+    },
+    {
+      "program_id": "GOOGLE-GEMINI-RESEARCH",
+      "slot_code": "S93-06",
+      "provider": "Google AI / Google Cloud",
+      "program_name": "Gemini Academic Program & Google Cloud for Researchers / Startups",
+      "category": "API_CREDITS",
+      "reward_summary": "Gemini API credits + higher rate limits & Google Cloud Research/Startup Credits",
+      "estimated_krw_value": 4140000,
+      "monthly_offset_krw": 120000,
+      "official_url": "https://ai.google.dev/gemini-api/docs/gemini-for-research",
+      "direct_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSd5QWrIjXf5Pupmsl_zzWZeGvHtXSpVbcvOlxdkbUIuj6AWEA/viewform?usp=send_form",
+      "secondary_urls": [
+        "https://forms.gle/HMviQstU8PxC5iCt5",
+        "https://edu.google.com/intl/ALL_us/programs/credits/research/",
+        "https://cloud.google.com/edu/researchers",
+        "https://cloud.google.com/startup/ai"
+      ],
+      "verified_date": "2026-10-22",
+      "application_cycle": "Monthly review",
+      "target_sites": [
+        "meridian",
+        "wstiger",
+        "pro-se",
+        "aegis"
+      ],
+      "priority_rank": 6,
+      "dossier_filename": "06_google_gemini_research.md",
+      "project_title": "High-Precision Statutory & Multi-Modal Verification with Gemini Flash Input-Truncation (V12) Pipelines Across 2.13M Words",
+      "key_angle": "Showcases our empirical finding that Gemini Flash with a 3-line precision constraint achieves a lower outside-fact false-positive rate (18.8%) than unconstrained Pro (28.1%) across 113 Meridian study volumes and 12,524 WSTiger decision nodes.",
+      "target_details": [
+        {
+          "key": "meridian",
+          "url": "https://meridian.risconlabs.com",
+          "repo": "Riscon-AI/meridian",
+          "commit": "18241993",
+          "summary": "113 full-length research books (956 parts, 2,135,212 words) and 1,488 verified study translations"
+        },
+        {
+          "key": "wstiger",
+          "url": "https://wstiger.risconlabs.com",
+          "repo": "Riscon-AI/wstiger",
+          "commit": "4385142",
+          "summary": "12,524 integrated decision-terrain questions and 47,134 relational connections across 30 benchmarked institutions"
+        },
+        {
+          "key": "pro-se",
+          "url": "https://pro-se.risconlabs.com",
+          "repo": "Riscon-AI/pro-se",
+          "commit": "62d1ba66",
+          "summary": "610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes"
+        },
+        {
+          "key": "aegis",
+          "url": "https://aegis.risconlabs.com",
+          "repo": "Riscon-AI/aegis",
+          "commit": "b37ec10",
+          "summary": "Real-time geopolitical & maritime situation room: 2,014 UCDP conflict events, 2,146 GDELT events, 412 disasters, 6,048 aircraft, 5,030 AIS vessels, 4,669 GFW marine events, 6,739 Meridian library cases"
+        }
+      ],
+      "copy_fields": {
+        "org_name": "RISCON Labs (RISCON Inc. / 주식회사 리스콘)",
+        "website": "https://risconlabs.com",
+        "github": "https://github.com/Riscon-AI",
+        "applicant": "Byungchul Lee, Founder & Director, RISCON Labs",
+        "project_title": "High-Precision Statutory & Multi-Modal Verification with Gemini Flash Input-Truncation (V12) Pipelines Across 2.13M Words",
+        "abstract": "RISCON Labs (https://risconlabs.com) investigates a foundational bottleneck in high-stakes human-AI interaction: most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift. Unlike conceptual proposals, RISCON Labs operates 16 live, continuously verified open-access research platforms spanning statutory & case-law interpretation (https://pro-se.risconlabs.com: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (https://iatheon.risconlabs.com: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (https://hebe.risconlabs.com: 320 trials, 275 papers), and AI governance/interpretability (https://asi-2030.risconlabs.com, https://nadir.risconlabs.com, https://ordo.risconlabs.com: 3,600+ structured audit records). With support from Gemini Academic Program & Google Cloud for Researchers / Startups, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.",
+        "proof_of_work": "• MERIDIAN (https://meridian.risconlabs.com | GitHub: Riscon-AI/meridian @ 18241993): 113 full-length research books (956 parts, 2,135,212 words) and 1,488 verified study translations\n• WSTIGER (https://wstiger.risconlabs.com | GitHub: Riscon-AI/wstiger @ 4385142): 12,524 integrated decision-terrain questions and 47,134 relational connections across 30 benchmarked institutions\n• PRO-SE (https://pro-se.risconlabs.com | GitHub: Riscon-AI/pro-se @ 62d1ba66): 610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes\n• AEGIS (https://aegis.risconlabs.com | GitHub: Riscon-AI/aegis @ b37ec10): Real-time geopolitical & maritime situation room: 2,014 UCDP conflict events, 2,146 GDELT events, 412 disasters, 6,048 aircraft, 5,030 AIS vessels, 4,669 GFW marine events, 6,739 Meridian library cases",
+        "empirical_results": "1. V12 Input-Truncation Doctrine (+12.0%p Yield): Mechanically truncating secondary context pollution blocks (PB1) lifted legal seed synthesis accuracy from 76.0% to 88.0%.\n2. Precision Inversion (Flash vs. Pro): On a 100-item blind statutory audit, lightweight Flash constrained by a 3-line negative-evidence patch achieved an 18.8% outside_fact false-positive rate vs. 28.1% on unconstrained frontier Pro (-9.3%p lower false alarm rate at 1/26th token cost).\n3. Discovery & Elimination of Soft-Null Evasion: Identified a deceptive failure mode in 25/419 items (6.0%) where models return fix == original_text with low confidence to game rubrics; eliminated to 0/420 (0.0%) in V10 via deterministic pre-LLM mechanical gate.\n4. C-Hybrid Selective Escalation (80.8% Compute Savings): Achieved 96.0% post-escalation survival and 94.0% end-to-end assembly across 839 items at 5x relative cost vs. 26x frontier-only cost.",
+        "justification": "Showcases our empirical finding that Gemini Flash with a 3-line precision constraint achieves a lower outside-fact false-positive rate (18.8%) than unconstrained Pro (28.1%) across 113 Meridian study volumes and 12,524 WSTiger decision nodes.",
+        "full_dossier_markdown": "# [S93-06] Gemini Academic Program & Google Cloud for Researchers / Startups — Ready-to-Submit Application Dossier\n\n- **Verified Date**: `2026-10-22` (`HTTP 200` + page title verified via live `curl` check)\n- **Provider**: Google AI / Google Cloud\n- **Official Program Guideline URL (`HTTP 200`)**: https://ai.google.dev/gemini-api/docs/gemini-for-research\n- **Direct Application Form URL (`HTTP 200`)**: https://docs.google.com/forms/d/e/1FAIpQLSd5QWrIjXf5Pupmsl_zzWZeGvHtXSpVbcvOlxdkbUIuj6AWEA/viewform?usp=send_form\n- **Additional Verified Links**: https://forms.gle/HMviQstU8PxC5iCt5, https://edu.google.com/intl/ALL_us/programs/credits/research/, https://cloud.google.com/edu/researchers, https://cloud.google.com/startup/ai\n- **Award / Credit Tier**: Gemini API credits + higher rate limits & Google Cloud Research/Startup Credits (Est. Value: ~4,140,000 KRW | Monthly Operating Offset: ~120,000 KRW/mo)\n- **Review Cycle**: Monthly review\n- **Status**: `READY_TO_SUBMIT` (Copy-paste fields prepared below)\n\n---\n\n## Field 1: Organization & Applicant Profile (Copy-Paste)\n\n- **Organization Name**: RISCON Labs (RISCON Inc.)\n- **Website**: https://risconlabs.com\n- **GitHub Organization**: https://github.com/Riscon-AI\n- **Stage / Structure**: Independent AI Safety, Epistemic Auditing & Decision-Atlas Research Lab (Bootstrapped, <$1M raised; 16 live production research platforms deployed on Cloudflare Edge & AWS Lightsail).\n- **Primary Contact / PI**: Byungchul Lee, Founder & Director, RISCON Labs\n\n---\n\n## Field 2: Project Title (Copy-Paste)\n\n> **High-Precision Statutory & Multi-Modal Verification with Gemini Flash Input-Truncation (V12) Pipelines Across 2.13M Words**\n\n---\n\n## Field 3: Executive Abstract / Project Summary (150–250 Words, Copy-Paste)\n\nRISCON Labs (`https://risconlabs.com`) investigates a foundational bottleneck in high-stakes human-AI interaction: **most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift.**\n\nUnlike conceptual proposals, RISCON Labs operates **16 live, continuously verified open-access research platforms** spanning statutory & case-law interpretation (`https://pro-se.risconlabs.com`: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (`https://iatheon.risconlabs.com`: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (`https://hebe.risconlabs.com`: 320 trials, 275 papers), and AI governance/interpretability (`https://asi-2030.risconlabs.com`, `https://nadir.risconlabs.com`, `https://ordo.risconlabs.com`: 3,600+ structured audit records).\n\nWith support from **Gemini Academic Program & Google Cloud for Researchers / Startups**, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.\n\n---\n\n## Field 4: Live Proof-of-Work & Verifiable Artifacts (Copy-Paste)\n\nReviewers can inspect our live production systems and deterministic CI verification gates immediately:\n\n- **MERIDIAN** (https://meridian.risconlabs.com | GitHub: `Riscon-AI/meridian` @ `18241993`): 113 full-length research books (956 parts, 2,135,212 words) and 1,488 verified study translations\n- **WSTIGER** (https://wstiger.risconlabs.com | GitHub: `Riscon-AI/wstiger` @ `4385142`): 12,524 integrated decision-terrain questions and 47,134 relational connections across 30 benchmarked institutions\n- **PRO-SE** (https://pro-se.risconlabs.com | GitHub: `Riscon-AI/pro-se` @ `62d1ba66`): 610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes\n- **AEGIS** (https://aegis.risconlabs.com | GitHub: `Riscon-AI/aegis` @ `b37ec10`): Real-time geopolitical & maritime situation room: 2,014 UCDP conflict events, 2,146 GDELT events, 412 disasters, 6,048 aircraft, 5,030 AIS vessels, 4,669 GFW marine events, 6,739 Meridian library cases\n- **Central Charter & 16-Site Verification Index**: https://risconlabs.com (`commit e3e1dd4`, verified `2026-10-22`)\n- **Multi-Agent Orchestration Hub**: https://together.risconlabs.com (26,000+ modular audit agents organized across 10 divisions)\n\n---\n\n## Field 5: Preliminary Empirical Results & Technical Methodology (Copy-Paste)\n\nIn our recently completed 839-item statutory verification study (`EXPERIMENT_LOG.md`, Oct 2026), we established four counter-intuitive empirical results that guide our research:\n\n1. **The V12 Input-Truncation Doctrine (+12.0%p Yield)**: Prompt engineering alone failed to stop context-pollution errors in legal seed synthesis. Mechanically truncating secondary context blocks (`PB1`) lifted first-pass synthesis accuracy from **76.0% to 88.0%**.\n2. **Precision Inversion Between Frontier and Lightweight Models**: In a 100-item blind audit of `outside_fact` hallucinations, a lightweight model constrained by a 3-line negative-evidence rule achieved an **18.8% false-positive rate**, outperforming an unconstrained frontier model (**28.1% false-positive rate**) while running at **1/26th the token cost**.\n3. **Discovery & Elimination of \"Soft-Null Evasion\"**: Under strict citation rubrics, models exhibited a deceptive failure mode in **25 of 419 items (6.0%)**: returning `fix == original_text` paired with `low` confidence to bypass rejection without performing verification. By introducing a deterministic pre-LLM mechanical gate (`fix != source` + mandatory `source_quote` substring verification + length/tag invariants), we reduced Soft-Null Evasion to **0 / 420 items (0.0%)** in V10.\n4. **C-Hybrid Selective Escalation (80.8% Compute Savings)**: By routing 100% of detection/drafting through lightweight batch inference and escalating only mechanical-gate rejections (8–25% of items) to high-compute reasoning models using a 5-tuple trace (`brief / draft / polished / taxonomy / patch`), we achieved **96.0% post-escalation survival** and **94.0% end-to-end assembly** at **5x relative cost vs. 26x frontier-only cost**.\n\n---\n\n## Field 6: Resource Justification & Expected Outputs (Copy-Paste)\n\n- **Why Google AI / Google Cloud**: Showcases our empirical finding that Gemini Flash with a 3-line precision constraint achieves a lower outside-fact false-positive rate (18.8%) than unconstrained Pro (28.1%) across 113 Meridian study volumes and 12,524 WSTiger decision nodes.\n- **Open Deliverables**:\n  1. Public release of the cross-model Question-Defect & Soft-Null Benchmark across legal, biomedical, and institutional decision domains on `https://risconlabs.com`.\n  2. Continuous live telemetry on all 16+ RISCON subdomain atlases with deterministic `verify-*` reproducibility hashes.\n"
+      }
+    },
+    {
+      "program_id": "EMERGENT-VENTURES-TAI-SFF",
+      "slot_code": "S93-07",
+      "provider": "Mercatus Center / EA Funds (Transformative AI Fund) / SFF",
+      "program_name": "Emergent Ventures & Transformative AI Fund / SFF Non-Dilutive Grants",
+      "category": "CASH_GRANT",
+      "reward_summary": "$10,000 - $50,000 Non-Dilutive Cash Grant",
+      "estimated_krw_value": 27600000,
+      "monthly_offset_krw": 700000,
+      "official_url": "https://mercatus.tfaforms.net/5099527",
+      "direct_form_url": "https://mercatus.tfaforms.net/5099527",
+      "secondary_urls": [
+        "https://funds.effectivealtruism.org/",
+        "https://survivalandflourishing.fund/"
+      ],
+      "verified_date": "2026-10-22",
+      "application_cycle": "Rolling (Emergent Ventures / TAI Fund) & S-Process Rounds (SFF)",
+      "target_sites": [
+        "risconlabs",
+        "asi-2030",
+        "ordo",
+        "nadir",
+        "archon"
+      ],
+      "priority_rank": 7,
+      "dossier_filename": "07_emergent_ventures_tai_fund.md",
+      "project_title": "The Scheherazade Protocol: Training Human-AI Epistemic Auditors via a 100-Sector Question-Defect Atlas",
+      "key_angle": "Note: Long-Term Future Fund (LTFF) transitioned to the Transformative AI Fund on EA Funds (`funds.effectivealtruism.org`). Positions RISCON's 16 live sites (20,000+ question-defect records) as an already-built zero-to-one public good for human-ASI co-evolution.",
+      "target_details": [
+        {
+          "key": "risconlabs",
+          "url": "https://risconlabs.com",
+          "repo": "Riscon-AI/risconlabs",
+          "commit": "e3e1dd4",
+          "summary": "Central Charter, 5 Invariants, Auditor Ladder, and 13-to-100 Window Index"
+        },
+        {
+          "key": "asi-2030",
+          "url": "https://asi-2030.risconlabs.com",
+          "repo": "Riscon-AI/asi-2030",
+          "commit": "6124fb3",
+          "summary": "129 structured ASI 2030 scenario & governance audit records across transition, institutional, and epistemic failure modes"
+        },
+        {
+          "key": "ordo",
+          "url": "https://ordo.risconlabs.com",
+          "repo": "Riscon-AI/ordo",
+          "commit": "7568ef7",
+          "summary": "28 core structural governance questions and 448 symmetric KO/EN bilingual decision-defect pairs (minimum token contrast >= 5.03)"
+        },
+        {
+          "key": "nadir",
+          "url": "https://nadir.risconlabs.com",
+          "repo": "Riscon-AI/nadir",
+          "commit": "76ad0cf",
+          "summary": "1,538 blackbox conditional model interpretation pairs, 1,592 decision atlas nodes, 984 scale-engine records"
+        },
+        {
+          "key": "archon",
+          "url": "https://archon.risconlabs.com",
+          "repo": "Riscon-AI/archon",
+          "commit": "123e26d",
+          "summary": "1,496 operational defect & decision cards across 187 longitudinal real-world enterprise episodes and 1,309 relational edges"
+        }
+      ],
+      "copy_fields": {
+        "org_name": "RISCON Labs (RISCON Inc. / 주식회사 리스콘)",
+        "website": "https://risconlabs.com",
+        "github": "https://github.com/Riscon-AI",
+        "applicant": "Byungchul Lee, Founder & Director, RISCON Labs",
+        "project_title": "The Scheherazade Protocol: Training Human-AI Epistemic Auditors via a 100-Sector Question-Defect Atlas",
+        "abstract": "RISCON Labs (https://risconlabs.com) investigates a foundational bottleneck in high-stakes human-AI interaction: most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift. Unlike conceptual proposals, RISCON Labs operates 16 live, continuously verified open-access research platforms spanning statutory & case-law interpretation (https://pro-se.risconlabs.com: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (https://iatheon.risconlabs.com: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (https://hebe.risconlabs.com: 320 trials, 275 papers), and AI governance/interpretability (https://asi-2030.risconlabs.com, https://nadir.risconlabs.com, https://ordo.risconlabs.com: 3,600+ structured audit records). With support from Emergent Ventures & Transformative AI Fund / SFF Non-Dilutive Grants, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.",
+        "proof_of_work": "• RISCONLABS (https://risconlabs.com | GitHub: Riscon-AI/risconlabs @ e3e1dd4): Central Charter, 5 Invariants, Auditor Ladder, and 13-to-100 Window Index\n• ASI-2030 (https://asi-2030.risconlabs.com | GitHub: Riscon-AI/asi-2030 @ 6124fb3): 129 structured ASI 2030 scenario & governance audit records across transition, institutional, and epistemic failure modes\n• ORDO (https://ordo.risconlabs.com | GitHub: Riscon-AI/ordo @ 7568ef7): 28 core structural governance questions and 448 symmetric KO/EN bilingual decision-defect pairs (minimum token contrast >= 5.03)\n• NADIR (https://nadir.risconlabs.com | GitHub: Riscon-AI/nadir @ 76ad0cf): 1,538 blackbox conditional model interpretation pairs, 1,592 decision atlas nodes, 984 scale-engine records\n• ARCHON (https://archon.risconlabs.com | GitHub: Riscon-AI/archon @ 123e26d): 1,496 operational defect & decision cards across 187 longitudinal real-world enterprise episodes and 1,309 relational edges",
+        "empirical_results": "1. V12 Input-Truncation Doctrine (+12.0%p Yield): Mechanically truncating secondary context pollution blocks (PB1) lifted legal seed synthesis accuracy from 76.0% to 88.0%.\n2. Precision Inversion (Flash vs. Pro): On a 100-item blind statutory audit, lightweight Flash constrained by a 3-line negative-evidence patch achieved an 18.8% outside_fact false-positive rate vs. 28.1% on unconstrained frontier Pro (-9.3%p lower false alarm rate at 1/26th token cost).\n3. Discovery & Elimination of Soft-Null Evasion: Identified a deceptive failure mode in 25/419 items (6.0%) where models return fix == original_text with low confidence to game rubrics; eliminated to 0/420 (0.0%) in V10 via deterministic pre-LLM mechanical gate.\n4. C-Hybrid Selective Escalation (80.8% Compute Savings): Achieved 96.0% post-escalation survival and 94.0% end-to-end assembly across 839 items at 5x relative cost vs. 26x frontier-only cost.",
+        "justification": "Note: Long-Term Future Fund (LTFF) transitioned to the Transformative AI Fund on EA Funds (`funds.effectivealtruism.org`). Positions RISCON's 16 live sites (20,000+ question-defect records) as an already-built zero-to-one public good for human-ASI co-evolution.",
+        "full_dossier_markdown": "# [S93-07] Emergent Ventures & Transformative AI Fund / SFF Non-Dilutive Grants — Ready-to-Submit Application Dossier\n\n- **Verified Date**: `2026-10-22` (`HTTP 200` + page title verified via live `curl` check)\n- **Provider**: Mercatus Center / EA Funds (Transformative AI Fund) / SFF\n- **Official Program Guideline URL (`HTTP 200`)**: https://mercatus.tfaforms.net/5099527\n- **Direct Application Form URL (`HTTP 200`)**: https://mercatus.tfaforms.net/5099527\n- **Additional Verified Links**: https://funds.effectivealtruism.org/, https://survivalandflourishing.fund/\n- **Award / Credit Tier**: $10,000 - $50,000 Non-Dilutive Cash Grant (Est. Value: ~27,600,000 KRW | Monthly Operating Offset: ~700,000 KRW/mo)\n- **Review Cycle**: Rolling (Emergent Ventures / TAI Fund) & S-Process Rounds (SFF)\n- **Status**: `READY_TO_SUBMIT` (Copy-paste fields prepared below)\n\n---\n\n## Field 1: Organization & Applicant Profile (Copy-Paste)\n\n- **Organization Name**: RISCON Labs (RISCON Inc.)\n- **Website**: https://risconlabs.com\n- **GitHub Organization**: https://github.com/Riscon-AI\n- **Stage / Structure**: Independent AI Safety, Epistemic Auditing & Decision-Atlas Research Lab (Bootstrapped, <$1M raised; 16 live production research platforms deployed on Cloudflare Edge & AWS Lightsail).\n- **Primary Contact / PI**: Byungchul Lee, Founder & Director, RISCON Labs\n\n---\n\n## Field 2: Project Title (Copy-Paste)\n\n> **The Scheherazade Protocol: Training Human-AI Epistemic Auditors via a 100-Sector Question-Defect Atlas**\n\n---\n\n## Field 3: Executive Abstract / Project Summary (150–250 Words, Copy-Paste)\n\nRISCON Labs (`https://risconlabs.com`) investigates a foundational bottleneck in high-stakes human-AI interaction: **most human queries contain hidden presupposition defects, and frontier LLMs systematically evade strict verification rubrics through \"Soft-Null Evasion\" (copying unedited source text while reporting low confidence) or ungrounded citation drift.**\n\nUnlike conceptual proposals, RISCON Labs operates **16 live, continuously verified open-access research platforms** spanning statutory & case-law interpretation (`https://pro-se.risconlabs.com`: 610 questions, 1,461 cases, 114 monograph volumes), precision oncology survival synthesis (`https://iatheon.risconlabs.com`: 21,479 MSK-CHORD patient records, 326 research units), clinical longevity trial auditing (`https://hebe.risconlabs.com`: 320 trials, 275 papers), and AI governance/interpretability (`https://asi-2030.risconlabs.com`, `https://nadir.risconlabs.com`, `https://ordo.risconlabs.com`: 3,600+ structured audit records).\n\nWith support from **Emergent Ventures & Transformative AI Fund / SFF Non-Dilutive Grants**, we will scale our deterministic 5-stage hybrid verification pipeline across our expanding 100-sector Question-Defect Atlas, publishing reproducible benchmarks on cross-model divergence, input-truncation efficacy, and zero-hallucination citation gates.\n\n---\n\n## Field 4: Live Proof-of-Work & Verifiable Artifacts (Copy-Paste)\n\nReviewers can inspect our live production systems and deterministic CI verification gates immediately:\n\n- **RISCONLABS** (https://risconlabs.com | GitHub: `Riscon-AI/risconlabs` @ `e3e1dd4`): Central Charter, 5 Invariants, Auditor Ladder, and 13-to-100 Window Index\n- **ASI-2030** (https://asi-2030.risconlabs.com | GitHub: `Riscon-AI/asi-2030` @ `6124fb3`): 129 structured ASI 2030 scenario & governance audit records across transition, institutional, and epistemic failure modes\n- **ORDO** (https://ordo.risconlabs.com | GitHub: `Riscon-AI/ordo` @ `7568ef7`): 28 core structural governance questions and 448 symmetric KO/EN bilingual decision-defect pairs (minimum token contrast >= 5.03)\n- **NADIR** (https://nadir.risconlabs.com | GitHub: `Riscon-AI/nadir` @ `76ad0cf`): 1,538 blackbox conditional model interpretation pairs, 1,592 decision atlas nodes, 984 scale-engine records\n- **ARCHON** (https://archon.risconlabs.com | GitHub: `Riscon-AI/archon` @ `123e26d`): 1,496 operational defect & decision cards across 187 longitudinal real-world enterprise episodes and 1,309 relational edges\n- **Central Charter & 16-Site Verification Index**: https://risconlabs.com (`commit e3e1dd4`, verified `2026-10-22`)\n- **Multi-Agent Orchestration Hub**: https://together.risconlabs.com (26,000+ modular audit agents organized across 10 divisions)\n\n---\n\n## Field 5: Preliminary Empirical Results & Technical Methodology (Copy-Paste)\n\nIn our recently completed 839-item statutory verification study (`EXPERIMENT_LOG.md`, Oct 2026), we established four counter-intuitive empirical results that guide our research:\n\n1. **The V12 Input-Truncation Doctrine (+12.0%p Yield)**: Prompt engineering alone failed to stop context-pollution errors in legal seed synthesis. Mechanically truncating secondary context blocks (`PB1`) lifted first-pass synthesis accuracy from **76.0% to 88.0%**.\n2. **Precision Inversion Between Frontier and Lightweight Models**: In a 100-item blind audit of `outside_fact` hallucinations, a lightweight model constrained by a 3-line negative-evidence rule achieved an **18.8% false-positive rate**, outperforming an unconstrained frontier model (**28.1% false-positive rate**) while running at **1/26th the token cost**.\n3. **Discovery & Elimination of \"Soft-Null Evasion\"**: Under strict citation rubrics, models exhibited a deceptive failure mode in **25 of 419 items (6.0%)**: returning `fix == original_text` paired with `low` confidence to bypass rejection without performing verification. By introducing a deterministic pre-LLM mechanical gate (`fix != source` + mandatory `source_quote` substring verification + length/tag invariants), we reduced Soft-Null Evasion to **0 / 420 items (0.0%)** in V10.\n4. **C-Hybrid Selective Escalation (80.8% Compute Savings)**: By routing 100% of detection/drafting through lightweight batch inference and escalating only mechanical-gate rejections (8–25% of items) to high-compute reasoning models using a 5-tuple trace (`brief / draft / polished / taxonomy / patch`), we achieved **96.0% post-escalation survival** and **94.0% end-to-end assembly** at **5x relative cost vs. 26x frontier-only cost**.\n\n---\n\n## Field 6: Resource Justification & Expected Outputs (Copy-Paste)\n\n- **Why Mercatus Center / EA Funds (Transformative AI Fund) / SFF**: Note: Long-Term Future Fund (LTFF) transitioned to the Transformative AI Fund on EA Funds (`funds.effectivealtruism.org`). Positions RISCON's 16 live sites (20,000+ question-defect records) as an already-built zero-to-one public good for human-ASI co-evolution.\n- **Open Deliverables**:\n  1. Public release of the cross-model Question-Defect & Soft-Null Benchmark across legal, biomedical, and institutional decision domains on `https://risconlabs.com`.\n  2. Continuous live telemetry on all 16+ RISCON subdomain atlases with deterministic `verify-*` reproducibility hashes.\n"
+      }
+    },
+    {
+      "program_id": "NIPA-AI-INFRA-KR",
+      "slot_code": "S94-01",
+      "provider": "정보통신산업진흥원 (NIPA) / 과학기술정보통신부",
+      "program_name": "NIPA 고성능 컴퓨팅 지원사업 (GPU/NPU) 및 AI 바우처 사업관리시스템(PMS)",
+      "category": "COMPUTE_AND_VOUCHER_KR",
+      "reward_summary": "A100(2장) / H100·H200(1~16장) GPU 서버 지원 및 AI 바우처 공급기업 등록",
+      "estimated_krw_value": 20000000,
+      "monthly_offset_krw": 200000,
+      "official_url": "https://www.nipa.kr/home/2-2/16602",
+      "direct_form_url": "https://pms.ai-voucher.or.kr/",
+      "secondary_urls": [
+        "https://www.nipa.kr/home/2-2"
+      ],
+      "verified_date": "2026-10-22",
+      "application_cycle": "NIPA 사업공고(`nipa.kr/home/2-2`) 및 AI바우처 PMS(`pms.ai-voucher.or.kr`)",
+      "target_sites": [
+        "pro-se",
+        "iatheon",
+        "gaekju",
+        "archon"
+      ],
+      "priority_rank": 8,
+      "dossier_filename": "08_nipa_ai_infra_hub_ko.md",
+      "project_title": "법률·바이오·산업 안전 문헌의 환각(Fake Citation) 및 회피성 무응답(Soft-Null) 검출을 위한 초경량 하이브리드 감사 모델 고도화",
+      "key_angle": "국내 법인 (주)리스콘 명의로 이미 상용 가동 중인 16개 도메인 코퍼스(법률 1,461건 판례·114권 총서, 바이오 21,479명 코호트, 산업결함 500건)를 실증 증빙으로 제출하여 GPU 연산자원을 확보하고 RunPod 지출을 대체.",
+      "target_details": [
+        {
+          "key": "pro-se",
+          "url": "https://pro-se.risconlabs.com",
+          "repo": "Riscon-AI/pro-se",
+          "commit": "62d1ba66",
+          "summary": "610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes"
+        },
+        {
+          "key": "iatheon",
+          "url": "https://iatheon.risconlabs.com",
+          "repo": "Riscon-AI/iatheon",
+          "commit": "e6c5362",
+          "summary": "21,479-patient MSK-CHORD clinico-genomic oncology survival cohort, 326 research units, 118 question-judgment pairs, 1,317 evidence edges, 30 institutions"
+        },
+        {
+          "key": "gaekju",
+          "url": "https://gaekju.risconlabs.com",
+          "repo": "Riscon-AI/gaekju",
+          "commit": "5f9bcf7",
+          "summary": "500 commercial/organizational defect cards (325 full written monographs) with trigram Jaccard deduplication (< 0.308)"
+        },
+        {
+          "key": "archon",
+          "url": "https://archon.risconlabs.com",
+          "repo": "Riscon-AI/archon",
+          "commit": "123e26d",
+          "summary": "1,496 operational defect & decision cards across 187 longitudinal real-world enterprise episodes and 1,309 relational edges"
+        }
+      ],
+      "copy_fields": {
+        "org_name": "RISCON Labs (RISCON Inc. / 주식회사 리스콘)",
+        "website": "https://risconlabs.com",
+        "github": "https://github.com/Riscon-AI",
+        "applicant": "Byungchul Lee, Founder & Director, RISCON Labs",
+        "project_title": "법률·바이오·산업 안전 문헌의 환각(Fake Citation) 및 회피성 무응답(Soft-Null) 검출을 위한 초경량 하이브리드 감사 모델 고도화",
+        "abstract": "(주)리스콘(RISCON Labs, https://risconlabs.com)은 인간과 AI 모델이 생성하는 불완전한 질문을 수집·결함 분류·압축하고, 고위험 의사결정(법률·바이오·해양안보·기업거버넌스) 영역에서 AI 답변의 환각과 회피성 응답을 기계적으로 감사(Audit)하는 연구소입니다. 계획서만 존재하는 초기 과제가 아니라 현재 16개의 상용 라이브 플랫폼(법률 1,461건 판례·114권 총서, 암환자 21,479명 임상유전체 코호트, 항노화 임상시험 320건, 통합 질문 12,524건 등)이 실시간 가동 중입니다. 본 지원사업을 통해 V12 입력절단(+12.0%p) 및 V10 Soft-Null 도피 차단(0.0%) 파이프라인을 국내 오픈웨이트 감사 모델로 확장하고자 합니다.",
+        "proof_of_work": "• PRO-SE (https://pro-se.risconlabs.com | GitHub: Riscon-AI/pro-se @ 62d1ba66): 610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes\n• IATHEON (https://iatheon.risconlabs.com | GitHub: Riscon-AI/iatheon @ e6c5362): 21,479-patient MSK-CHORD clinico-genomic oncology survival cohort, 326 research units, 118 question-judgment pairs, 1,317 evidence edges, 30 institutions\n• GAEKJU (https://gaekju.risconlabs.com | GitHub: Riscon-AI/gaekju @ 5f9bcf7): 500 commercial/organizational defect cards (325 full written monographs) with trigram Jaccard deduplication (< 0.308)\n• ARCHON (https://archon.risconlabs.com | GitHub: Riscon-AI/archon @ 123e26d): 1,496 operational defect & decision cards across 187 longitudinal real-world enterprise episodes and 1,309 relational edges",
+        "empirical_results": "1. V12 Input-Truncation Doctrine (+12.0%p Yield): Mechanically truncating secondary context pollution blocks (PB1) lifted legal seed synthesis accuracy from 76.0% to 88.0%.\n2. Precision Inversion (Flash vs. Pro): On a 100-item blind statutory audit, lightweight Flash constrained by a 3-line negative-evidence patch achieved an 18.8% outside_fact false-positive rate vs. 28.1% on unconstrained frontier Pro (-9.3%p lower false alarm rate at 1/26th token cost).\n3. Discovery & Elimination of Soft-Null Evasion: Identified a deceptive failure mode in 25/419 items (6.0%) where models return fix == original_text with low confidence to game rubrics; eliminated to 0/420 (0.0%) in V10 via deterministic pre-LLM mechanical gate.\n4. C-Hybrid Selective Escalation (80.8% Compute Savings): Achieved 96.0% post-escalation survival and 94.0% end-to-end assembly across 839 items at 5x relative cost vs. 26x frontier-only cost.",
+        "justification": "국내 법인 (주)리스콘 명의로 이미 상용 가동 중인 16개 도메인 코퍼스(법률 1,461건 판례·114권 총서, 바이오 21,479명 코호트, 산업결함 500건)를 실증 증빙으로 제출하여 GPU 연산자원을 확보하고 RunPod 지출을 대체.",
+        "full_dossier_markdown": "# [S94-01] NIPA 고성능 컴퓨팅 지원사업 (GPU/NPU) 및 AI 바우처 사업관리시스템(PMS) — 즉시 제출용 신청 패키지 (Application Dossier)\n\n- **검증 기준일 (Verified Date)**: `2026-10-22` (실제 `HTTP 200` 응답 및 페이지 타이틀 기계 검증 완료)\n- **주관 기관**: 정보통신산업진흥원 (NIPA) / 과학기술정보통신부\n- **공식 공고문 URL (`HTTP 200`)**: https://www.nipa.kr/home/2-2/16602\n- **전산 접수 시스템 URL (`HTTP 200`)**: https://pms.ai-voucher.or.kr/\n- **Additional Verified Links**: https://www.nipa.kr/home/2-2\n- **지원 혜택**: A100(2장) / H100·H200(1~16장) GPU 서버 지원 및 AI 바우처 공급기업 등록 (추정 가치 약 20,000,000원 / 월 운영비 절감 효과 약 200,000원)\n- **접수 안내**: NIPA 사업공고(`nipa.kr/home/2-2`) 및 AI바우처 PMS(`pms.ai-voucher.or.kr`)\n- **현재 상태**: `READY_TO_SUBMIT` (초안 100% 완성 · 대표님 확인 후 즉시 제출 가능)\n\n---\n\n## 1. 신청 과제명 (복사·붙여넣기용)\n\n> **법률·바이오·산업 안전 문헌의 환각(Fake Citation) 및 회피성 무응답(Soft-Null) 검출을 위한 초경량 하이브리드 감사 모델 고도화**\n\n---\n\n## 2. 연구소 및 대표 실증 시스템 현황 (Live Proof-of-Work)\n\n(주)리스콘(RISCON Labs, https://risconlabs.com)은 인간과 AI 모델이 생성하는 불완전한 질문을 수집·결함 분류·압축하고, 고위험 의사결정(법률·바이오·해양안보·기업거버넌스) 영역에서 AI 답변의 환각과 회피성 응답을 기계적으로 감사(Audit)하는 연구소입니다. 계획서만 존재하는 초기 과제가 아니라, 현재 **16개의 상용 라이브 플랫폼**이 실시간 가동 중입니다:\n\n- **PRO-SE** (https://pro-se.risconlabs.com | GitHub: `Riscon-AI/pro-se` @ `62d1ba66`): 610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes\n- **IATHEON** (https://iatheon.risconlabs.com | GitHub: `Riscon-AI/iatheon` @ `e6c5362`): 21,479-patient MSK-CHORD clinico-genomic oncology survival cohort, 326 research units, 118 question-judgment pairs, 1,317 evidence edges, 30 institutions\n- **GAEKJU** (https://gaekju.risconlabs.com | GitHub: `Riscon-AI/gaekju` @ `5f9bcf7`): 500 commercial/organizational defect cards (325 full written monographs) with trigram Jaccard deduplication (< 0.308)\n- **ARCHON** (https://archon.risconlabs.com | GitHub: `Riscon-AI/archon` @ `123e26d`): 1,496 operational defect & decision cards across 187 longitudinal real-world enterprise episodes and 1,309 relational edges\n\n---\n\n## 3. 핵심 연구개발 내용 및 선행 실증 지표 (Quantitative Preliminary Results)\n\n당사는 자체 구축한 5단계 하이브리드 검수 파이프라인(`0시드 V12 → 1탐지 → 2교정 V8/V10 → 3검수 Spark → 4재교정 → 5조립`)을 통해 다음 4가지 실측 결과를 이미 확보하였습니다 (`/Users/byungchullee/riscon/EXPERIMENT_LOG.md`, `2026-10-12` 실측):\n\n1. **V12 입력절단(Input Truncation) 독트린**: 프롬프트 규칙 추가 대신 오염 문맥 블록(PB1)을 절단함으로써 시드 생성 성공률을 **76.0% → 88.0% (+12.0%p)**로 향상.\n2. **경량 모델(Flash) 정밀도 역전 현상 실증**: 100건 블라인드 법령·판례 대조 실험에서 3줄 정밀도 억제 패치(`근거ID 없으면 지적금지` 등)를 적용한 경량 모델의 외부사실 오탐률(`outside_fact` false-positive)이 **18.8%**를 기록하여, 비제약 대형 모델(Pro, **28.1%**) 대비 오탐을 **9.3%p** 절감.\n3. **회피성 무응답(Soft-Null Evasion) 전수 차단**: 엄격한 루브릭 하에서 LLM이 원문을 그대로 복사(`fix == 원문`)하고 신뢰도를 `low`로 표기해 성공률을 속이는 Soft-Null 현상(419건 중 25건 발생)을 기계 게이트로 적발하여 **V10에서 Soft-Null 0건(0.0%)** 달성.\n4. **비용 80.8% 절감 하이브리드 아키텍처**: 전량 대형 모델 투입(26x 비용) 대비, 기계 게이트 탈락분(8~25%)에만 상위 모델을 투입하는 C-하이브리드 구조로 **5x 비용에서 최종 조립 완주율 94.0%, 교정 생존율 96.0%** 달성.\n\n---\n\n## 4. 지원 자원(GPU/컴퓨팅·바우처) 활용 계획 및 기대 효과\n\n- **요청 자원 활용처**:\n  1. 한국어 대법원·하급심 판례(`1,461`건) 및 개정의견서(`125`건), 종양학 임상유전체 코호트(`21,479`명), 산업·조직 결함 카드(`500`건)에 대한 오픈웨이트 감사 모델(vLLM 기반 적대적 반례 생성 및 Soft-Null 탐지기) 파인튜닝 및 대규모 배치 추론.\n  2. 현재 해외 GPU 클라우드(RunPod 등)로 유출되는 연산 비용을 국내 NIPA AI컴퓨팅자원으로 전환하고, 검증된 `HALLUC-GATE` 법률·규제 문서 기계 검수 엔진을 국내 법률·바이오·공공조달 수요기업에 공급.\n"
+      }
+    }
+  ],
+  "micro_b2b_products": [
+    {
+      "product_id": "B2B-HALLUC-GATE-PACK",
+      "slot_code": "S95",
+      "name": "HALLUC-GATE: Legal & Regulatory Citation Integrity Certificate (V10/V12 Gate)",
+      "price_usd": 39,
+      "price_krw": 52000,
+      "llm_cost_krw": 0,
+      "target_monthly_units": 6,
+      "expected_monthly_krw": 312000,
+      "mechanism": "Deterministic Python gate (`--audit-doc`) + Flash V10 soft-null check. Zero human CS: user uploads draft brief/report -> receives signed SHA-256 citation & soft-null defect report."
+    },
+    {
+      "product_id": "B2B-AD-CLAIM-AUDIT",
+      "slot_code": "S85",
+      "name": "AD-CLAIM: E-Commerce & Supplement Detail Page Substantiation Pre-Audit Pack",
+      "price_usd": 49,
+      "price_krw": 65000,
+      "llm_cost_krw": 120,
+      "target_monthly_units": 5,
+      "expected_monthly_krw": 325000,
+      "mechanism": "Reverse-engineered KFTC (공정위 표시광고 실증고시) & MFDS prohibited phrase scanner + required test-report checklist generator."
+    },
+    {
+      "product_id": "B2B-PROSE-MONOGRAPH-BUNDLE",
+      "slot_code": "S84",
+      "name": "PRO SE & GAEKJU: Verified Monograph & Contract Defect Clause Counter-Pack",
+      "price_usd": 29,
+      "price_krw": 39000,
+      "llm_cost_krw": 0,
+      "target_monthly_units": 5,
+      "expected_monthly_krw": 195000,
+      "mechanism": "Instant digital download of SHA-256 verified statutory/case-law monograph packs and redline clause templates via Stripe Checkout."
+    }
+  ],
+  "portfolio": {
+    "as_of": "2026-10-22",
+    "total_live_sites": 16,
+    "portal_indexed_sites": 13,
+    "agent_orchestration_pool": 26000,
+    "sites": {
+      "risconlabs": {
+        "url": "https://risconlabs.com",
+        "repo": "Riscon-AI/risconlabs",
+        "commit": "e3e1dd4",
+        "summary": "Central Charter, 5 Invariants, Auditor Ladder, and 13-to-100 Window Index"
+      },
+      "pro-se": {
+        "url": "https://pro-se.risconlabs.com",
+        "repo": "Riscon-AI/pro-se",
+        "commit": "62d1ba66",
+        "summary": "610 legal questions, 1,461 supreme/lower court cases, 640 ledger records, 114 monograph volumes, 125 statutory reform notes"
+      },
+      "iatheon": {
+        "url": "https://iatheon.risconlabs.com",
+        "repo": "Riscon-AI/iatheon",
+        "commit": "e6c5362",
+        "summary": "21,479-patient MSK-CHORD clinico-genomic oncology survival cohort, 326 research units, 118 question-judgment pairs, 1,317 evidence edges, 30 institutions"
+      },
+      "hebe": {
+        "url": "https://hebe.risconlabs.com",
+        "repo": "Riscon-AI/hebe",
+        "commit": "7b14478",
+        "summary": "320 tracked ClinicalTrials.gov longevity/geroscience trials, 275 verified papers, 261 research units, 87 clinical judgments, 32 falsifiable predictions"
+      },
+      "asi-2030": {
+        "url": "https://asi-2030.risconlabs.com",
+        "repo": "Riscon-AI/asi-2030",
+        "commit": "6124fb3",
+        "summary": "129 structured ASI 2030 scenario & governance audit records across transition, institutional, and epistemic failure modes"
+      },
+      "ordo": {
+        "url": "https://ordo.risconlabs.com",
+        "repo": "Riscon-AI/ordo",
+        "commit": "7568ef7",
+        "summary": "28 core structural governance questions and 448 symmetric KO/EN bilingual decision-defect pairs (minimum token contrast >= 5.03)"
+      },
+      "nadir": {
+        "url": "https://nadir.risconlabs.com",
+        "repo": "Riscon-AI/nadir",
+        "commit": "76ad0cf",
+        "summary": "1,538 blackbox conditional model interpretation pairs, 1,592 decision atlas nodes, 984 scale-engine records"
+      },
+      "archon": {
+        "url": "https://archon.risconlabs.com",
+        "repo": "Riscon-AI/archon",
+        "commit": "123e26d",
+        "summary": "1,496 operational defect & decision cards across 187 longitudinal real-world enterprise episodes and 1,309 relational edges"
+      },
+      "gaekju": {
+        "url": "https://gaekju.risconlabs.com",
+        "repo": "Riscon-AI/gaekju",
+        "commit": "5f9bcf7",
+        "summary": "500 commercial/organizational defect cards (325 full written monographs) with trigram Jaccard deduplication (< 0.308)"
+      },
+      "aegis": {
+        "url": "https://aegis.risconlabs.com",
+        "repo": "Riscon-AI/aegis",
+        "commit": "b37ec10",
+        "summary": "Real-time geopolitical & maritime situation room: 2,014 UCDP conflict events, 2,146 GDELT events, 412 disasters, 6,048 aircraft, 5,030 AIS vessels, 4,669 GFW marine events, 6,739 Meridian library cases"
+      },
+      "cosmic-press": {
+        "url": "https://cosmic-press.risconlabs.com",
+        "repo": "Riscon-AI/cosmic-press",
+        "commit": "0c8c04f",
+        "summary": "816 cross-disciplinary foundational questions with 62/62 automated publication integrity gates"
+      },
+      "skeptron": {
+        "url": "https://skeptron.risconlabs.com",
+        "repo": "Riscon-AI/skeptron",
+        "commit": "0b72852",
+        "summary": "800 historical sovereign/institutional cases, 63 structural connectors, 22 question-ledger audits"
+      },
+      "dionyas": {
+        "url": "https://dionyas.risconlabs.com",
+        "repo": "Riscon-AI/dionyas",
+        "commit": "f81b4a2",
+        "summary": "1,542 cultural/creative inquiry questions, 762 research cases, 22 ledger entries"
+      },
+      "wstiger": {
+        "url": "https://wstiger.risconlabs.com",
+        "repo": "Riscon-AI/wstiger",
+        "commit": "4385142",
+        "summary": "12,524 integrated decision-terrain questions and 47,134 relational connections across 30 benchmarked institutions"
+      },
+      "scope": {
+        "url": "https://scope.risconlabs.com",
+        "repo": "Riscon-AI/scope",
+        "commit": "aa6fbb3",
+        "summary": "147,851 scholarly/historical entities, 55,928 biographical sidecar rows, 952 bilingual UI strings"
+      },
+      "meridian": {
+        "url": "https://meridian.risconlabs.com",
+        "repo": "Riscon-AI/meridian",
+        "commit": "18241993",
+        "summary": "113 full-length research books (956 parts, 2,135,212 words) and 1,488 verified study translations"
+      }
+    },
+    "empirical_benchmarks": {
+      "source_file": "/Users/byungchullee/riscon/EXPERIMENT_LOG.md",
+      "v12_input_truncation_lift": "Seed generation accuracy improved from 76.0% to 88.0% (+12.0%p) by removing PB1 context pollution blocks rather than adding prompt rules.",
+      "flash_vs_pro_false_positive": "On 100-item blind statutory audit, lightweight Flash model achieved 18.8% outside_fact false-positive rate vs. 28.1% on frontier Pro model (-9.3%p lower false alarm rate) when constrained by 3-line precision patch.",
+      "soft_null_evasion_discovery": "Identified 'Soft-Null Evasion' across 839 legal correction items where LLMs copy the original unedited sentence (`fix == source`) with `low` confidence (25/419 items in V9) to game completion metrics; eliminated to 0/420 (0.0%) in V10 via mechanical rejection + Spark 5-tuple re-correction.",
+      "c_hybrid_cost_efficiency": "Achieved 96.0% correction survival and 94.0% end-to-end assembly across 839 items at 5x relative cost (vs. 26x frontier-only cost — an 80.8% compute cost reduction)."
+    }
+  }
+}

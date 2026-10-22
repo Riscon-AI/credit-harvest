@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CREDIT-HARVEST &amp; HALLUC-GATE — RISCON Labs Treasury &amp; Verification Studio</title>
+  <meta name="description" content="RISCON Labs Track A (S93 CREDIT-HARVEST & S95 HALLUC-GATE): Non-dilutive AI research credit/grant command center with 13/13 HTTP-200 verified portals and a zero-LLM-cost mechanical Soft-Null & citation integrity gate." />
+  <link rel="icon" type="image/svg+xml" href="/assets/riscon-field-favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <style>
+    :root {
+      --bg: #0a0b0e;
+      --bg-elev: #111318;
+      --bg-card: #151821;
+      --bg-hover: #1c202c;
+      --border: rgba(255, 255, 255, 0.09);
+      --border-strong: rgba(255, 255, 255, 0.18);
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --accent: #10b981;
+      --accent-soft: rgba(16, 185, 129, 0.14);
+      --amber: #f59e0b;
+      --amber-soft: rgba(245, 158, 11, 0.14);
+      --danger: #ef4444;
+      --danger-soft: rgba(239, 68, 68, 0.15);
+      --blue: #3b82f6;
+      --blue-soft: rgba(59, 130, 246, 0.14);
+      --font-sans: "Geist", "Pretendard Variable", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    html[data-theme="light"] {
+      --bg: #f6f6f4;
+      --bg-elev: #ffffff;
+      --bg-card: #ffffff;
+      --bg-hover: #f0f1f3;
+      --border: rgba(15, 23, 42, 0.1);
+      --border-strong: rgba(15, 23, 42, 0.22);
+      --text: #111827;
+      --text-muted: #4b5563;
+      --text-dim: #6b7280;
+      --accent: #059669;
+      --accent-soft: rgba(5, 150, 105, 0.1);
+      --amber: #d97706;
+      --amber-soft: rgba(217, 119, 6, 0.1);
+      --danger: #dc2626;
+      --danger-soft: rgba(220, 38, 38, 0.1);
+      --blue: #2563eb;
+      --blue-soft: rgba(37, 99, 235, 0.1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 5rem;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* Top bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--bg) 84%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      padding: 0.15rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+    .top-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pill-btn {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.38rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      transition: all 0.15s ease;
+    }
+    .pill-btn:hover, .pill-btn.active {
+      color: var(--text);
+      border-color: var(--border-strong);
+      background: var(--bg-hover);
+    }
+
+    /* Container */
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 0;
+    }
+
+    /* Hero */
+    .hero {
+      border: 1px solid var(--border);
+      background: linear-gradient(160deg, var(--bg-card) 0%, var(--bg-elev) 100%);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.65rem, 3vw, 2.45rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .hero p.lead {
+      color: var(--text-muted);
+      max-width: 880px;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.9rem;
+    }
+    .kpi-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+    }
+    .kpi-label {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .kpi-val {
+      font-family: var(--font-mono);
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+      color: var(--text);
+    }
+    .kpi-sub {
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-top: 0.2rem;
+    }
+
+    /* Main Tabs */
+    .tabs {
+      display: flex;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.65rem 1.15rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.15s ease;
+    }
+    .tab-btn:hover {
+      color: var(--text);
+      border-color: var(--border-strong);
+    }
+    .tab-btn.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .tab-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.07);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Filter chips */
+    .filter-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.15rem;
+      flex-wrap: wrap;
+    }
+    .chip-group {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    /* Program Grid */
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 1.1rem;
+    }
+    @media (max-width: 640px) {
+      .program-grid { grid-template-columns: 1fr; }
+    }
+    .prog-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: border-color 0.15s ease;
+    }
+    .prog-card:hover {
+      border-color: var(--border-strong);
+    }
+    .prog-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+    .slot-pill {
+      padding: 0.18rem 0.55rem;
+      border-radius: 6px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-weight: 600;
+    }
+    .http-pill {
+      padding: 0.18rem 0.55rem;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .prog-provider {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+    .prog-name {
+      font-size: 1.18rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-top: 0.15rem;
+    }
+    .prog-reward {
+      margin-top: 0.55rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .prog-title-box {
+      margin-top: 0.65rem;
+      font-size: 0.86rem;
+      color: var(--text);
+      background: var(--bg-elev);
+      border-left: 3px solid var(--accent);
+      padding: 0.55rem 0.75rem;
+      border-radius: 0 8px 8px 0;
+    }
+    .prog-angle {
+      margin-top: 0.55rem;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+    .site-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.65rem;
+    }
+    .site-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .site-tag:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+    .prog-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.58rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--text);
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+    .btn:hover {
+      background: var(--bg-hover);
+      border-color: var(--border-strong);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #04130d;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover {
+      filter: brightness(1.08);
+      background: var(--accent);
+      color: #04130d;
+    }
+    .btn-full {
+      grid-column: 1 / -1;
+      background: var(--blue-soft);
+      color: var(--blue);
+      border-color: color-mix(in srgb, var(--blue) 40%, transparent);
+    }
+    .btn-full:hover {
+      background: color-mix(in srgb, var(--blue) 24%, transparent);
+    }
+
+    /* Modal / Drawer for Copy-Paste Dossier */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      border-radius: 16px;
+      max-width: 920px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+    }
+    .modal-head {
+      padding: 1.15rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .modal-body {
+      padding: 1.35rem 1.5rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .field-block {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+    }
+    .field-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      gap: 0.5rem;
+    }
+    .field-name {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .copy-btn {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-card);
+      color: var(--text);
+    }
+    .copy-btn.copied {
+      background: var(--accent);
+      color: #04130d;
+      border-color: var(--accent);
+    }
+    .field-content {
+      font-size: 0.86rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: var(--text);
+      font-family: var(--font-sans);
+    }
+
+    /* Tab 2: Halluc-Gate Studio */
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.25rem;
+    }
+    @media (max-width: 900px) {
+      .studio-grid { grid-template-columns: 1fr; }
+    }
+    .panel-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.35rem;
+    }
+    .panel-box h3 {
+      font-size: 1.08rem;
+      margin-bottom: 0.35rem;
+    }
+    textarea.code-input {
+      width: 100%;
+      min-height: 270px;
+      margin-top: 0.75rem;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      padding: 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      line-height: 1.5;
+      resize: vertical;
+    }
+    .receipt-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem;
+      margin-top: 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+    }
+    .verdict-badge {
+      display: inline-block;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    .verdict-pass { background: var(--accent-soft); color: var(--accent); }
+    .verdict-reject { background: var(--danger-soft); color: var(--danger); }
+
+    /* Table for 16 sites */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-card);
+    }
+    table.atlas-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+    table.atlas-table th, table.atlas-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+    table.atlas-table th {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: var(--bg-elev);
+    }
+    .mono { font-family: var(--font-mono); }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <a href="https://risconlabs.com">RISCON Labs</a>
+        <span class="brand-sub">S93 CREDIT-HARVEST · S95 HALLUC-GATE</span>
+      </div>
+      <div class="top-controls">
+        <a class="pill-btn" href="https://risconlabs.com" target="_blank" rel="noopener">risconlabs.com ↗</a>
+        <a class="pill-btn" href="https://github.com/Riscon-AI/credit-harvest" target="_blank" rel="noopener">GitHub ↗</a>
+        <button class="pill-btn" id="theme-toggle" type="button">DARK / LIGHT</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">
+        <span>● VERIFIED 2026-10-22</span>
+        <span>·</span>
+        <span>13/13 DIRECT PORTAL URLS HTTP-200 PASS</span>
+      </div>
+      <h1>RISCON Autonomous Treasury &amp; Hallucination Gate</h1>
+      <p class="lead">
+        연구소 운영비(월 50~70만 원) 및 프론티어 API·클라우드 연산 자원을 무희석(Non-Dilutive)으로 자체 조달하는 <strong>S93 CREDIT-HARVEST</strong> 신청 커맨드 센터와, LLM 비용 0원으로 법률·바이오 문서의 Soft-Null 도피 및 인용 오류를 차단하는 <strong>S95 HALLUC-GATE</strong> 실시간 검수 스튜디오입니다.
+      </p>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Total Verified Credit &amp; Grant Pool</div>
+          <div class="kpi-val" id="kpi-total-pool">₩96,680,000</div>
+          <div class="kpi-sub">8 Active Global &amp; KR Programs</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Monthly Compute &amp; Ops Offset</div>
+          <div class="kpi-val" id="kpi-monthly-offset">₩1,675,000 / 월</div>
+          <div class="kpi-sub">목표 운영비(50~70만 원) 240% 커버</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Portal URL Integrity Gate</div>
+          <div class="kpi-val">13 / 13 HTTP-200</div>
+          <div class="kpi-sub">Google Form · SMApply 직통 검증 완료</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Live Proof-of-Work Ecosystem</div>
+          <div class="kpi-val">16 Production Sites</div>
+          <div class="kpi-sub">2026-10-22 전수 verify-* 통과</div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="credit-harvest" type="button">
+        <span>01 · S93 CREDIT-HARVEST (8대 크레딧·그랜트 직통 신청)</span>
+        <span class="tab-badge">8 Ready</span>
+      </button>
+      <button class="tab-btn" data-tab="halluc-gate" type="button">
+        <span>02 · S95 HALLUC-GATE (실시간 Soft-Null &amp; 인용 기계 검수기)</span>
+        <span class="tab-badge">Live API</span>
+      </button>
+      <button class="tab-btn" data-tab="proof-of-work" type="button">
+        <span>03 · 16대 라이브 실증 사이트 &amp; 실험 원장 (Reviewer Proof)</span>
+        <span class="tab-badge">16 Sites</span>
+      </button>
+    </nav>
+
+    <!-- TAB 1: CREDIT-HARVEST -->
+    <section class="tab-panel active" id="panel-credit-harvest">
+      <div class="filter-row">
+        <div class="chip-group" id="category-filters">
+          <button class="pill-btn active" data-cat="ALL" type="button">전체 (8)</button>
+          <button class="pill-btn" data-cat="API_CREDITS" type="button">AI API 크레딧 (4)</button>
+          <button class="pill-btn" data-cat="CLOUD_CREDITS" type="button">클라우드 인프라 (2)</button>
+          <button class="pill-btn" data-cat="CASH_GRANT" type="button">비희석 현금 연구기금 (1)</button>
+          <button class="pill-btn" data-cat="COMPUTE_AND_VOUCHER_KR" type="button">국내 GPU·바우처 (1)</button>
+        </div>
+        <div class="mono" style="font-size:0.78rem;color:var(--text-muted);">
+          각 카드의 [원클릭 복사용 신청서 열기]를 누르면 항목별 복사 후 직통 폼에 바로 붙여넣을 수 있습니다.
+        </div>
+      </div>
+      <div class="program-grid" id="program-grid"></div>
+    </section>
+
+    <!-- TAB 2: HALLUC-GATE -->
+    <section class="tab-panel" id="panel-halluc-gate">
+      <div class="studio-grid">
+        <div class="panel-box">
+          <h3>S95 HALLUC-GATE — V8/V10/V12 기계 검수 엔진 (`POST /api/audit`)</h3>
+          <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:0.8rem;">
+            LLM 토큰 비용 0원으로 ① <strong>V10 Soft-Null 도피(`fix == original` 원문 복사)</strong>, ② <strong>인용 근거(`source_quote`) 누락</strong>, ③ <strong>V8 95자 길이 초과</strong>, ④ <strong>`findings` 배열 오염 유출</strong>을 즉시 적발하고 SHA-256 감사 영수증을 발행합니다.
+          </p>
+          <div class="chip-group" style="margin-bottom:0.5rem;">
+            <button class="pill-btn active" id="preset-pass" type="button">샘플 A: V10 합격 배치 (PASS)</button>
+            <button class="pill-btn" id="preset-fail" type="button">샘플 B: Soft-Null &amp; 결함 적발 배치 (REJECT)</button>
+          </div>
+          <textarea class="code-input" id="audit-input" spellcheck="false"></textarea>
+          <div style="margin-top:0.85rem;display:flex;gap:0.65rem;align-items:center;flex-wrap:wrap;">
+            <button class="btn btn-primary" id="run-audit-btn" type="button">⚡ 실시간 기계 게이트 검수 실행 (/api/audit)</button>
+            <span class="mono" style="font-size:0.76rem;color:var(--text-muted);">LLM Cost: ₩0 (Deterministic Edge Worker)</span>
+          </div>
+        </div>
+
+        <div class="panel-box">
+          <h3>기계 감사 판정서 &amp; SHA-256 영수증 (Audit Receipt)</h3>
+          <p style="font-size:0.84rem;color:var(--text-muted);">
+            검수를 통과한 배치(`PASS_CERTIFIED`)만 본 코퍼스로 조립되며, 탈락분(`REJECT_RETURN_TO_SPARK`)은 5-tuple 재교정 큐로 자동 반송됩니다.
+          </p>
+          <div class="receipt-box" id="audit-output">
+            검수 대기 중... 좌측에서 [실시간 기계 게이트 검수 실행] 버튼을 눌러주세요.
+          </div>
+
+          <h3 style="margin-top:1.5rem;">무인 셀프-체크아웃 마이크로 B2B 수익 트랙 (월 83.2만 원 목표)</h3>
+          <div id="b2b-list" style="display:flex;flex-direction:column;gap:0.65rem;margin-top:0.65rem;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: PROOF OF WORK ATLAS -->
+    <section class="tab-panel" id="panel-proof-of-work">
+      <div class="panel-box" style="margin-bottom:1.25rem;">
+        <h3>RISCON Empirical Benchmark Summary (`EXPERIMENT_LOG.md` · 2026-10-12)</h3>
+        <div id="empirical-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.85rem;margin-top:0.85rem;"></div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="atlas-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Site</th>
+              <th>Production URL</th>
+              <th>GitHub Repo &amp; Commit (`2026-10-22`)</th>
+              <th>Verified Corpus &amp; Scale Metrics</th>
+            </tr>
+          </thead>
+          <tbody id="sites-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Copy-Paste Dossier Modal -->
+  <div class="modal-backdrop" id="dossier-modal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <div class="mono" id="modal-slot" style="font-size:0.75rem;color:var(--accent);"></div>
+          <h3 id="modal-title" style="font-size:1.15rem;margin-top:0.15rem;"></h3>
+        </div>
+        <div style="display:flex;gap:0.5rem;">
+          <a class="btn btn-primary" id="modal-form-link" href="#" target="_blank" rel="noopener">직통 신청 폼 열기 ↗</a>
+          <button class="btn" id="modal-close" type="button">닫기 ✕</button>
+        </div>
+      </div>
+      <div class="modal-body" id="modal-fields"></div>
+    </div>
+  </div>
+
+  <script>
+    const PRESET_PASS_JSONL = [
+      JSON.stringify({
+        custom_id: "v10-pass-001",
+        original: "임대인은 계약 해지 후 보증금을 즉시 반환할 의무가 없다.",
+        fix: "임대인은 임대차 종료 시 목적물 반환과 동시이행으로 보증금을 반환해야 한다(민법 제536조).",
+        source_quote: "민법 제536조 동시이행의 항변권"
+      }),
+      JSON.stringify({
+        custom_id: "v10-pass-002",
+        original: "근로기준법상 통상임금에는 재직조건부 상여금이 제외된다.",
+        fix: "대법원 2024. 12. 19. 선고 2020다247190 전원합의체 판결에 따라 재직조건부 정기상여금도 통상임금에 포함된다.",
+        source_quote: "대법원 2020다247190 전원합의체"
+      }),
+      JSON.stringify({
+        custom_id: "v10-pass-003",
+        original: "법령과 일치하여 수정이 불필요한 문장",
+        fix: null,
+        source_quote: null
+      })
+    ].join("\n");
+
+    const PRESET_FAIL_JSONL = [
+      JSON.stringify({
+        custom_id: "v10-fail-softnull",
+        original: "하도급대금 감액 시 서면 미교부는 과징금 대상이 아니다.",
+        fix: "하도급대금 감액 시 서면 미교부는 과징금 대상이 아니다.",
+        source_quote: "하도급법 제11조",
+        confidence: "low"
+      }),
+      JSON.stringify({
+        custom_id: "v10-fail-noquote",
+        original: "청약철회 기간은 수령일로부터 3일이다.",
+        fix: "전자상거래법 제17조에 따라 계약내용에 관한 서면을 받은 날부터 7일 이내에 청약철회를 할 수 있다.",
+        source_quote: ""
+      }),
+      JSON.stringify({
+        custom_id: "v8-fail-length",
+        original: "단기 소멸시효 안내 문장",
+        fix: "이 교정문은 V8 규칙이 강제하는 95자 상한선을 고의로 초과하도록 작성된 장문의 테스트 문장으로서 기계 검수 게이트에서 LLM 호출 전에 즉시 탈락 처리되어 재교정 큐로 반송되어야만 합니다.",
+        source_quote: "민법 제163조"
+      })
+    ].join("\n");
+
+    let TREASURY_DATA = null;
+    let ACTIVE_CAT = "ALL";
+
+    function switchTab(tabId) {
+      document.querySelectorAll(".tab-btn").forEach((b) => {
+        b.classList.toggle("active", b.dataset.tab === tabId);
+      });
+      document.querySelectorAll(".tab-panel").forEach((p) => {
+        p.classList.toggle("active", p.id === `panel-${tabId}`);
+      });
+    }
+
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+    });
+
+    // If accessed via hallucgate.risconlabs.com, default to Halluc-Gate tab
+    if (location.hostname.startsWith("hallucgate.")) {
+      switchTab("halluc-gate");
+    }
+
+    // Theme toggle
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      const root = document.documentElement;
+      root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+    });
+
+    function copyText(text, btnEl) {
+      navigator.clipboard.writeText(text).then(() => {
+        const prev = btnEl.textContent;
+        btnEl.textContent = "✓ 복사됨 (Copied)";
+        btnEl.classList.add("copied");
+        setTimeout(() => {
+          btnEl.textContent = prev;
+          btnEl.classList.remove("copied");
+        }, 1600);
+      });
+    }
+
+    function openDossierModal(prog) {
+      document.getElementById("modal-slot").textContent = `${prog.slot_code} · ${prog.provider} · Verified ${prog.verified_date}`;
+      document.getElementById("modal-title").textContent = prog.program_name;
+      document.getElementById("modal-form-link").href = prog.direct_form_url;
+
+      const cf = prog.copy_fields;
+      const blocks = [
+        { label: "1. Organization & Applicant Profile", val: `Organization: ${cf.org_name}\nWebsite: ${cf.website}\nGitHub: ${cf.github}\nApplicant / PI: ${cf.applicant}` },
+        { label: "2. Project Title (과제명)", val: cf.project_title },
+        { label: "3. Executive Abstract / Summary (요약문)", val: cf.abstract },
+        { label: "4. Live Proof-of-Work URLs & Git Commits (실증 사이트 증빙)", val: cf.proof_of_work },
+        { label: "5. Quantitative Preliminary Results (V12 · Soft-Null · C-Hybrid 실측치)", val: cf.empirical_results },
+        { label: "6. Resource Justification & Fit (신청 사유 및 기대효과)", val: cf.justification },
+        { label: "7. Full Application Dossier Markdown (전체 신청서 원문)", val: cf.full_dossier_markdown }
+      ];
+
+      const container = document.getElementById("modal-fields");
+      container.innerHTML = "";
+      blocks.forEach((b) => {
+        const div = document.createElement("div");
+        div.className = "field-block";
+        const head = document.createElement("div");
+        head.className = "field-head";
+        const nameSpan = document.createElement("span");
+        nameSpan.className = "field-name";
+        nameSpan.textContent = b.label;
+        const cBtn = document.createElement("button");
+        cBtn.className = "copy-btn";
+        cBtn.type = "button";
+        cBtn.textContent = "복사 (Copy)";
+        cBtn.addEventListener("click", () => copyText(b.val, cBtn));
+        head.appendChild(nameSpan);
+        head.appendChild(cBtn);
+
+        const body = document.createElement("div");
+        body.className = "field-content";
+        body.textContent = b.val;
+
+        div.appendChild(head);
+        div.appendChild(body);
+        container.appendChild(div);
+      });
+
+      document.getElementById("dossier-modal").classList.add("open");
+    }
+
+    document.getElementById("modal-close").addEventListener("click", () => {
+      document.getElementById("dossier-modal").classList.remove("open");
+    });
+    document.getElementById("dossier-modal").addEventListener("click", (e) => {
+      if (e.target.id === "dossier-modal") {
+        document.getElementById("dossier-modal").classList.remove("open");
+      }
+    });
+
+    function renderPrograms() {
+      if (!TREASURY_DATA) return;
+      const grid = document.getElementById("program-grid");
+      grid.innerHTML = "";
+      const list = TREASURY_DATA.programs.filter(
+        (p) => ACTIVE_CAT === "ALL" || p.category === ACTIVE_CAT
+      );
+      list.forEach((prog) => {
+        const card = document.createElement("article");
+        card.className = "prog-card";
+
+        const sitePills = prog.target_details
+          .map(
+            (t) =>
+              `<a class="site-tag" href="${t.url}" target="_blank" rel="noopener">${t.key.toUpperCase()} @ ${t.commit}</a>`
+          )
+          .join("");
+
+        card.innerHTML = `
+          <div>
+            <div class="prog-top">
+              <span class="slot-pill">#${prog.priority_rank} · ${prog.slot_code}</span>
+              <span class="http-pill">✓ HTTP 200 · ${prog.verified_date}</span>
+            </div>
+            <div class="prog-provider">${prog.provider} · ${prog.application_cycle}</div>
+            <h2 class="prog-name">${prog.program_name}</h2>
+            <div class="prog-reward">${prog.reward_summary}</div>
+            <div class="prog-title-box">${prog.project_title}</div>
+            <p class="prog-angle">${prog.key_angle}</p>
+            <div class="site-tags">${sitePills}</div>
+          </div>
+          <div class="prog-actions">
+            <a class="btn btn-primary" href="${prog.direct_form_url}" target="_blank" rel="noopener">직통 신청 폼 ↗</a>
+            <a class="btn" href="${prog.official_url}" target="_blank" rel="noopener">공식 안내문 ↗</a>
+            <button class="btn btn-full" type="button" data-open-dossier="${prog.program_id}">📋 원클릭 복사용 신청서 열기 (Copy-Paste Fields)</button>
+          </div>
+        `;
+        card.querySelector("[data-open-dossier]").addEventListener("click", () => openDossierModal(prog));
+        grid.appendChild(card);
+      });
+    }
+
+    document.querySelectorAll("#category-filters button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#category-filters button").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        ACTIVE_CAT = btn.dataset.cat;
+        renderPrograms();
+      });
+    });
+
+    async function runAudit() {
+      const raw = document.getElementById("audit-input").value;
+      const out = document.getElementById("audit-output");
+      out.textContent = "검수 중...";
+      try {
+        const res = await fetch("/api/audit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ raw })
+        });
+        const data = await res.json();
+        const badgeClass = data.verdict === "PASS_CERTIFIED" ? "verdict-pass" : "verdict-reject";
+        const defectsHtml = data.defects && data.defects.length
+          ? `<div style="margin-top:0.65rem;color:var(--danger);"><strong>적발된 결함 (${data.defects.length}건):</strong><br>${data.defects.map((d) => `• [${d.id}] ${d.rule}: ${d.detail}`).join("<br>")}</div>`
+          : `<div style="margin-top:0.65rem;color:var(--accent);">✓ 모든 항목이 V8/V10/V12 기계 게이트를 무결점으로 통과했습니다.</div>`;
+
+        out.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.6rem;">
+            <span class="verdict-badge ${badgeClass}">${data.verdict}</span>
+            <span>Receipt: <strong>${data.receipt_id}</strong></span>
+          </div>
+          <div>• 총 검수 건수: ${data.total_items}건 (통과: ${data.passed_items}건)</div>
+          <div>• V10 Soft-Null 도피(원문복사): ${data.soft_null_count}건</div>
+          <div>• V10 인용근거(source_quote) 누락: ${data.missing_quote_count}건</div>
+          <div>• V8 95자 길이 초과: ${data.length_violation_count}건 | findings 오염: ${data.findings_leak_count}건</div>
+          <div style="margin-top:0.4rem;word-break:break-all;color:var(--text-muted);">• SHA-256: ${data.sha256_hash}</div>
+          ${defectsHtml}
+        `;
+      } catch (err) {
+        out.textContent = "검수 오류: " + err.message;
+      }
+    }
+
+    document.getElementById("audit-input").value = PRESET_PASS_JSONL;
+    document.getElementById("preset-pass").addEventListener("click", (e) => {
+      document.getElementById("preset-pass").classList.add("active");
+      document.getElementById("preset-fail").classList.remove("active");
+      document.getElementById("audit-input").value = PRESET_PASS_JSONL;
+      runAudit();
+    });
+    document.getElementById("preset-fail").addEventListener("click", (e) => {
+      document.getElementById("preset-fail").classList.add("active");
+      document.getElementById("preset-pass").classList.remove("active");
+      document.getElementById("audit-input").value = PRESET_FAIL_JSONL;
+      runAudit();
+    });
+    document.getElementById("run-audit-btn").addEventListener("click", runAudit);
+
+    async function init() {
+      const res = await fetch("/data/treasury-data.json");
+      TREASURY_DATA = await res.json();
+      renderPrograms();
+
+      // Render B2B products
+      const b2bList = document.getElementById("b2b-list");
+      TREASURY_DATA.micro_b2b_products.forEach((prod) => {
+        const div = document.createElement("div");
+        div.className = "field-block";
+        div.innerHTML = `
+          <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.78rem;color:var(--accent);">
+            <span>${prod.slot_code} · $${prod.price_usd} (₩${prod.price_krw.toLocaleString()})</span>
+            <span>목표 월 ₩${prod.expected_monthly_krw.toLocaleString()}</span>
+          </div>
+          <div style="font-weight:600;margin-top:0.25rem;font-size:0.9rem;">${prod.name}</div>
+          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">${prod.mechanism}</div>
+        `;
+        b2bList.appendChild(div);
+      });
+
+      // Render Empirical cards
+      const empContainer = document.getElementById("empirical-cards");
+      const eb = TREASURY_DATA.portfolio.empirical_benchmarks;
+      [
+        { title: "V12 Input-Truncation (+12.0%p)", text: eb.v12_input_truncation_lift },
+        { title: "Flash vs. Pro Precision Inversion", text: eb.flash_vs_pro_false_positive },
+        { title: "Soft-Null Evasion 0.0% Elimination", text: eb.soft_null_evasion_discovery },
+        { title: "C-Hybrid 80.8% Compute Savings", text: eb.c_hybrid_cost_efficiency }
+      ].forEach((item) => {
+        const d = document.createElement("div");
+        d.className = "field-block";
+        d.innerHTML = `<div class="field-name" style="margin-bottom:0.35rem;">${item.title}</div><div style="font-size:0.83rem;color:var(--text-muted);">${item.text}</div>`;
+        empContainer.appendChild(d);
+      });
+
+      // Render 16 Sites table
+      const tbody = document.getElementById("sites-tbody");
+      Object.entries(TREASURY_DATA.portfolio.sites).forEach(([key, s], i) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td class="mono">${String(i + 1).padStart(2, "0")}</td>
+          <td><strong>${key.toUpperCase()}</strong></td>
+          <td class="mono"><a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent);">${s.url} ↗</a></td>
+          <td class="mono">${s.repo} @ <code>${s.commit}</code></td>
+          <td style="color:var(--text-muted);">${s.summary}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      runAudit();
+    }
+
+    init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "riscon-credit-harvest",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "RISCON Labs Track A — Non-Dilutive Credit & Grant Scouter (S93 CREDIT-HARVEST) & Mechanical Citation/Soft-Null Gate (S95 HALLUC-GATE)",
+  "scripts": {
+    "build:data": "python3 scripts/build-data.py",
+    "verify": "node scripts/verify-site.mjs",
+    "deploy": "npx --yes wrangler deploy"
+  }
+}
